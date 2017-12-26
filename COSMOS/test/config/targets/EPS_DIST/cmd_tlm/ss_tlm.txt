@@ -1,0 +1,47 @@
+TELEMETRY EPS_DIST GENERAL LITTLE_ENDIAN "EPS distribution module general status telemetry."
+
+    # First two items must ALWAYS be provided
+    APPEND_ITEM LENGTH 8 UINT "Length of packet." LITTLE_ENDIAN
+    APPEND_ID_ITEM ID 8 UINT 0 "ID of command" LITTLE_ENDIAN
+    
+    
+    APPEND_ITEM OMS 8 UINT "Overall subsystem module status." LITTLE_ENDIAN
+      STATE NOMINAL 0 GREEN
+      STATE MINORISSUES 1 YELLOW
+      STATE SERIOUSISSUES 2 YELLOW
+      STATE FATALERROR 3 RED
+    
+
+TELEMETRY EPS_DIST SENSORDAT LITTLE_ENDIAN "EPS distribution module captured sensor data."
+
+    # First two items must ALWAYS be provided
+    APPEND_ITEM LENGTH 8 UINT "Length of packet." LITTLE_ENDIAN
+    APPEND_ID_ITEM ID 8 UINT 1 "ID of command" LITTLE_ENDIAN
+    
+    #APPEND_ARRAY_ITEM ARRAY 32 FLOAT 224 "Array-view of the 8 power domain current numbers." LITTLE_ENDIAN
+    APPEND_ITEM CURR_COM1 32 FLOAT "Current draw by the COM1 power domain." LITTLE_ENDIAN
+      UNITS amps A
+      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+    APPEND_ITEM CURR_COM2 32 FLOAT "Current draw by the COM2 power domain." LITTLE_ENDIAN
+      UNITS amps A
+      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+    APPEND_ITEM CURR_RAHS 32 FLOAT "Current draw by the RAHS power domain." LITTLE_ENDIAN
+      UNITS amps A
+      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+    APPEND_ITEM CURR_BDOT 32 FLOAT "Current draw by the BDOT power domain." LITTLE_ENDIAN
+      UNITS amps A
+      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+    APPEND_ITEM CURR_ESTIM 32 FLOAT "Current draw by the ESTIM power domain." LITTLE_ENDIAN
+      UNITS amps A
+      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+    APPEND_ITEM CURR_WHEELS 32 FLOAT "Current draw by the WHEELS power domain." LITTLE_ENDIAN
+      UNITS amps A
+      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+    APPEND_ITEM CURR_EPS 32 FLOAT "Current draw by the EPS power domain." LITTLE_ENDIAN
+      UNITS amps A
+      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+    APPEND_ITEM CURR_PPT 32 FLOAT "Current draw by the PPT power domain." LITTLE_ENDIAN
+      UNITS amps A
+      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+
+    
