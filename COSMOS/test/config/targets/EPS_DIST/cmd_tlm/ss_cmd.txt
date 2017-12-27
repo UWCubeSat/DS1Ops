@@ -1,8 +1,48 @@
-COMMAND EPS_DIST COMMAND BIG_ENDIAN "Packet description"
-  # Keyword           Name  BitSize Type   Min Max  Default  Description
-  APPEND_ID_PARAMETER ID    16      INT    1   1    1        "Identifier"
-  APPEND_PARAMETER    VALUE 32      FLOAT  0   10.5 2.5      "Value"
-  APPEND_PARAMETER    BOOL  8       UINT   MIN MAX  0        "Boolean"
-    STATE FALSE 0
-    STATE TRUE 1
-  APPEND_PARAMETER    LABEL 0       STRING          "COSMOS" "The label to apply"
+COMMAND EPS_DIST DOMSWITCH LITTLE_ENDIAN "Provides direct enable/disable/toggle control of power domains."
+
+  # The following 3 fields are required for proper command routing
+  APPEND_PARAMETER LENGTH 8 UINT 0 255 0
+  APPEND_ID_PARAMETER ENTITYID 8 UINT 10 10 10 "Entity ID for the specific subsystem software on this module."
+  APPEND_ID_PARAMETER OPCODE 8 UINT 100 100 100 "Opcode passed to the entity command handler."
+  
+  # The rest of the fields are the actual commands passed
+  APPEND_PARAMETER PD_COM1 8 UINT 0 3 0 "Passes the desired power domain switch behavior for COM1." LITTLE_ENDIAN
+    STATE NOCHANGE 0 
+    STATE ENABLE 1 
+    STATE DISABLE 2 
+    STATE TOGGLE 3
+  APPEND_PARAMETER PD_COM2 8 UINT 0 3 0 "Passes the desired power domain switch behavior for COM2." LITTLE_ENDIAN
+    STATE NOCHANGE 0 
+    STATE ENABLE 1 
+    STATE DISABLE 2 
+    STATE TOGGLE 3
+  APPEND_PARAMETER PD_RAHS 8 UINT 0 3 0 "Passes the desired power domain switch behavior for RAHS." LITTLE_ENDIAN
+    STATE NOCHANGE 0 
+    STATE ENABLE 1 
+    STATE DISABLE 2 
+    STATE TOGGLE 3
+  APPEND_PARAMETER PD_BDOT 8 UINT 0 3 0 "Passes the desired power domain switch behavior for BDOT." LITTLE_ENDIAN
+    STATE NOCHANGE 0 
+    STATE ENABLE 1 
+    STATE DISABLE 2 
+    STATE TOGGLE 3
+  APPEND_PARAMETER PD_ESTIM 8 UINT 0 3 0 "Passes the desired power domain switch behavior for ESTIM." LITTLE_ENDIAN
+    STATE NOCHANGE 0 
+    STATE ENABLE 1 
+    STATE DISABLE 2 
+    STATE TOGGLE 3
+  APPEND_PARAMETER PD_WHEELS 8 UINT 0 3 0 "Passes the desired power domain switch behavior for WHEELS." LITTLE_ENDIAN
+    STATE NOCHANGE 0 
+    STATE ENABLE 1 
+    STATE DISABLE 2 
+    STATE TOGGLE 3
+  APPEND_PARAMETER PD_EPS 8 UINT 0 3 0 "Passes the desired power domain switch behavior for EPS." LITTLE_ENDIAN
+    STATE NOCHANGE 0 
+    STATE ENABLE 1 
+    STATE DISABLE 2 
+    STATE TOGGLE 3
+  APPEND_PARAMETER PD_PPT 8 UINT 0 3 0 "Passes the desired power domain switch behavior for PPT." LITTLE_ENDIAN
+    STATE NOCHANGE 0 
+    STATE ENABLE 1 
+    STATE DISABLE 2 
+    STATE TOGGLE 3

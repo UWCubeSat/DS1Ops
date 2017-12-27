@@ -1,5 +1,8 @@
 COSMOS/test/outputs/logs/
 COSMOS/test/outputs/tmp/
+COSMOS/test/outputs/saved_config/
 
 COSMOS/flatsat/outputs/logs/
 COSMOS/flatsat/outputs/tmp/
+COSMOS/flatsat/outputs/saved_config/
+
