@@ -2,46 +2,81 @@ TELEMETRY EPS_DIST GENERAL LITTLE_ENDIAN "EPS distribution module general status
 
     # First two items must ALWAYS be provided
     APPEND_ITEM LENGTH 8 UINT "Length of packet." LITTLE_ENDIAN
-    APPEND_ID_ITEM ID 8 UINT 0 "ID of command" LITTLE_ENDIAN
+    APPEND_ID_ITEM ID 8 UINT 1 "ID of telemetry packet." LITTLE_ENDIAN
     
-    
-    APPEND_ITEM OMS 8 UINT "Overall subsystem module status." LITTLE_ENDIAN
-      STATE NOMINAL 0 GREEN
-      STATE MINORISSUES 1 YELLOW
-      STATE SERIOUSISSUES 2 YELLOW
-      STATE FATALERROR 3 RED
+    APPEND_ITEM CMD_COM1 8 UINT "Last command given to the COM1 power domain switch."
+      <%= render "_pd_cmds.txt" %>    
+    APPEND_ITEM CMD_COM2 8 UINT "Last command given to the COM2 power domain switch."
+      <%= render "_pd_cmds.txt" %>  
+    APPEND_ITEM CMD_RAHS 8 UINT "Last command given to the RAHS power domain switch."
+      <%= render "_pd_cmds.txt" %>  
+    APPEND_ITEM CMD_BDOT 8 UINT "Last command given to the BDOT power domain switch."
+      <%= render "_pd_cmds.txt" %>  
+    APPEND_ITEM CMD_ESTIM 8 UINT "Last command given to the ESTIM power domain switch."
+      <%= render "_pd_cmds.txt" %>  
+    APPEND_ITEM CMD_WHEELS 8 UINT "Last command given to the WHEELS power domain switch."
+      <%= render "_pd_cmds.txt" %>  
+    APPEND_ITEM CMD_EPS 8 UINT "Last command given to the EPS power domain switch."
+      <%= render "_pd_cmds.txt" %>  
+    APPEND_ITEM CMD_PPT 8 UINT "Last command given to the PPT power domain switch."
+      <%= render "_pd_cmds.txt" %>  
+   
+    APPEND_ITEM SW_COM1 8 UINT "Actual state of the GPIO pin driving the switch." LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
+    APPEND_ITEM SW_COM2 8 UINT "Actual state of the GPIO pin driving the switch." LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
+    APPEND_ITEM SW_RAHS 8 UINT "Actual state of the GPIO pin driving the switch." LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
+    APPEND_ITEM SW_BDOT 8 UINT "Actual state of the GPIO pin driving the switch." LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
+    APPEND_ITEM SW_ESTIM 8 UINT "Actual state of the GPIO pin driving the switch." LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
+    APPEND_ITEM SW_WHEELS 8 UINT "Actual state of the GPIO pin driving the switch." LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
+    APPEND_ITEM SW_EPS 8 UINT "Actual state of the GPIO pin driving the switch." LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
+    APPEND_ITEM SW_PPT 8 UINT "Actual state of the GPIO pin driving the switch." LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
     
 
 TELEMETRY EPS_DIST SENSORDAT LITTLE_ENDIAN "EPS distribution module captured sensor data."
 
     # First two items must ALWAYS be provided
     APPEND_ITEM LENGTH 8 UINT "Length of packet." LITTLE_ENDIAN
-    APPEND_ID_ITEM ID 8 UINT 1 "ID of command" LITTLE_ENDIAN
+    APPEND_ID_ITEM ID 8 UINT 2 "ID of telemetry packet." LITTLE_ENDIAN
     
     #APPEND_ARRAY_ITEM ARRAY 32 FLOAT 224 "Array-view of the 8 power domain current numbers." LITTLE_ENDIAN
     APPEND_ITEM CURR_COM1 32 FLOAT "Current draw by the COM1 power domain." LITTLE_ENDIAN
       UNITS amps A
-      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+      LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
     APPEND_ITEM CURR_COM2 32 FLOAT "Current draw by the COM2 power domain." LITTLE_ENDIAN
       UNITS amps A
-      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+      LIMITS DEFAULT 3 ENABLED 0.07 0.095 0.135 0.20
     APPEND_ITEM CURR_RAHS 32 FLOAT "Current draw by the RAHS power domain." LITTLE_ENDIAN
       UNITS amps A
-      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+      LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
     APPEND_ITEM CURR_BDOT 32 FLOAT "Current draw by the BDOT power domain." LITTLE_ENDIAN
       UNITS amps A
-      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+      LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
     APPEND_ITEM CURR_ESTIM 32 FLOAT "Current draw by the ESTIM power domain." LITTLE_ENDIAN
       UNITS amps A
-      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+      LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
     APPEND_ITEM CURR_WHEELS 32 FLOAT "Current draw by the WHEELS power domain." LITTLE_ENDIAN
       UNITS amps A
-      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+      LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
     APPEND_ITEM CURR_EPS 32 FLOAT "Current draw by the EPS power domain." LITTLE_ENDIAN
       UNITS amps A
-      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+      LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
     APPEND_ITEM CURR_PPT 32 FLOAT "Current draw by the PPT power domain." LITTLE_ENDIAN
       UNITS amps A
-      LIMITS DEFAULT 3 ENABLED 0.05 0.25 0.38 0.5
+      LIMITS DEFAULT 3 ENABLED 0.1 0.25 0.40 0.50
 
     

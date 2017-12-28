@@ -1,0 +1,17 @@
+TELEMETRY EPS_DIST HEALTH LITTLE_ENDIAN "Standard shared health telemetry packet."
+
+    # First two items must ALWAYS be provided
+    APPEND_ITEM LENGTH 8 UINT "Length of packet." LITTLE_ENDIAN
+    APPEND_ID_ITEM ID 8 UINT 0 "ID of telemetry packet." LITTLE_ENDIAN
+    
+    APPEND_ITEM MODULE 16 UINT "Internal module name." LITTLE_ENDIAN
+      <%= render "_shared_mod_ids.txt" %>
+    
+    APPEND_ITEM OMS 8 UINT "Overall subsystem module status." LITTLE_ENDIAN
+      STATE NOMINAL 0 GREEN
+      STATE MINORFAULTS 1 YELLOW
+      STATE MAJORFAULTS 2 YELLOW
+      STATE FAILURES 3 RED
+      STATE FATALERRORS 4 RED
+      STATE UNKNOWN 5 RED
+    
