@@ -1,0 +1,3 @@
+  APPEND_PARAMETER LENGTH 8 UINT 0 255 0
+  APPEND_ID_PARAMETER ENTITYID 8 UINT <%= eid %> <%= eid %> <%= eid %> "Entity ID for the specific subsystem software on this module."
+  APPEND_ID_PARAMETER OPCODE 8 UINT <%= opc %> <%= opc %> <%= opc %> "Opcode passed to the entity command handler."

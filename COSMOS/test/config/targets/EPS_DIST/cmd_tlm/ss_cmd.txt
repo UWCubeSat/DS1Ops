@@ -1,9 +1,7 @@
 COMMAND EPS_DIST DOMSWITCH LITTLE_ENDIAN "Provides direct enable/disable/toggle control of power domains."
 
-  # The following 3 fields are required for proper command routing
-  APPEND_PARAMETER LENGTH 8 UINT 0 255 0
-  APPEND_ID_PARAMETER ENTITYID 8 UINT 10 10 10 "Entity ID for the specific subsystem software on this module."
-  APPEND_ID_PARAMETER OPCODE 8 UINT 100 100 100 "Opcode passed to the entity command handler."
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "_shared_cmd_header.txt", locals: { eid: 10, opc: 100 } %>
   
   # The rest of the fields are the actual commands passed
   APPEND_PARAMETER PD_COM1 8 UINT 0 3 0 "Passes the desired power domain switch behavior for COM1." LITTLE_ENDIAN

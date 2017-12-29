@@ -1,0 +1,4 @@
+
+    APPEND_ITEM LENGTH 8 UINT "Length of packet." LITTLE_ENDIAN
+    APPEND_ID_ITEM ID 8 UINT <%= id %> "ID of telemetry packet." LITTLE_ENDIAN
+    
