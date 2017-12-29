@@ -54,6 +54,30 @@ TELEMETRY EPS_DIST GENERAL LITTLE_ENDIAN "EPS distribution module general status
     APPEND_ITEM OCCNT_EPS 8 UINT "Specifies the number of separate overcurrent events for the EPS power domain." LITTLE_ENDIAN
     APPEND_ITEM OCCNT_PPT 8 UINT "Specifies the number of separate overcurrent events for the PPT power domain." LITTLE_ENDIAN
     
+    APPEND_ITEM OCTHRESH_COM1 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN
+      UNITS amps A
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM OCTHRESH_COM2 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN
+      UNITS amps A
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM OCTHRESH_RAHS 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN    
+      UNITS amps A
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM OCTHRESH_BDOT 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN
+      UNITS amps A
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM OCTHRESH_ESTIM 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN
+      UNITS amps A
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM OCTHRESH_WHEELS 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN
+      UNITS amps A
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM OCTHRESH_EPS 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN
+      UNITS amps A
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM OCTHRESH_PPT 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN
+      UNITS amps A
+      FORMAT_STRING "%0.4f"
     
 TELEMETRY EPS_DIST SENSORDAT LITTLE_ENDIAN "EPS distribution module captured sensor data."
 
@@ -64,27 +88,35 @@ TELEMETRY EPS_DIST SENSORDAT LITTLE_ENDIAN "EPS distribution module captured sen
     APPEND_ITEM CURR_COM1 32 FLOAT "Current draw by the COM1 power domain." LITTLE_ENDIAN
       UNITS amps A
       LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
+      FORMAT_STRING "%0.4f"
     APPEND_ITEM CURR_COM2 32 FLOAT "Current draw by the COM2 power domain." LITTLE_ENDIAN
       UNITS amps A
       LIMITS DEFAULT 3 ENABLED 0.07 0.095 0.135 0.20
+      FORMAT_STRING "%0.4f"
     APPEND_ITEM CURR_RAHS 32 FLOAT "Current draw by the RAHS power domain." LITTLE_ENDIAN
       UNITS amps A
       LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
+      FORMAT_STRING "%0.4f"
     APPEND_ITEM CURR_BDOT 32 FLOAT "Current draw by the BDOT power domain." LITTLE_ENDIAN
       UNITS amps A
       LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
+      FORMAT_STRING "%0.4f"
     APPEND_ITEM CURR_ESTIM 32 FLOAT "Current draw by the ESTIM power domain." LITTLE_ENDIAN
       UNITS amps A
       LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
+      FORMAT_STRING "%0.4f"
     APPEND_ITEM CURR_WHEELS 32 FLOAT "Current draw by the WHEELS power domain." LITTLE_ENDIAN
       UNITS amps A
       LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
+      FORMAT_STRING "%0.4f"
     APPEND_ITEM CURR_EPS 32 FLOAT "Current draw by the EPS power domain." LITTLE_ENDIAN
       UNITS amps A
       LIMITS DEFAULT 3 ENABLED 0.01 0.08 0.12 0.15
+      FORMAT_STRING "%0.4f"
     APPEND_ITEM CURR_PPT 32 FLOAT "Current draw by the PPT power domain." LITTLE_ENDIAN
       UNITS amps A
       LIMITS DEFAULT 3 ENABLED 0.1 0.25 0.40 0.50
+      FORMAT_STRING "%0.4f"
       
     APPEND_ITEM OC_COM1 8 UINT "Indicates whether COM1 power domain is drawing more current than threshold." LITTLE_ENDIAN
       STATE SAFE 0 GREEN

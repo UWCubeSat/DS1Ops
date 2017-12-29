@@ -44,3 +44,26 @@ COMMAND EPS_DIST DOMSWITCH LITTLE_ENDIAN "Provides direct enable/disable/toggle 
     STATE ENABLE 1 
     STATE DISABLE 2 
     STATE TOGGLE 3
+
+
+COMMAND EPS_DIST CHNGOCPTHRSH LITTLE_ENDIAN "Allows the overcurrent threshold to be changed for each power domain."
+
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "_shared_cmd_header.txt", locals: { eid: 10, opc: 116 } %>
+  
+  APPEND_PARAMETER THRSH_COM1 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
+    UNITS amps A
+  APPEND_PARAMETER THRSH_COM2 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
+    UNITS amps A
+  APPEND_PARAMETER THRSH_RAHS 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
+    UNITS amps A
+  APPEND_PARAMETER THRSH_BDOT 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
+    UNITS amps A
+  APPEND_PARAMETER THRSH_ESTIM 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
+    UNITS amps A
+  APPEND_PARAMETER THRSH_WHEELS 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
+    UNITS amps A
+  APPEND_PARAMETER THRSH_EPS 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
+    UNITS amps A
+  APPEND_PARAMETER THRSH_PPT 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
+    UNITS amps A
