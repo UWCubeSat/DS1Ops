@@ -1,7 +1,7 @@
 TELEMETRY EPS_DIST GENERAL LITTLE_ENDIAN "EPS distribution module general status telemetry."
 
     # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "_shared_tlm_header.txt", locals: {id: 2} %>
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
     
     APPEND_ITEM BATTV 32 FLOAT "The ADC12-measured battery voltage." LITTLE_ENDIAN
       UNITS volts V
@@ -93,11 +93,12 @@ TELEMETRY EPS_DIST GENERAL LITTLE_ENDIAN "EPS distribution module general status
     APPEND_ITEM OCTHRESH_PPT 32 FLOAT "Indicates the current overcurrent protection setting for the domain." LITTLE_ENDIAN
       UNITS amps A
       FORMAT_STRING "%0.4f"
-    
+      
+  
 TELEMETRY EPS_DIST SENSORDAT LITTLE_ENDIAN "EPS distribution module captured sensor data."
 
     # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "_shared_tlm_header.txt", locals: {id: 3} %>
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
     
     #APPEND_ARRAY_ITEM ARRAY 32 FLOAT 224 "Array-view of the 8 power domain current numbers." LITTLE_ENDIAN
     APPEND_ITEM CURR_COM1 32 FLOAT "Current draw by the COM1 power domain." LITTLE_ENDIAN

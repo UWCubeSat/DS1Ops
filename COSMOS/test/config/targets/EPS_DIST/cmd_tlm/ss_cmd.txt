@@ -1,7 +1,7 @@
 COMMAND EPS_DIST DOMSWITCH LITTLE_ENDIAN "Provides direct enable/disable/toggle control of power domains."
 
   # This must ALWAYS be the first entry in any command packet
-  <%= render "_shared_cmd_header.txt", locals: { eid: 10, opc: 100 } %>
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 100 } %>
   
   # The rest of the fields are the actual commands passed
   APPEND_PARAMETER PD_COM1 8 UINT 0 3 0 "Passes the desired power domain switch behavior for COM1." LITTLE_ENDIAN
@@ -49,7 +49,7 @@ COMMAND EPS_DIST DOMSWITCH LITTLE_ENDIAN "Provides direct enable/disable/toggle 
 COMMAND EPS_DIST CHNGOCPTHRSH LITTLE_ENDIAN "Allows the overcurrent threshold to be changed for each power domain."
 
   # This must ALWAYS be the first entry in any command packet
-  <%= render "_shared_cmd_header.txt", locals: { eid: 10, opc: 116 } %>
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 116 } %>
   
   APPEND_PARAMETER THRSH_COM1 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
     UNITS amps A
@@ -76,7 +76,7 @@ COMMAND EPS_DIST CHNGOCPTHRSH LITTLE_ENDIAN "Allows the overcurrent threshold to
 COMMAND EPS_DIST FIREDEPLOY LITTLE_ENDIAN "Indicates the satellite should fire deployables."
 
   # This must ALWAYS be the first entry in any command packet
-  <%= render "_shared_cmd_header.txt", locals: { eid: 10, opc: 102 } %>
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 102 } %>
   
   HAZARDOUS "This is a ONE-TIME, PYRO FIRING EVENT.  Make sure triggering this is what you want to do.  It cannot be 'undone'. "
   APPEND_PARAMETER DEPLOYMENT_KEY 8 UINT 0 255 0 "Deployment key MUST be entered to fire the system." LITTLE_ENDIAN

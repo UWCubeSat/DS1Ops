@@ -1,7 +1,7 @@
 COMMAND EPS_DIST COMMONCMD LITTLE_ENDIAN "Provides commands that are common to all the MSP43x modules."
 
   # This must ALWAYS be the first entry in any command packet
-  <%= render "_shared_cmd_header.txt", locals: { eid: 10, opc: 0 } %>
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 0 } %>
   
   # The rest of the fields are the actual commands passed
   APPEND_PARAMETER PD_COM1 8 UINT 0 255 0 "Testing ..." LITTLE_ENDIAN
