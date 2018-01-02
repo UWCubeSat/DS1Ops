@@ -1,0 +1,11 @@
+    APPEND_ITEM OMS 8 UINT "Overall subsystem module status." LITTLE_ENDIAN
+      STATE NOMINAL 0 GREEN
+      STATE MINORFAULTS 1 YELLOW
+      STATE MAJORFAULTS 2 YELLOW
+      STATE FAILURES 3 RED
+      STATE FATALERRORS 4 RED
+      STATE UNKNOWN 5 RED
+      
+    APPEND_ITEM INTTEMP 32 FLOAT "Temperature measured by internal MSP43x sensor." LITTLE_ENDIAN
+      UNITS Celsius C
+      FORMAT_STRING "%0.4f"
