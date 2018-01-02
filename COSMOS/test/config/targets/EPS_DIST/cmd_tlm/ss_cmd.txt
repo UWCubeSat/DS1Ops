@@ -67,3 +67,16 @@ COMMAND EPS_DIST CHNGOCPTHRSH LITTLE_ENDIAN "Allows the overcurrent threshold to
     UNITS amps A
   APPEND_PARAMETER THRSH_PPT 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
     UNITS amps A
+    
+  APPEND_PARAMETER BATTVTHRSH_PARTIAL 32 FLOAT 0.0 100.0 0.0 "Specifies the battery voltage threshold at which the distribution board triggers partial power domain shutdown mode." LITTLE_ENDIAN
+    UNITS volts V
+  APPEND_PARAMETER BATTVTHRSH_FULL 32 FLOAT 0.0 100.0 0.0 "Specifies the battery voltage threshold at which the distribution board triggers full power domain shutdown mode." LITTLE_ENDIAN
+    UNITS volts V
+    
+COMMAND EPS_DIST FIREDEPLOY LITTLE_ENDIAN "Indicates the satellite should fire deployables."
+
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "_shared_cmd_header.txt", locals: { eid: 10, opc: 102 } %>
+  
+  HAZARDOUS "This is a ONE-TIME, PYRO FIRING EVENT.  Make sure triggering this is what you want to do.  It cannot be 'undone'. "
+  APPEND_PARAMETER DEPLOYMENT_KEY 8 UINT 0 255 0 "Deployment key MUST be entered to fire the system." LITTLE_ENDIAN
