@@ -3,6 +3,8 @@ TELEMETRY EPS_DIST GENERAL LITTLE_ENDIAN "EPS distribution module general status
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "_shared_tlm_header.txt", locals: {id: 2} %>
     
+    APPEND_ITEM BATTV 32 FLOAT "The ADC12-measured battery voltage." LITTLE_ENDIAN
+    
     APPEND_ITEM CMD_COM1 8 UINT "Last command given to the COM1 power domain switch."
       <%= render "_pd_cmds.txt" %>    
     APPEND_ITEM CMD_COM2 8 UINT "Last command given to the COM2 power domain switch."
@@ -143,5 +145,36 @@ TELEMETRY EPS_DIST SENSORDAT LITTLE_ENDIAN "EPS distribution module captured sen
       STATE SAFE 0 GREEN
       STATE OVERCURRENT 1 RED
 
-
+    APPEND_ITEM BUSV_COM1 32 FLOAT "Current bus voltage measured on the power domain." LITTLE_ENDIAN
+      UNITS volts V
+      LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
+      FORMAT_STRING "%0.10f"
+    APPEND_ITEM BUSV_COM2 32 FLOAT "Current bus voltage measured on the power domain." LITTLE_ENDIAN
+      UNITS volts V
+      LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM BUSV_RAHS 32 FLOAT "Current bus voltage measured on the power domain." LITTLE_ENDIAN
+      UNITS volts V
+      LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM BUSV_BDOT 32 FLOAT "Current bus voltage measured on the power domain." LITTLE_ENDIAN
+      UNITS volts V
+      LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM BUSV_ESTIM 32 FLOAT "Current bus voltage measured on the power domain." LITTLE_ENDIAN
+      UNITS volts V
+      LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM BUSV_WHEELS 32 FLOAT "Current bus voltage measured on the power domain." LITTLE_ENDIAN
+      UNITS volts V
+      LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM BUSV_EPS 32 FLOAT "Current bus voltage measured on the power domain." LITTLE_ENDIAN
+      UNITS volts V
+      LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM BUSV_PPT 32 FLOAT "Current bus voltage measured on the power domain." LITTLE_ENDIAN
+      UNITS volts V
+      LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
+      FORMAT_STRING "%0.4f"
     

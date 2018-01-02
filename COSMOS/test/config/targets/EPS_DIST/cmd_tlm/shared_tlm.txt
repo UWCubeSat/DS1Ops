@@ -25,4 +25,8 @@ TELEMETRY EPS_DIST HEALTH LITTLE_ENDIAN "Standard shared health telemetry packet
       STATE FAILURES 3 RED
       STATE FATALERRORS 4 RED
       STATE UNKNOWN 5 RED
+      
+    APPEND_ITEM INTTEMP 32 FLOAT "Temperature measured by internal MSP43x sensor." LITTLE_ENDIAN
+      UNITS Celsius C
+      FORMAT_STRING "%0.4f"
     
