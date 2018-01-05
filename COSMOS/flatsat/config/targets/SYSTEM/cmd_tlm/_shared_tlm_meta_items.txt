@@ -1,6 +1,11 @@
     APPEND_ITEM MODULE 8 UINT "Internal module name." LITTLE_ENDIAN
       <%= render "../../SYSTEM/cmd_tlm/_shared_mod_ids.txt" %>
       
+    APPEND_ITEM MATCHSTATE 8 UINT "Hardware/software match check state." LITTLE_ENDIAN
+      STATE LOCKNOTENABLED 0 YELLOW
+      STATE NOKEYSPROVIDED 1 YELLOW
+      STATE LOCKVIOLATION 2 RED
+      STATE MATCHED 3 GREEN
     APPEND_ITEM COMPILERVER 16 UINT "Version number of compiler used to compile module." LITTLE_ENDIAN
     APPEND_ITEM STDCVER 16 UINT "Version of Standard C supported by compiler." LITTLE_ENDIAN
     
