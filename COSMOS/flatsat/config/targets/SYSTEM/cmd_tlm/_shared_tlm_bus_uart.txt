@@ -1,0 +1,17 @@
+    APPEND_ID_ITEM BUSNUM 8 UINT <%= bus %> "The ID of the bus instance." LITTLE_ENDIAN
+    
+    APPEND_ITEM INITIALIZED 8 UINT "Indicates whether UART bus has been initialized."
+    APPEND_ITEM BUSHEALTH 8 UINT "Indicates the overall health of the UART bus instance." LITTLE_ENDIAN
+      STATE UNKNOWN 0 YELLOW
+      STATE MINORFAULTS 1 YELLOW
+      STATE FATALERROR 2 RED
+      STATE HEALTHY 3 GREEN
+      STATE BUFFOVERRUN_HANDLED 4 RED
+      STATE BUFFOVERRUN_FATAL 5 RED
+      STATE BUFFUNDERRUN 6 YELLOW
+      STATE BADADDR 7 RED
+    APPEND_ITEM TX_BYTESSENT 16 UINT "Indicates how many bytes have been sent by this UART instance." LITTLE_ENDIAN
+    APPEND_ITEM RX_BYTESRCVD 16 UINT "Indicates how many bytes have been received by this UART instance." LITTLE_ENDIAN
+    APPEND_ITEM TX_ERRORCNT 8 UINT "Indicates how many transmit errors have been encountered on this UART instance." LITTLE_ENDIAN
+    APPEND_ITEM RX_ERRORCNT 8 UINT "Indicates how many receive errors have been encountered on this UART instance." LITTLE_ENDIAN
+    

@@ -1,1 +1,2 @@
-APPEND_PARAMETER PD_COM1 8 UINT 0 255 0 "Testing ..." LITTLE_ENDIAN
+    APPEND_PARAMETER EXPECTED_MODULE 8 UINT <%= expmod %> <%= expmod %> <%= expmod %> "Indicates to the subsystem module what module is EXPECTED, to make sure we don't have incorrect backchannel serial port connections." LITTLE_ENDIAN
+      <%= render "../../SYSTEM/cmd_tlm/_shared_mod_ids.txt" %>
