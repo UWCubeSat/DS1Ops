@@ -1,0 +1,6 @@
+COMMAND ADCS_SENSORPROC SEND_ASCII LITTLE_ENDIAN "Send a raw ASCII command to the GPS receiver."
+  # This must ALWAYS be the first entry in any command packet
+  # TODO opcode?
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 11, opc: 100 } %>
+  
+  APPEND_PARAMETER CMD 0 STRING REQUIRED "ASCII command to send."
