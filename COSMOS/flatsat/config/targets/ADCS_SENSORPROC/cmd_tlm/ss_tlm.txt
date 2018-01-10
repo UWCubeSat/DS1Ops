@@ -1,3 +1,28 @@
+TELEMETRY ADCS_SENSORPROC SUNSENSOR BIG_ENDIAN "Sun sensor angles"
+    # This must ALWAYS be the first entry in any telemetry packet
+    # TODO fill in real ID
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 121} %>
+    
+    APPEND_ITEM ALPHA 32 FLOAT "Alpha angle, degrees" LITTLE_ENDIAN
+    APPEND_ITEM BETA 32 FLOAT "Alpha angle, degrees" LITTLE_ENDIAN
+    APPEND_ITEM STATUS 8 UINT "Sun sensor error code" LITTLE_ENDIAN
+      STATE OK 0
+      STATE OUTFOV1 4
+      STATE OUTFOV2 5
+      STATE LOW 11
+      STATE HIGH 12
+      STATE NONE 3
+
+TELEMETRY ADCS_SENSORPROC GPSPOWER BIG_ENDIAN "GPS Power Status"
+    # This must ALWAYS be the first entry in any telemetry packet
+    # TODO fill in real ID
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 122} %>
+    
+    APPEND_ITEM STATUS 8 UINT "GPS power status." LITTLE_ENDIAN
+      STATE ON 2
+      STATE BOOTING 1
+      STATE OFF 0
+
 TELEMETRY ADCS_SENSORPROC RXSTATUS BIG_ENDIAN "Receiver status"
     # This must ALWAYS be the first entry in any telemetry packet
     # TODO fill in real ID
