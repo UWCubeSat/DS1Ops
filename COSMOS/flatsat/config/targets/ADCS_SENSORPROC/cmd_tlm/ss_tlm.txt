@@ -1,6 +1,5 @@
 TELEMETRY ADCS_SENSORPROC SUNSENSOR BIG_ENDIAN "Sun sensor angles"
     # This must ALWAYS be the first entry in any telemetry packet
-    # TODO fill in real ID
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 121} %>
     
     APPEND_ITEM ALPHA 32 FLOAT "Alpha angle, degrees" LITTLE_ENDIAN
@@ -13,9 +12,19 @@ TELEMETRY ADCS_SENSORPROC SUNSENSOR BIG_ENDIAN "Sun sensor angles"
       STATE HIGH 12
       STATE NONE 3
 
+TELEMETRY ADCS_SENSORPROC GPSHEALTH BIG_ENDIAN "GPS Software Errors"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 120} %>
+    
+    APPEND_ITEM UMSG 8 UINT "Number of unknown message IDs" LITTLE_ENDIAN
+    APPEND_ITEM UEVT 8 UINT "Number of unknown event IDs" LITTLE_ENDIAN
+    APPEND_ITEM REGERR 8 UINT "Number of message/event registration errors" LITTLE_ENDIAN
+    APPEND_ITEM SKIP 8 UINT "Number of skipped GPS messages due to lack of memory" LITTLE_ENDIAN
+    APPEND_ITEM BADCRC 8 UINT "Number of messages with invalid CRC32s" LITTLE_ENDIAN
+    APPEND_ITEM REGERR2 8 UINT "Number of parser registration errors" LITTLE_ENDIAN
+
 TELEMETRY ADCS_SENSORPROC GPSPOWER BIG_ENDIAN "GPS Power Status"
     # This must ALWAYS be the first entry in any telemetry packet
-    # TODO fill in real ID
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 122} %>
     
     APPEND_ITEM STATUS 8 UINT "GPS power status." LITTLE_ENDIAN
@@ -25,7 +34,6 @@ TELEMETRY ADCS_SENSORPROC GPSPOWER BIG_ENDIAN "GPS Power Status"
 
 TELEMETRY ADCS_SENSORPROC RXSTATUS BIG_ENDIAN "Receiver status"
     # This must ALWAYS be the first entry in any telemetry packet
-    # TODO fill in real ID
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 123} %>
     
     APPEND_ITEM ERROR 32 UINT "Receiver error word." LITTLE_ENDIAN
@@ -41,7 +49,6 @@ TELEMETRY ADCS_SENSORPROC RXSTATUS BIG_ENDIAN "Receiver status"
 
 TELEMETRY ADCS_SENSORPROC POSVEL BIG_ENDIAN "Position and velocity with timestamp"
     # This must ALWAYS be the first entry in any telemetry packet
-    # TODO fill in real ID
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 124} %>
 
     APPEND_ITEM POS_STATUS 32 UINT "Position solution status." LITTLE_ENDIAN
@@ -77,7 +84,6 @@ TELEMETRY ADCS_SENSORPROC POSVEL BIG_ENDIAN "Position and velocity with timestam
     
 TELEMETRY ADCS_SENSORPROC TIME BIG_ENDIAN "Time of latest message"
     # This must ALWAYS be the first entry in any telemetry packet
-    # TODO fill in real ID
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 125} %>
 
     APPEND_ITEM OFFSET 64 FLOAT "Combined offset between GPS reference time and UTC." LITTLE_ENDIAN
@@ -98,7 +104,6 @@ TELEMETRY ADCS_SENSORPROC TIME BIG_ENDIAN "Time of latest message"
 
 TELEMETRY ADCS_SENSORPROC HWMONITOR BIG_ENDIAN "Hardware measurements"
     # This must ALWAYS be the first entry in any telemetry packet
-    # TODO fill in real ID
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 126} %>
 
     APPEND_ITEM TEMP 32 FLOAT "Temperature." LITTLE_ENDIAN
@@ -112,7 +117,6 @@ TELEMETRY ADCS_SENSORPROC HWMONITOR BIG_ENDIAN "Hardware measurements"
 
 TELEMETRY ADCS_SENSORPROC SATVIS2 BIG_ENDIAN "Satellite visibility"
     # This must ALWAYS be the first entry in any telemetry packet
-    # TODO fill in real ID
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 127} %>
 
     APPEND_ITEM NUM_GPS 32 UINT "Number of visible GPS satellites." LITTLE_ENDIAN
