@@ -18,10 +18,9 @@ TELEMETRY ADCS_SENSORPROC GPSHEALTH BIG_ENDIAN "GPS Software Errors"
     
     APPEND_ITEM UMSG 8 UINT "Number of unknown message IDs" LITTLE_ENDIAN
     APPEND_ITEM UEVT 8 UINT "Number of unknown event IDs" LITTLE_ENDIAN
-    APPEND_ITEM REGERR 8 UINT "Number of message/event registration errors" LITTLE_ENDIAN
-    APPEND_ITEM SKIP 8 UINT "Number of skipped GPS messages due to lack of memory" LITTLE_ENDIAN
+    APPEND_ITEM SKIP 8 UINT "Number of skipped GPS messages due to lack of RX buffer memory" LITTLE_ENDIAN
     APPEND_ITEM BADCRC 8 UINT "Number of messages with invalid CRC32s" LITTLE_ENDIAN
-    APPEND_ITEM REGERR2 8 UINT "Number of parser registration errors" LITTLE_ENDIAN
+    APPEND_ITEM OVERSIZE 8 UINT "Number of skipped GPS messages due to lack of _array memory" LITTLE_ENDIAN
 
 TELEMETRY ADCS_SENSORPROC GPSPOWER BIG_ENDIAN "GPS Power Status"
     # This must ALWAYS be the first entry in any telemetry packet
@@ -122,3 +121,32 @@ TELEMETRY ADCS_SENSORPROC SATVIS2 BIG_ENDIAN "Satellite visibility"
     APPEND_ITEM NUM_GPS 32 UINT "Number of visible GPS satellites." LITTLE_ENDIAN
     APPEND_ITEM NUM_GLONASS 32 UINT "Number of visible GLONASS satellites." LITTLE_ENDIAN
     APPEND_ITEM NUM_SBAS 32 UINT "Number of visible SBAS satellites." LITTLE_ENDIAN
+    
+TELEMETRY ADCS_SENSORPROC RANGE BIG_ENDIAN "Range"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 119} %>
+    
+    APPEND_ITEM PRN1 16 UINT "Satellite PRN number" LITTLE_ENDIAN
+    APPEND_ITEM CTONO1 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
+    APPEND_ITEM LOCKTIME1 32 FLOAT "Lock time" LITTLE_ENDIAN
+      UNITS seconds s
+    APPEND_ITEM PRN2 16 UINT "Satellite PRN number" LITTLE_ENDIAN
+    APPEND_ITEM CTONO2 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
+    APPEND_ITEM LOCKTIME2 32 FLOAT "Lock time" LITTLE_ENDIAN
+      UNITS seconds s
+    APPEND_ITEM PRN3 16 UINT "Satellite PRN number" LITTLE_ENDIAN
+    APPEND_ITEM CTONO3 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
+    APPEND_ITEM LOCKTIME3 32 FLOAT "Lock time" LITTLE_ENDIAN
+      UNITS seconds s
+    APPEND_ITEM PRN4 16 UINT "Satellite PRN number" LITTLE_ENDIAN
+    APPEND_ITEM CTONO4 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
+    APPEND_ITEM LOCKTIME4 32 FLOAT "Lock time" LITTLE_ENDIAN
+      UNITS seconds s
+    APPEND_ITEM PRN5 16 UINT "Satellite PRN number" LITTLE_ENDIAN
+    APPEND_ITEM CTONO5 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
+    APPEND_ITEM LOCKTIME5 32 FLOAT "Lock time" LITTLE_ENDIAN
+      UNITS seconds s
+    APPEND_ITEM PRN6 16 UINT "Satellite PRN number" LITTLE_ENDIAN
+    APPEND_ITEM CTONO6 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
+    APPEND_ITEM LOCKTIME6 32 FLOAT "Lock time" LITTLE_ENDIAN
+      UNITS seconds s
