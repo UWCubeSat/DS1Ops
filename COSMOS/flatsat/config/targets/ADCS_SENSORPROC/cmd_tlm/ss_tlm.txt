@@ -107,12 +107,18 @@ TELEMETRY ADCS_SENSORPROC HWMONITOR BIG_ENDIAN "Hardware measurements"
 
     APPEND_ITEM TEMP 32 FLOAT "Temperature." LITTLE_ENDIAN
       UNITS Celcius C
-    APPEND_ITEM TEMP_STATUS 8 UINT "Temperature limit status."
-      STATE OK 0 GREEN
-      STATE UNDERWARN 1 YELLOW
-      STATE UNDERERR 2 YELLOW
-      STATE OVERWARN 3 RED
-      STATE OVERERR 4 RED
+    APPEND_ITEM ANTCUR 32 FLOAT "Antenna current" LITTLE_ENDIAN
+      UNITS Amps A
+    APPEND_ITEM SUPVOLT 32 FLOAT "Supply voltage" LITTLE_ENDIAN
+      UNITS Volts V
+    APPEND_ITEM ANTVOLT 32 FLOAT "Antenna voltage" LITTLE_ENDIAN
+      UNITS Volts V
+    APPEND_ITEM DIGCOREVOLT 32 FLOAT "Digital core voltage" LITTLE_ENDIAN
+      UNITS Volts V
+    APPEND_ITEM TEMP2 32 FLOAT "Secondary temperature" LITTLE_ENDIAN
+      UNITS Celcius C
+    APPEND_ITEM PCOREVOLT 32 FLOAT "Peripheral core voltage" LITTLE_ENDIAN
+      UNITS Volts V
 
 TELEMETRY ADCS_SENSORPROC SATVIS2 BIG_ENDIAN "Satellite visibility"
     # This must ALWAYS be the first entry in any telemetry packet
