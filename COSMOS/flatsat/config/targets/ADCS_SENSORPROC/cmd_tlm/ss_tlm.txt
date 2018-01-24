@@ -117,8 +117,6 @@ TELEMETRY ADCS_SENSORPROC HWMONITOR BIG_ENDIAN "Hardware measurements"
       UNITS Volts V
     APPEND_ITEM TEMP2 32 FLOAT "Secondary temperature" LITTLE_ENDIAN
       UNITS Celcius C
-    APPEND_ITEM PCOREVOLT 32 FLOAT "Peripheral core voltage" LITTLE_ENDIAN
-      UNITS Volts V
 
 TELEMETRY ADCS_SENSORPROC SATVIS2 BIG_ENDIAN "Satellite visibility"
     # This must ALWAYS be the first entry in any telemetry packet
