@@ -21,6 +21,9 @@ TELEMETRY ADCS_SENSORPROC GPSHEALTH BIG_ENDIAN "GPS Software Errors"
     APPEND_ITEM SKIP 8 UINT "Number of skipped GPS messages due to lack of RX buffer memory" LITTLE_ENDIAN
     APPEND_ITEM BADCRC 8 UINT "Number of messages with invalid CRC32s" LITTLE_ENDIAN
     APPEND_ITEM OVERSIZE 8 UINT "Number of skipped GPS messages due to lack of _array memory" LITTLE_ENDIAN
+    APPEND_ITEM BUCKSTAT 8 UINT "Status of buck converter" LITTLE_ENDIAN
+      STATE GOOD 1
+      STATE BAD 0
 
 TELEMETRY ADCS_SENSORPROC GPSPOWER BIG_ENDIAN "GPS Power Status"
     # This must ALWAYS be the first entry in any telemetry packet

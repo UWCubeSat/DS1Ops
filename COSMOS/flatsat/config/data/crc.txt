@@ -5,7 +5,7 @@ USER_MODIFIED
 "config/targets/ADCS_SENSORPROC/cmd_tlm/shared_cmd.txt" 0xF92144A7
 "config/targets/ADCS_SENSORPROC/cmd_tlm/shared_tlm.txt" 0x9EEE7635
 "config/targets/ADCS_SENSORPROC/cmd_tlm/ss_cmd.txt" 0x65950D5C
-"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_tlm.txt" 0xF7D3D7F6
+"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_tlm.txt" 0x7616D710
 "config/targets/ADCS_SENSORPROC/cmd_tlm_server.txt" 0x52418621
 "config/targets/ADCS_SENSORPROC/lib/adcs_sensorproc.rb" 0xA16FD675
 "config/targets/ADCS_SENSORPROC/procedures/adcs_sensorproc_script.rb" 0xCF39003F
@@ -24,7 +24,7 @@ USER_MODIFIED
 "config/targets/EPS_DIST/cmd_tlm/shared_cmd.txt" 0x6625C7D4
 "config/targets/EPS_DIST/cmd_tlm/shared_tlm.txt" 0x3243935F
 "config/targets/EPS_DIST/cmd_tlm/ss_cmd.txt" 0x6A1876E5
-"config/targets/EPS_DIST/cmd_tlm/ss_tlm.txt" 0xC120031D
+"config/targets/EPS_DIST/cmd_tlm/ss_tlm.txt" 0x668B23F4
 "config/targets/EPS_DIST/cmd_tlm/_pd_cmds.txt" 0x6BB978B2
 "config/targets/EPS_DIST/cmd_tlm_server.txt" 0xE4A0AE52
 "config/targets/EPS_DIST/lib/eps_dist.rb" 0x5D277253
@@ -212,4 +212,5 @@ USER_MODIFIED
 "tools/ToolLaunch.bat" 0x4E6549E0
 "tools/tool_launch.rb" 0x0BDB6696
 "procedures/LoopToggle.rb" 0xE01CB4DD
+"procedures/LoopToggleOneAtATime.rb" 0x410C0BD3
 "procedures/README.txt" 0x93B2C07E
