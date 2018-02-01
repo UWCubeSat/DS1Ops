@@ -1,0 +1,8 @@
+COMMAND TEMPLATE MY_CMD LITTLE_ENDIAN "Enable/disable a pretend sensor"
+  # This must ALWAYS be the first entry in any command packet
+  # TODO opcode?
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 1 } %>
+  
+  APPEND_PARAMETER ENABLE 8 UINT 0 1 0 "Enable setting"
+    STATE FALSE 0
+    STATE TRUE 1

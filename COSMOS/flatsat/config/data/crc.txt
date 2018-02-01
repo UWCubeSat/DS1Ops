@@ -1,17 +1,21 @@
 USER_MODIFIED
 "lib/user_version.rb" 0x8F282EE9
+"config/data/map.jpg" 0x667625BB
 "config/data/README.txt" 0x93B2C07E
 "config/system/system.txt" 0x6CB79668
 "config/targets/ADCS_SENSORPROC/cmd_tlm/shared_cmd.txt" 0xF92144A7
 "config/targets/ADCS_SENSORPROC/cmd_tlm/shared_tlm.txt" 0x9EEE7635
-"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_cmd.txt" 0x65950D5C
-"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_tlm.txt" 0x7327CD7D
-"config/targets/ADCS_SENSORPROC/cmd_tlm_server.txt" 0x52418621
+"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_cmd.txt" 0x206F5428
+"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_tlm.txt" 0xC313A01D
+"config/targets/ADCS_SENSORPROC/cmd_tlm_server.txt" 0x1E67B35E
 "config/targets/ADCS_SENSORPROC/lib/adcs_sensorproc.rb" 0xA16FD675
 "config/targets/ADCS_SENSORPROC/procedures/adcs_sensorproc_script.rb" 0xCF39003F
 "config/targets/ADCS_SENSORPROC/procedures/adcs_sensorproc_test.rb" 0x75E3A9AE
 "config/targets/ADCS_SENSORPROC/procedures/gps_reset.rb" 0xC7A7F4F5
+"config/targets/ADCS_SENSORPROC/screens/gps_power_status.txt" 0x2B6B0727
+"config/targets/ADCS_SENSORPROC/screens/pos.txt" 0xA6642C11
 "config/targets/ADCS_SENSORPROC/screens/status.txt" 0xE5D0C82A
+"config/targets/ADCS_SENSORPROC/screens/sun_sensor.txt" 0x11B86CF3
 "config/targets/ADCS_SENSORPROC/target.txt" 0xB699233D
 "config/targets/EPS_BATT/cmd_tlm/cmd.txt" 0x56FB0884
 "config/targets/EPS_BATT/cmd_tlm/tlm.txt" 0x20148732
@@ -56,6 +60,12 @@ USER_MODIFIED
 "config/targets/SYSTEM/screens/meta.txt" 0x26076B02
 "config/targets/SYSTEM/screens/overall.txt" 0xCEA4CEBD
 "config/targets/SYSTEM/target.txt" 0x07E82776
+"config/targets/TEMPLATE/cmd_tlm/shared_cmd.txt" 0xB6730CAD
+"config/targets/TEMPLATE/cmd_tlm/shared_tlm.txt" 0x25816B3D
+"config/targets/TEMPLATE/cmd_tlm/ss_cmd.txt" 0xA33EF516
+"config/targets/TEMPLATE/cmd_tlm/ss_tlm.txt" 0x074BEBB1
+"config/targets/TEMPLATE/cmd_tlm_server.txt" 0x4020E0CB
+"config/targets/TEMPLATE/target.txt" 0x75B9302A
 "config/tools/cmd_tlm_server/cmd_tlm_server.txt" 0x80C40C7B
 "config/tools/data_viewer/data_viewer.txt" 0xAEE0B7DF
 "config/tools/handbook_creator/default_toc.xsl" 0x4122A040

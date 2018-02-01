@@ -1,0 +1,11 @@
+TELEMETRY TEMPLATE MY_TELEM BIG_ENDIAN "Sample telemetry"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+    
+    APPEND_ITEM ALPHA 32 FLOAT "Alpha angle" LITTLE_ENDIAN
+      UNITS degrees deg
+    APPEND_ITEM BETA 32 FLOAT "Beta angle" LITTLE_ENDIAN
+      UNITS degrees deg
+    APPEND_ITEM STATUS 8 UINT "Enable/disable status" LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
