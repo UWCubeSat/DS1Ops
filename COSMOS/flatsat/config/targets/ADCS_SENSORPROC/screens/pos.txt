@@ -1,0 +1,16 @@
+SCREEN AUTO AUTO 1.0
+
+  TITLE "Position"
+
+  VERTICALBOX
+    LABELVALUE ADCS_SENSORPROC POSVEL RECEIVED_TIMEFORMATTED WITH_UNITS 25  # COSMOS Received Time (Local time zone, Formatted string)
+    LABELVALUE ADCS_SENSORPROC POSVEL RECEIVED_COUNT # COSMOS packet received count
+    
+    HORIZONTALLINE
+    
+    BUTTON "Start display" 'require astro.rb; my_function(self)'
+    
+    CANVAS 1200 601
+      CANVASIMAGE "map.jpg" 0 0
+    END
+  END
