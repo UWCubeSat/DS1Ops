@@ -1,0 +1,12 @@
+SCREEN AUTO AUTO 1.0
+
+  VERTICALBOX
+    LABELVALUE EPS_GEN HEALTH RECEIVED_TIMESECONDS # COSMOS Received Time (UTC, Floating point, Unix epoch)
+    LABELVALUE EPS_GEN HEALTH RECEIVED_TIMEFORMATTED # COSMOS Received Time (Local time zone, Formatted string)
+    LABELVALUE EPS_GEN HEALTH RECEIVED_COUNT # COSMOS packet received count
+    LABELVALUE EPS_GEN HEALTH LENGTH # Length of packet.
+    LABELVALUE EPS_GEN HEALTH ID # ID of telemetry packet.
+    LABELVALUE EPS_GEN HEALTH OMS # Overall subsystem module status.
+    LABELVALUE EPS_GEN HEALTH INTTEMP # Temperature measured by internal MSP43x sensor.
+  END
+

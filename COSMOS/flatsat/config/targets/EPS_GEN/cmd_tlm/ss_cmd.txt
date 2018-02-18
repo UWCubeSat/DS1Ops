@@ -1,0 +1,19 @@
+COMMAND EPS_GEN CHARGECMD LITTLE_ENDIAN "Control generation board charging circuits."
+
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 100 } %>
+  
+  APPEND_PARAMETER PT1_ENABLECHARGE 8 UINT 0 1 2 "Enables/disables charging for PT 1." LITTLE_ENDIAN
+    STATE DISABLE 0
+    STATE ENABLE 1
+    STATE NOCHANGE 2
+  APPEND_PARAMETER PT2_ENABLECHARGE 8 UINT 0 1 2 "Enables/disables charging for PT 2." LITTLE_ENDIAN
+    STATE DISABLE 0
+    STATE ENABLE 1
+    STATE NOCHANGE 2
+  APPEND_PARAMETER PT3_ENABLECHARGE 8 UINT 0 1 2 "Enables/disables charging for PT 3." LITTLE_ENDIAN
+    STATE DISABLE 0
+    STATE ENABLE 1
+    STATE NOCHANGE 2
+
+  

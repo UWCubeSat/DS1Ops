@@ -1,0 +1,103 @@
+TELEMETRY EPS_GEN GENERAL LITTLE_ENDIAN "EPS generation module general status telemetry."
+
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+    
+      APPEND_ITEM LASTCMD_PT1 8 UINT "Last command given to power tracker for panel 1." LITTLE_ENDIAN
+        STATE INITIALENABLE 0 YELLOW
+        STATE EXPLICITENABLE 1 GREEN
+        STATE EXPLICITDISABLE 2 RED
+      APPEND_ITEM LASTCMD_PT2 8 UINT "Last command given to power tracker for panel 2." LITTLE_ENDIAN
+        STATE INITIALENABLE 0 YELLOW
+        STATE EXPLICITENABLE 1 GREEN
+        STATE EXPLICITDISABLE 2 RED
+      APPEND_ITEM LASTCMD_PT3 8 UINT "Last command given to power tracker for panel 3." LITTLE_ENDIAN
+        STATE INITIALENABLE 0 YELLOW
+        STATE EXPLICITENABLE 1 GREEN
+        STATE EXPLICITDISABLE 2 RED
+        
+      APPEND_ITEM CHARGING_PT1 8 UINT "Indicates whether PT 1 is reporting that it is charging." LITTLE_ENDIAN
+        STATE NOTCHARGING 0 YELLOW
+        STATE CHARGING 1 GREEN
+      APPEND_ITEM CHARGING_PT2 8 UINT "Indicates whether PT 2 is reporting that it is charging." LITTLE_ENDIAN
+        STATE NOTCHARGING 0 YELLOW
+        STATE CHARGING 1 GREEN
+      APPEND_ITEM CHARGING_PT3 8 UINT "Indicates whether PT 3 is reporting that it is charging." LITTLE_ENDIAN
+        STATE NOTCHARGING 0 YELLOW
+        STATE CHARGING 1 GREEN
+        
+      APPEND_ITEM ENABLE_PT1 8 UINT "Indicates software output pin state controlling PT1 enable/disable." LITTLE_ENDIAN
+        STATE DISABLED 0 RED
+        STATE ENABLED 1 GREEN
+      APPEND_ITEM ENABLE_PT2 8 UINT "Indicates software output pin state controlling PT2 enable/disable." LITTLE_ENDIAN
+        STATE DISABLED 0 RED
+        STATE ENABLED 1 GREEN
+      APPEND_ITEM ENABLE_PT3 8 UINT "Indicates software output pin state controlling PT3 enable/disable." LITTLE_ENDIAN
+        STATE DISABLED 0 RED
+        STATE ENABLED 1 GREEN
+
+        
+     
+
+
+TELEMETRY EPS_GEN SENSORDAT LITTLE_ENDIAN "EPS generation module captured sensor data."
+
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
+    
+    APPEND_ITEM P1_TEMP 32 FLOAT "Temperature of panel 1." LITTLE_ENDIAN
+      UNITS Celsius C
+      FORMAT_STRING "%0.3f"
+      <%= render "../../SYSTEM/cmd_tlm/_shared_limits_flatsat_temps.txt" %>
+    APPEND_ITEM P2_TEMP 32 FLOAT "Temperature of panel 2." LITTLE_ENDIAN
+      UNITS Celsius C
+      FORMAT_STRING "%0.3f"
+      <%= render "../../SYSTEM/cmd_tlm/_shared_limits_flatsat_temps.txt" %>
+    APPEND_ITEM P3_TEMP 32 FLOAT "Temperature of panel 3." LITTLE_ENDIAN
+      UNITS Celsius C
+      FORMAT_STRING "%0.3f"
+      <%= render "../../SYSTEM/cmd_tlm/_shared_limits_flatsat_temps.txt" %>
+    
+    APPEND_ITEM P1_POWER 32 FLOAT "Power from panel 1, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Watts W
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 0.06 1.0 3.0 4.0
+    APPEND_ITEM P2_POWER 32 FLOAT "Power from panel 2, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Watts W
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 0.06 1.0 6.0 7.0
+    APPEND_ITEM P3_POWER 32 FLOAT "Power from panel 3, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Watts W
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 0.06 1.0 3.0 4.0
+      
+      
+    APPEND_ITEM P1_CURR 32 FLOAT "Current from panel 1, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Amps A
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 0.003 0.05 0.3 0.4
+    APPEND_ITEM P2_CURR 32 FLOAT "Current from panel 2, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Amps A
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 0.003 0.05 0.45 0.6
+    APPEND_ITEM P3_CURR 32 FLOAT "Current from panel 3, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Amps A
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 0.003 0.05 0.3 0.4
+      
+    APPEND_ITEM P1_BUSV 32 FLOAT "Bus voltage from panel 1, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Volts V
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 3.0 9.0 17.0 18.0 14.0 16.0
+    APPEND_ITEM P2_BUSV 32 FLOAT "Bus voltage from panel 2, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Volts V
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 3.0 9.0 17.0 18.0 14.0 16.0
+    APPEND_ITEM P3_BUSV 32 FLOAT "Bus voltage from panel 3, as measured by the INA219." LITTLE_ENDIAN
+      UNITS Volts V
+      FORMAT_STRING "%0.4f"
+      LIMITS DEFAULT 3 ENABLED 3.0 9.0 17.0 18.0 14.0 16.0
+
+
+      
+    

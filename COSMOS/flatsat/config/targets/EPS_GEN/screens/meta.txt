@@ -1,0 +1,18 @@
+SCREEN AUTO AUTO 1.0
+
+  VERTICALBOX
+    LABELVALUE EPS_GEN META RECEIVED_TIMESECONDS # COSMOS Received Time (UTC, Floating point, Unix epoch)
+    LABELVALUE EPS_GEN META RECEIVED_TIMEFORMATTED # COSMOS Received Time (Local time zone, Formatted string)
+    LABELVALUE EPS_GEN META RECEIVED_COUNT # COSMOS packet received count
+    LABELVALUE EPS_GEN META LENGTH # Length of packet.
+    LABELVALUE EPS_GEN META ID # ID of telemetry packet.
+    LABELVALUE EPS_GEN META MODULE # Internal module name.
+    LABELVALUE EPS_GEN META CHIPID # Unique die identification code, including the wafer/lot number, and X/Y position on the wafer.
+    LABELVALUE EPS_GEN META HWSW_MATCHSTATE # Hardware/software match check state.
+    LABELVALUE EPS_GEN META COMM_MATCHSTATE # Indicates whether correct connections have been established between COSMOS and the DUTs.
+    LABELVALUE EPS_GEN META COMPILERVER # Version number of compiler used to compile module.
+    LABELVALUE EPS_GEN META STDCVER # Version of Standard C supported by compiler.
+    LABELVALUE EPS_GEN META COMPILEDATE # Date the module was compiled.
+    LABELVALUE EPS_GEN META COMPILETIME # Time the module was compiled.
+  END
+
