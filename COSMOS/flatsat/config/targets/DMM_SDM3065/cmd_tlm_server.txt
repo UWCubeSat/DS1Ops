@@ -1,0 +1,9 @@
+# This is a segment of the main cmd_tlm_server.txt that will be used with
+# AUTO_INTERFACE_TARGETS or INTERFACE_TARGET
+
+# NOTE: This line must be modified to match how your actual target connects.
+# See http://cosmosrb.com/docs/interfaces/ for more information.
+INTERFACE DMM_SDM3065_INT tcpip_client_interface.rb 172.28.23.175 5555 5555 10.0 nil TEMPLATE 0x0A 0x0A
+  TARGET DMM_SDM3065
+  # Add in the OverrideProtocol to allow override_tlm("DMM_SDM3065 STATUS STRING = 'HI'")
+  PROTOCOL READ_WRITE OverrideProtocol
