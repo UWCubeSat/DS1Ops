@@ -1,0 +1,26 @@
+TELEMETRY EPS_BATT GENERAL LITTLE_ENDIAN "EPS battery module general status telemetry."
+
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+    
+    APPEND_ITEM LASTBATTBALCMD 8 UINT "The last command sent to the battery balancer unit." LITTLE_ENDIAN
+      STATE INITIALDISABLE 0 YELLOW
+      STATE AUTOENABLE 1 GREEN
+      STATE EXPLICITDISABLE 2 YELLOW
+      STATE EXPLICITENABLE 3 GREEN
+      STATE NOCHANGE 4
+    
+    APPEND_ITEM LASTBATTHEATERCMD 8 UINT "The last command sent to the battery heaters." LITTLE_ENDIAN
+      STATE INITIALDISABLE 0 YELLOW
+      STATE AUTOENABLE 1 GREEN
+      STATE EXPLICITDISABLE 2 YELLOW
+      STATE EXPLICITENABLE 3 GREEN
+      STATE NOCHANGE 4
+    
+       
+    
+    
+TELEMETRY EPS_BATT SENSORDAT LITTLE_ENDIAN "EPS battery module captured sensor data."
+
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
