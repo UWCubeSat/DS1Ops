@@ -1,26 +1,128 @@
 TELEMETRY EPS_BATT GENERAL LITTLE_ENDIAN "EPS battery module general status telemetry."
 
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
-    
-    APPEND_ITEM LASTBATTBALCMD 8 UINT "The last command sent to the battery balancer unit." LITTLE_ENDIAN
-      STATE INITIALDISABLE 0 YELLOW
-      STATE AUTOENABLE 1 GREEN
-      STATE EXPLICITDISABLE 2 YELLOW
-      STATE EXPLICITENABLE 3 GREEN
-      STATE NOCHANGE 4
-    
-    APPEND_ITEM LASTBATTHEATERCMD 8 UINT "The last command sent to the battery heaters." LITTLE_ENDIAN
-      STATE INITIALDISABLE 0 YELLOW
-      STATE AUTOENABLE 1 GREEN
-      STATE EXPLICITDISABLE 2 YELLOW
-      STATE EXPLICITENABLE 3 GREEN
-      STATE NOCHANGE 4
-    
-       
-    
-    
-TELEMETRY EPS_BATT SENSORDAT LITTLE_ENDIAN "EPS battery module captured sensor data."
+
 
     # This must ALWAYS be the first entry in any telemetry packet
+
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+
+
+    APPEND_ITEM LASTBATTBALCMD 8 UINT "The last command sent to the battery balancer unit." LITTLE_ENDIAN
+
+      STATE INITIALDISABLE 0 YELLOW
+
+      STATE AUTOENABLE 1 GREEN
+
+      STATE EXPLICITDISABLE 2 YELLOW
+
+      STATE EXPLICITENABLE 3 GREEN
+
+      STATE NOCHANGE 4
+
+    APPEND_ITEM LASTBATTHEATERCMD 8 UINT "The last command sent to the battery heaters." LITTLE_ENDIAN
+
+      STATE INITIALDISABLE 0 YELLOW
+
+      STATE AUTOENABLE 1 GREEN
+
+      STATE EXPLICITDISABLE 2 YELLOW
+
+      STATE EXPLICITENABLE 3 GREEN
+
+      STATE NOCHANGE 4
+
+
+
+TELEMETRY EPS_BATT SENSORDAT LITTLE_ENDIAN "EPS battery module captured sensor data."
+
+
+
+    # This must ALWAYS be the first entry in any telemetry packet
+
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
+
+
+    
+APPEND_ITEM BATTERYVOLT 32 FLOAT "The voltage of the batteries." LITTLE_ENDIAN
+
+      UNITS volts V
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+   
+    APPEND_ITEM STATEOFCHARGE 32 FLOAT "The state of charge of the batteries." LITTLE_ENDIAN
+
+      UNITS percent %
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+
+    
+APPEND_ITEM BATTERYCURR 32 FLOAT "The current of the batteries." LITTLE_ENDIAN
+
+      UNITS milliAmps mA
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+
+    
+APPEND_ITEM ACCCHARGE 32 FLOAT "The accumulated charge of the batteries." LITTLE_ENDIAN
+
+      UNITS milliAmpH mAH
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+
+    APPEND_ITEM BATTERYNODEVOLT 32 FLOAT "The node voltage of the batteries." LITTLE_ENDIAN
+
+      UNITS voltage V
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+
+    APPEND_ITEM BATTERYNODECURR 32 FLOAT "The node current of the batteries." LITTLE_ENDIAN
+
+      UNITS milliAmps mA
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+
+    APPEND_ITEM BATTERYTEMP 32 FLOAT "The temperature of the batteries." LITTLE_ENDIAN
+
+      UNITS Celcius C
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+ 
+    APPEND_ITEM HEATSTATE 8 UINT "The state of the heaters." LITTLE_ENDIAN
+
+      STATE DISABLED 0 YELLOW
+
+      STATE ENABLED 1 GREEN
+
+    APPEND_ITEM BALANCESTATE 8 UINT "The state of the battery balancers." LITTLE_ENDIAN
+
+      STATE DISABLED 0 YELLOW
+
+      STATE ENABLED 1 GREEN
+
+    APPEND_ITEM ISBALANCE 8 UNIT "If balancers are on." LITTLE_ENDIAN
+  
+    STATE DISABLED 0 YELLOW
+
+      STATE ENABLED 1 GREEN
+
+    APPEND_ITEM BATTERYCHARGE 32 FLOAT "mAh in batteries." LITTLE_ENDIAN
+      UNITS milliAmpH mAH
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+   
