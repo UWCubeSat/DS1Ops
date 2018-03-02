@@ -9,3 +9,5 @@
     APPEND_ITEM INTTEMP 32 FLOAT "Temperature measured by internal MSP43x sensor." LITTLE_ENDIAN
       UNITS Celsius C
       FORMAT_STRING "%0.4f"
+      
+    APPEND_ITEM RESETCOUNT 32 UINT "Count of the resets." LITTLE_ENDIAN
