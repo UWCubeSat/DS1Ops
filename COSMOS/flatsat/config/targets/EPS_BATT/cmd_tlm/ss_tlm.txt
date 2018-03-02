@@ -113,12 +113,6 @@ APPEND_ITEM ACCCHARGE 32 FLOAT "The accumulated charge of the batteries." LITTLE
 
       STATE ENABLED 1 GREEN
 
-    APPEND_ITEM ISBALANCE 8 UINT "If balancers are on." LITTLE_ENDIAN
-  
-    STATE DISABLED 0 YELLOW
-
-      STATE ENABLED 1 GREEN
-
     APPEND_ITEM BATTERYCHARGE 32 FLOAT "mAh in batteries." LITTLE_ENDIAN
       UNITS milliAmpH mAH
 
