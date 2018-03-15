@@ -28,10 +28,12 @@ def main():
     if isAdmin():
         for i in range(len(ports_list)):
             name = ports_list[i]
-            if name and not "FLATSAT_COMPORT_" + name in os.environ:
+            if name:
+                writeSSCOM(i, 256)
+            '''if name and not "FLATSAT_COMPORT_" + name in os.environ:
                 print("adding environment variable for " + name)
                 #os.system("call reg add \"HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment\"  /v FLATSAT_COMPORT_"+ name +" /d \"\"")  # calls the batch command
-                writeSSCOM(i, 256) #this writes a default null value of 256
+                writeSSCOM(i, 256) #this writes a default null value of 256'''
         timeout = 2  # seconds
         searchLen = 256  # attempts COMs 0 -> (searchLen - 1)
         threads = []
