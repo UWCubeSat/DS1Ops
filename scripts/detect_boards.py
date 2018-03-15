@@ -1,6 +1,9 @@
 import serial.serialwin32
 import threading
 import os #os.environ["name"] = "value"
+import sys
+import win32com.shell.shell as shell
+import ctypes
 
 ports_list = [
         None,
@@ -22,19 +25,29 @@ ports_list = [
     ]
 
 def main():
-    timeout = 2 #seconds
-    searchLen = 256 #attempts COMs 0 -> (searchLen - 1)
-    threads = []
-    for i in range(searchLen):
-        t = threading.Thread(target=assignComPort, args=(i, timeout, 100))
-        threads.append(t)
-        t.start()
+    if isAdmin():
+        for i in range(len(ports_list)):
+            name = ports_list[i]
+            if name and not "FLATSAT_COMPORT_" + name in os.environ:
+                print("adding environment variable for " + name)
+                #os.system("call reg add \"HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment\"  /v FLATSAT_COMPORT_"+ name +" /d \"\"")  # calls the batch command
+                writeSSCOM(i, 256) #this writes a default null value of 256
+        timeout = 2  # seconds
+        searchLen = 256  # attempts COMs 0 -> (searchLen - 1)
+        threads = []
+        for i in range(searchLen):
+            t = threading.Thread(target=assignComPort, args=(i, timeout, 100))
+            threads.append(t)
+            t.start()
+    else:
+        #run again as admin
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
 
 def writeSSCOM(ss_id, com_num):
     if ports_list[ss_id]:
         var_name = "FLATSAT_COMPORT_" + ports_list[ss_id]
         #os.environ[var_name] = "COM" + str(com_num) #sets the current session's environment variables
-        os.system("setx " + var_name + " \"COM" + str(com_num) + "\"") #calls the batch command
+        os.system("setx " + var_name + " COM" + str(com_num) + " -m") #calls the batch command
         print(var_name + " = COM" + str(com_num))
     else:
         print("id " + str(ss_id) + " not found")
@@ -78,5 +91,11 @@ def sendStartFire(ser, rate, timeout): #values must be < 10
     hex_data = bytes.fromhex(hex_str)
     print(hex_data)
     ser.write(hex_data)
+
+def isAdmin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
 
 main()
