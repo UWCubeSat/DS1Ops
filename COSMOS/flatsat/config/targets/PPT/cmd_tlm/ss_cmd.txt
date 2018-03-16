@@ -11,7 +11,7 @@ COMMAND PPT GET_TIMING LITTLE_ENDIAN "Get Timing"
 
 COMMAND PPT SET_TIMING LITTLE_ENDIAN "Get Timing"
   <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 5 } %>
-  APPEND_PARAMETER MAIN_CHARGE_TIME 16 UINT 0 65535 0 "mainChargeTime"
-  APPEND_PARAMETER MAIN_IGNITER_DELAY 16 UINT 0 65535 0 "mainIgniterDelay"
-  APPEND_PARAMETER IGNITER_CHARGE_TIME 16 UINT 0 65535 0 "igniterChargeTime"
-  APPEND_PARAMETER COOLDOWN_TIME 16 UINT 0 65535 0 "cooldownTime"
+  APPEND_PARAMETER MAIN_CHARGE_TIME 16 UINT 0 65535 0 "the time main is high"
+  APPEND_PARAMETER MAIN_IGNITER_DELAY 16 UINT 0 65535 0 "the delay between main low and igniter high"
+  APPEND_PARAMETER IGNITER_CHARGE_TIME 16 UINT 0 65535 0 "the time igniter is high"
+  APPEND_PARAMETER COOLDOWN_TIME 16 UINT 0 65535 0 "the time between igniter low and main high"
