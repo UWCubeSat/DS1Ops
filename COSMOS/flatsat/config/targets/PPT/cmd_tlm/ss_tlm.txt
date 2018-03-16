@@ -14,3 +14,10 @@ TELEMETRY PPT IGNITER_DONE BIG_ENDIAN "igniter done charging"
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 4} %>
 	
 	APPEND_ITEM TIME 16 UINT "clock time at off" LITTLE_ENDIAN
+	
+TELEMETRY PPT TIMING BIG_ENDIAN "the current firing timings"
+	<%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 5} %>
+	APPEND_ITEM MAIN_CHARGE_TIME 16 UINT "the time main is high" LITTLE_ENDIAN
+	APPEND_ITEM MAIN_IGNITER_DELAY 16 UINT "the delay between main low and igniter high" LITTLE_ENDIAN
+	APPEND_ITEM IGNITER_CHARGE_TIME 16 UINT "the time igniter is high" LITTLE_ENDIAN
+	APPEND_ITEM COOLDOWN_TIME 16 UINT "the time between igniter low and main high" LITTLE_ENDIAN
