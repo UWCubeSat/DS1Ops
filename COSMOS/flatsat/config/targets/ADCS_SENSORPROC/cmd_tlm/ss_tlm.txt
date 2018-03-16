@@ -21,7 +21,10 @@ TELEMETRY ADCS_SENSORPROC PHOTODIODE BIG_ENDIAN "Photodiode readings"
     APPEND_ITEM CENTER 32 UINT "Center photodiode reading" LITTLE_ENDIAN
     APPEND_ITEM RIGHT 32 UINT "Right photodiode reading" LITTLE_ENDIAN
     APPEND_ITEM LEFT 32 UINT "Left photodiode reading" LITTLE_ENDIAN
-
+    APPEND_ITEM CCENTER 8 UINT "Compressed center photodiode reading" LITTLE_ENDIAN
+    APPEND_ITEM CRIGHT 8 UINT "Compressed right photodiode reading" LITTLE_ENDIAN
+    APPEND_ITEM CLEFT 8 UINT "Compressed left photodiode reading" LITTLE_ENDIAN
+    
 TELEMETRY ADCS_SENSORPROC GPSHEALTH BIG_ENDIAN "GPS Software Errors"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 120} %>
@@ -31,7 +34,7 @@ TELEMETRY ADCS_SENSORPROC GPSHEALTH BIG_ENDIAN "GPS Software Errors"
     APPEND_ITEM SKIP 8 UINT "Number of skipped GPS messages due to lack of RX buffer memory" LITTLE_ENDIAN
     APPEND_ITEM BADCRC 8 UINT "Number of messages with invalid CRC32s" LITTLE_ENDIAN
     APPEND_ITEM OVERSIZE 8 UINT "Number of skipped GPS messages due to lack of _array memory" LITTLE_ENDIAN
-    APPEND_ITEM BUCKSTAT 8 UINT "Status of buck converter. Good means the output is within 7.5% of 3.3V" LITTLE_ENDIAN
+    APPEND_ITEM BUCKSTAT 8 UINT "Buck converter status" LITTLE_ENDIAN
       STATE GOOD 1 GREEN
       STATE BAD 0 YELLOW
 
@@ -39,19 +42,25 @@ TELEMETRY ADCS_SENSORPROC GPSPOWER BIG_ENDIAN "GPS Power Status"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 122} %>
     
-    APPEND_ITEM GPS 8 UINT "GPS power status" LITTLE_ENDIAN
+    APPEND_ITEM GPS 8 UINT "GPS switch enable status" LITTLE_ENDIAN
       STATE ON 1
       STATE OFF 0
-    APPEND_ITEM BUCK 8 UINT "Buck converter status" LITTLE_ENDIAN
+    APPEND_ITEM BUCK 8 UINT "Buck converter enable status" LITTLE_ENDIAN
       STATE ENABLED 1
       STATE DISABLED 0
-    APPEND_ITEM STATE 8 UINT "Powering on/off state" LITTLE_ENDIAN
-      # TODO document this state better
-      STATE GPSOFF 0      # GPS is off
-      STATE WAITBUCKON 1  # Buck converter enabled, waiting for BUCK_GOOD signal
-      STATE WAITGPS 2     # GPS is powered on, waiting for response
-      STATE GPSON 3       # GPS is powered on and responsive
-      STATE WAITBUCKOFF 4 # GPS is powered off, waiting for delay before disabling buck converter
+    APPEND_ITEM BUCK_OVERRIDE 8 UINT "Buck converter status override"
+      STATE ENABLED 1
+      STATE DISABLED 0
+    APPEND_ITEM RESET 8 UINT "RESET pin status"
+      STATE ACTIVE 1
+      STATE INACTIVE 0
+    APPEND_ITEM STATE 8 UINT "Power state" LITTLE_ENDIAN
+      STATE OFF 0
+      STATE ENABLING_BUCK 1
+      STATE ENABLING_GPS 2
+      STATE AWAITING_GPS_ON 3
+      STATE ON 4
+      STATE SHUTTING_DOWN 5
 
 TELEMETRY ADCS_SENSORPROC RXSTATUS BIG_ENDIAN "Receiver status"
     # This must ALWAYS be the first entry in any telemetry packet
