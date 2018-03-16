@@ -1,0 +1,16 @@
+TELEMETRY PPT ISOP BIG_ENDIAN "PPT Operation Status"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+	
+TELEMETRY PPT MAIN_DONE BIG_ENDIAN "main done charging"
+	# This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
+	
+	APPEND_ITEM TIME 16 UINT "clock time at off" LITTLE_ENDIAN
+
+TELEMETRY PPT IGNITER_DONE BIG_ENDIAN "igniter done charging"
+	
+	# This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 4} %>
+	
+	APPEND_ITEM TIME 16 UINT "clock time at off" LITTLE_ENDIAN

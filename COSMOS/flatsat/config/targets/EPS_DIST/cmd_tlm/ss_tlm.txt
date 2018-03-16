@@ -6,7 +6,7 @@ TELEMETRY EPS_DIST GENERAL LITTLE_ENDIAN "EPS distribution module general status
     APPEND_ITEM BATTV 32 FLOAT "The ADC12-measured battery voltage." LITTLE_ENDIAN
       UNITS volts V
       FORMAT_STRING "%0.4f"
-      LIMITS DEFAULT 3 ENABLED 5.2 5.8 6.8 7.1
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
     APPEND_ITEM UVMODE 8 UINT "Indicates the undervoltage handling mode in effect." LITTLE_ENDIAN
       STATE INRANGE 0 GREEN
       STATE PARTIALSHUTDOWN 1 YELLOW

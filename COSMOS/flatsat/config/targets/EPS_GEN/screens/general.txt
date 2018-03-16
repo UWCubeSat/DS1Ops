@@ -1,0 +1,19 @@
+SCREEN AUTO AUTO 1.0
+
+  VERTICALBOX
+    LABELVALUE EPS_GEN GENERAL RECEIVED_TIMESECONDS # COSMOS Received Time (UTC, Floating point, Unix epoch)
+    LABELVALUE EPS_GEN GENERAL RECEIVED_TIMEFORMATTED # COSMOS Received Time (Local time zone, Formatted string)
+    LABELVALUE EPS_GEN GENERAL RECEIVED_COUNT # COSMOS packet received count
+    LABELVALUE EPS_GEN GENERAL LENGTH # Length of packet.
+    LABELVALUE EPS_GEN GENERAL ID # ID of telemetry packet.
+    LABELVALUE EPS_GEN GENERAL LASTCMD_PT1 # Last command given to power tracker for panel 1.
+    LABELVALUE EPS_GEN GENERAL LASTCMD_PT2 # Last command given to power tracker for panel 2.
+    LABELVALUE EPS_GEN GENERAL LASTCMD_PT3 # Last command given to power tracker for panel 3.
+    LABELVALUE EPS_GEN GENERAL CHARGING_PT1 # Indicates whether PT 1 is reporting that it is charging.
+    LABELVALUE EPS_GEN GENERAL CHARGING_PT2 # Indicates whether PT 2 is reporting that it is charging.
+    LABELVALUE EPS_GEN GENERAL CHARGING_PT3 # Indicates whether PT 3 is reporting that it is charging.
+    LABELVALUE EPS_GEN GENERAL ENABLE_PT1 # Indicates software output pin state controlling PT1 enable/disable.
+    LABELVALUE EPS_GEN GENERAL ENABLE_PT2 # Indicates software output pin state controlling PT2 enable/disable.
+    LABELVALUE EPS_GEN GENERAL ENABLE_PT3 # Indicates software output pin state controlling PT3 enable/disable.
+  END
+

@@ -1,0 +1,53 @@
+SCREEN AUTO AUTO 1.0
+
+  TITLE "Solar Panel and Charging Status"
+  
+  VERTICALBOX
+    LABELVALUE EPS_GEN SENSORDAT RECEIVED_TIMEFORMATTED WITH_UNITS 25 # COSMOS received Time (Local time zone, Formatted string)
+    LABELVALUE EPS_GEN SENSORDAT RECEIVED_COUNT # COSMOS packet received count
+    
+    SPACER 300 10
+    HORIZONTALLINE
+    SPACER 300 10
+    
+    <%= render "_scrn_panel_charger_ui.txt", locals: { n: '1' } %>
+    SETTING BACKCOLOR 153 153 255
+ 
+    SPACER 300 10
+    HORIZONTALLINE
+    SPACER 300 10
+    
+    <%= render "_scrn_panel_charger_ui.txt", locals: { n: '2' } %>
+    SETTING BACKCOLOR 255 153 153
+    
+    SPACER 300 10
+    HORIZONTALLINE
+    SPACER 300 10
+    
+    <%= render "_scrn_panel_charger_ui.txt", locals: { n: '3' } %>
+    SETTING BACKCOLOR 153 255 153
+    
+    
+    
+    
+    
+    SPACER 300 10
+    HORIZONTALLINE
+    SPACER 300 10
+  
+    BUTTON 'Enable All' 'cmd("EPS_GEN CHARGECMD with PT1_ENABLECHARGE ENABLE, PT2_ENABLECHARGE ENABLE, PT3_ENABLECHARGE ENABLE")'
+    BUTTON 'Disable All' 'cmd("EPS_GEN CHARGECMD with PT1_ENABLECHARGE DISABLE, PT2_ENABLECHARGE DISABLE, PT3_ENABLECHARGE DISABLE")'
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  END
+  
+END

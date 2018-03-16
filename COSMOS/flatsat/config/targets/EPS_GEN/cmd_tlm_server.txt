@@ -4,5 +4,6 @@
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
 
-INTERFACE EPS_GEN_INT tcpip_client_interface.rb localhost 8080 8081 10.0 nil BURST 4 0xDEADBEEF
+INTERFACE EPS_GEN_INT serial_interface.rb <%= ENV["FLATSAT_COMPORT_EPSGEN"] %> <%= ENV["FLATSAT_COMPORT_EPSGEN"] %> 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
   TARGET EPS_GEN
+

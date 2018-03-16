@@ -1,0 +1,17 @@
+SCREEN AUTO AUTO 1.0
+
+  VERTICALBOX
+    LABELVALUE EPS_GEN BUS_UART1 RECEIVED_TIMESECONDS # COSMOS Received Time (UTC, Floating point, Unix epoch)
+    LABELVALUE EPS_GEN BUS_UART1 RECEIVED_TIMEFORMATTED # COSMOS Received Time (Local time zone, Formatted string)
+    LABELVALUE EPS_GEN BUS_UART1 RECEIVED_COUNT # COSMOS packet received count
+    LABELVALUE EPS_GEN BUS_UART1 LENGTH # Length of packet.
+    LABELVALUE EPS_GEN BUS_UART1 ID # ID of telemetry packet.
+    LABELVALUE EPS_GEN BUS_UART1 BUSNUM # The ID of the bus instance.
+    LABELVALUE EPS_GEN BUS_UART1 INITIALIZED # Indicates whether UART bus has been initialized.
+    LABELVALUE EPS_GEN BUS_UART1 BUSHEALTH # Indicates the overall health of the UART bus instance.
+    LABELVALUE EPS_GEN BUS_UART1 TX_BYTESSENT # Indicates how many bytes have been sent by this UART instance.
+    LABELVALUE EPS_GEN BUS_UART1 RX_BYTESRCVD # Indicates how many bytes have been received by this UART instance.
+    LABELVALUE EPS_GEN BUS_UART1 TX_ERRORCNT # Indicates how many transmit errors have been encountered on this UART instance.
+    LABELVALUE EPS_GEN BUS_UART1 RX_ERRORCNT # Indicates how many receive errors have been encountered on this UART instance.
+  END
+

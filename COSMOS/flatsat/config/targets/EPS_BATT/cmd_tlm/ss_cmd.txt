@@ -1,0 +1,16 @@
+COMMAND EPS_BATT BATTMGMT LITTLE_ENDIAN "Control battery board management functions."
+
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 100 } %>
+  
+  APPEND_PARAMETER BATTBALANCERCMD 8 UINT 0 2 2 "Indicates whether the battery balancer should be enabled." LITTLE_ENDIAN
+    STATE DISABLE 0
+    STATE ENABLE 1
+    STATE NOCHANGE 2
+    
+  APPEND_PARAMETER BATTHEATERCMD 8 UINT 0 2 2 "Indicates whether the battery heaters should be turned on." LITTLE_ENDIAN
+    STATE DISABLE 0
+    STATE ENABLE 1
+    STATE NOCHANGE 2
+
+  
