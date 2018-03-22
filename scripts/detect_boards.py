@@ -15,7 +15,7 @@ ports_list = [
         "EPSDIST",
         "EPSGEN",
         "EPSBATT",
-        None,
+        "ADCS_ESTIM",
         None,
         "ADCS_SENSORPROC",
         None,
