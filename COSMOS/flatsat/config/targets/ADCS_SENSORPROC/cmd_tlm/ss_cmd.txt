@@ -19,3 +19,27 @@ COMMAND ADCS_SENSORPROC OVERRIDE_BUCK LITTLE_ENDIAN "Buck converter status overr
   APPEND_PARAMETER ENABLE 8 UINT 0 1 0 "Override enable/disable"
     STATE DISABLE 0
     STATE ENABLE 1 HAZARDOUS "Warning! Bad buck converter status will be ignored."
+
+COMMAND ADCS_SENSORPROC TEST_RESET LITTLE_ENDIAN "Direct RESET pin control"
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 4 } %>
+  
+  APPEND_PARAMETER ACTIVATE 8 UINT 0 1 0 "Activate/deactivate"
+    STATE DEACTIVATE 0
+    STATE ACTIVATE 1
+
+COMMAND ADCS_SENSORPROC TEST_BUCK LITTLE_ENDIAN "Direct buck converter control"
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 5 } %>
+  
+  APPEND_PARAMETER ENABLE 8 UINT 0 1 0 "Enable/disable"
+    STATE DISABLE 0
+    STATE ENABLE 1
+
+COMMAND ADCS_SENSORPROC TEST_GPS_SWITCH LITTLE_ENDIAN "Direct GPS switch control"
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 6 } %>
+  
+  APPEND_PARAMETER ENABLE 8 UINT 0 1 0 "Enable/disable"
+    STATE DISABLE 0
+    STATE ENABLE 1 HAZARDOUS "Warning! GPS will power on"

@@ -138,16 +138,28 @@ TELEMETRY ADCS_SENSORPROC HWMONITOR BIG_ENDIAN "Hardware measurements"
 
     APPEND_ITEM TEMP 32 FLOAT "Temperature" LITTLE_ENDIAN
       UNITS Celcius C
+    APPEND_ITEM TEMP_S 8 UINT "Temperature status" LITTLE_ENDIAN
+    <%= render "_sp_states.txt" %>
     APPEND_ITEM ANTCUR 32 FLOAT "Antenna current" LITTLE_ENDIAN
       UNITS Amps A
+    APPEND_ITEM ANTCUR_S 8 UINT "Antenna current status" LITTLE_ENDIAN
+    <%= render "_sp_states.txt" %>
     APPEND_ITEM SUPVOLT 32 FLOAT "Supply voltage" LITTLE_ENDIAN
       UNITS Volts V
+    APPEND_ITEM SUPVOLT_S 8 UINT "Supply voltage status" LITTLE_ENDIAN
+    <%= render "_sp_states.txt" %>
     APPEND_ITEM ANTVOLT 32 FLOAT "Antenna voltage" LITTLE_ENDIAN
       UNITS Volts V
+    APPEND_ITEM ANTVOLT_S 8 UINT "Antenna voltage status" LITTLE_ENDIAN
+    <%= render "_sp_states.txt" %>
     APPEND_ITEM DIGCOREVOLT 32 FLOAT "Digital core voltage" LITTLE_ENDIAN
       UNITS Volts V
+    APPEND_ITEM DIGCOREVOLT_S 8 UINT "Digital core voltage status" LITTLE_ENDIAN
+    <%= render "_sp_states.txt" %>
     APPEND_ITEM TEMP2 32 FLOAT "Secondary temperature" LITTLE_ENDIAN
       UNITS Celcius C
+    APPEND_ITEM TEMP2_S 8 UINT "Secondary temp. status" LITTLE_ENDIAN
+    <%= render "_sp_states.txt" %>
 
 TELEMETRY ADCS_SENSORPROC SATVIS2 BIG_ENDIAN "Satellite visibility"
     # This must ALWAYS be the first entry in any telemetry packet
