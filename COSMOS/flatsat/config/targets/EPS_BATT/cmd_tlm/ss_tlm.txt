@@ -56,17 +56,14 @@ APPEND_ITEM BATTERYVOLT 32 FLOAT "The voltage of the batteries." LITTLE_ENDIAN
       UNITS percent %
 
       FORMAT_STRING "%0.4f"
-
-      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
-
     
 APPEND_ITEM BATTERYCURR 32 FLOAT "The current of the batteries." LITTLE_ENDIAN
 
-      UNITS milliAmps mA
+      UNITS milliAmps A
 
       FORMAT_STRING "%0.4f"
 
-      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+      LIMITS DEFAULT 3 ENABLED  -10 -8 4.5 6
 
     
 APPEND_ITEM ACCCHARGE 32 FLOAT "The accumulated charge of the batteries." LITTLE_ENDIAN
@@ -75,38 +72,32 @@ APPEND_ITEM ACCCHARGE 32 FLOAT "The accumulated charge of the batteries." LITTLE
 
       FORMAT_STRING "%0.4f"
 
-      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
-
-    APPEND_ITEM BATTERYNODEVOLT 32 FLOAT "The node voltage of the batteries." LITTLE_ENDIAN
+     APPEND_ITEM BATTERYNODEVOLT 32 FLOAT "The node voltage of the batteries." LITTLE_ENDIAN
 
       UNITS voltage V
 
       FORMAT_STRING "%0.4f"
 
-      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+      LIMITS DEFAULT 3 ENABLED 2.6 2.9 3.65 3.85
 
     APPEND_ITEM BATTERYNODECURR 32 FLOAT "The node current of the batteries." LITTLE_ENDIAN
 
-      UNITS milliAmps mA
+      UNITS milliAmps A
 
       FORMAT_STRING "%0.4f"
-
-      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
-
     APPEND_ITEM BATTERYTEMP 32 FLOAT "The temperature of the batteries." LITTLE_ENDIAN
 
       UNITS Celcius C
 
       FORMAT_STRING "%0.4f"
 
-      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
- 
+      LIMITS DEFAULT 3 ENABLED -30 0 60 60
     APPEND_ITEM HEATSTATE 8 UINT "The state of the heaters." LITTLE_ENDIAN
 
       STATE DISABLED 0 YELLOW
 
       STATE ENABLED 1 GREEN
-
+ 
     APPEND_ITEM BALANCESTATE 8 UINT "The state of the battery balancers." LITTLE_ENDIAN
 
       STATE DISABLED 0 YELLOW
@@ -118,5 +109,4 @@ APPEND_ITEM ACCCHARGE 32 FLOAT "The accumulated charge of the batteries." LITTLE
 
       FORMAT_STRING "%0.4f"
 
-      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
-   
+      LIMITS DEFAULT 3 ENABLED 0 0 2200 2200
