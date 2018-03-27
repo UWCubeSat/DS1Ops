@@ -31,6 +31,88 @@ TELEMETRY EPS_BATT GENERAL LITTLE_ENDIAN "EPS battery module general status tele
 
       STATE NOCHANGE 4
 
+    APPEND_ITEM COULOMBCOUNTERSTATUS 8 UINT "The contents of the coulomb counter's STATUS register" LITTLE_ENDIAN
+    APPEND_ITEM COULOMBCOUNTERCONTROL 8 UINT "The contents of the coulomb counter's CONTROL register" LITTLE_ENDIAN
+    
+    #Breakdown of control register into coresponding setting.
+    ITEM ADCMODE 0 0 DERIVED "Coulomb Counter's ADC setting"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcountercontrol') & 0b11000000) >> 6)
+      GENERIC_READ_CONVERSION_END
+      STATE Automatic_Mode 3
+      STATE Scan_Mode 2 RED
+      STATE Manual_Mode 1 RED
+      STATE Sleep 0 RED
+    ITEM PRESCALER 0 0 DERIVED "Coulomb Counter's accumulated charge scaleing factor"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcountercontrol') & 0b00111000) >> 3)
+      GENERIC_READ_CONVERSION_END
+      STATE M_1 0
+      STATE M_4 1
+      STATE M_16 2
+      STATE M_64 3
+      STATE M_256 4
+      STATE M_1024 5
+      STATE M_4096 6
+      STATE M_4096 7
+    ITEM ALCCPIN 0 0 DERIVED "Coulomb Counter's alert pin setting"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcountercontrol') & 0b00000110) >> 1)
+      GENERIC_READ_CONVERSION_END
+      STATE Alert_Mode 2
+      STATE Charge_Complete_Mode 1
+      STATE ALCC_Disabled 0
+    ITEM ANALOGSECTION 0 0 DERIVED "Coulomb Counter's analog section shutdown state"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcountercontrol') & 0b00000001))
+      GENERIC_READ_CONVERSION_END
+      STATE Shutdown 1
+      STATE Active 0
+
+    #Breakdown of Status register into individual bits
+    ITEM UNDERVOLTAGELOCKOUT 0 0 DERIVED "Under voltage lockout state"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00000001))
+      GENERIC_READ_CONVERSION_END
+      STATE UVLO_OCCURED 1
+      STATE GOOD 0
+    ITEM VOLTAGEALERT 0 0 DERIVED "Indicates one of the voltage limits was exceeded (Not in use)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00000010)>>1)
+      GENERIC_READ_CONVERSION_END
+      STATE UVLO_OCCURED 1 RED
+      STATE GOOD 0
+    ITEM CHARGEALERTLOW 0 0 DERIVED "Indicates that the ACR value exceeded the charge threshold low limit (Not in use)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00000100)>>2)
+      GENERIC_READ_CONVERSION_END
+      STATE ACR_LOW 1 RED
+      STATE GOOD 0
+    ITEM CHARGEALERTHIGH 0 0 DERIVED "Indicates that the ACR value exceeded the charge threshold high limit (NOT IN USE)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00001000)>>3)
+      GENERIC_READ_CONVERSION_END
+      STATE ACR_HIGH 1 RED
+      STATE GOOD 0
+    ITEM TEMPERATUREALERT 0 0 DERIVED "Indicates one of the temperature limits was exceeded (NOT IN USE)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00010000)>>4)
+      GENERIC_READ_CONVERSION_END
+      STATE ACR_HIGH 1 RED
+      STATE GOOD 0
+    ITEM ACRUNDEROVER 0 0 DERIVED "Indicates that the value of the ACR hit either top or bottom (NOT USED)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00100000)>>5)
+      GENERIC_READ_CONVERSION_END
+      STATE ACR_UNDEROVER 1 RED
+      STATE GOOD 0
+    ITEM CURRENTALERT 0 0 DERIVED "Indicates one of the current limits was exceeded (NOT USED)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b01000000)>>6)
+      GENERIC_READ_CONVERSION_END
+      STATE CURRENT_ALERT 1 RED
+      STATE GOOD 0
+
 
 
 TELEMETRY EPS_BATT SENSORDAT LITTLE_ENDIAN "EPS battery module captured sensor data."
@@ -110,3 +192,11 @@ APPEND_ITEM ACCCHARGE 32 FLOAT "The accumulated charge of the batteries." LITTLE
       FORMAT_STRING "%0.4f"
 
       LIMITS DEFAULT 3 ENABLED 0 0 2200 2200
+    ITEM BATTERYDIFFERENCE 0 0 DERIVED "Derived difference between battery voltages" LITTLE_ENDIAN
+      GENERIC_READ_CONVERSION_START
+        (100*(packet.read('batteryvolt') - ( 2 * packet.read('batterynodevolt'))))
+      GENERIC_READ_CONVERSION_END
+      UNITS milivolts mV
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED  -60 -30 30 60
