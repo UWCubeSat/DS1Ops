@@ -6,22 +6,22 @@ import win32com.shell.shell as shell
 import ctypes
 
 ports_list = [
-        None,
-        None,
-        None,
-        None,
-        None,
+        None,  #0
+        None,  #1
+        None,  #2
+        None,  #3
+        None,  #4
         "PPT",
         "EPSDIST",
         "EPSGEN",
         "EPSBATT",
         "ADCS_ESTIM",
-        None,
+        None,  #10
         "ADCS_SENSORPROC",
-        None,
-        None,
-        None,
-        None
+        None,  #12
+        None,  #13
+        None,  #14
+        None   #15
     ]
 
 def main():
@@ -41,6 +41,7 @@ def main():
             t = threading.Thread(target=assignComPort, args=(i, timeout, 100))
             threads.append(t)
             t.start()
+        os.system("pause")
     else:
         #run again as admin
         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
