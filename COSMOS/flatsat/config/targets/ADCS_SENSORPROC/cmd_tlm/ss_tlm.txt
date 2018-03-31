@@ -15,209 +15,39 @@ TELEMETRY ADCS_SENSORPROC SUNSENSOR BIG_ENDIAN "Sun sensor angles"
       STATE LOW 11 YELLOW
       STATE HIGH 12 YELLOW 
       STATE NONE 3 YELLOW
-      
-TELEMETRY ADCS_SENSORPROC PHOTODIODE BIG_ENDIAN "Photodiode readings"
+
+TELEMETRY ADCS_SENSORPROC MAG BIG_ENDIAN "Magnetometer readings"
     # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 118} %>
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 117} %>
     
-    APPEND_ITEM CENTER 32 UINT "Center photodiode reading" LITTLE_ENDIAN
-    APPEND_ITEM RIGHT 32 UINT "Right photodiode reading" LITTLE_ENDIAN
-    APPEND_ITEM LEFT 32 UINT "Left photodiode reading" LITTLE_ENDIAN
-    APPEND_ITEM CCENTER 8 UINT "Compressed center photodiode reading" LITTLE_ENDIAN
-    APPEND_ITEM CRIGHT 8 UINT "Compressed right photodiode reading" LITTLE_ENDIAN
-    APPEND_ITEM CLEFT 8 UINT "Compressed left photodiode reading" LITTLE_ENDIAN
+    # conversion factor assuming MAG_HMC5883L_GAIN_1370
+    APPEND_ITEM X 16 INT "X reading" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 73.0
+      UNITS "nanoteslas" nT
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM Y 16 INT "Y reading" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 73.0
+      UNITS "nanoteslas" nT
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM Z 16 INT "Z reading" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 73.0
+      UNITS "nanoteslas" nT
+      FORMAT_STRING "%0.4f"
+
+TELEMETRY ADCS_SENSORPROC IMU BIG_ENDIAN "IMU readings"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 116} %>
     
-TELEMETRY ADCS_SENSORPROC GPSHEALTH BIG_ENDIAN "GPS Software Errors"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 120} %>
-    
-    APPEND_ITEM UMSG 8 UINT "Number of unknown message IDs" LITTLE_ENDIAN
-    APPEND_ITEM UEVT 8 UINT "Number of unknown event IDs" LITTLE_ENDIAN
-    APPEND_ITEM SKIP 8 UINT "Number of skipped GPS messages due to lack of RX buffer memory" LITTLE_ENDIAN
-    APPEND_ITEM BADCRC 8 UINT "Number of messages with invalid CRC32s" LITTLE_ENDIAN
-    APPEND_ITEM OVERSIZE 8 UINT "Number of skipped GPS messages due to lack of _array memory" LITTLE_ENDIAN
-    APPEND_ITEM BUCKSTAT 8 UINT "Buck converter status" LITTLE_ENDIAN
-      STATE GOOD 1 GREEN
-      STATE BAD 0 YELLOW
-
-TELEMETRY ADCS_SENSORPROC GPSPOWER BIG_ENDIAN "GPS Power Status"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 122} %>
-    
-    APPEND_ITEM GPS 8 UINT "GPS switch enable status" LITTLE_ENDIAN
-      STATE ON 1
-      STATE OFF 0
-    APPEND_ITEM BUCK 8 UINT "Buck converter enable status" LITTLE_ENDIAN
-      STATE ENABLED 1
-      STATE DISABLED 0
-    APPEND_ITEM BUCK_OVERRIDE 8 UINT "Buck converter status override"
-      STATE ENABLED 1
-      STATE DISABLED 0
-    APPEND_ITEM RESET 8 UINT "RESET pin status"
-      STATE ACTIVE 1
-      STATE INACTIVE 0
-    APPEND_ITEM STATE 8 UINT "Power state" LITTLE_ENDIAN
-      STATE OFF 0
-      STATE ENABLING_BUCK 1
-      STATE ENABLING_GPS 2
-      STATE AWAITING_GPS_ON 3
-      STATE ON 4
-      STATE SHUTTING_DOWN 5
-
-TELEMETRY ADCS_SENSORPROC RXSTATUS BIG_ENDIAN "Receiver status"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 123} %>
-    
-    APPEND_ITEM ERROR 32 UINT "Receiver error word" LITTLE_ENDIAN
-      FORMAT_STRING "0x%08x"
-    APPEND_ITEM STATUS 32 UINT "Receiver status word" LITTLE_ENDIAN
-      FORMAT_STRING "0x%08x"
-    APPEND_ITEM AUX1 32 UINT "Auxillary status word 1" LITTLE_ENDIAN
-      FORMAT_STRING "0x%08x"
-    APPEND_ITEM AUX2 32 UINT "Auxillary status word 2" LITTLE_ENDIAN
-      FORMAT_STRING "0x%08x"
-    APPEND_ITEM AUX3 32 UINT "Auxillary status word 3" LITTLE_ENDIAN
-      FORMAT_STRING "0x%08x"
-
-TELEMETRY ADCS_SENSORPROC POSVEL BIG_ENDIAN "Position and velocity with timestamp"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 124} %>
-
-    APPEND_ITEM POS_STATUS 32 UINT "Position solution status" LITTLE_ENDIAN
-      STATE SOL_COMPUTED 0 GREEN
-      STATE INSUFFICIENT_OBS 1 RED
-      STATE COLD_START 6 YELLOW
-    APPEND_ITEM POSX 64 FLOAT "Position X-coordinate" LITTLE_ENDIAN
-      UNITS meters m
+    # conversion factor assuming +/- 125 dps
+    APPEND_ITEM X 16 INT "X angular rate" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 0.0038299560546875
+      UNITS "degrees per second" dps
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM POSY 64 FLOAT "Position Y-coordinate" LITTLE_ENDIAN
-      UNITS meters m
+    APPEND_ITEM Y 16 INT "Y angular rate" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 0.0038299560546875
+      UNITS "degrees per second" dps
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM POSZ 64 FLOAT "Position Z-coordinate" LITTLE_ENDIAN
-      UNITS meters m
+    APPEND_ITEM Z 16 INT "Z angular rate" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 0.0038299560546875
+      UNITS "degrees per second" dps
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM STDPOSX 32 FLOAT "Standard deviation of position X-coordinate" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM STDPOSY 32 FLOAT "Standard deviation of position Y-coordinate" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM STDPOSZ 32 FLOAT "Standard deviation of position Z-coordinate" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM VEL_STATUS 32 UINT "Velocity solution status" LITTLE_ENDIAN
-      STATE SOL_COMPUTED 0 GREEN
-      STATE INSUFFICIENT_OBS 1 RED
-      STATE COLD_START 6 YELLOW
-    APPEND_ITEM VELX 64 FLOAT "Velocity X-coordinate" LITTLE_ENDIAN
-      UNITS meters_per_second mps
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM VELY 64 FLOAT "Velocity Y-coordinate" LITTLE_ENDIAN
-      UNITS meters_per_second mps
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM VELZ 64 FLOAT "Velocity Z-coordinate" LITTLE_ENDIAN
-      UNITS meters_per_second mps
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM STDVELX 32 FLOAT "Standard deviation of velocity X-coordinate" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM STDVELY 32 FLOAT "Standard deviation of velocity Y-coordinate" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM STDVELZ 32 FLOAT "Standard deviation of velocity Z-coordinate" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM WEEK 16 UINT "GPS Reference Week, UTC." LITTLE_ENDIAN
-      UNITS weeks w
-    APPEND_ITEM MS 32 INT "Milliseconds into this reference week, UTC" LITTLE_ENDIAN
-      UNITS milliseconds ms
-    
-TELEMETRY ADCS_SENSORPROC TIME BIG_ENDIAN "Time of latest message"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 125} %>
-
-    APPEND_ITEM OFFSET 64 FLOAT "Combined offset between GPS reference time and UTC" LITTLE_ENDIAN
-      UNITS seconds s
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM MS 32 INT "Milliseconds into this reference week, UTC" LITTLE_ENDIAN
-      UNITS milliseconds ms
-    APPEND_ITEM WEEK 16 UINT "GPS Reference Week, UTC" LITTLE_ENDIAN
-      UNITS weeks w
-    APPEND_ITEM CLK_STAT 32 UINT "Clock status" LITTLE_ENDIAN
-      STATE VALID 0 GREEN
-      STATE CONVERGING 1 YELLOW
-      STATE ITERATING 2 YELLOW
-      STATE INVALID 3 RED
-    APPEND_ITEM UTC_STAT 32 UINT "UTC status" LITTLE_ENDIAN
-      STATE INVALID 0 RED
-      STATE VALID 1 GREEN
-      STATE WARNING 2 YELLOW
-
-TELEMETRY ADCS_SENSORPROC HWMONITOR BIG_ENDIAN "Hardware measurements"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 126} %>
-
-    APPEND_ITEM TEMP 32 FLOAT "Temperature" LITTLE_ENDIAN
-      UNITS Celcius C
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM TEMP_S 8 UINT "Temperature status" LITTLE_ENDIAN
-    <%= render "_sp_states.txt" %>
-    APPEND_ITEM ANTCUR 32 FLOAT "Antenna current" LITTLE_ENDIAN
-      UNITS Amps A
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM ANTCUR_S 8 UINT "Antenna current status" LITTLE_ENDIAN
-    <%= render "_sp_states.txt" %>
-    APPEND_ITEM SUPVOLT 32 FLOAT "Supply voltage" LITTLE_ENDIAN
-      UNITS Volts V
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM SUPVOLT_S 8 UINT "Supply voltage status" LITTLE_ENDIAN
-    <%= render "_sp_states.txt" %>
-    APPEND_ITEM ANTVOLT 32 FLOAT "Antenna voltage" LITTLE_ENDIAN
-      UNITS Volts V
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM ANTVOLT_S 8 UINT "Antenna voltage status" LITTLE_ENDIAN
-    <%= render "_sp_states.txt" %>
-    APPEND_ITEM DIGCOREVOLT 32 FLOAT "Digital core voltage" LITTLE_ENDIAN
-      UNITS Volts V
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM DIGCOREVOLT_S 8 UINT "Digital core voltage status" LITTLE_ENDIAN
-    <%= render "_sp_states.txt" %>
-    APPEND_ITEM TEMP2 32 FLOAT "Secondary temperature" LITTLE_ENDIAN
-      UNITS Celcius C
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM TEMP2_S 8 UINT "Secondary temp. status" LITTLE_ENDIAN
-    <%= render "_sp_states.txt" %>
-
-TELEMETRY ADCS_SENSORPROC SATVIS2 BIG_ENDIAN "Satellite visibility"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 127} %>
-
-    APPEND_ITEM NUM_GPS 8 UINT "Number of visible GPS satellites." LITTLE_ENDIAN
-    APPEND_ITEM NUM_GLONASS 8 UINT "Number of visible GLONASS satellites." LITTLE_ENDIAN
-    APPEND_ITEM NUM_SBAS 8 UINT "Number of visible SBAS satellites." LITTLE_ENDIAN
-    APPEND_ITEM NUM_GALILEO 8 UINT "Number of visible Galileo satellites." LITTLE_ENDIAN
-    APPEND_ITEM NUM_BEIDOU 8 UINT "Number of visible BeiDou satellites." LITTLE_ENDIAN
-    APPEND_ITEM NUM_QZSS 8 UINT "Number of visible QZSS satellites." LITTLE_ENDIAN
-    
-TELEMETRY ADCS_SENSORPROC RANGE BIG_ENDIAN "Range"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 119} %>
-    
-    APPEND_ITEM PRN1 16 UINT "Satellite PRN number" LITTLE_ENDIAN
-    APPEND_ITEM CTONO1 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
-    APPEND_ITEM LOCKTIME1 32 FLOAT "Lock time" LITTLE_ENDIAN
-      UNITS seconds s
-    APPEND_ITEM PRN2 16 UINT "Satellite PRN number" LITTLE_ENDIAN
-    APPEND_ITEM CTONO2 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
-    APPEND_ITEM LOCKTIME2 32 FLOAT "Lock time" LITTLE_ENDIAN
-      UNITS seconds s
-    APPEND_ITEM PRN3 16 UINT "Satellite PRN number" LITTLE_ENDIAN
-    APPEND_ITEM CTONO3 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
-    APPEND_ITEM LOCKTIME3 32 FLOAT "Lock time" LITTLE_ENDIAN
-      UNITS seconds s
-    APPEND_ITEM PRN4 16 UINT "Satellite PRN number" LITTLE_ENDIAN
-    APPEND_ITEM CTONO4 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
-    APPEND_ITEM LOCKTIME4 32 FLOAT "Lock time" LITTLE_ENDIAN
-      UNITS seconds s
-    APPEND_ITEM PRN5 16 UINT "Satellite PRN number" LITTLE_ENDIAN
-    APPEND_ITEM CTONO5 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
-    APPEND_ITEM LOCKTIME5 32 FLOAT "Lock time" LITTLE_ENDIAN
-      UNITS seconds s
-    APPEND_ITEM PRN6 16 UINT "Satellite PRN number" LITTLE_ENDIAN
-    APPEND_ITEM CTONO6 32 FLOAT "Signal to noise ratio" LITTLE_ENDIAN
-    APPEND_ITEM LOCKTIME6 32 FLOAT "Lock time" LITTLE_ENDIAN
-      UNITS seconds s
