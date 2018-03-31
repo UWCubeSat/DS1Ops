@@ -40,14 +40,14 @@ TELEMETRY ADCS_SENSORPROC IMU BIG_ENDIAN "IMU readings"
     
     # conversion factor assuming +/- 125 dps
     APPEND_ITEM X 16 INT "X angular rate" LITTLE_ENDIAN
-      POLY_READ_CONVERSION 0 0.0038299560546875
+      POLY_READ_CONVERSION 0 0.004375
       UNITS "degrees per second" dps
       FORMAT_STRING "%0.4f"
     APPEND_ITEM Y 16 INT "Y angular rate" LITTLE_ENDIAN
-      POLY_READ_CONVERSION 0 0.0038299560546875
+      POLY_READ_CONVERSION 0 0.004375
       UNITS "degrees per second" dps
       FORMAT_STRING "%0.4f"
     APPEND_ITEM Z 16 INT "Z angular rate" LITTLE_ENDIAN
-      POLY_READ_CONVERSION 0 0.0038299560546875
+      POLY_READ_CONVERSION 0 0.004375
       UNITS "degrees per second" dps
       FORMAT_STRING "%0.4f"
