@@ -33,6 +33,9 @@ TELEMETRY EPS_BATT GENERAL LITTLE_ENDIAN "EPS battery module general status tele
 
     APPEND_ITEM COULOMBCOUNTERSTATUS 8 UINT "The contents of the coulomb counter's STATUS register" LITTLE_ENDIAN
     APPEND_ITEM COULOMBCOUNTERCONTROL 8 UINT "The contents of the coulomb counter's CONTROL register" LITTLE_ENDIAN
+    APPEND_ITEM ISCHECKING 8 UINT "ENEABLES THE CHECKING OF THE BATTERY TEMP TO AUTO-ANABLE THE HEATERS AT 0C AND DISABLE AT 10C" LITTLE_ENDIAN
+    STATE ENABLED 1
+    STATE DISABLED 0
     
     #Breakdown of control register into coresponding setting.
     ITEM ADCMODE 0 0 DERIVED "Coulomb Counter's ADC setting"

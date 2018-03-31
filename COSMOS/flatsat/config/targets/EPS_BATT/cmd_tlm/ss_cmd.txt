@@ -13,4 +13,12 @@ COMMAND EPS_BATT BATTMGMT LITTLE_ENDIAN "Control battery board management functi
     STATE ENABLE 1
     STATE NOCHANGE 2
 
-  
+COMMAND EPS_BATT TEMPCHECKINGCMD LITTLE_ENDIAN "Control battery board management functions."
+
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 101 } %>
+
+   APPEND_PARAMETER HEATERENABLECHECKING 8 UINT 0 2 2 "Indicates whether the msp should be checking for heater on states" LITTLE_ENDIAN
+    STATE DISABLE 0
+    STATE ENABLE 1
+    STATE NOCHANGE 2
