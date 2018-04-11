@@ -1,0 +1,7 @@
+TELEMETRY ADCS_ESTIM XYZ BIG_ENDIAN "Raw gyro acceleration"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+    
+    APPEND_ITEM X 16 UINT "Raw X acceleration" LITTLE_ENDIAN
+    APPEND_ITEM Y 16 UINT "Raw Y acceleration" LITTLE_ENDIAN
+    APPEND_ITEM Z 16 UINT "Raw Z acceleration" LITTLE_ENDIAN

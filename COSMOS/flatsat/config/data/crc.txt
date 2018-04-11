@@ -5,7 +5,7 @@ USER_MODIFIED
 "config/targets/ADCS_SENSORPROC/cmd_tlm/shared_cmd.txt" 0xF92144A7
 "config/targets/ADCS_SENSORPROC/cmd_tlm/shared_tlm.txt" 0x9EEE7635
 "config/targets/ADCS_SENSORPROC/cmd_tlm/ss_cmd.txt" 0x65950D5C
-"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_tlm.txt" 0xF7D3D7F6
+"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_tlm.txt" 0x7327CD7D
 "config/targets/ADCS_SENSORPROC/cmd_tlm_server.txt" 0x52418621
 "config/targets/ADCS_SENSORPROC/lib/adcs_sensorproc.rb" 0xA16FD675
 "config/targets/ADCS_SENSORPROC/procedures/adcs_sensorproc_script.rb" 0xCF39003F

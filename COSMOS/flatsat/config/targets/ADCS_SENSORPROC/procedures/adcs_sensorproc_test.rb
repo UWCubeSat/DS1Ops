@@ -1,21 +1,22 @@
 # To add this test to Test Runner edit config/tools/test_runner/test_runner.txt
 # Add this line:
 #   REQUIRE_UTILITY 'adcs_sensorproc_test'
-#
-# Test Runner test script
-class Adcs_sensorprocTest < Cosmos::Test
-  # def setup
-  #   # Implement group level setup
-  # end
 
-  def test_command
-    cmd("ADCS_SENSORPROC COMMAND")
-    wait_check("ADCS_SENSORPROC STATUS BOOL == 'FALSE'", 5)
+class GPSBootTest < Cosmos::Test
+  def setup
+  
   end
-
-  # def teardown
-  #   # Implement group level teardown
-  # end
+  
+  def test
+    cmd("ADCS_SENSORPROC GPS_ENABLE with ENABLE 1")
+    wait_check("ADCS_SENSORPROC GPSPOWER STATE == 'ON'", 20) # wait for ON state
+    cmd("ADCS_SENSORPROC GPS_ENABLE with ENABLE 0")
+    wait_check("ADCS_SENSORPROC GPSPOWER STATE == 'OFF'", 5) # wait for OFF state
+  end
+  
+  def teardown
+  
+  end
 end
 
 class Adcs_sensorprocSuite < Cosmos::TestSuite
@@ -25,7 +26,7 @@ class Adcs_sensorprocSuite < Cosmos::TestSuite
 
   def initialize
     super()
-    add_test('Adcs_sensorprocTest')
+    add_test('GPSBootTest')
   end
 
   # def teardown

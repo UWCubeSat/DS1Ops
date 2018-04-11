@@ -1,26 +1,205 @@
 TELEMETRY EPS_BATT GENERAL LITTLE_ENDIAN "EPS battery module general status telemetry."
 
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
-    
-    APPEND_ITEM LASTBATTBALCMD 8 UINT "The last command sent to the battery balancer unit." LITTLE_ENDIAN
-      STATE INITIALDISABLE 0 YELLOW
-      STATE AUTOENABLE 1 GREEN
-      STATE EXPLICITDISABLE 2 YELLOW
-      STATE EXPLICITENABLE 3 GREEN
-      STATE NOCHANGE 4
-    
-    APPEND_ITEM LASTBATTHEATERCMD 8 UINT "The last command sent to the battery heaters." LITTLE_ENDIAN
-      STATE INITIALDISABLE 0 YELLOW
-      STATE AUTOENABLE 1 GREEN
-      STATE EXPLICITDISABLE 2 YELLOW
-      STATE EXPLICITENABLE 3 GREEN
-      STATE NOCHANGE 4
-    
-       
-    
-    
-TELEMETRY EPS_BATT SENSORDAT LITTLE_ENDIAN "EPS battery module captured sensor data."
+
 
     # This must ALWAYS be the first entry in any telemetry packet
+
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+
+
+    APPEND_ITEM LASTBATTBALCMD 8 UINT "The last command sent to the battery balancer unit." LITTLE_ENDIAN
+
+      STATE INITIALDISABLE 0 YELLOW
+
+      STATE AUTOENABLE 1 GREEN
+
+      STATE EXPLICITDISABLE 2 YELLOW
+
+      STATE EXPLICITENABLE 3 GREEN
+
+      STATE NOCHANGE 4
+
+    APPEND_ITEM LASTBATTHEATERCMD 8 UINT "The last command sent to the battery heaters." LITTLE_ENDIAN
+
+      STATE INITIALDISABLE 0 YELLOW
+
+      STATE AUTOENABLE 1 GREEN
+
+      STATE EXPLICITDISABLE 2 YELLOW
+
+      STATE EXPLICITENABLE 3 GREEN
+
+      STATE NOCHANGE 4
+
+    APPEND_ITEM COULOMBCOUNTERSTATUS 8 UINT "The contents of the coulomb counter's STATUS register" LITTLE_ENDIAN
+    APPEND_ITEM COULOMBCOUNTERCONTROL 8 UINT "The contents of the coulomb counter's CONTROL register" LITTLE_ENDIAN
+    APPEND_ITEM ISCHECKING 8 UINT "ENEABLES THE CHECKING OF THE BATTERY TEMP TO AUTO-ANABLE THE HEATERS AT 0C AND DISABLE AT 10C" LITTLE_ENDIAN
+    STATE ENABLED 1
+    STATE DISABLED 0
+    
+    #Breakdown of control register into coresponding setting.
+    ITEM ADCMODE 0 0 DERIVED "Coulomb Counter's ADC setting"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcountercontrol') & 0b11000000) >> 6)
+      GENERIC_READ_CONVERSION_END
+      STATE Automatic_Mode 3
+      STATE Scan_Mode 2 RED
+      STATE Manual_Mode 1 RED
+      STATE Sleep 0 RED
+    ITEM PRESCALER 0 0 DERIVED "Coulomb Counter's accumulated charge scaleing factor"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcountercontrol') & 0b00111000) >> 3)
+      GENERIC_READ_CONVERSION_END
+      STATE M_1 0
+      STATE M_4 1
+      STATE M_16 2
+      STATE M_64 3
+      STATE M_256 4
+      STATE M_1024 5
+      STATE M_4096 6
+      STATE M_4096 7
+    ITEM ALCCPIN 0 0 DERIVED "Coulomb Counter's alert pin setting"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcountercontrol') & 0b00000110) >> 1)
+      GENERIC_READ_CONVERSION_END
+      STATE Alert_Mode 2
+      STATE Charge_Complete_Mode 1
+      STATE ALCC_Disabled 0
+    ITEM ANALOGSECTION 0 0 DERIVED "Coulomb Counter's analog section shutdown state"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcountercontrol') & 0b00000001))
+      GENERIC_READ_CONVERSION_END
+      STATE Shutdown 1
+      STATE Active 0
+
+    #Breakdown of Status register into individual bits
+    ITEM UNDERVOLTAGELOCKOUT 0 0 DERIVED "Under voltage lockout state"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00000001))
+      GENERIC_READ_CONVERSION_END
+      STATE UVLO_OCCURED 1
+      STATE GOOD 0
+    ITEM VOLTAGEALERT 0 0 DERIVED "Indicates one of the voltage limits was exceeded (Not in use)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00000010)>>1)
+      GENERIC_READ_CONVERSION_END
+      STATE UVLO_OCCURED 1 RED
+      STATE GOOD 0
+    ITEM CHARGEALERTLOW 0 0 DERIVED "Indicates that the ACR value exceeded the charge threshold low limit (Not in use)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00000100)>>2)
+      GENERIC_READ_CONVERSION_END
+      STATE ACR_LOW 1 RED
+      STATE GOOD 0
+    ITEM CHARGEALERTHIGH 0 0 DERIVED "Indicates that the ACR value exceeded the charge threshold high limit (NOT IN USE)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00001000)>>3)
+      GENERIC_READ_CONVERSION_END
+      STATE ACR_HIGH 1 RED
+      STATE GOOD 0
+    ITEM TEMPERATUREALERT 0 0 DERIVED "Indicates one of the temperature limits was exceeded (NOT IN USE)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00010000)>>4)
+      GENERIC_READ_CONVERSION_END
+      STATE ACR_HIGH 1 RED
+      STATE GOOD 0
+    ITEM ACRUNDEROVER 0 0 DERIVED "Indicates that the value of the ACR hit either top or bottom (NOT USED)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b00100000)>>5)
+      GENERIC_READ_CONVERSION_END
+      STATE ACR_UNDEROVER 1 RED
+      STATE GOOD 0
+    ITEM CURRENTALERT 0 0 DERIVED "Indicates one of the current limits was exceeded (NOT USED)"
+      GENERIC_READ_CONVERSION_START
+        ((packet.read('coulombcounterstatus') & 0b01000000)>>6)
+      GENERIC_READ_CONVERSION_END
+      STATE CURRENT_ALERT 1 RED
+      STATE GOOD 0
+
+
+
+TELEMETRY EPS_BATT SENSORDAT LITTLE_ENDIAN "EPS battery module captured sensor data."
+
+
+
+    # This must ALWAYS be the first entry in any telemetry packet
+
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
+
+
+    
+APPEND_ITEM BATTERYVOLT 32 FLOAT "The voltage of the batteries." LITTLE_ENDIAN
+
+      UNITS volts V
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 5.2 5.8 7.3 7.7
+   
+    APPEND_ITEM STATEOFCHARGE 32 FLOAT "The state of charge of the batteries." LITTLE_ENDIAN
+
+      UNITS percent %
+
+      FORMAT_STRING "%0.4f"
+    
+APPEND_ITEM BATTERYCURR 32 FLOAT "The current of the batteries." LITTLE_ENDIAN
+
+      UNITS milliAmps A
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED  -10 -8 4.5 6
+
+    
+APPEND_ITEM ACCCHARGE 32 FLOAT "The accumulated charge of the batteries." LITTLE_ENDIAN
+
+      UNITS milliAmpH mAH
+
+      FORMAT_STRING "%0.4f"
+
+     APPEND_ITEM BATTERYNODEVOLT 32 FLOAT "The node voltage of the batteries." LITTLE_ENDIAN
+
+      UNITS voltage V
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 2.6 2.9 3.65 3.85
+
+    APPEND_ITEM BATTERYNODECURR 32 FLOAT "The node current of the batteries." LITTLE_ENDIAN
+
+      UNITS milliAmps A
+
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM BATTERYTEMP 32 FLOAT "The temperature of the batteries." LITTLE_ENDIAN
+
+      UNITS Celcius C
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED -30 0 60 60
+    APPEND_ITEM HEATSTATE 8 UINT "The state of the heaters." LITTLE_ENDIAN
+
+      STATE DISABLED 0 YELLOW
+
+      STATE ENABLED 1 GREEN
+ 
+    APPEND_ITEM BALANCESTATE 8 UINT "The state of the battery balancers." LITTLE_ENDIAN
+
+      STATE DISABLED 0 YELLOW
+
+      STATE ENABLED 1 GREEN
+
+    APPEND_ITEM BATTERYCHARGE 32 FLOAT "mAh in batteries." LITTLE_ENDIAN
+      UNITS milliAmpH mAH
+
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED 0 0 2200 2200
+    ITEM BATTERYDIFFERENCE 0 0 DERIVED "Derived difference between battery voltages" LITTLE_ENDIAN
+      GENERIC_READ_CONVERSION_START
+        (100*(packet.read('batteryvolt') - ( 2 * packet.read('batterynodevolt'))))
+      GENERIC_READ_CONVERSION_END
+      UNITS milivolts mV
+      FORMAT_STRING "%0.4f"
+
+      LIMITS DEFAULT 3 ENABLED  -60 -30 30 60

@@ -1,0 +1,10 @@
+TELEMETRY ADCS_BDOT XYZ BIG_ENDIAN "Magnetometer XYZ data"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+    
+    APPEND_ITEM X 64 FLOAT "X reading" LITTLE_ENDIAN
+      UNITS nanoTeslas nT
+    APPEND_ITEM Y 64 FLOAT "Y reading" LITTLE_ENDIAN
+      UNITS nanoTeslas nT
+    APPEND_ITEM Z 64 FLOAT "Z reading" LITTLE_ENDIAN
+      UNITS nanoTeslas nT
