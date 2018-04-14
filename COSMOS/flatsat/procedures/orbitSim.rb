@@ -1,9 +1,10 @@
-
-load "powerControl.rb"
-
+require 'cosmos'
+require 'cosmos/script'
+require 'powerControl'
+require 'SDM3065x_scan'
 inSun=ask("Time spent in the sun")
-inEclipse=("Time spent in eclipse")
-numberOfOrbits=("Number of orbits")
+inEclipse=ask("Time spent in eclipse")
+
 
 def cycleChannel(up, cycleTime, voltage, resolution)
 	
