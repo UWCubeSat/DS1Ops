@@ -1,5 +1,4 @@
-require 'cosmos'
-require 'cosmos/script'
+
 
 class ChannelStatus
   def initialize(v, i, p)
