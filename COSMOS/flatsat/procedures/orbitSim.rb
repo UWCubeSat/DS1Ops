@@ -34,15 +34,16 @@ end
 
 
 
-setVoltage(1, 0.0)
+
 channelOn(3)
 channelOn(1)
 setVoltage(3,3.3)
-setVoltage(1, 16.0)
+
+setCurrent(1,1.7)
 puts "start"
-#scanSetup()
-#setScanRange(1,2)
-#startScan()
+scanSetup()
+setScanRange(2,4)
+startScan()
 wait(5)
 cmd("EPS_DIST DOMSWITCH with PD_COM1 ENABLE")
 wait(1)
@@ -60,31 +61,47 @@ cmd("EPS_DIST DOMSWITCH with PD_EPS ENABLE")
 wait(1)
 cmd("EPS_DIST DOMSWITCH with PD_PPT ENABLE")
 wait(1)
+
 while true
   cycleChannel(true, 5.0, 16, 10)
   for i in 0..120*inSun
     stat = getStatus()
-    #data = getData()
-    #if data.at(i)>4.9
-    #  break
-    #end
-    wait(0.5)
+    data = getData(2,4)
+    puts "Loop #{i}"
+    if data.at(0)<4.5 and data.at(0).to_f>0
+      channelOff(1)
+      channelOff(3)
+      break
+    end
+    
   end
-  data = getData()
-  #if data.at(i)>4.9
-  #  break
-  #end
+  data = getData(2,4)
+  if data.at(0)<4.5 and data.at(0).to_f>0
+    channelOff(1)
+    channelOff(3)
+    break
+  end
+
+
   cycleChannel(false, 5.0, 16, 10)
   for i in 0..120*inEclipse
     stat = getStatus()
-    data = getData()
-    #if data.at(i)
-    #  break
-    #end
-    wait(0.5)
+    data = getData(2,4)
+    puts "Loop #{i}"
+    if data.at(0)<4.5 and data.at(0).to_f>0
+      channelOff(1)
+      channelOff(3) 
+      break
+    end
+    
   end
-  data = getData()
-  #if data.at(i)
-  #  break
-  #end
+  data = getData(2,4)
+  if data.at(0)<4.5 and data.at(0).to_f>0
+    channelOff(1)
+    channelOff(3)
+    break
+  end
+  
+  
+  
 end

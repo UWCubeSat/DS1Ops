@@ -24,12 +24,13 @@ end
 
 def getData(low, high)
   data=Array.new(high-low)
-  for i in low..high
-    puts i    
+  for i in low..high   
     cmd("SDM3065X", "GET_DATA","CHANNEL"=>i)
     
     val=tlm("SDM3065X DATA DATA")
-    data[i-low]=val
+    val=val.gsub(/^[\s>]+/,"")
+    val=val.gsub(" VDC", "")
+    data[i-low]=val.to_f
     
   end
   return data
