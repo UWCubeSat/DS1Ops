@@ -1,4 +1,4 @@
-COMMAND ADCS_BDOT COMMONCMD LITTLE_ENDIAN "Provides commands that are common to all the MSP43x modules."
+COMMAND TEMPLATE COMMONCMD LITTLE_ENDIAN "Provides commands that are common to all the MSP43x modules."
 
   # TO CUSTOMIZE FOR A GIVEN TARGET:  change expmod, below; all other params should 
   # stay as they are
@@ -10,4 +10,4 @@ COMMAND ADCS_BDOT COMMONCMD LITTLE_ENDIAN "Provides commands that are common to 
   # The rest of the fields are the actual commands passed
   # expmod = specifies the expected module (via setting the min/max/default value) - should match
   # the correct module's value in _shared_mod_ids.txt
-  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_params.txt", locals: { expmod: 0 } %>
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_params.txt", locals: { expmod: 1 } %>
