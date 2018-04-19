@@ -4,5 +4,5 @@
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
 
-INTERFACE PS_DP832A_INT tcpip_client_interface.rb 172.28.23.178 5555 5555 10.0 nil TEMPLATE 0x0A 0x0A
+INTERFACE PS_DP832A_INT tcpip_client_interface.rb 172.28.23.224 5555 5555 10.0 nil TEMPLATE 0x0A 0x0A
   TARGET PS_DP832A

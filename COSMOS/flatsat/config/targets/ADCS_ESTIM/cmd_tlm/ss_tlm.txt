@@ -1,7 +1,89 @@
-TELEMETRY ADCS_ESTIM XYZ BIG_ENDIAN "Raw gyro acceleration"
+TELEMETRY ADCS_ESTIM INPUT_TLE BIG_ENDIAN "TLE from CAN"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
     
-    APPEND_ITEM X 16 UINT "Raw X acceleration" LITTLE_ENDIAN
-    APPEND_ITEM Y 16 UINT "Raw Y acceleration" LITTLE_ENDIAN
-    APPEND_ITEM Z 16 UINT "Raw Z acceleration" LITTLE_ENDIAN
+    APPEND_ITEM YEAR 32 FLOAT "Year" LITTLE_ENDIAN
+      FORMAT_STRING "%0.0f"
+    # TODO is this julian day into year or days since X epoch
+    APPEND_ITEM DAY 32 FLOAT "Julian day?" LITTLE_ENDIAN
+      UNITS Days d
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM BSTAR 32 FLOAT "BSTAR drag term" LITTLE_ENDIAN
+      FORMAT_STRING "%.6e"
+    APPEND_ITEM INC 32 FLOAT "Inclination" LITTLE_ENDIAN
+      UNITS degrees deg
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM RAAN 32 FLOAT "Right ascension of the ascending node" LITTLE_ENDIAN
+      UNITS degrees deg
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM ECC 32 FLOAT "Eccentricity" LITTLE_ENDIAN
+      FORMAT_STRING "%0.8f"
+    APPEND_ITEM AOP 32 FLOAT "Argument of perigee" LITTLE_ENDIAN
+      UNITS degrees deg
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM MNA 32 FLOAT "Mean anomaly" LITTLE_ENDIAN
+      UNITS degrees deg
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM MNM 32 FLOAT "Mean motion" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+
+TELEMETRY ADCS_ESTIM INPUT_MET BIG_ENDIAN "Mission elapsed time"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
+    
+    APPEND_ITEM MET 64 FLOAT "Mission elapsed time" LITTLE_ENDIAN
+      UNITS seconds s
+      FORMAT_STRING "%0.4f"
+
+TELEMETRY ADCS_ESTIM OUTPUT BIG_ENDIAN "Autocode outputs"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 4} %>
+    
+    APPEND_ITEM SC2GS_UNIT_X 32 FLOAT "X coord of spacecraft to ground station unit vector" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM SC2GS_UNIT_Y 32 FLOAT "Y coord of spacecraft to ground station unit vector" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM SC2GS_UNIT_Z 32 FLOAT "Z coord of spacecraft to ground station unit vector" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    
+    APPEND_ITEM SC2SUN_UNIT_X 32 FLOAT "X coord of spacecraft to sun unit vector" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM SC2SUN_UNIT_Y 32 FLOAT "Y coord of spacecraft to sun unit vector" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM SC2SUN_UNIT_Z 32 FLOAT "Z coord of spacecraft to sun unit vector" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    
+    APPEND_ITEM MAG_UNIT_X 32 FLOAT "X coord of mag unit vector (ECI)" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM MAG_UNIT_Y 32 FLOAT "Y coord of mag unit vector (ECI)" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM MAG_UNIT_Z 32 FLOAT "Z coord of mag unit vector (ECI)" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    
+    # TODO units?
+    APPEND_ITEM MAG_X 32 FLOAT "X coord of mag vector (ECI)" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM MAG_Y 32 FLOAT "Y coord of mag vector (ECI)" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM MAG_Z 32 FLOAT "Z coord of mag vector (ECI)" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    
+    APPEND_ITEM VEL_X 32 FLOAT "X coord of velocity vector (ECI)" LITTLE_ENDIAN
+      UNITS "meters per second" "m/s"
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM VEL_Y 32 FLOAT "Y coord of velocity vector (ECI)" LITTLE_ENDIAN
+      UNITS "meters per second" "m/s"
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM VEL_Z 32 FLOAT "Z coord of velocity vector (ECI)" LITTLE_ENDIAN
+      UNITS "meters per second" "m/s"
+      FORMAT_STRING "%0.4f"
+      
+    APPEND_ITEM ABOVE_GS 8 UINT "Spacecraft over ground station?" LITTLE_ENDIAN
+      STATE "Not above GS" 0
+      STATE "Above GS" 1
+    APPEND_ITEM IN_FOV 8 UINT "Spacecraft in field of view?" LITTLE_ENDIAN
+      STATE "Not in FOV" 0
+      STATE "In FOV" 1
+    APPEND_ITEM IN_SUN 8 UINT "Spacecraft in sun?" LITTLE_ENDIAN
+      STATE "Not in sun" 0
+      State "In sun" 1

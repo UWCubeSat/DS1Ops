@@ -1,5 +1,4 @@
-require 'cosmos'
-require 'cosmos/script'
+
 
 class ChannelStatus
   def initialize(v, i, p)
@@ -75,6 +74,10 @@ end
 
 def setVoltage(channel, voltage)
   cmd("PS_DP832A", "SET_VOLTAGE", "voltage" => voltage,"channel"=>channel)
+end
+
+def setCurrent(channel, current)
+  cmd("PS_DP832A", "SET_CURRENT", "current" => current,"channel"=>channel)
 end
 
 def getStatus()
