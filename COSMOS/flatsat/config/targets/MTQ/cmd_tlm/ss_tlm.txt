@@ -1,0 +1,32 @@
+TELEMETRY MTQ MY_TELEM BIG_ENDIAN "Sample telemetry"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+    
+    APPEND_ITEM ALPHA 32 FLOAT "Alpha angle" LITTLE_ENDIAN
+      UNITS degrees deg
+    APPEND_ITEM BETA 32 FLOAT "Beta angle" LITTLE_ENDIAN
+      UNITS degrees deg
+    APPEND_ITEM STATUS 8 UINT "Enable/disable status" LITTLE_ENDIAN
+      STATE DISABLED 0
+      STATE ENABLED 1
+
+TELEMETRY MTQ BDOT_FSW_COMMANDS LITTLE_ENDIAN ""
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 127} %>
+
+    APPEND_ITEM BDOT_X 8 INT "BDOT X" LITTLE_ENDIAN
+    APPEND_ITEM BDOT_Y 8 INT "BDOT Y" LITTLE_ENDIAN
+    APPEND_ITEM BDOT_Z 8 INT "BDOT Z" LITTLE_ENDIAN
+    APPEND_ITEM FSW_X 8 INT "FSW_X" LITTLE_ENDIAN
+    APPEND_ITEM FSW_Y 8 INT "FSW_Y" LITTLE_ENDIAN
+    APPEND_ITEM FSW_Z 8 INT "FSW_Z" LITTLE_ENDIAN
+
+
+TELEMETRY MTQ DUTY_PERCENT LITTLE_ENDIAN ""
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 126} %>
+
+    APPEND_ITEM XONE 8 UINT "X_1" LITTLE_ENDIAN
+    APPEND_ITEM XTWO 8 UINT "X_2" LITTLE_ENDIAN
+    APPEND_ITEM YONE 8 UINT "Y_1" LITTLE_ENDIAN
+    APPEND_ITEM YTWO 8 UINT "Y_2" LITTLE_ENDIAN
+    APPEND_ITEM ZONE 8 UINT "Z_1" LITTLE_ENDIAN
+    APPEND_ITEM ZTWO 8 UINT "Z_2" LITTLE_ENDIAN
