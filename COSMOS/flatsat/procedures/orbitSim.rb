@@ -63,45 +63,42 @@ cmd("EPS_DIST DOMSWITCH with PD_PPT ENABLE")
 wait(1)
 
 while true
+
   cycleChannel(true, 5.0, 16, 10)
   for i in 0..120*inSun
     stat = getStatus()
     data = getData(2,4)
     puts "Loop #{i}"
-    if data.at(0)<4.5 and data.at(0).to_f>0
+    if data.at(0)<4 and data.at(0).to_f>0
       channelOff(1)
       channelOff(3)
       break
-    end
-    
+    end    
   end
+  
   data = getData(2,4)
-  if data.at(0)<4.5 and data.at(0).to_f>0
+  if data.at(0)<4 and data.at(0).to_f>0
     channelOff(1)
     channelOff(3)
     break
   end
-
 
   cycleChannel(false, 5.0, 16, 10)
   for i in 0..120*inEclipse
     stat = getStatus()
     data = getData(2,4)
     puts "Loop #{i}"
-    if data.at(0)<4.5 and data.at(0).to_f>0
+    if data.at(0)<4 and data.at(0).to_f>0
       channelOff(1)
       channelOff(3) 
       break
     end
-    
   end
+  
   data = getData(2,4)
-  if data.at(0)<4.5 and data.at(0).to_f>0
+  if data.at(0)<4 and data.at(0).to_f>0
     channelOff(1)
     channelOff(3)
     break
   end
-  
-  
-  
 end

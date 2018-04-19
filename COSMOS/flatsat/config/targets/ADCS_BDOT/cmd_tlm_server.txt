@@ -4,5 +4,5 @@
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
 
-INTERFACE ADCS_BDOT_INT serial_interface.rb COM256 COM256 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
+INTERFACE ADCS_BDOT_INT serial_interface.rb <%= ENV["FLATSAT_COMPORT_ADCS_BDOT"] %> <%= ENV["FLATSAT_COMPORT_ADCS_BDOT"] %> 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
   TARGET ADCS_BDOT

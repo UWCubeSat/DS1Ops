@@ -1,4 +1,4 @@
-TELEMETRY ADCS_SENSORPROC SUNSENSOR BIG_ENDIAN "Sun sensor angles"
+TELEMETRY ADCS_SENSORPROC SUNSENSOR_RAW BIG_ENDIAN "Sun sensor angles"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 121} %>
     
@@ -15,8 +15,19 @@ TELEMETRY ADCS_SENSORPROC SUNSENSOR BIG_ENDIAN "Sun sensor angles"
       STATE LOW 11 YELLOW
       STATE HIGH 12 YELLOW 
       STATE NONE 3 YELLOW
-
-TELEMETRY ADCS_SENSORPROC MAG BIG_ENDIAN "Magnetometer readings"
+      
+TELEMETRY ADCS_SENSORPROC SUNSENSOR_VECTOR BIG_ENDIAN "Sun sensor vector"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 114} %>
+    
+    APPEND_ITEM X 32 FLOAT "X" LITTLE_ENDIAN
+    APPEND_ITEM Y 32 FLOAT "Y" LITTLE_ENDIAN
+    APPEND_ITEM Z 32 FLOAT "Z" LITTLE_ENDIAN
+    APPEND_ITEM VALID 8 UINT "Sun sensor validity" LITTLE_ENDIAN
+      STATE INVALID 0 RED
+      STATE VALID 1 GREEN    
+    
+TELEMETRY ADCS_SENSORPROC MAG1_RAW BIG_ENDIAN "Magnetometer 1 readings"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 117} %>
     
@@ -33,8 +44,37 @@ TELEMETRY ADCS_SENSORPROC MAG BIG_ENDIAN "Magnetometer readings"
       POLY_READ_CONVERSION 0 73.0
       UNITS "nanoteslas" nT
       FORMAT_STRING "%0.4f"
+      
+TELEMETRY ADCS_SENSORPROC MAG2_RAW BIG_ENDIAN "Magnetometer 2 readings"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 115} %>
+    
+    # conversion factor assuming MAG_HMC5883L_GAIN_1370
+    APPEND_ITEM X 16 INT "X reading" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 73.0
+      UNITS "nanoteslas" nT
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM Y 16 INT "Y reading" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 73.0
+      UNITS "nanoteslas" nT
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM Z 16 INT "Z reading" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 73.0
+      UNITS "nanoteslas" nT
+      FORMAT_STRING "%0.4f"
+      
+TELEMETRY ADCS_SENSORPROC MAG_VECTOR BIG_ENDIAN "Magnetometer vector"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 113} %>
+    
+    APPEND_ITEM X 32 FLOAT "X" LITTLE_ENDIAN
+    APPEND_ITEM Y 32 FLOAT "Y" LITTLE_ENDIAN
+    APPEND_ITEM Z 32 FLOAT "Z" LITTLE_ENDIAN
+    APPEND_ITEM VALID 8 UINT "Magnetometer validity" LITTLE_ENDIAN
+      STATE INVALID 0 RED
+      STATE VALID 1 GREEN
 
-TELEMETRY ADCS_SENSORPROC IMU BIG_ENDIAN "IMU readings"
+TELEMETRY ADCS_SENSORPROC IMU_RAW BIG_ENDIAN "IMU readings"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 116} %>
     
@@ -51,3 +91,14 @@ TELEMETRY ADCS_SENSORPROC IMU BIG_ENDIAN "IMU readings"
       POLY_READ_CONVERSION 0 0.004375
       UNITS "degrees per second" dps
       FORMAT_STRING "%0.4f"
+
+TELEMETRY ADCS_SENSORPROC IMU_VECTOR BIG_ENDIAN "IMU vector"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 112} %>
+    
+    APPEND_ITEM X 32 FLOAT "X" LITTLE_ENDIAN
+    APPEND_ITEM Y 32 FLOAT "Y" LITTLE_ENDIAN
+    APPEND_ITEM Z 32 FLOAT "Z" LITTLE_ENDIAN
+    APPEND_ITEM VALID 8 UINT "IMU validity" LITTLE_ENDIAN
+      STATE INVALID 0 RED
+      STATE VALID 1 GREEN
