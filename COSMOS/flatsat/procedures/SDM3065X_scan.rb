@@ -41,7 +41,7 @@ def getData(low, high)
   for i in low..high   
     cmd("SDM3065X", "GET_DATA","CHANNEL"=>i)
     
-    val=tlm("SDM3065X DATA DATA")
+    val=tlm("SDM3065X DATA#{i} DATA")
     val=val.gsub(/^[\s>]+/,"")
     val=val.gsub(" VDC", "")
     data[i-low]=val.to_f
