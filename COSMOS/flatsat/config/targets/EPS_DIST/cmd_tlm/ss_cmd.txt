@@ -68,8 +68,6 @@ COMMAND EPS_DIST CHNGOCPTHRSH LITTLE_ENDIAN "Allows the overcurrent threshold to
   APPEND_PARAMETER THRSH_PPT 32 FLOAT 0.0 100.0 0.0 "Specifies the new current limit for this power domain.  0.0 means that the current threshold should not be changed." LITTLE_ENDIAN
     UNITS amps A
     
-  APPEND_PARAMETER BATTVTHRSH_PARTIAL 32 FLOAT 0.0 100.0 0.0 "Specifies the battery voltage threshold at which the distribution board triggers partial power domain shutdown mode." LITTLE_ENDIAN
-    UNITS volts V
   APPEND_PARAMETER BATTVTHRSH_FULL 32 FLOAT 0.0 100.0 0.0 "Specifies the battery voltage threshold at which the distribution board triggers full power domain shutdown mode." LITTLE_ENDIAN
     UNITS volts V
     

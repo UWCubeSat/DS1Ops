@@ -1,5 +1,4 @@
-require 'cosmos'
-require 'cosmos/script'
+
 
 class ChannelStatus
   def initialize(v, i, p)
@@ -87,6 +86,10 @@ def setVoltage(channel, voltage)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN ON CHANNEL"
   end
+end
+
+def setCurrent(channel, current)
+  cmd("PS_DP832A", "SET_CURRENT", "current" => current,"channel"=>channel)
 end
 
 def getStatus()

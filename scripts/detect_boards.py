@@ -7,7 +7,7 @@ import ctypes
 
 ports_list = [
         None,  #0
-        None,  #1
+        "ADCS_BDOT",
         None,  #2
         None,  #3
         None,  #4
