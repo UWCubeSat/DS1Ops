@@ -2,5 +2,5 @@
 # AUTO_INTERFACE_TARGETS or INTERFACE_TARGET
 
 # NOTE: This line must be modified to match how your actual target connects.
-INTERFACE MTQ serial_interface.rb COM5 COM5 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
+INTERFACE MTQ serial_interface.rb <%= ENV["FLATSAT_COMPORT_ADCS_MTQ"] %> <%= ENV["FLATSAT_COMPORT_ADCS_MTQ"] %> 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
   TARGET MTQ
