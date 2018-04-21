@@ -1,14 +1,66 @@
-TELEMETRY SDM3065X VOLTAGE BIG_ENDIAN "Power Supply Telemetry"
+TELEMETRY SDM3065X DATA1 BIG_ENDIAN "Multimeter Telemetry Channel 1"
   APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
-  APPEND_ITEM V 512 STRING "Measured Voltage"
-    UNITS "Volts" "V"
+  APPEND_ITEM DATA 512 STRING "data from channel"
   
-  
-TELEMETRY SDM3065X CURRENT BIG_ENDIAN "Power Supply Telemetry"
+TELEMETRY SDM3065X DATA2 BIG_ENDIAN "Multimeter Telemetry Channel 1"
   APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
-  APPEND_ITEM I 512 STRING "Measured Current"
-    UNITS "Amps" "A"
-	
-TELEMETRY SDM3065X DATA BIG_ENDIAN "Power Supply Telemetry"
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA3 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA4 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA5 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA6 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA7 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA8 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA9 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+TELEMETRY SDM3065X DATA1 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA10 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA11 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA12 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA13 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA14 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA15 BIG_ENDIAN "Multimeter Telemetry Channel 1"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM DATA 512 STRING "data from channel"
+  
+TELEMETRY SDM3065X DATA16 BIG_ENDIAN "Multimeter Telemetry Channel 1"
   APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
   APPEND_ITEM DATA 512 STRING "data from channel"

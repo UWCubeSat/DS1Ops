@@ -66,18 +66,31 @@ end
 
 
 def channelOn(channel)
+  begin 
   cmd("PS_DP832A", "TURN_ON_CHANNEL","channel"=>channel)
+  rescue Exception =>e
+  puts "WARNING COULD NOT UPDATE VOLTAGE"
+  end
 end
 
 def channelOff(channel)
+  begin
   cmd("PS_DP832A", "TURN_OFF_CHANNEL","channel"=>channel)
+  rescue Exception =>e
+  puts "WARNING COULD NOT TURN OFF CHANNEL"
+  end
 end
 
 def setVoltage(channel, voltage)
+  begin
   cmd("PS_DP832A", "SET_VOLTAGE", "voltage" => voltage,"channel"=>channel)
+  rescue Exception =>e
+  puts "WARNING COULD NOT TURN ON CHANNEL"
+  end
 end
 
 def getStatus()
+  begin 
   cmd("PS_DP832A","GETSTATUS")
   v=tlm("PS_DP832A PS_STATUS V_CH1")
   i=tlm("PS_DP832A PS_STATUS i_CH1")
@@ -95,5 +108,9 @@ def getStatus()
   chan3 = ChannelStatus.new(v, i, p)
   
   stat = StatusPacket.new(chan1, chan2, chan3)
+  rescue Exception => e
+  stat = nil
+  puts "WARNING COULD NOT GET STATUS"
+  end
   return stat
 end
