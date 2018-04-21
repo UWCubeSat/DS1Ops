@@ -64,7 +64,7 @@ wait(1)
 
 while true
 
-  cycleChannel(true, 5.0, 16, 10)
+  
   for i in 0..120*inSun
     stat = getStatus()
     data = getData(2,4)
@@ -101,4 +101,5 @@ while true
     channelOff(3)
     break
   end
+  cycleChannel(true, 5.0, 16, 10)
 end
