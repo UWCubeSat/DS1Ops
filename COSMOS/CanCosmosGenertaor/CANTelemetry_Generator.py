@@ -33,7 +33,7 @@ import canmatrix.canmatrix as cm
 import canmatrix.copy as cmcp
 
 
-def toPyObject(infile, outfileName, **options):
+def toPyObject(infile, **options):
     dbs = {}
 
     #logger.info("Importing " + infile + " ... ")
@@ -251,10 +251,9 @@ def main():
     from optparse import OptionParser
 
     usage = """
-    %prog [options] import-file export-file
+    %prog [options] import-file
 
     import-file: *.dbc|*.dbf|*.kcd|*.arxml|*.json|*.xls(x)|*.sym
-    export-file: *.dbc|*.dbf|*.kcd|*.arxml|*.json|*.xls(x)|*.sym
 
     followig formats are availible at this installation:
     \n"""
@@ -263,22 +262,18 @@ def main():
         usage += suppFormat + "\t"
         if 'load' in features:
             usage += "import"
-        usage += "\t"
-        if 'dump' in features:
-            usage += "export"
         usage += "\n"
 
     parser = OptionParser(usage=usage)
 
     (cmdlineOptions, args) = parser.parse_args()
-    if len(args) < 2:
+    if len(args) < 1:
         parser.print_help()
         sys.exit(1)
 
     infile = args[0]
-    outfileName = args[1]
 
-    CANObj = toPyObject(infile, outfileName, **cmdlineOptions.__dict__)
+    CANObj = toPyObject(infile, **cmdlineOptions.__dict__)
 
     createCosmosCmd(CANObj, "cmd.txt")
     createCosmosTlm(CANObj, "tlm.txt")
