@@ -18,7 +18,7 @@ ports_list = [
         "ADCS_ESTIM",
         None,  #10
         "ADCS_SENSORPROC",
-        None,  #12
+        "ADCS_MTQ",
         None,  #13
         None,  #14
         None   #15
