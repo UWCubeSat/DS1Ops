@@ -39,51 +39,44 @@ TELEMETRY ADCS_ESTIM OUTPUT BIG_ENDIAN "Autocode outputs"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 4} %>
     
-    APPEND_ITEM SC2GS_UNIT_X 32 FLOAT "X coord of spacecraft to ground station unit vector" LITTLE_ENDIAN
+    APPEND_ITEM SC2SUN_X 64 FLOAT "X coord of spacecraft to sun unit vector" LITTLE_ENDIAN
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM SC2GS_UNIT_Y 32 FLOAT "Y coord of spacecraft to ground station unit vector" LITTLE_ENDIAN
+    APPEND_ITEM SC2SUN_Y 64 FLOAT "Y coord of spacecraft to sun unit vector" LITTLE_ENDIAN
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM SC2GS_UNIT_Z 32 FLOAT "Z coord of spacecraft to ground station unit vector" LITTLE_ENDIAN
+    APPEND_ITEM SC2SUN_Z 64 FLOAT "Z coord of spacecraft to sun unit vector" LITTLE_ENDIAN
       FORMAT_STRING "%0.4f"
-    
-    APPEND_ITEM SC2SUN_UNIT_X 32 FLOAT "X coord of spacecraft to sun unit vector" LITTLE_ENDIAN
+      
+    APPEND_ITEM MAG_X 64 FLOAT "X coord of mag unit vector (ECI)" LITTLE_ENDIAN
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM SC2SUN_UNIT_Y 32 FLOAT "Y coord of spacecraft to sun unit vector" LITTLE_ENDIAN
+    APPEND_ITEM MAG_Y 64 FLOAT "Y coord of mag unit vector (ECI)" LITTLE_ENDIAN
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM SC2SUN_UNIT_Z 32 FLOAT "Z coord of spacecraft to sun unit vector" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    
-    APPEND_ITEM MAG_UNIT_X 32 FLOAT "X coord of mag unit vector (ECI)" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM MAG_UNIT_Y 32 FLOAT "Y coord of mag unit vector (ECI)" LITTLE_ENDIAN
-      FORMAT_STRING "%0.4f"
-    APPEND_ITEM MAG_UNIT_Z 32 FLOAT "Z coord of mag unit vector (ECI)" LITTLE_ENDIAN
+    APPEND_ITEM MAG_Z 64 FLOAT "Z coord of mag unit vector (ECI)" LITTLE_ENDIAN
       FORMAT_STRING "%0.4f"
     
-    # TODO units?
-    APPEND_ITEM MAG_X 32 FLOAT "X coord of mag vector (ECI)" LITTLE_ENDIAN
+    APPEND_ITEM POS_X 64 FLOAT "X coord of position vector (ECI)" LITTLE_ENDIAN
+      UNITS "meters" "m"
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM MAG_Y 32 FLOAT "Y coord of mag vector (ECI)" LITTLE_ENDIAN
+    APPEND_ITEM POS_Y 64 FLOAT "Y coord of position vector (ECI)" LITTLE_ENDIAN
+      UNITS "meters" "m"
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM MAG_Z 32 FLOAT "Z coord of mag vector (ECI)" LITTLE_ENDIAN
+    APPEND_ITEM POS_Z 64 FLOAT "Z coord of position vector (ECI)" LITTLE_ENDIAN
+      UNITS "meters" "m"
       FORMAT_STRING "%0.4f"
     
-    APPEND_ITEM VEL_X 32 FLOAT "X coord of velocity vector (ECI)" LITTLE_ENDIAN
+    APPEND_ITEM VEL_X 64 FLOAT "X coord of velocity vector (ECI)" LITTLE_ENDIAN
       UNITS "meters per second" "m/s"
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM VEL_Y 32 FLOAT "Y coord of velocity vector (ECI)" LITTLE_ENDIAN
+    APPEND_ITEM VEL_Y 64 FLOAT "Y coord of velocity vector (ECI)" LITTLE_ENDIAN
       UNITS "meters per second" "m/s"
       FORMAT_STRING "%0.4f"
-    APPEND_ITEM VEL_Z 32 FLOAT "Z coord of velocity vector (ECI)" LITTLE_ENDIAN
+    APPEND_ITEM VEL_Z 64 FLOAT "Z coord of velocity vector (ECI)" LITTLE_ENDIAN
       UNITS "meters per second" "m/s"
       FORMAT_STRING "%0.4f"
       
-    APPEND_ITEM ABOVE_GS 8 UINT "Spacecraft over ground station?" LITTLE_ENDIAN
-      STATE "Not above GS" 0
-      STATE "Above GS" 1
-    APPEND_ITEM IN_FOV 8 UINT "Spacecraft in field of view?" LITTLE_ENDIAN
-      STATE "Not in FOV" 0
-      STATE "In FOV" 1
+    APPEND_ITEM SGP4 8 INT "SGP4 flag" LITTLE_ENDIAN
     APPEND_ITEM IN_SUN 8 UINT "Spacecraft in sun?" LITTLE_ENDIAN
       STATE "Not in sun" 0
       State "In sun" 1
+    APPEND_ITEM ABOVE_GS 8 UINT "Spacecraft over ground station?" LITTLE_ENDIAN
+      STATE "Not above GS" 0
+      STATE "Above GS" 1
