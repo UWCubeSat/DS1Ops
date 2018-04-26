@@ -1,0 +1,44 @@
+TELEMETRY ADCS_MPC OUTPUT BIG_ENDIAN "Non-MTQ CAN output"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
+    
+    APPEND_ITEM QUAT_1 64 FLOAT "First element of spacecraft attitude quaternion" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM QUAT_2 64 FLOAT "Second element of spacecraft attitude quaternion" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM QUAT_3 64 FLOAT "Third element of spacecraft attitude quaternion" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    APPEND_ITEM QUAT_4 64 FLOAT "Fourth element of spacecraft attitude quaternion" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+    
+    APPEND_ITEM BODYRATE_X 64 FLOAT "X component of angular velocity" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+      UNITS "radians per second" "rad/s"
+    APPEND_ITEM BODYRATE_Y 64 FLOAT "Y component of angular velocity" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+      UNITS "radians per second" "rad/s"
+    APPEND_ITEM BODYRATE_Z 64 FLOAT "Z component of angular velocity" LITTLE_ENDIAN
+      FORMAT_STRING "%0.4f"
+      UNITS "radians per second" "rad/s"
+    
+    # TODO add states
+    APPEND_ITEM MODE 8 INT "Operating mode" LITTLE_ENDIAN
+    
+    APPEND_ITEM POINTING 8 UINT "COM2 pointing?" LITTLE_ENDIAN
+      STATE "Not pointing" 0
+      STATE "Pointing" 1
+      
+    APPEND_ITEM ABOVE_GS 8 UINT "Above ground station?" LITTLE_ENDIAN
+      STATE "Not above GS" 0
+      STATE "Above GS" 1 
+
+TELEMETRY ADCS_MPC MTQCMD BIG_ENDIAN "MTQ command data"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
+    
+    # TODO add states
+    APPEND_ITEM MODE 8 INT "Operating mode" LITTLE_ENDIAN
+    
+    APPEND_ITEM CMD_X 8 INT "X component of commanded MTQ dipole" LITTLE_ENDIAN
+    APPEND_ITEM CMD_Y 8 INT "Y component of commanded MTQ dipole" LITTLE_ENDIAN
+    APPEND_ITEM CMD_Z 8 INT "Z component of commanded MTQ dipole" LITTLE_ENDIAN
