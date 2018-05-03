@@ -26,6 +26,8 @@ TELEMETRY ADCS_ESTIM INPUT_TLE BIG_ENDIAN "TLE from CAN"
       FORMAT_STRING "%0.4f"
     APPEND_ITEM MNM 32 FLOAT "Mean motion" LITTLE_ENDIAN
       FORMAT_STRING "%0.4f"
+      UNITS rev/day rev/d
+    APPEND_ITEM TLEID 8 UINT "TLE ID" LITTLE_ENDIAN
 
 TELEMETRY ADCS_ESTIM INPUT_MET BIG_ENDIAN "Mission elapsed time"
     # This must ALWAYS be the first entry in any telemetry packet
@@ -34,6 +36,9 @@ TELEMETRY ADCS_ESTIM INPUT_MET BIG_ENDIAN "Mission elapsed time"
     APPEND_ITEM MET 64 FLOAT "Mission elapsed time" LITTLE_ENDIAN
       UNITS seconds s
       FORMAT_STRING "%0.4f"
+    APPEND_ITEM EPOCH 64 FLOAT "Epoch (J2000)" LITTLE_ENDIAN
+      UNITS seconds s
+      FORMAT_STRING "%.0f"
 
 TELEMETRY ADCS_ESTIM OUTPUT BIG_ENDIAN "Autocode outputs"
     # This must ALWAYS be the first entry in any telemetry packet
@@ -55,13 +60,13 @@ TELEMETRY ADCS_ESTIM OUTPUT BIG_ENDIAN "Autocode outputs"
     
     APPEND_ITEM POS_X 64 FLOAT "X coord of position vector (ECI)" LITTLE_ENDIAN
       UNITS "meters" "m"
-      FORMAT_STRING "%0.4f"
+      FORMAT_STRING "%0.1f"
     APPEND_ITEM POS_Y 64 FLOAT "Y coord of position vector (ECI)" LITTLE_ENDIAN
       UNITS "meters" "m"
-      FORMAT_STRING "%0.4f"
+      FORMAT_STRING "%0.1f"
     APPEND_ITEM POS_Z 64 FLOAT "Z coord of position vector (ECI)" LITTLE_ENDIAN
       UNITS "meters" "m"
-      FORMAT_STRING "%0.4f"
+      FORMAT_STRING "%0.1f"
     
     APPEND_ITEM VEL_X 64 FLOAT "X coord of velocity vector (ECI)" LITTLE_ENDIAN
       UNITS "meters per second" "m/s"
