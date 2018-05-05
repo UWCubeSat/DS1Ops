@@ -27,6 +27,16 @@ TELEMETRY PS_DP832A PS_STATUS BIG_ENDIAN "Power Supply Telemetry"
   APPEND_ITEM P_CH3 32 FLOAT "Output power on channel 3."
     FORMAT_STRING "%0.3f"
     UNITS "Watts" "W"
-  
-  
  
+ 
+ TELEMETRY PS_DP832A CH1_STATE BIG_ENDIAN "Power Supply Telemetry"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM STATE 16 STRING "Status of channel 1."
+ 
+TELEMETRY PS_DP832A CH2_STATE BIG_ENDIAN "Power Supply Telemetry"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM STATE 512 STRING "Status of channel 2."
+  
+TELEMETRY PS_DP832A CH3_STATE BIG_ENDIAN "Power Supply Telemetry"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM STATE 16 STRING "Status of channel 3."
