@@ -1,3 +1,22 @@
+TELEMETRY CAN_LOCAL rc_adcs_bdot_4 BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 304677402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM rc_adcs_bdot_4_mag_z_avg 16 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_4_tumble 1 UINT "None" BIG_ENDIAN
+	APPEND_ITEM PADDING 47 UINT "Padded bits for CAN data"
+
 TELEMETRY CAN_LOCAL rc_adcs_bdot_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -13,10 +32,10 @@ TELEMETRY CAN_LOCAL rc_adcs_bdot_3 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677401 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_bdot_3_tumble 1 UINT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_bdot_3_mag_avg 32 INT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 31 UINT "Padded bits for CAN data"
-
+	APPEND_ITEM rc_adcs_bdot_3_mag_z_min 16 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_3_mag_z_max 16 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_3_mag_y_max 16 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_3_mag_y_avg 16 INT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_bdot_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -32,8 +51,10 @@ TELEMETRY CAN_LOCAL rc_adcs_bdot_2 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677383 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_bdot_2_mag_min 32 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_bdot_2_mag_max 32 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_2_mag_y_min 16 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_2_mag_x_avg 16 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_2_mag_x_min 16 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_2_mag_x_max 16 INT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_bdot_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -170,23 +191,6 @@ TELEMETRY CAN_LOCAL estim_state BIG_ENDIAN
 	APPEND_ITEM estim_state_above_gs 1 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
-TELEMETRY CAN_LOCAL rc_eps_gen_11 BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM rc_eps_gen_11_pnl_1_power_min 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM rc_eps_gen_11_pnl_1_power_max 32 FLOAT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_mtq_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1459,3 +1463,23 @@ TELEMETRY CAN_LOCAL grnd_epoch BIG_ENDIAN
 	APPEND_ITEM grnd_epoch_val 32 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 24 UINT "Padded bits for CAN data"
 
+
+TELEMETRY CAN_LOCAL general_can_message BIG_ENDIAN 
+    APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+    APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+    APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+    APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+    APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+    APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+    APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+    APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+    APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+    APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+    APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+    APPEND_ITEM CANID_ID 29 UINT 304677402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+        STATE EXTENDED 1
+        STATE STANDARD 0
+    APPEND_ITEM DATA 64 UINT "CAN data"
+
+
+    
