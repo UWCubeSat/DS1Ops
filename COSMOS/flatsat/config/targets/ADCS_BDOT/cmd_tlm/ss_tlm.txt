@@ -1,15 +1,3 @@
-TELEMETRY ADCS_BDOT MY_TELEM BIG_ENDIAN "Sample telemetry"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 2} %>
-    
-    APPEND_ITEM ALPHA 32 FLOAT "Alpha angle" LITTLE_ENDIAN
-      UNITS degrees deg
-    APPEND_ITEM BETA 32 FLOAT "Beta angle" LITTLE_ENDIAN
-      UNITS degrees deg
-    APPEND_ITEM STATUS 8 UINT "Enable/disable status" LITTLE_ENDIAN
-      STATE DISABLED 0
-      STATE ENABLED 1
-      
 TELEMETRY ADCS_BDOT MAGNETOMETER BIG_ENDIAN "Magnetometer readings"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 127} %>
@@ -28,9 +16,13 @@ TELEMETRY ADCS_BDOT MTQ_INFO BIG_ENDIAN "Magnetorquer Info readings"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 126} %>
 	
+    
     APPEND_ITEM X_DIPOLE 8 INT "Value of x-dipole to send to MTQ when tumble status is high" LITTLE_ENDIAN
     APPEND_ITEM Y_DIPOLE 8 INT "Value of y-dipole to send to MTQ when tumble status is high" LITTLE_ENDIAN
     APPEND_ITEM Z_DIPOLE 8 INT "Value of z-dipole to send to MTQ when tumble status is high" LITTLE_ENDIAN
+    APPEND_ITEM TUMBLE_STATUS 8 UINT "Tumble Status to send to MTQ" LITTLE_ENDIAN
+	STATE TUMBLING 1 RED
+	STATE NOT_TUMBLING 0 GREEN
 
 TELEMETRY ADCS_BDOT SIMULINK_INFO BIG_ENDIAN "Simulink outputs"
     # This must ALWAYS be the first entry in any telemetry packet
@@ -40,14 +32,4 @@ TELEMETRY ADCS_BDOT SIMULINK_INFO BIG_ENDIAN "Simulink outputs"
     APPEND_ITEM SIM_X_DIPOLE 8 INT "Value of x-dipole that simulinks outputs" LITTLE_ENDIAN
     APPEND_ITEM SIM_Y_DIPOLE 8 INT "Value of y-dipole that simulinks outputs" LITTLE_ENDIAN
     APPEND_ITEM SIM_Z_DIPOLE 8 INT "Value of z-dipole that simulinks outputs" LITTLE_ENDIAN
-    APPEND_ITEM TUMBLE 8 UINT "Tumble status that simulinks outputs" LITTLE_ENDIAN
-	STATE TUMBLING 1 RED
-	STATE NOT_TUMBLING 0 GREEN
-
-
-TELEMETRY ADCS_BDOT MTQ_STATE BIG_ENDIAN "State of MTQ seen by BDOT"
-    # This must ALWAYS be the first entry in any telemetry packet
-    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 123} %>
-
-    APPEND_ITEM MTQ_STATE_STATUS 8 UINT "MTQ State seen by BDOT" LITTLE_ENDIAN
 

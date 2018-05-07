@@ -8,7 +8,7 @@ import ctypes
 ports_list = [
         None,  #0
         "ADCS_BDOT",
-        None,  #2
+        "MATLAB_BDOT",
         None,  #3
         None,  #4
         "PPT",

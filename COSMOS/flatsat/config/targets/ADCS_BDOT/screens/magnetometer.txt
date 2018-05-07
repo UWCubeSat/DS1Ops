@@ -1,6 +1,6 @@
 SCREEN AUTO AUTO 1.0
 
-  TITLE "Magnetometer"
+  TITLE "Magnetometer Reading"
 
   VERTICALBOX
     LABELVALUE ADCS_BDOT MAGNETOMETER RECEIVED_TIMEFORMATTED WITH_UNITS 25  # COSMOS Received Time (Local time zone, Formatted string)
