@@ -31,7 +31,11 @@ sys.path.append('..')
 import canmatrix.formats
 import canmatrix.canmatrix as cm
 import canmatrix.copy as cmcp
+signalToLimits = {
+    "rc_adcs_bdot_4_tumble":[1,2,3,4,5,6],
 
+
+}
 
 def toPyObject(infile, **options):
     dbs = {}
@@ -195,11 +199,21 @@ def createCosmosTlm(candb, tlmFileName):
                 signalEndian = "LITTLE_ENDIAN"
             else:
                 signalEndian = "BIG_ENDIAN"
+
             tlmFile.write("\tAPPEND_ITEM {} {} {} \"{}\" {}\n".format(signal.name,
                                                             signal.signalsize,
                                                             signalType,
                                                             signal.comment,
                                                             signalEndian))
+            if signal.name in signalToLimits:
+                tlmFile.write("\t\t LIMITS DEFAULT 1 ENABLED {} {} {} {} {} {}\n".format(
+                                                            signalToLimits[signal.name][0],
+                                                            signalToLimits[signal.name][1],
+                                                            signalToLimits[signal.name][2],
+                                                            signalToLimits[signal.name][3],
+                                                            signalToLimits[signal.name][4],
+                                                            signalToLimits[signal.name][5],
+                                                            ))
         if signal_size != 64:
             tlmFile.write("\tAPPEND_ITEM PADDING {} UINT \"Padded bits for CAN data\"\n\n".format(64 - signal_size))
     tlmFile.write("""
@@ -259,11 +273,13 @@ def createCosmosCmd(candb, tlmFileName):
                 signalEndian = "LITTLE_ENDIAN"
             else:
                 signalEndian = "BIG_ENDIAN"
+
             tlmFile.write("\tAPPEND_PARAMETER {} {} {} MIN MAX  0 \"{}\" {}\n".format(signal.name,
                                                             signal.signalsize,
                                                             signalType,
                                                             signal.comment,
                                                             signalEndian))
+
         if signal_size != 64:
             tlmFile.write("\tAPPEND_PARAMETER PADDING {} UINT MIN MAX 0 \"Padded bits for CAN data\"\n\n".format(64 - signal_size))
 
