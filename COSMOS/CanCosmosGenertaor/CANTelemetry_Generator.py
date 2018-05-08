@@ -229,7 +229,7 @@ TELEMETRY CAN_LOCAL general_can_message BIG_ENDIAN
     APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
     APPEND_ITEM CANID_RTR 1 UINT "RTR value."
     APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-    APPEND_ITEM CANID_ID 29 UINT 304677402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+    APPEND_ITEM CANID_ID 29 UINT "The ID (normal or extended) portion of the 'CAN ID' set of headers."
         STATE EXTENDED 1
         STATE STANDARD 0
     APPEND_ITEM DATA 64 UINT "CAN data"
