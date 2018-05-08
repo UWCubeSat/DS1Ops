@@ -32,7 +32,17 @@ import canmatrix.formats
 import canmatrix.canmatrix as cm
 import canmatrix.copy as cmcp
 signalToLimits = {
-    "rc_adcs_bdot_4_tumble":[1,2,3,4,5,6],
+    "rc_eps_batt_1_temp_avg":[15,20,30,35,22,28],
+	"rc_adcs_bdot_1_temp_avg":[15,20,30,35,22,28],
+	"rc_ppt_1_temp_AVG":[15,20,30,35,22,28],
+	"rc_eps_dist_1_TEMP_AVG":[15,20,30,35,22,28],
+	"rc_eps_gen_1_TEMP_AVG":[15,20,30,35,22,28],
+	"rc_adcs_estim_1_TEMP_AVG":[15,20,30,35,22,28],
+	"rc_adcs_mpc_1_TEMP_AVG":[15,20,30,35,22,28],
+	"rc_adcs_sensorproc_1_temp_avg":[15,20,30,35,22,28],
+	"rc_adcs_mtq_1_temp_avg":[15,20,30,35,22,28],
+	"rc_com1_1_temp_avg":[15,20,30,35,22,28],
+	"rc_com2_1_temp_avg":[15,20,30,35,22,28],
 
 
 }
