@@ -89,9 +89,25 @@ def setVoltage(channel, voltage)
 end
 
 def setCurrent(channel, current)
+  begin
   cmd("PS_DP832A", "SET_CURRENT", "current" => current,"channel"=>channel)
+  rescue Exception =>e
+  puts "WARNING COULD NOT SET CURRENT"
+  end
 end
 
+def isChannelOn(channel)
+  begin
+  cmd("PS_DP832A","GETCHANNELSTATE", "channel"=>channel)
+  state=tlm("PS_DP832A CH#{channel}_STATE STATE")
+  if state == "ON"
+    return true
+  end
+  return false
+  rescue Exception =>e
+  puts "WARNING COULD CHECK CHANNEL STATUS"
+  end
+end
 def getStatus()
   begin 
   cmd("PS_DP832A","GETSTATUS")
