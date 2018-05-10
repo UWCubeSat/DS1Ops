@@ -11,9 +11,6 @@ TELEMETRY EPS_DIST GENERAL LITTLE_ENDIAN "EPS distribution module general status
       STATE INRANGE 0 GREEN
       STATE PARTIALSHUTDOWN 1 YELLOW
       STATE FULLSHUTDOWN 2 RED
-    APPEND_ITEM UVPARTIALTHRSH 32 FLOAT "The voltage at which the board enters partial undervoltage mode." LITTLE_ENDIAN
-      UNITS volts V
-      FORMAT_STRING "%0.3f"
     APPEND_ITEM UVFULLTHRSH 32 FLOAT "The voltage at which the board enters full undervoltage mode." LITTLE_ENDIAN
       UNITS volts V
       FORMAT_STRING "%0.3f"
