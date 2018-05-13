@@ -79,6 +79,9 @@ TELEMETRY ADCS_ESTIM OUTPUT BIG_ENDIAN "Autocode outputs"
       FORMAT_STRING "%0.4f"
       
     APPEND_ITEM SGP4 8 INT "SGP4 flag" LITTLE_ENDIAN
+      STATE "Error" -1 RED
+      STATE "OK" 0 GREEN
+      STATE "???" 1 YELLOW
     APPEND_ITEM IN_SUN 8 UINT "Spacecraft in sun?" LITTLE_ENDIAN
       STATE "Not in sun" 0
       State "In sun" 1
