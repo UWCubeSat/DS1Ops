@@ -1,0 +1,60 @@
+TARGET "ADCS_BDOT"
+  SCREEN "magnetometer.txt" 29 51
+    SHOW_ON_STARTUP
+  SCREEN "magnetorquer_info.txt" -1694 -1404
+    SHOW_ON_STARTUP
+  SCREEN "mtq_state.txt"
+  SCREEN "simulink_info.txt" 4430 -1426
+    SHOW_ON_STARTUP
+
+TARGET "ADCS_ESTIM"
+  SCREEN "status.txt"
+
+TARGET "ADCS_SENSORPROC"
+  SCREEN "flashy_status.txt" 6873 -2061
+    SHOW_ON_STARTUP
+  SCREEN "status.txt" 7837 -1957
+    SHOW_ON_STARTUP
+
+TARGET "CAN_LOCAL"
+  SCREEN "status.txt"
+
+TARGET "CAN_LOCAL_CMD"
+  SCREEN "status.txt"
+
+TARGET "EPS_BATT"
+  SCREEN "battery_state.txt" 5097 -2007
+    SHOW_ON_STARTUP
+  SCREEN "status.txt"
+
+TARGET "EPS_DIST"
+  SCREEN "general.txt"
+  SCREEN "health.txt"
+  SCREEN "meta.txt"
+  SCREEN "power_domain_status.txt"
+
+TARGET "EPS_GEN"
+  SCREEN "bus_uart0.txt"
+  SCREEN "bus_uart1.txt"
+  SCREEN "general.txt"
+  SCREEN "health.txt"
+  SCREEN "meta.txt"
+  SCREEN "panels_charging_status.txt"
+  SCREEN "sensordat.txt"
+  SCREEN "status.txt"
+
+TARGET "MTQ"
+  SCREEN "duty_percent.txt" 1011 1140
+    SHOW_ON_STARTUP
+  SCREEN "fsw_bdot_command.txt" 169 1089
+    SHOW_ON_STARTUP
+
+TARGET "PS_DP832A"
+  SCREEN "ps_status.txt"
+  SCREEN "status.txt"
+
+TARGET "SYSTEM"
+  SCREEN "bus_state.txt"
+  SCREEN "meta.txt"
+  SCREEN "overall.txt"
+
