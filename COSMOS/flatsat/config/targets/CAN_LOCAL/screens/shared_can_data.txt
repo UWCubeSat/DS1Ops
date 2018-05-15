@@ -1,73 +1,57 @@
 SCREEN AUTO AUTO 1.0
 
-  VERTICALBOX
-  HORIZONTALBOX
-  VERTICALBOX
-	TITLE "EPS Batt"
-	<%=render "_sharedData.txt", locals:{subsyst: 'EPS_BATT'}%>
 
-  END
-  
+HORIZONTALBOX
+TITLE "EPS Batt"
+<%=render "_sharedData.txt", locals:{subsyst: 'EPS_BATT'}%>
+END
 
-  VERTICALBOX
-	TITLE "BDOT"
-	<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_BDOT'}%>
-  END
-  
-  VERTICALBOX
-	TITLE "PPT"
-	<%=render "_sharedData.txt", locals:{subsyst: 'PPT'}%>
-  END
-  END
-  
-  HORIZONTALBOX
-  VERTICALBOX
-	TITLE "EPS Dist Board"
-	<%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
-  END
-  
+HORIZONTALBOX 
+TITLE "BDOT"
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_BDOT'}%>
+END
 
-  VERTICALBOX
-	TITLE "EPS Gen board"
-	<%=render "_sharedData.txt", locals:{subsyst: 'EPS_GEN'}%>
+HORIZONTALBOX
+TITLE "PPT"
+<%=render "_sharedData.txt", locals:{subsyst: 'PPT'}%>
+END
+ 
+HORIZONTALBOX
+TITLE "EPS Dist Board"
+<%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
+END
 
-  END
-  
-  VERTICALBOX
-	TITLE "ADCS Estim"
-	<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
-  END
-  END
-  
-  HORIZONTALBOX
-  VERTICALBOX
-	TITLE "ADCS MPC"
-	<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MPC'}%>
-  END
-  
+HORIZONTALBOX
+TITLE "EPS Gen board"
+<%=render "_sharedData.txt", locals:{subsyst: 'EPS_GEN'}%>
+END
 
-  VERTICALBOX
-	TITLE "ADCS SensorProc"
-    <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_SENSORPROC'}%>
-  END
-  
-  VERTICALBOX
-	TITLE "ADCS MTQ"
-	<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MTQ'}%>
-  END
-  END
-  
+HORIZONTALBOX
+TITLE "ADCS Estim"
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
+END
 
-  VERTICALBOX
-	TITLE "Com1"
-	<%=render "_sharedData.txt", locals:{subsyst: 'COM1'}%>
-  END
-  
-  VERTICALBOX
-	TITLE "COM2"
-	<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_COM2'}%>
+HORIZONTALBOX
+TITLE "ADCS MPC"
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MPC'}%>
+END
 
-  END
-  END
-  
-  END
+HORIZONTALBOX
+TITLE "ADCS SensorProc"
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_SENSORPROC'}%>
+END
+
+HORIZONTALBOX    
+TITLE "ADCS MTQ"
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MTQ'}%>
+END
+
+HORIZONTALBOX 
+TITLE "Com1"
+<%=render "_sharedData.txt", locals:{subsyst: 'COM1'}%>
+END
+
+HORIZONTALBOX 
+TITLE "COM2"
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_COM2'}%>
+END

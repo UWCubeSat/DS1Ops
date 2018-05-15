@@ -31,20 +31,54 @@ sys.path.append('..')
 import canmatrix.formats
 import canmatrix.canmatrix as cm
 import canmatrix.copy as cmcp
+
+temperatureLimits=[288, 293, 303, 308, 295, 301]
 signalToLimits = {
-    "rc_eps_batt_1_temp_avg":[15,20,30,35,22,28],
-	"rc_adcs_bdot_1_temp_avg":[15,20,30,35,22,28],
-	"rc_ppt_1_temp_AVG":[15,20,30,35,22,28],
-	"rc_eps_dist_1_TEMP_AVG":[15,20,30,35,22,28],
-	"rc_eps_gen_1_TEMP_AVG":[15,20,30,35,22,28],
-	"rc_adcs_estim_1_TEMP_AVG":[15,20,30,35,22,28],
-	"rc_adcs_mpc_1_TEMP_AVG":[15,20,30,35,22,28],
-	"rc_adcs_sensorproc_1_temp_avg":[15,20,30,35,22,28],
-	"rc_adcs_mtq_1_temp_avg":[15,20,30,35,22,28],
-	"rc_com1_1_temp_avg":[15,20,30,35,22,28],
-	"rc_com2_1_temp_avg":[15,20,30,35,22,28],
+    "rc_eps_batt_1_temp_avg":temperatureLimits,
+	"rc_adcs_bdot_1_temp_avg":temperatureLimits,
+	"rc_ppt_1_temp_avg":temperatureLimits,
+	"rc_eps_dist_1_temp_avg":temperatureLimits,
+	"rc_eps_gen_1_temp_avg":temperatureLimits,
+	"rc_adcs_estim_1_temp_AVG":temperatureLimits,
+	"rc_adcs_mpc_1_temp_avg":temperatureLimits,
+	"rc_adcs_sensorproc_1_temp_avg":temperatureLimits,
+	"rc_adcs_mtq_1_temp_avg":temperatureLimits,
+	"rc_com1_1_temp_avg":temperatureLimits,
+	"rc_com2_1_temp_avg":temperatureLimits,
 
 
+}
+signalConversions = {
+	"1/73 nT":1.0/73,
+	"dK":.1,
+	"dk":.1,
+	"2^-15 seconds":2.0**-15,
+	"mW":.001,
+	"mA":.001,
+	"dmA":.0001,
+	"mV":.001,
+	"cA":.01,
+	"2^-8 seconds":2.0**-8,
+	"2^-15s":2.0**-15,
+	"dmA (0.1mA)":.0001,
+	"2^-8s":2.0**-8,
+	"2^-8 s":2.0**-8
+}
+signalUnits = {
+	"1/73 nT":"Nanotesla nT",
+	"dK":"Kelvin K",
+	"dk":"Kelvin K",
+	"2^-15 seconds":"Seconds s",
+	"mW":"Watts W",
+	"mA":"Amps A",
+	"dmA":"Amps A",
+	"mV":"Volts V",
+	"cA":"Amps A",
+	"2^-8 seconds":"Seconds s",
+	"2^-15s":"Seconds s",
+	"dmA (0.1mA)":"Amps A",
+	"2^-8s":"Seconds s",
+	"2^-8 s":"Seconds s"
 }
 
 def toPyObject(infile, **options):
@@ -203,6 +237,7 @@ def createCosmosTlm(candb, tlmFileName):
         tlmFile.write("\t\tSTATE STANDARD 0\n")
         signal_size = 0
         for signal in frame:
+            
             signal_size = signal_size + signal.signalsize
             signalType = tlmGetType(signal)
             if signal.is_little_endian and False:
@@ -215,6 +250,11 @@ def createCosmosTlm(candb, tlmFileName):
                                                             signalType,
                                                             signal.comment,
                                                             signalEndian))
+            if signal.unit in signalConversions:
+                tlmFile.write("\t\t UNITS {}\n".format(signalUnits[signal.unit]))
+                tlmFile.write("\t\t GENERIC_READ_CONVERSION_START\n")
+                tlmFile.write("\t\t\t value * {}\n".format(signalConversions[signal.unit]))
+                tlmFile.write("\t\t GENERIC_READ_CONVERSION_END\n")
             if signal.name in signalToLimits:
                 tlmFile.write("\t\t LIMITS DEFAULT 1 ENABLED {} {} {} {} {} {}\n".format(
                                                             signalToLimits[signal.name][0],

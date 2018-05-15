@@ -1,12 +1,38 @@
-LABEL "Last Update Time"
-VALUE CAN_LOCAL RC_<%=subsyst %>_1 RECEIVED_TIMEFORMATTED  WITH_UNITS 25  # COSMOS Received Time (Local time zone, Formatted string)
-LABEL "Received Packets"
+HORIZONTALBOX
+LABEL "Time Since Last Update:"
+
+
+
+HOURSSINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_1 RECEIVED_COUNT CONVERTED 3
+LABEL " Hours  "
+
+MINUTESSINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_1 RECEIVED_COUNT CONVERTED 3
+LABEL " Minutes"
+END
+
+HORIZONTALBOX
+LABEL "Received Packets:"
 VALUE CAN_LOCAL RC_<%=subsyst %>_1 RECEIVED_COUNT # COSMOS packet received count
-    
-HORIZONTALLINE 
-LABEL "Reboots In Last Update"
-CHANGEINVALUE CAN_LOCAL RC_<%=subsyst %>_1 RC_<%=subsyst %>_1_SYSRSTIV "%d" FORMATTED
-LABEL "Last Reboot Time"
-LASTUPDATE CAN_LOCAL RC_<%=subsyst %>_1 RC_<%=subsyst %>_1_SYSRSTIV FORMATTED 25
+END
+
+HORIZONTALBOX
+LABEL "Reboots In Last Update:"
+CHANGEINVALUE CAN_LOCAL RC_<%=subsyst %>_1 RC_<%=subsyst %>_1_RESET_COUNT "%d" FORMATTED 3
+END
+
+
+
+HORIZONTALBOX
+LABEL "Time Since Last Reboot:"
+
+
+HOURSSINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_1 RC_<%=subsyst %>_1_RESET_COUNT CONVERTED 3
+LABEL "  Hours  "
+MINUTESSINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_1 RC_<%=subsyst %>_1_RESET_COUNT CONVERTED 3
+LABEL "  Minutes"
+END 
+
+HORIZONTALBOX
 LABEL "Average Temperature"
-VALUELIMITSBAR CAN_LOCAL RC_<%=subsyst %>_1 RC_<%=subsyst %>_1_TEMP_AVG
+VALUELIMITSBAR CAN_LOCAL RC_<%=subsyst %>_1 RC_<%=subsyst %>_1_TEMP_AVG CONVERTED 3
+END
