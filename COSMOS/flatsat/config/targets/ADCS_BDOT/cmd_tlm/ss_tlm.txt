@@ -32,3 +32,74 @@ TELEMETRY ADCS_BDOT SIMULINK_INFO BIG_ENDIAN "Simulink outputs"
     APPEND_ITEM TUMBLE_STATUS 8 UINT "Simulink Tumble Status" LITTLE_ENDIAN
 	STATE TUMBLING 1 RED
 	STATE NOT_TUMBLING 0 GREEN
+
+TELEMETRY ADCS_BDOT POLLING_TIMER BIG_ENDIAN "All 8 Polling Timer Information"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 123} %>
+	
+    
+    APPEND_ITEM TIMER_ID_0 8 UINT "Timer ID" LITTLE_ENDIAN
+    APPEND_ITEM USER_ID_0 16 UINT "User chosen ID" LITTLE_ENDIAN
+    APPEND_ITEM IN_USE_0 8 UINT "Whether timer is in use" LITTLE_ENDIAN
+    APPEND_ITEM START_COUNTER_0 16 UINT "Start value of counter" LITTLE_ENDIAN
+    APPEND_ITEM START_TAR_0 16 UINT "Start value of TAR" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_COUNTER_DIF_0 16 UINT "Converted desired difference in counter value" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_TAR_DIF_0 16 UINT "Converted desired difference in tar value" LITTLE_ENDIAN
+
+    APPEND_ITEM TIMER_ID_1 8 UINT "Timer ID" LITTLE_ENDIAN
+    APPEND_ITEM USER_ID_1 16 UINT "User chosen ID" LITTLE_ENDIAN
+    APPEND_ITEM IN_USE_1 8 UINT "Whether timer is in use" LITTLE_ENDIAN
+    APPEND_ITEM START_COUNTER_1 16 UINT "Start value of counter" LITTLE_ENDIAN
+    APPEND_ITEM START_TAR_1 16 UINT "Start value of TAR" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_COUNTER_DIF_1 16 UINT "Converted desired difference in counter value" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_TAR_DIF_1 16 UINT "Converted desired difference in tar value" LITTLE_ENDIAN
+
+    APPEND_ITEM TIMER_ID_2 8 UINT "Timer ID" LITTLE_ENDIAN
+    APPEND_ITEM USER_ID_2 16 UINT "User chosen ID" LITTLE_ENDIAN
+    APPEND_ITEM IN_USE_2 8 UINT "Whether timer is in use" LITTLE_ENDIAN
+    APPEND_ITEM START_COUNTER_2 16 UINT "Start value of counter" LITTLE_ENDIAN
+    APPEND_ITEM START_TAR_2 16 UINT "Start value of TAR" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_COUNTER_DIF_2 16 UINT "Converted desired difference in counter value" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_TAR_DIF_2 16 UINT "Converted desired difference in tar value" LITTLE_ENDIAN
+
+    APPEND_ITEM TIMER_ID_3 8 UINT "Timer ID" LITTLE_ENDIAN
+    APPEND_ITEM USER_ID_3 16 UINT "User chosen ID" LITTLE_ENDIAN
+    APPEND_ITEM IN_USE_3 8 UINT "Whether timer is in use" LITTLE_ENDIAN
+    APPEND_ITEM START_COUNTER_3 16 UINT "Start value of counter" LITTLE_ENDIAN
+    APPEND_ITEM START_TAR_3 16 UINT "Start value of TAR" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_COUNTER_DIF_3 16 UINT "Converted desired difference in counter value" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_TAR_DIF_3 16 UINT "Converted desired difference in tar value" LITTLE_ENDIAN
+
+    APPEND_ITEM TIMER_ID_4 8 UINT "Timer ID" LITTLE_ENDIAN
+    APPEND_ITEM USER_ID_4 16 UINT "User chosen ID" LITTLE_ENDIAN
+    APPEND_ITEM IN_USE_4 8 UINT "Whether timer is in use" LITTLE_ENDIAN
+    APPEND_ITEM START_COUNTER_4 16 UINT "Start value of counter" LITTLE_ENDIAN
+    APPEND_ITEM START_TAR_4 16 UINT "Start value of TAR" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_COUNTER_DIF_4 16 UINT "Converted desired difference in counter value" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_TAR_DIF_4 16 UINT "Converted desired difference in tar value" LITTLE_ENDIAN
+
+    APPEND_ITEM TIMER_ID_5 8 UINT "Timer ID" LITTLE_ENDIAN
+    APPEND_ITEM USER_ID_5 16 UINT "User chosen ID" LITTLE_ENDIAN
+    APPEND_ITEM IN_USE_5 8 UINT "Whether timer is in use" LITTLE_ENDIAN
+    APPEND_ITEM START_COUNTER_5 16 UINT "Start value of counter" LITTLE_ENDIAN
+    APPEND_ITEM START_TAR_5 16 UINT "Start value of TAR" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_COUNTER_DIF_5 16 UINT "Converted desired difference in counter value" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_TAR_DIF_5 16 UINT "Converted desired difference in tar value" LITTLE_ENDIAN
+
+    APPEND_ITEM TIMER_ID_6 8 UINT "Timer ID" LITTLE_ENDIAN
+    APPEND_ITEM USER_ID_6 16 UINT "User chosen ID" LITTLE_ENDIAN
+    APPEND_ITEM IN_USE_6 8 UINT "Whether timer is in use" LITTLE_ENDIAN
+    APPEND_ITEM START_COUNTER_6 16 UINT "Start value of counter" LITTLE_ENDIAN
+    APPEND_ITEM START_TAR_6 16 UINT "Start value of TAR" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_COUNTER_DIF_6 16 UINT "Converted desired difference in counter value" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_TAR_DIF_6 16 UINT "Converted desired difference in tar value" LITTLE_ENDIAN
+
+    APPEND_ITEM TIMER_ID_7 8 UINT "Timer ID" LITTLE_ENDIAN
+    APPEND_ITEM USER_ID_7 16 UINT "User chosen ID" LITTLE_ENDIAN
+    APPEND_ITEM IN_USE_7 8 UINT "Whether timer is in use" LITTLE_ENDIAN
+    APPEND_ITEM START_COUNTER_7 16 UINT "Start value of counter" LITTLE_ENDIAN
+    APPEND_ITEM START_TAR_7 16 UINT "Start value of TAR" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_COUNTER_DIF_7 16 UINT "Converted desired difference in counter value" LITTLE_ENDIAN
+    APPEND_ITEM DESIRED_TAR_DIF_7 16 UINT "Converted desired difference in tar value" LITTLE_ENDIAN
+
+
