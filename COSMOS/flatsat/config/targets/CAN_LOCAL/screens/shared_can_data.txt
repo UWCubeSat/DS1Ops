@@ -1,49 +1,33 @@
 SCREEN AUTO AUTO 1.0
-HORIZONTAL
-VERTICAL
-TITLE "EPS Dist Board"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "EPS Gen board"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "BDOT"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "ADCS Estim"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "ADCS MPC"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "ADCS SensorProc"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "ADCS MTQ"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "PPT"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "EPS Batt"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "Com1"
-SPACER 0 3
-HORIZONTALLINE
-TITLE "COM2"
-END
-VERTICAL
-<%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'EPS_GEN'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_BDOT'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MPC'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_SP'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MTQ'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'PPT'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'EPS_BATT'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'COM1'}%>
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_COM2'}%>
-END
+MATRIXBYCOLUMNS 6 50 10
+   LABEL " "
+   LABEL "Time Since Last Update"
+   LABEL "Received Packets"
+   LABEL "Reboots In Last Update"
+   LABEL "Time Since Last Reboot"
+   LABEL "Average Temperature"
+   
+   
+   TITLE "EPS Dist Board"
+  <%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
+  TITLE "EPS Gen board"
+  <%=render "_sharedData.txt", locals:{subsyst: 'EPS_GEN'}%>
+  TITLE "BDOT"
+  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_BDOT'}%>
+  TITLE "ADCS Estim"
+  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
+  TITLE "ADCS MPC"
+  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MPC'}%>
+  TITLE "ADCS SensorProc"
+  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_SP'}%>
+  TITLE "ADCS MTQ"
+  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MTQ'}%>
+  TITLE "PPT"
+  <%=render "_sharedData.txt", locals:{subsyst: 'PPT'}%>
+  TITLE "EPS Batt"
+  <%=render "_sharedData.txt", locals:{subsyst: 'EPS_BATT'}%>
+  TITLE "Com1"
+  <%=render "_sharedData.txt", locals:{subsyst: 'COM1'}%>
+  TITLE "Com2"
+  <%=render "_sharedData.txt", locals:{subsyst: 'COM2'}%>
 END
