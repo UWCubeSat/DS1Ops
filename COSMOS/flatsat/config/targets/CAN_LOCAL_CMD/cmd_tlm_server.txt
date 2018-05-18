@@ -4,5 +4,5 @@
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
 
-INTERFACE CAN_LOCAL_CMD_INT tcpip_client_interface.rb 172.28.23.10 3000 80 10 1 LENGTH
+INTERFACE CAN_LOCAL_CMD_INT tcpip_client_interface.rb 192.168.1.10 3000 NIL 10 1 LENGTH
   TARGET CAN_LOCAL_CMD

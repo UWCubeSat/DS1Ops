@@ -188,4 +188,7 @@ TELEMETRY EPS_DIST SENSORDAT LITTLE_ENDIAN "EPS distribution module captured sen
       UNITS volts V
       LIMITS DEFAULT 3 ENABLED 0.5 3.0 7.0 10.0
       FORMAT_STRING "%0.4f"
-    
+	  
+TELEMETRY EPS_DIST RCCOUNT LITTLE_ENDIAN
+<%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 25} %>
+	APPEND_ITEM COUNT 8 UINT
