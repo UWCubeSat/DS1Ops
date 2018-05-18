@@ -1,57 +1,49 @@
 SCREEN AUTO AUTO 1.0
-
-
-HORIZONTALBOX
-TITLE "EPS Batt"
-<%=render "_sharedData.txt", locals:{subsyst: 'EPS_BATT'}%>
-END
-
-HORIZONTALBOX 
-TITLE "BDOT"
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_BDOT'}%>
-END
-
-HORIZONTALBOX
-TITLE "PPT"
-<%=render "_sharedData.txt", locals:{subsyst: 'PPT'}%>
-END
- 
-HORIZONTALBOX
+HORIZONTAL
+VERTICAL
 TITLE "EPS Dist Board"
-<%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
-END
-
-HORIZONTALBOX
+SPACER 0 3
+HORIZONTALLINE
 TITLE "EPS Gen board"
-<%=render "_sharedData.txt", locals:{subsyst: 'EPS_GEN'}%>
-END
-
-HORIZONTALBOX
+SPACER 0 3
+HORIZONTALLINE
+TITLE "BDOT"
+SPACER 0 3
+HORIZONTALLINE
 TITLE "ADCS Estim"
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
-END
-
-HORIZONTALBOX
+SPACER 0 3
+HORIZONTALLINE
 TITLE "ADCS MPC"
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MPC'}%>
-END
-
-HORIZONTALBOX
+SPACER 0 3
+HORIZONTALLINE
 TITLE "ADCS SensorProc"
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_SENSORPROC'}%>
-END
-
-HORIZONTALBOX    
+SPACER 0 3
+HORIZONTALLINE
 TITLE "ADCS MTQ"
-<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MTQ'}%>
-END
-
-HORIZONTALBOX 
+SPACER 0 3
+HORIZONTALLINE
+TITLE "PPT"
+SPACER 0 3
+HORIZONTALLINE
+TITLE "EPS Batt"
+SPACER 0 3
+HORIZONTALLINE
 TITLE "Com1"
-<%=render "_sharedData.txt", locals:{subsyst: 'COM1'}%>
-END
-
-HORIZONTALBOX 
+SPACER 0 3
+HORIZONTALLINE
 TITLE "COM2"
+END
+VERTICAL
+<%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'EPS_GEN'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_BDOT'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MPC'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_SP'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MTQ'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'PPT'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'EPS_BATT'}%>
+<%=render "_sharedData.txt", locals:{subsyst: 'COM1'}%>
 <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_COM2'}%>
+END
 END

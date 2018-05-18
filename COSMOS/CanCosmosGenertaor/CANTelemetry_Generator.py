@@ -34,18 +34,41 @@ import canmatrix.copy as cmcp
 
 temperatureLimits=[288, 293, 303, 308, 295, 301]
 signalToLimits = {
-    "rc_eps_batt_1_temp_avg":temperatureLimits,
+        "rc_eps_batt_1_temp_avg":temperatureLimits,
 	"rc_adcs_bdot_1_temp_avg":temperatureLimits,
 	"rc_ppt_1_temp_avg":temperatureLimits,
 	"rc_eps_dist_1_temp_avg":temperatureLimits,
 	"rc_eps_gen_1_temp_avg":temperatureLimits,
-	"rc_adcs_estim_1_temp_AVG":temperatureLimits,
+	"rc_adcs_estim_1_temp_avg":temperatureLimits,
 	"rc_adcs_mpc_1_temp_avg":temperatureLimits,
-	"rc_adcs_sensorproc_1_temp_avg":temperatureLimits,
+	"rc_adcs_sp_1_temp_avg":temperatureLimits,
 	"rc_adcs_mtq_1_temp_avg":temperatureLimits,
 	"rc_com1_1_temp_avg":temperatureLimits,
 	"rc_com2_1_temp_avg":temperatureLimits,
-
+        
+        "rc_eps_batt_1_temp_max":temperatureLimits,
+	"rc_adcs_bdot_1_temp_max":temperatureLimits,
+	"rc_ppt_1_temp_max":temperatureLimits,
+	"rc_eps_dist_1_temp_max":temperatureLimits,
+	"rc_eps_gen_1_temp_max":temperatureLimits,
+	"rc_adcs_estim_1_temp_max":temperatureLimits,
+	"rc_adcs_mpc_1_temp_max":temperatureLimits,
+	"rc_adcs_sp_1_temp_max":temperatureLimits,
+	"rc_adcs_mtq_1_temp_max":temperatureLimits,
+	"rc_com1_1_temp_max":temperatureLimits,
+	"rc_com2_1_temp_max":temperatureLimits,
+        
+        "rc_eps_batt_1_temp_min":temperatureLimits,
+	"rc_adcs_bdot_1_temp_min":temperatureLimits,
+	"rc_ppt_1_temp_min":temperatureLimits,
+	"rc_eps_dist_1_temp_min":temperatureLimits,
+	"rc_eps_gen_1_temp_min":temperatureLimits,
+	"rc_adcs_estim_1_temp_min":temperatureLimits,
+	"rc_adcs_mpc_1_temp_min":temperatureLimits,
+	"rc_adcs_sp_1_temp_min":temperatureLimits,
+	"rc_adcs_mtq_1_temp_min":temperatureLimits,
+	"rc_com1_1_temp_min":temperatureLimits,
+	"rc_com2_1_temp_min":temperatureLimits,
 
 }
 signalConversions = {
@@ -62,10 +85,15 @@ signalConversions = {
 	"2^-15s":2.0**-15,
 	"dmA (0.1mA)":.0001,
 	"2^-8s":2.0**-8,
-	"2^-8 s":2.0**-8
+	"2^-8 s":2.0**-8,
+	"s^-8 since J2000":1.0**-8,
+	"s^-8 since J2000 ":1.0**-8,,
+	"1/73 nanoTeslas":1.0/73,
+	"0.004375 deg/s":0.004375,
+	"60/32767 degrees":60.0/32767
 }
 signalUnits = {
-	"1/73 nT":"Nanotesla nT",
+	"1/73 nT":"Nanoteslas nT",
 	"dK":"Kelvin K",
 	"dk":"Kelvin K",
 	"2^-15 seconds":"Seconds s",
@@ -78,9 +106,30 @@ signalUnits = {
 	"2^-15s":"Seconds s",
 	"dmA (0.1mA)":"Amps A",
 	"2^-8s":"Seconds s",
-	"2^-8 s":"Seconds s"
+	"2^-8 s":"Seconds s",
+	"r/s":"Radians_Per_Second r/s",
+	"s^-8 since J2000":"Seconds s",
+	"s^-8 since J2000 ":"Seconds s",
+	"m/s":"Meters_Per_Second m/s",
+	"m":"Meters m",
+	"1/73 nanoTeslas":"Nanoteslas nT",
+	"0.004375 deg/s":"Degrees_Per_Second deg/s",
+	"60/32767 degrees":"Degrees deg",
+	"C":"Degrees_Celcius C",
+	"deg C":"Degrees_Celcius C",
+	"Deg C":"Degrees_Celcius C",
+	"s":"Seconds s"
 }
-
+signalsWithOverflow=[
+    "cmd_rollcall_met",
+    "grnd_epoch_val",
+    "rc_eps_dist_2_met",
+    "rc_adcs_estim_8_epoch"]
+overFlowSignals=[
+    "cmd_rollcall_met_overflow",
+    "grnd_epoch_val_overflow",
+    "rc_eps_dist_2_met_overflow",
+    "rc_adcs_estim_8_epoch_overflow"]
 def toPyObject(infile, **options):
     dbs = {}
 
@@ -237,15 +286,22 @@ def createCosmosTlm(candb, tlmFileName):
         tlmFile.write("\t\tSTATE STANDARD 0\n")
         signal_size = 0
         for signal in frame:
-            
             signal_size = signal_size + signal.signalsize
+            if not signal.unit in signalUnits:
+                print (signal.unit)
             signalType = tlmGetType(signal)
             if signal.is_little_endian and False:
                 signalEndian = "LITTLE_ENDIAN"
             else:
                 signalEndian = "BIG_ENDIAN"
-
-            tlmFile.write("\tAPPEND_ITEM {} {} {} \"{}\" {}\n".format(signal.name,
+            if signal.name in signalsWithOverflow:
+                tlmFile.write("\tAPPEND_ITEM {} {} {} \"{}\" {}\n".format(signal.name,
+                                                            40,
+                                                            signalType,
+                                                            signal.comment,
+                                                            signalEndian))
+            elif not (signal.name in overFlowSignals):
+                tlmFile.write("\tAPPEND_ITEM {} {} {} \"{}\" {}\n".format(signal.name,
                                                             signal.signalsize,
                                                             signalType,
                                                             signal.comment,
@@ -323,13 +379,18 @@ def createCosmosCmd(candb, tlmFileName):
                 signalEndian = "LITTLE_ENDIAN"
             else:
                 signalEndian = "BIG_ENDIAN"
-
-            tlmFile.write("\tAPPEND_PARAMETER {} {} {} MIN MAX  0 \"{}\" {}\n".format(signal.name,
+            if signal.name in signalsWithOverflow:
+                tlmFile.write("\tAPPEND_PARAMETER {} {} {} MIN MAX  0 \"{}\" {}\n".format(signal.name,
+                                                            40,
+                                                            signalType,
+                                                            signal.comment,
+                                                            signalEndian))
+            elif not (signal.name in overFlowSignals):
+                tlmFile.write("\tAPPEND_PARAMETER {} {} {} MIN MAX  0 \"{}\" {}\n".format(signal.name,
                                                             signal.signalsize,
                                                             signalType,
                                                             signal.comment,
                                                             signalEndian))
-
         if signal_size != 64:
             tlmFile.write("\tAPPEND_PARAMETER PADDING {} UINT MIN MAX 0 \"Padded bits for CAN data\"\n\n".format(64 - signal_size))
 
