@@ -87,7 +87,7 @@ signalConversions = {
 	"2^-8s":2.0**-8,
 	"2^-8 s":2.0**-8,
 	"s^-8 since J2000":1.0**-8,
-	"s^-8 since J2000 ":1.0**-8,,
+	"s^-8 since J2000 ":1.0**-8,
 	"1/73 nanoTeslas":1.0/73,
 	"0.004375 deg/s":0.004375,
 	"60/32767 degrees":60.0/32767
@@ -287,8 +287,6 @@ def createCosmosTlm(candb, tlmFileName):
         signal_size = 0
         for signal in frame:
             signal_size = signal_size + signal.signalsize
-            if not signal.unit in signalUnits:
-                print (signal.unit)
             signalType = tlmGetType(signal)
             if signal.is_little_endian and False:
                 signalEndian = "LITTLE_ENDIAN"
