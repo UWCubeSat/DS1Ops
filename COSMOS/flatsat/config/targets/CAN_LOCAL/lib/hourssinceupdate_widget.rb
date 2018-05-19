@@ -20,13 +20,13 @@ module Cosmos
     def value= (data)
 	  newNumRecieved=tlm(target_name, packet_name,"RECEIVED_COUNT")
 	  if newNumRecieved-@numRecieved > 0 
-		delta=data != @prev_val
+		delta=data.to_i - @prev_val.to_i
 		@numRecieved=newNumRecieved
-		if delta
+		if delta > 0
 			@known = true
 			@update_time=tlm(target_name, packet_name, "RECEIVED_TIMESECONDS")
-			@prev_val=data
 		end
+		@prev_val=tlm(target_name, packet_name, item_name)
 	  end
 	  if @known
 		time=Time.now.to_i
