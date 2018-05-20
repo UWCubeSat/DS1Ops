@@ -18,6 +18,31 @@ TELEMETRY MATLAB_UDP SP_ANGULAR_VELOCITY BIG_ENDIAN "Angular Velocity in Rad/Sec
   APPEND_ITEM Z_AXIS 16 INT "Z-Axis Angular Velocity rad/s"
 	UNITS Radian/Sec rad/s
 
+TELEMETRY MATLAB_UDP SP_MAG_OUT BIG_ENDIAN "Expected magnetometer output"
+  APPEND_ID_ITEM ID 8 INT 5
+  APPEND_ITEM X 16 INT "X"
+    UNITS nanoTesla nT
+  APPEND_ITEM Y 16 INT "Y"
+    UNITS nanoTesla nT
+  APPEND_ITEM Z 16 INT "Z"
+    UNITS nanoTesla nT
+    
+TELEMETRY MATLAB_UDP SP_IMU_OUT BIG_ENDIAN "Expected IMU output"
+  # Keyword      Name   BitSize Type   ID Description
+  APPEND_ID_ITEM ID 8 INT 6
+  APPEND_ITEM X 16 INT "X"
+    UNITS milli-radians/sec mrps
+  APPEND_ITEM Y 16 INT "Y"
+    UNITS milli-radians/sec mrps
+  APPEND_ITEM Z 16 INT "Z"
+    UNITS milli-radians/sec mrps
+    
+TELEMETRY MATLAB_UDP SP_SUN_OUT BIG_ENDIAN "Expected sun output unit vector"
+  APPEND_ID_ITEM ID 8 INT 7
+  APPEND_ITEM X 32 FLOAT "X"
+  APPEND_ITEM Y 32 FLOAT "Y"
+  APPEND_ITEM Z 32 FLOAT "Z"
+	
 TELEMETRY MATLAB_UDP SP_ENVIRONMENT_MAGFIELD BIG_ENDIAN "Environment magnetic field nT"
   # Keyword      Name   BitSize Type   ID Description
   APPEND_ID_ITEM ID 8 INT 4 "Environmental Magnetic Field nT"  
