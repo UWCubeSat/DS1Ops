@@ -72,30 +72,30 @@ signalToLimits = {
 
 }
 signalConversions = {
-	"1/73 nT":1.0/73,
-	"dK":.1,
-	"dk":.1,
-	"2^-15 seconds":2.0**-15,
-	"mW":.001,
-	"mA":.001,
-	"dmA":.0001,
-	"mV":.001,
-	"cA":.01,
-	"2^-8 seconds":2.0**-8,
-	"2^-15s":2.0**-15,
-	"dmA (0.1mA)":.0001,
-	"2^-8s":2.0**-8,
-	"2^-8 s":2.0**-8,
-	"s^-8 since J2000":1.0**-8,
-	"s^-8 since J2000 ":1.0**-8,
-	"1/73 nanoTeslas":1.0/73,
-	"0.004375 deg/s":0.004375,
-	"60/32767 degrees":60.0/32767
+	"1/73 nT":"value * 1.0/73",
+	"dK":"(55.0*(value-1255.0))/214.0 +30.0",
+	"dk":"(55.0*(value-1255.0))/214.0 +30.0",
+	"2^-15 seconds":"value * 2.0**-15",
+	"mW":"value * .001",
+	"mA":"value * .001",
+	"dmA":"value * .0001",
+	"mV":"value * .001",
+	"cA":"value * .01",
+	"2^-8 seconds":"value * 2.0**-8",
+	"2^-15s":"value * 2.0**-15",
+	"dmA (0.1mA)":"value * .0001",
+	"2^-8s":"value * 2.0**-8",
+	"2^-8 s":"value * 2.0**-8",
+	"s^-8 since J2000":"value * 1.0**-8",
+	"s^-8 since J2000 ":"value * 1.0**-8",
+	"1/73 nanoTeslas":"value * 1.0/73",
+	"0.004375 deg/s":"value * 0.004375",
+	"60/32767 degrees":"value * 60.0/32767"
 }
 signalUnits = {
 	"1/73 nT":"Nanoteslas nT",
-	"dK":"Kelvin K",
-	"dk":"Kelvin K",
+	"dK":"Celcius C",
+	"dk":"Celcius C",
 	"2^-15 seconds":"Seconds s",
 	"mW":"Watts W",
 	"mA":"Amps A",
@@ -309,7 +309,7 @@ def createCosmosTlm(candb, tlmFileName):
 			if signal.unit in signalConversions:
 				tlmString +=("\t\t UNITS {}\n".format(signalUnits[signal.unit]))
 				tlmString +=("\t\t GENERIC_READ_CONVERSION_START\n")
-				tlmString +=("\t\t\t value * {}\n".format(signalConversions[signal.unit]))
+				tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
 				tlmString +=("\t\t GENERIC_READ_CONVERSION_END\n")
 			if signal.name in signalToLimits:
 				tlmString +=("\t\t LIMITS DEFAULT 1 ENABLED {} {} {} {} {} {}\n".format(
