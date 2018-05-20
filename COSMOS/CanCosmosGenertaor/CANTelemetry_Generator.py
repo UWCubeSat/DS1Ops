@@ -90,7 +90,8 @@ signalConversions = {
 	"s^-8 since J2000 ":"value * 1.0**-8",
 	"1/73 nanoTeslas":"value * 1.0/73",
 	"0.004375 deg/s":"value * 0.004375",
-	"60/32767 degrees":"value * 60.0/32767"
+	"60/32767 degrees":"value * 60.0/32767",
+	"1/32768 units":"value / 32768"
 }
 signalUnits = {
 	"1/73 nT":"Nanoteslas nT",
