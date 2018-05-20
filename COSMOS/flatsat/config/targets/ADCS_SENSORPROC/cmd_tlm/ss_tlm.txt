@@ -92,16 +92,16 @@ TELEMETRY ADCS_SENSORPROC IMU_RAW BIG_ENDIAN "IMU readings"
     
     # conversion factor assuming +/- 125 dps
     APPEND_ITEM X 16 INT "X angular rate" LITTLE_ENDIAN
-      POLY_READ_CONVERSION 0 0.0000763582
-      UNITS "radians per second" "rps"
+      POLY_READ_CONVERSION 0 0.0763582
+      UNITS "milli-radians per second" "mrps"
       FORMAT_STRING "%0.4f"
     APPEND_ITEM Y 16 INT "Y angular rate" LITTLE_ENDIAN
-      POLY_READ_CONVERSION 0 0.0000763582
-      UNITS "radians per second" "rps"
+      POLY_READ_CONVERSION 0 0.0763582
+      UNITS "milli-radians per second" "mrps"
       FORMAT_STRING "%0.4f"
     APPEND_ITEM Z 16 INT "Z angular rate" LITTLE_ENDIAN
-      POLY_READ_CONVERSION 0 0.0000763582
-      UNITS "radians per second" "rps"
+      POLY_READ_CONVERSION 0 0.0763582
+      UNITS "milli-radians per second" "mrps"
       FORMAT_STRING "%0.4f"
 
 TELEMETRY ADCS_SENSORPROC IMU_VECTOR BIG_ENDIAN "IMU vector"
@@ -109,14 +109,17 @@ TELEMETRY ADCS_SENSORPROC IMU_VECTOR BIG_ENDIAN "IMU vector"
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 112} %>
     
     APPEND_ITEM X 32 FLOAT "X" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 1000
       FORMAT_STRING "%0.4f"
-      UNITS "radians per second" "rps"
+      UNITS "milli-radians per second" "mrps"
     APPEND_ITEM Y 32 FLOAT "Y" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 1000
       FORMAT_STRING "%0.4f"
-      UNITS "radians per second" "rps"
+      UNITS "milli-radians per second" "mrps"
     APPEND_ITEM Z 32 FLOAT "Z" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 1000
       FORMAT_STRING "%0.4f"
-      UNITS "radians per second" "rps"
+      UNITS "milli-radians per second" "mrps"
     APPEND_ITEM VALID 8 UINT "IMU validity" LITTLE_ENDIAN
       STATE INVALID 0 RED
       STATE VALID 1 GREEN
