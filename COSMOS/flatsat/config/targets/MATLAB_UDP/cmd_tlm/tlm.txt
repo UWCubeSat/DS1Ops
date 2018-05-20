@@ -1,0 +1,29 @@
+TELEMETRY MATLAB_UDP BDOT_ANGULAR_VELOCITY BIG_ENDIAN "Angular Velocity in Rad/Sec"
+  # Keyword      Name   BitSize Type   ID Description
+  APPEND_ID_ITEM ID 8 INT 2 "Angular Velocity Rad/S"
+  APPEND_ITEM X_AXIS 16 INT "X-Axis Angular Velocity rad/s"
+	UNITS Radian/Sec rad/s
+  APPEND_ITEM Y_AXIS 16 INT "Y-Axis Angular Velocity rad/s"
+	UNITS Radian/Sec rad/s
+  APPEND_ITEM Z_AXIS 16 INT "Z-Axis Angular Velocity rad/s"
+	UNITS Radian/Sec rad/s
+	
+TELEMETRY MATLAB_UDP SP_ANGULAR_VELOCITY BIG_ENDIAN "Angular Velocity in Rad/Sec"
+  # Keyword      Name   BitSize Type   ID Description
+  APPEND_ID_ITEM ID 8 INT 3 "Angular Velocity Rad/S"
+  APPEND_ITEM X_AXIS 16 INT "X-Axis Angular Velocity rad/s"
+	UNITS Radian/Sec rad/s
+  APPEND_ITEM Y_AXIS 16 INT "Y-Axis Angular Velocity rad/s"
+	UNITS Radian/Sec rad/s
+  APPEND_ITEM Z_AXIS 16 INT "Z-Axis Angular Velocity rad/s"
+	UNITS Radian/Sec rad/s
+
+TELEMETRY MATLAB_UDP SP_ENVIRONMENT_MAGFIELD BIG_ENDIAN "Environment magnetic field nT"
+  # Keyword      Name   BitSize Type   ID Description
+  APPEND_ID_ITEM ID 8 INT 4 "Environmental Magnetic Field nT"  
+  APPEND_ITEM X_AXIS 16 INT "X-axis environment magnetic filed in nT"
+	UNITS nanoTesla nT
+  APPEND_ITEM Y_AXIS 16 INT "Y-axis environment magnetic filed in nT"
+	UNITS nanoTesla nT
+  APPEND_ITEM Z_AXIS 16 INT "Z-axis environment magnetic filed in nT"
+	UNITS nanoTesla nT

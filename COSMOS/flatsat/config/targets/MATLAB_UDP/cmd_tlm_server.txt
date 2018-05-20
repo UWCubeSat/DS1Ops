@@ -4,5 +4,5 @@
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
 
-INTERFACE MATLAB_BDOT_INT udp_interface.rb 127.0.0.1 4012 4012
-  TARGET MATLAB_BDOT
+INTERFACE MATLAB_UDP_INT udp_interface.rb 127.0.0.1 4012 4012
+  TARGET MATLAB_UDP
