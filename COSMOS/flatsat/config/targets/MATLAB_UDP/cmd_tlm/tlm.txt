@@ -2,21 +2,21 @@ TELEMETRY MATLAB_UDP BDOT_ANGULAR_VELOCITY BIG_ENDIAN "Angular Velocity in Rad/S
   # Keyword      Name   BitSize Type   ID Description
   APPEND_ID_ITEM ID 8 INT 2 "Angular Velocity Rad/S"
   APPEND_ITEM X_AXIS 16 INT "X-Axis Angular Velocity rad/s"
-	UNITS Radian/Sec rad/s
+    UNITS Radian/Sec rad/s
   APPEND_ITEM Y_AXIS 16 INT "Y-Axis Angular Velocity rad/s"
-	UNITS Radian/Sec rad/s
+    UNITS Radian/Sec rad/s
   APPEND_ITEM Z_AXIS 16 INT "Z-Axis Angular Velocity rad/s"
-	UNITS Radian/Sec rad/s
+    UNITS Radian/Sec rad/s
 	
 TELEMETRY MATLAB_UDP SP_ANGULAR_VELOCITY BIG_ENDIAN "Angular Velocity in Rad/Sec"
   # Keyword      Name   BitSize Type   ID Description
   APPEND_ID_ITEM ID 8 INT 3 "Angular Velocity Rad/S"
   APPEND_ITEM X_AXIS 16 INT "X-Axis Angular Velocity rad/s"
-	UNITS Radian/Sec rad/s
+    UNITS Radian/Sec rad/s
   APPEND_ITEM Y_AXIS 16 INT "Y-Axis Angular Velocity rad/s"
-	UNITS Radian/Sec rad/s
+    UNITS Radian/Sec rad/s
   APPEND_ITEM Z_AXIS 16 INT "Z-Axis Angular Velocity rad/s"
-	UNITS Radian/Sec rad/s
+    UNITS Radian/Sec rad/s
 
 TELEMETRY MATLAB_UDP SP_MAG_OUT BIG_ENDIAN "Expected magnetometer output"
   APPEND_ID_ITEM ID 8 INT 5
@@ -47,8 +47,97 @@ TELEMETRY MATLAB_UDP SP_ENVIRONMENT_MAGFIELD BIG_ENDIAN "Environment magnetic fi
   # Keyword      Name   BitSize Type   ID Description
   APPEND_ID_ITEM ID 8 INT 4 "Environmental Magnetic Field nT"  
   APPEND_ITEM X_AXIS 16 INT "X-axis environment magnetic filed in nT"
-	UNITS nanoTesla nT
+    UNITS nanoTesla nT
   APPEND_ITEM Y_AXIS 16 INT "Y-axis environment magnetic filed in nT"
-	UNITS nanoTesla nT
+    UNITS nanoTesla nT
   APPEND_ITEM Z_AXIS 16 INT "Z-axis environment magnetic filed in nT"
-	UNITS nanoTesla nT
+    UNITS nanoTesla nT
+  
+TELEMETRY MATLAB_UDP ESTIM_TLE BIG_ENDIAN "TLE"
+  APPEND_ID_ITEM ID 8 INT 8
+  APPEND_ITEM YEAR 8 UINT "Year"
+  APPEND_ITEM DAY 64 FLOAT "Days since J2000"
+    UNITS days d
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM BSTAR 32 FLOAT "B-star drag term"
+    FORMAT_STRING "%.6e"
+  APPEND_ITEM RAAN 32 FLOAT "RAAN"
+    UNITS degrees deg
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM INC 32 FLOAT "Inclination"
+    UNITS degrees deg
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM ECC 32 FLOAT "Eccentricity"
+    FORMAT_STRING "%0.8f"
+  APPEND_ITEM AOP 32 FLOAT "Arg. of peri."
+    UNITS degrees deg
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM MNA 32 FLOAT "Mean anomaly"
+    UNITS degrees deg
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM MNM 64 FLOAT "Mean motion"
+    UNITS "revolutions per day" rev/d
+    FORMAT_STRING "%0.4f"
+  
+TELEMETRY MATLAB_UDP ESTIM_MET BIG_ENDIAN "Mission elapsed time"
+  APPEND_ID_ITEM ID 8 INT 9
+  APPEND_ITEM MET 64 FLOAT "Mission elapsed time"
+    UNITS seconds s
+    FORMAT_STRING "%0.4f"
+
+TELEMETRY MATLAB_UDP ESTIM_EPOCH BIG_ENDIAN "MET epoch"
+  APPEND_ID_ITEM ID 8 INT 10
+  APPEND_ITEM EPOCH 64 FLOAT "MET epoch"
+    UNITS seconds s
+    FORMAT_STRING "%.4f"
+    
+TELEMETRY MATLAB_UDP ESTIM_STATE BIG_ENDIAN "State booleans"
+  APPEND_ID_ITEM ID 8 INT 11
+  APPEND_ITEM IN_SUN 8 UINT "In sun?"
+    STATE 0 "Not in sun"
+    STATE 1 "In sun"
+  APPEND_ITEM ABOVE_GS 8 UINT "Above ground station?"
+    STATE 0 "Not above"
+    STATE 1 "Above"
+
+TELEMETRY MATLAB_UDP ESTIM_SUN BIG_ENDIAN "Unit vector from spacecraft to sun"
+  APPEND_ID_ITEM ID 8 INT 12
+  APPEND_ITEM X 64 FLOAT "X"
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM Y 64 FLOAT "Y"
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM Z 64 FLOAT "Z"
+    FORMAT_STRING "%0.4f"
+  
+TELEMETRY MATLAB_UDP ESTIM_MAG BIG_ENDIAN "Unit vector of direction of magnetic field, ECI"
+  APPEND_ID_ITEM ID 8 INT 13
+  APPEND_ITEM X 64 FLOAT "X"
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM Y 64 FLOAT "Y"
+    FORMAT_STRING "%0.4f"
+  APPEND_ITEM Z 64 FLOAT "Z"
+    FORMAT_STRING "%0.4f"
+  
+TELEMETRY MATLAB_UDP ESTIM_POS BIG_ENDIAN "Position, ECI"
+  APPEND_ID_ITEM ID 8 INT 14
+  APPEND_ITEM X 64 FLOAT "X"
+    UNITS meters m
+    FORMAT_STRING "%0.1f"
+  APPEND_ITEM Y 64 FLOAT "Y"
+    UNITS meters m
+    FORMAT_STRING "%0.1f"
+  APPEND_ITEM Z 64 FLOAT "Z"
+    UNITS meters m
+    FORMAT_STRING "%0.1f"
+    
+TELEMETRY MATLAB_UDP ESTIM_VEL BIG_ENDIAN "Velocity, ECI"
+  APPEND_ID_ITEM ID 8 INT 15
+  APPEND_ITEM X 64 FLOAT "X"
+    UNITS "meters per second" m/s
+    FORMAT_STRING "%0.1f"
+  APPEND_ITEM Y 64 FLOAT "Y"
+    UNITS "meters per second" m/s
+    FORMAT_STRING "%0.1f"
+  APPEND_ITEM Z 64 FLOAT "Z"
+    UNITS "meters per second" m/s
+    FORMAT_STRING "%0.1f"
