@@ -8,26 +8,22 @@ MATRIXBYCOLUMNS 6 50 10
    LABEL "Average Temperature"
    
    
-   TITLE "EPS Dist Board"
+   LABEL "EPS Dist Board"
   <%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
-  TITLE "EPS Gen board"
+  LABEL "EPS Gen board"
   <%=render "_sharedData.txt", locals:{subsyst: 'EPS_GEN'}%>
-  TITLE "BDOT"
+  LABEL "BDOT"
   <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_BDOT'}%>
-  TITLE "ADCS Estim"
+  LABEL "ADCS Estim"
   <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
-  TITLE "ADCS MPC"
+  LABEL "ADCS MPC"
   <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MPC'}%>
-  TITLE "ADCS SensorProc"
+  LABEL "ADCS SensorProc"
   <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_SP'}%>
-  TITLE "ADCS MTQ"
+  LABEL "ADCS MTQ"
   <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MTQ'}%>
-  TITLE "PPT"
+  LABEL "PPT"
   <%=render "_sharedData.txt", locals:{subsyst: 'PPT'}%>
-  TITLE "EPS Batt"
+  LABEL "EPS Batt"
   <%=render "_sharedData.txt", locals:{subsyst: 'EPS_BATT'}%>
-  TITLE "Com1"
-  <%=render "_sharedData.txt", locals:{subsyst: 'COM1'}%>
-  TITLE "Com2"
-  <%=render "_sharedData.txt", locals:{subsyst: 'COM2'}%>
 END

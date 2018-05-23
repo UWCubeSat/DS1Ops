@@ -32,7 +32,7 @@ import canmatrix.formats
 import canmatrix.canmatrix as cm
 import canmatrix.copy as cmcp
 
-temperatureLimits=[288, 293, 303, 308, 295, 301]
+temperatureLimits=[15, 20, 30, 35]
 signalToLimits = {
 		"rc_eps_batt_1_temp_avg":temperatureLimits,
 	"rc_adcs_bdot_1_temp_avg":temperatureLimits,
@@ -69,6 +69,22 @@ signalToLimits = {
 	"rc_adcs_mtq_1_temp_min":temperatureLimits,
 	"rc_com1_1_temp_min":temperatureLimits,
 	"rc_com2_1_temp_min":temperatureLimits,
+	
+	"rc_eps_dist_3_batt_v_avg":[5.2, 5.8,7.3, 7.7],
+	"rc_eps_dist_4_com1_c_avg":[0.01, 0.08, 0.12, 0.15],
+	"rc_eps_dist_5_com1_v_avg":[0.5,3.0,7.0,10.0],
+	"rc_eps_dist_6_com2_c_avg":[0.07, 0.095, 0.135, 0.20],
+	"rc_eps_dist_7_com2_v_avg":[0.5,3.0,7.0,10.0],
+	"rc_eps_dist_8_rahs_c_avg":[0.01, 0.08, 0.12, 0.15],
+	"rc_eps_dist_9_rahs_v_avg":[0.5,3.0,7.0,10.0],
+	"rc_eps_dist_10_bdot_c_avg":[0.01,0.08,0.12,0.15],
+	"rc_eps_dist_11_bdot_v_avg":[0.5,3.0,7.0,10.0],
+	"rc_eps_dist_12_estim_c_avg":[0.01,0.08,0.12,0.15],
+	"rc_eps_dist_13_estim_v_avg":[0.5,3.0,7.0,10.0],
+	"rc_eps_dist_14_eps_c_avg":[0.01, 0.08, 0.12, 0.15],
+	"rc_eps_dist_15_eps_v_avg":[0.5,3.0,7.0,10.0],
+	"rc_eps_dist_16_ppt_c_avg":[0.1,0.25,0.4,0.5],
+	"rc_eps_dist_17_ppt_v_avg":[0.5,3.0,7.0,10.0]
 
 }
 signalConversions = {
@@ -119,7 +135,8 @@ signalUnits = {
 	"C":"Degrees_Celcius C",
 	"deg C":"Degrees_Celcius C",
 	"Deg C":"Degrees_Celcius C",
-	"s":"Seconds s"
+	"s":"Seconds s",
+	"1/32768 units":"Units u"
 }
 signalsWithOverflow=[
 	"cmd_rollcall_met",
@@ -313,13 +330,11 @@ def createCosmosTlm(candb, tlmFileName):
 				tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
 				tlmString +=("\t\t GENERIC_READ_CONVERSION_END\n")
 			if signal.name in signalToLimits:
-				tlmString +=("\t\t LIMITS DEFAULT 1 ENABLED {} {} {} {} {} {}\n".format(
+				tlmString +=("\t\t LIMITS DEFAULT 1 ENABLED {} {} {} {}\n".format(
 															signalToLimits[signal.name][0],
 															signalToLimits[signal.name][1],
 															signalToLimits[signal.name][2],
-															signalToLimits[signal.name][3],
-															signalToLimits[signal.name][4],
-															signalToLimits[signal.name][5],
+															signalToLimits[signal.name][3]
 															))
 			signalStrings[signal._startbit] = tlmString
 		if signal_size != 64:
