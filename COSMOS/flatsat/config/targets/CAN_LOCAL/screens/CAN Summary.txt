@@ -1,5 +1,5 @@
 SCREEN AUTO AUTO 1.0
-MATRIXBYCOLUMNS 6 50 10
+MATRIXBYCOLUMNS 6 20 10
    LABEL " "
    LABEL "Time Since Last Update"
    LABEL "Received Packets"
