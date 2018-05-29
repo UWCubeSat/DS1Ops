@@ -116,7 +116,46 @@ signalToLimits = {
 	"rc_eps_dist_14_eps_c_max":[0.01, 0.08, 0.12, 0.15],
 	"rc_eps_dist_15_eps_v_max":[0.5,3.0,7.0,10.0],
 	"rc_eps_dist_16_ppt_c_max":[0.1,0.25,0.4,0.5],
-	"rc_eps_dist_17_ppt_v_max":[0.5,3.0,7.0,10.0]
+	"rc_eps_dist_17_ppt_v_max":[0.5,3.0,7.0,10.0],
+	
+	"rc_eps_gen_2_pnl_1_voltage_avg":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_3_pnl_2_voltage_avg":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_4_pnl_3_voltage_avg":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_4_pnl_1_current_avg":[0.003,.05,.3,.4],
+	"rc_eps_gen_5_pnl_2_current_avg":[0.003,.05,.45,.6],
+	"rc_eps_gen_6_pnl_3_current_avg":[0.003,.05,.3,.4],
+	"rc_eps_gen_7_pnl_1_power_avg":[0.06,1.0,3.0,4.0],
+	"rc_eps_gen_7_pnl_2_power_avg":[0.06,1.0,6.0,7.0],
+	"rc_eps_gen_8_pnl_3_power_avg":[0.06,1.0,3.0,4.0],
+	"rc_eps_gen_9_pnl_1_temp_avg":[17,19.5,23,25],
+	"rc_eps_gen_9_pnl_2_temp_avg":[17,19.5,23,25],
+	"rc_eps_gen_9_pnl_3_temp_avg":[17,19.5,23,25],
+	
+	"rc_eps_gen_2_pnl_1_voltage_min":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_2_pnl_2_voltage_min":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_3_pnl_3_voltage_min":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_4_pnl_1_current_min":[0.003,.05,.3,.4],
+	"rc_eps_gen_5_pnl_2_current_min":[0.003,.05,.45,.6],
+	"rc_eps_gen_5_pnl_3_current_min":[0.003,.05,.3,.4],
+	"rc_eps_gen_6_pnl_1_power_min":[0.06,1.0,3.0,4.0],
+	"rc_eps_gen_7_pnl_2_power_min":[0.06,1.0,6.0,7.0],
+	"rc_eps_gen_8_pnl_3_power_min":[0.06,1.0,3.0,4.0],
+	"rc_eps_gen_8_pnl_1_temp_min":[17,19.5,23,25],
+	"rc_eps_gen_9_pnl_2_temp_min":[17,19.5,23,25],
+	"rc_eps_gen_9_pnl_3_temp_min":[17,19.5,23,25],
+	
+	"rc_eps_gen_2_pnl_1_voltage_max":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_3_pnl_2_voltage_max":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_3_pnl_3_voltage_max":[3.0, 9.0,17.0,18.0],
+	"rc_eps_gen_4_pnl_1_current_max":[0.003,.05,.3,.4],
+	"rc_eps_gen_5_pnl_2_current_max":[0.003,.05,.45,.6],
+	"rc_eps_gen_6_pnl_3_current_max":[0.003,.05,.3,.4],
+	"rc_eps_gen_6_pnl_1_power_max":[0.06,1.0,3.0,4.0],
+	"rc_eps_gen_7_pnl_2_power_max":[0.06,1.0,6.0,7.0],
+	"rc_eps_gen_8_pnl_3_power_max":[0.06,1.0,3.0,4.0],
+	"rc_eps_gen_9_pnl_1_temp_max":[17,19.5,23,25],
+	"rc_eps_gen_9_pnl_2_temp_max":[17,19.5,23,25],
+	"rc_eps_gen_9_pnl_3_temp_max":[17,19.5,23,25]
 
 }
 signalConversions = {
