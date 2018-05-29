@@ -10,6 +10,18 @@ TELEMETRY ADCS_BDOT MAGNETOMETER BIG_ENDIAN "Magnetometer readings"
     APPEND_ITEM Z_AXIS 32 FLOAT "Z-axis magnetometer reading in nT" LITTLE_ENDIAN
 	UNITS nanoTesla nT
 
+TELEMETRY ADCS_BDOT CONTINUOUS_MAGNETOMETER BIG_ENDIAN "Magnetometer readings"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 120} %>
+	
+    
+    APPEND_ITEM X_AXIS 32 FLOAT "X-axis magnetometer reading in nT" LITTLE_ENDIAN
+	UNITS nanoTesla nT
+    APPEND_ITEM Y_AXIS 32 FLOAT "Y-axis magnetometer reading in nT" LITTLE_ENDIAN
+	UNITS nanoTesla nT
+    APPEND_ITEM Z_AXIS 32 FLOAT "Z-axis magnetometer reading in nT" LITTLE_ENDIAN
+	UNITS nanoTesla nT
+
 TELEMETRY ADCS_BDOT MTQ_INFO BIG_ENDIAN "Magnetorquer Info readings"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 126} %>
