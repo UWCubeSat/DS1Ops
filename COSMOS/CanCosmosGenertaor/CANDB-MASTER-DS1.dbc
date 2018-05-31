@@ -46,6 +46,35 @@ VAL_TABLE_ agg 5 "sum" 4 "max" 3 "min" 2 "count" 1 "avg" 0 "none" ;
 VAL_TABLE_ bool 1 "true" 0 "false" ;
 
 
+BO_ 2452161114 rc_eps_batt_7: 6 Vector__XXX
+ SG_ rc_eps_batt_7_acc_charge_min : 0|16@1+ (1,0) [0|65535] "22.588 mAh" Vector__XXX
+ SG_ rc_eps_batt_7_acc_charge_max : 16|16@1+ (1,0) [0|65535] "22.588 mAh" Vector__XXX
+ SG_ rc_eps_batt_7_acc_charge_avg : 32|16@1+ (1,0) [0|65535] "22.588 mAh" Vector__XXX
+
+BO_ 2483355716 sensorproc_mag2: 7 Vector__XXX
+ SG_ sensorproc_mag2_z : 32|16@1- (1,0) [-32768|32767] "" Vector__XXX
+ SG_ sensorproc_mag2_y : 16|16@1- (1,0) [-32768|32767] "" Vector__XXX
+ SG_ sensorproc_mag2_x : 0|16@1- (1,0) [-32768|32767] "" Vector__XXX
+ SG_ sensorproc_mag2_valid : 48|1@1+ (1,0) [0|1] "bool" Vector__XXX
+
+BO_ 2452161113 rc_adcs_estim_14: 8 Vector__XXX
+ SG_ rc_adcs_estim_14_mag_z : 0|64@1- (1,0) [-1|1] "" Vector__XXX
+
+BO_ 2452161112 rc_adcs_estim_13: 8 Vector__XXX
+ SG_ rc_adcs_estim_13_mag_y : 0|64@1- (1,0) [-1|1] "" Vector__XXX
+
+BO_ 2452161111 rc_adcs_estim_12: 8 Vector__XXX
+ SG_ rc_adcs_estim_12_mag_x : 0|64@1- (1,0) [-1|1] "" Vector__XXX
+
+BO_ 2452161110 rc_adcs_estim_11: 8 Vector__XXX
+ SG_ rc_adcs_estim_11_sun_z : 0|64@1- (1,0) [-1|1] "" Vector__XXX
+
+BO_ 2452161109 rc_adcs_estim_10: 8 Vector__XXX
+ SG_ rc_adcs_estim_10_sun_y : 0|64@1- (1,0) [-1|1] "" Vector__XXX
+
+BO_ 2452161108 rc_adcs_estim_9: 8 Vector__XXX
+ SG_ rc_adcs_estim_9_sun_x : 0|64@1- (1,0) [-1|1] "" Vector__XXX
+
 BO_ 2452161106 rc_eps_dist_16: 7 Vector__XXX
  SG_ rc_eps_dist_16_ppt_state : 0|8@1+ (1,0) [0|3] "" Vector__XXX
  SG_ rc_eps_dist_16_ppt_c_min : 8|16@1+ (1,0) [0|65535] "mA" Vector__XXX
@@ -80,8 +109,8 @@ BO_ 2452161093 rc_eps_dist_3: 6 Vector__XXX
 
 BO_ 2452161092 rc_eps_dist_2: 6 Vector__XXX
  SG_ rc_eps_dist_2_uv_state : 0|8@1+ (1,0) [0|3] "" Vector__XXX
- SG_ rc_eps_dist_2_met_overflow : 40|8@1+ (1,0) [0|4294967295] "" Vector__XXX
- SG_ rc_eps_dist_2_met : 8|32@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ rc_eps_dist_2_met_overflow : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ rc_eps_dist_2_met : 8|32@1+ (1,0) [0|4294967296] "" Vector__XXX
 
 BO_ 2452161107 rc_eps_dist_17: 6 Vector__XXX
  SG_ rc_eps_dist_17_ppt_v_min : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
@@ -194,7 +223,7 @@ BO_ 2452161075 rc_adcs_estim_8: 7 Vector__XXX
  SG_ rc_adcs_estim_8_sgp4_flag : 40|8@1- (1,0) [-1|1] "" Vector__XXX
  SG_ rc_adcs_estim_8_sc_in_sun : 48|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ rc_adcs_estim_8_sc_above_gs : 49|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ rc_adcs_estim_8_epoch_overflow : 32|8@1+ (1,0) [0|256] "s^-8 since J2000 " Vector__XXX
+ SG_ rc_adcs_estim_8_epoch_overflow : 32|8@1+ (1,0) [0|255] "s^-8 since J2000 " Vector__XXX
  SG_ rc_adcs_estim_8_epoch : 0|32@1+ (1,0) [0|4294967295] "s^-8 since J2000 " Vector__XXX
 
 BO_ 2452161074 rc_adcs_estim_7: 8 Vector__XXX
@@ -235,16 +264,13 @@ BO_ 2452161061 rc_adcs_sp_11: 8 Vector__XXX
  SG_ rc_adcs_sp_11_mag2_y_min : 48|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
 
 BO_ 2452161057 rc_adcs_sp_7: 8 Vector__XXX
- SG_ rc_adcs_sp_7_magp_y_min : 16|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
- SG_ rc_adcs_sp_7_magp_y_max : 32|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
- SG_ rc_adcs_sp_7_magp_y_avg : 48|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
- SG_ rc_adcs_sp_7_magp_x_avg : 0|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
 
 BO_ 2452161056 rc_adcs_sp_6: 8 Vector__XXX
+ SG_ rc_adcs_sp_6_mag2_valid : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ rc_adcs_sp_6_mag1_x_min : 48|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
+ SG_ rc_adcs_sp_6_mag1_valid : 32|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ rc_adcs_sp_6_sun_z_max : 0|16@1- (1,0) [-32768|32767] "1/32768 units" Vector__XXX
  SG_ rc_adcs_sp_6_sun_z_avg : 16|16@1- (1,0) [-32768|32767] "1/32768 units" Vector__XXX
- SG_ rc_adcs_sp_6_magp_x_min : 32|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
- SG_ rc_adcs_sp_6_magp_x_max : 48|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
 
 BO_ 2452161067 rc_adcs_sp_17: 8 Vector__XXX
  SG_ rc_adcs_sp_17_imu_z_max : 0|16@1- (1,0) [-32768|32767] "0.004375 deg/s" Vector__XXX
@@ -263,10 +289,6 @@ BO_ 2452161060 rc_adcs_sp_10: 8 Vector__XXX
  SG_ rc_adcs_sp_10_mag1_y_avg : 0|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
 
 BO_ 2452161058 rc_adcs_sp_8: 8 Vector__XXX
- SG_ rc_adcs_sp_8_magp_z_min : 0|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
- SG_ rc_adcs_sp_8_magp_z_max : 16|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
- SG_ rc_adcs_sp_8_magp_z_avg : 32|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
- SG_ rc_adcs_sp_8_mag1_x_min : 48|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
 
 BO_ 2452161059 rc_adcs_sp_9: 8 Vector__XXX
  SG_ rc_adcs_sp_9_mag1_y_min : 32|16@1- (1,0) [-32768|32767] "1/73 nanoTeslas" Vector__XXX
@@ -286,12 +308,11 @@ BO_ 2452161065 rc_adcs_sp_15: 8 Vector__XXX
  SG_ rc_adcs_sp_15_imu_x_avg : 40|16@1- (1,0) [-32768|32767] "0.004375 deg/s" Vector__XXX
  SG_ rc_adcs_sp_15_imu_valid : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 2452161064 rc_adcs_sp_14: 8 Vector__XXX
+BO_ 2452161064 rc_adcs_sp_14: 7 Vector__XXX
  SG_ rc_adcs_sp_14_sunb_min : 0|16@1- (1,0) [-32768|32767] "60/32767 degrees" Vector__XXX
  SG_ rc_adcs_sp_14_sunb_max : 16|16@1- (1,0) [-32768|32767] "60/32767 degrees" Vector__XXX
  SG_ rc_adcs_sp_14_sunb_avg : 32|16@1- (1,0) [-32768|32767] "60/32767 degrees" Vector__XXX
- SG_ rc_adcs_sp_14_sun_valid : 56|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_adcs_sp_14_magp_valid : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ rc_adcs_sp_14_sun_valid : 48|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 2452161055 rc_adcs_sp_5: 8 Vector__XXX
  SG_ rc_adcs_sp_5_sun_z_min : 48|16@1- (1,0) [-32768|32767] "1/32768 units" Vector__XXX
@@ -487,11 +508,10 @@ BO_ 2452161040 rc_eps_gen_1: 8 Vector__XXX
  SG_ rc_eps_gen_1_temp_avg : 32|16@1+ (1,0) [0|65535] "dK" Vector__XXX
  SG_ rc_eps_gen_1_sysrstiv : 48|8@1+ (1,0) [0|256] "" Vector__XXX
 
-BO_ 2452161029 rc_eps_batt_6: 8 Vector__XXX
- SG_ rc_eps_batt_6_soc_min : 0|8@1+ (1,0) [0|255] "pct" Vector__XXX
- SG_ rc_eps_batt_6_soc_max : 8|8@1+ (1,0) [0|255] "pct" Vector__XXX
- SG_ rc_eps_batt_6_soc_avg : 16|8@1+ (1,0) [0|255] "pct" Vector__XXX
- SG_ rc_eps_batt_6_last_charge : 24|40@1+ (1,0) [0|1099511627775] "2^-8 seconds" Vector__XXX
+BO_ 2452161029 rc_eps_batt_6: 7 Vector__XXX
+ SG_ rc_eps_batt_6_status : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ rc_eps_batt_6_ctrl : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ rc_eps_batt_6_last_charge : 16|40@1+ (1,0) [0|1099511627775] "2^-8 seconds" Vector__XXX
 
 BO_ 2452161028 rc_eps_batt_5: 8 Vector__XXX
  SG_ rc_eps_batt_5_node_c_min : 0|16@1- (1,0) [-1000|1000] "dmA" Vector__XXX
@@ -724,6 +744,7 @@ BO_TX_BU_ 2183725075 : eps_batt,adcs_bdot,adcs_estim,adcs_mpc,adcs_mtq,adcs_rwx,
 
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "BusType" "CAN";
+VAL_ 2483355716 sensorproc_mag2_valid 1 "true" 0 "false" ;
 VAL_ 2452161106 rc_eps_dist_16_ppt_state 3 "off_batt_undervoltage" 2 "off_overcurrent" 1 "off_manual" 0 "on" ;
 VAL_ 2452161096 rc_eps_dist_6_com2_state 3 "off_batt_undervoltage" 2 "off_overcurrent" 1 "off_manual" 0 "on" ;
 VAL_ 2452161092 rc_eps_dist_2_uv_state 1 "undervoltage" 0 "normal" ;
@@ -770,6 +791,12 @@ VAL_ 2183266498 eps_batt_state_bal 1 "true" 0 "false" ;
 VAL_ 2183266498 eps_batt_state_heat 1 "true" 0 "false" ;
 VAL_ 2483355713 sensorproc_sun_valid 1 "true" 0 "false" ;
 VAL_ 2181496864 bdot_tumble_status_status 1 "true" 0 "false" ;
+SIG_VALTYPE_ 2452161113 rc_adcs_estim_14_mag_z : 2;
+SIG_VALTYPE_ 2452161112 rc_adcs_estim_13_mag_y : 2;
+SIG_VALTYPE_ 2452161111 rc_adcs_estim_12_mag_x : 2;
+SIG_VALTYPE_ 2452161110 rc_adcs_estim_11_sun_z : 2;
+SIG_VALTYPE_ 2452161109 rc_adcs_estim_10_sun_y : 2;
+SIG_VALTYPE_ 2452161108 rc_adcs_estim_9_sun_x : 2;
 SIG_VALTYPE_ 2452161086 rc_adcs_mpc_11_omega_y_avg : 2;
 SIG_VALTYPE_ 2452161082 rc_adcs_mpc_7_omega_x_max : 2;
 SIG_VALTYPE_ 2452161083 rc_adcs_mpc_8_omega_x_avg : 2;
