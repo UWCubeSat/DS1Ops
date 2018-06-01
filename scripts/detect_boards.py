@@ -9,7 +9,7 @@ ports_list = [
         None,  #0
         "ADCS_BDOT",
         "MATLAB_BDOT",
-        None,  #3
+        "ADCS_BDOT_1",
         None,  #4
         "PPT",
         "EPSDIST",
