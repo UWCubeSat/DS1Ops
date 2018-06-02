@@ -1010,7 +1010,8 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_8 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_sgp4_flag 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_sc_in_sun 1 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_sc_above_gs 1 UINT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_estim_8_tle_id 1 UINT "None" BIG_ENDIAN
+	APPEND_ITEM PADDING 13 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_adcs_estim_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
