@@ -370,6 +370,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_2 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_2_uv_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_2_met 40 UINT "None" BIG_ENDIAN
+		UNITS Seconds s
+		GENERIC_READ_CONVERSION_START
+			value * 2.0**-8
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_17 BIG_ENDIAN 
@@ -1013,13 +1017,9 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_8 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_epoch 40 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
-			value * 1.0**-8
+			value * 2.0**-8
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%.0f"
-		UNITS Seconds s
-		GENERIC_READ_CONVERSION_START
-			value * 1.0**-8
-		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_estim_8_sgp4_flag 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_sc_in_sun 1 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_sc_above_gs 1 UINT "None" BIG_ENDIAN
@@ -3217,6 +3217,10 @@ TELEMETRY CAN_LOCAL cmd_rollcall BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM cmd_rollcall_msp 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM cmd_rollcall_met 40 UINT "None" BIG_ENDIAN
+		UNITS Seconds s
+		GENERIC_READ_CONVERSION_START
+			value * 2.0**-8
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM cmd_rollcall_type 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
