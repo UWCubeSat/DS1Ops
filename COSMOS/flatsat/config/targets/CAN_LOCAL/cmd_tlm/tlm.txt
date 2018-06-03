@@ -762,6 +762,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_11 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_11_omega_y_avg 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -778,6 +780,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_7 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_7_omega_x_max 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -794,6 +798,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_8 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_8_omega_x_avg 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -810,6 +816,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_9 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_9_omega_y_min 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -826,6 +834,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_5 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_5_sc_quat_4 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -842,6 +851,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_6 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_6_omega_x_min 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -858,6 +869,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_4 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_4_sc_quat_3 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -874,6 +886,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_3 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_3_sc_quat_2 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -909,6 +922,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_12 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_12_omega_z_min 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -925,6 +940,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_13 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_13_omega_z_max 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -941,6 +958,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_14 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_14_omega_z_avg 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -957,6 +976,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_10 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_10_omega_y_max 64 FLOAT "None" BIG_ENDIAN
+		UNITS Radians_Per_Second r/s
+		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -973,6 +994,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_2 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_2_sc_quat_1 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1054,6 +1076,7 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_7 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_estim_7_vel_z 64 FLOAT "None" BIG_ENDIAN
+		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL rc_adcs_estim_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1071,6 +1094,7 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_6 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_estim_6_vel_y 64 FLOAT "None" BIG_ENDIAN
+		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL rc_adcs_estim_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1088,6 +1112,7 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_5 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_estim_5_vel_x 64 FLOAT "None" BIG_ENDIAN
+		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL rc_adcs_estim_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1105,6 +1130,7 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_4 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_estim_4_pos_z 64 FLOAT "None" BIG_ENDIAN
+		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 TELEMETRY CAN_LOCAL rc_adcs_estim_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1122,6 +1148,7 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_2 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_estim_2_pos_x 64 FLOAT "None" BIG_ENDIAN
+		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 TELEMETRY CAN_LOCAL rc_adcs_estim_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1139,6 +1166,7 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_3 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_estim_3_pos_y 64 FLOAT "None" BIG_ENDIAN
+		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 TELEMETRY CAN_LOCAL rc_adcs_estim_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1872,6 +1900,7 @@ TELEMETRY CAN_LOCAL estim_sun_unit_z BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM estim_sun_unit_z_val 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL estim_sun_unit_y BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1888,6 +1917,7 @@ TELEMETRY CAN_LOCAL estim_sun_unit_y BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM estim_sun_unit_y_val 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL estim_sun_unit_x BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1904,6 +1934,7 @@ TELEMETRY CAN_LOCAL estim_sun_unit_x BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM estim_sun_unit_x_val 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL estim_mag_unit_z BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1920,6 +1951,7 @@ TELEMETRY CAN_LOCAL estim_mag_unit_z BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM estim_mag_unit_z_val 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL estim_mag_unit_y BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1936,6 +1968,7 @@ TELEMETRY CAN_LOCAL estim_mag_unit_y BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM estim_mag_unit_y_val 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL estim_mag_unit_x BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1952,6 +1985,7 @@ TELEMETRY CAN_LOCAL estim_mag_unit_x BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM estim_mag_unit_x_val 64 FLOAT "None" BIG_ENDIAN
+		FORMAT_STRING "%0.4f"
 TELEMETRY CAN_LOCAL estim_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -2214,27 +2248,35 @@ TELEMETRY CAN_LOCAL rc_eps_gen_9 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_9_pnl_1_temp_max 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_gen_9_pnl_1_temp_avg 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_gen_9_pnl_2_temp_min 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_gen_9_pnl_2_temp_max 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_gen_9_pnl_2_temp_avg 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_gen_9_pnl_3_temp_min 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_gen_9_pnl_3_temp_max 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_gen_9_pnl_3_temp_avg 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_eps_gen_8 BIG_ENDIAN 
@@ -2271,6 +2313,7 @@ TELEMETRY CAN_LOCAL rc_eps_gen_8 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
 	APPEND_ITEM rc_eps_gen_8_pnl_1_temp_min 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		FORMAT_STRING "%0.3f"
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
@@ -2602,7 +2645,9 @@ TELEMETRY CAN_LOCAL rc_eps_batt_5 BIG_ENDIAN
 			value * 0.0001
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_5_batt_temp_min 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 	APPEND_ITEM rc_eps_batt_5_batt_temp_max 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 TELEMETRY CAN_LOCAL rc_eps_batt_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -2668,6 +2713,7 @@ TELEMETRY CAN_LOCAL rc_eps_batt_3 BIG_ENDIAN
 			value * 0.01
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_3_batt_temp_avg 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_batt_2 BIG_ENDIAN 
@@ -3018,6 +3064,7 @@ TELEMETRY CAN_LOCAL com2_state BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM com2_state_uptime 16 UINT "None" BIG_ENDIAN
+		UNITS Seconds s
 		FORMAT_STRING "%0.4f"
 	APPEND_ITEM com2_state_qlen 16 UINT "None" BIG_ENDIAN
 	APPEND_ITEM com2_state_qfilesize 16 UINT "None" BIG_ENDIAN
@@ -3472,6 +3519,7 @@ TELEMETRY CAN_LOCAL eps_batt_state BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM eps_batt_state_temp 8 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
 	APPEND_ITEM eps_batt_state_soc 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM eps_batt_state_heat 1 UINT "None" BIG_ENDIAN
 	APPEND_ITEM eps_batt_state_bal 1 UINT "None" BIG_ENDIAN

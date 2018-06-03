@@ -218,7 +218,8 @@ unitFormat = {
 	"s":"%0.4f",
 	"C":"%0.3f",
 	"dK":"%0.3f",
-	"dk":"%0.3f"
+	"dk":"%0.3f",
+	"r/s":"%0.3f"
 }
 
 # adds a FORMAT_STRING for specific signals. Overrides the unit formatting
@@ -412,11 +413,12 @@ def createCosmosTlm(candb, tlmFileName):
 															signalType,
 															signal.comment,
 															signalEndian))
-			if signal.unit in signalConversions:
+			if signal.unit in signalUnits:
 				tlmString +=("\t\tUNITS {}\n".format(signalUnits[signal.unit]))
-				tlmString +=("\t\tGENERIC_READ_CONVERSION_START\n")
-				tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
-				tlmString +=("\t\tGENERIC_READ_CONVERSION_END\n")
+				if signal.unit in signalConversions:
+					tlmString +=("\t\tGENERIC_READ_CONVERSION_START\n")
+					tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
+					tlmString +=("\t\tGENERIC_READ_CONVERSION_END\n")
 			if signal.name in signalToLimits:
 				tlmString +=("\t\tLIMITS DEFAULT 1 ENABLED {} {} {} {}\n".format(
 															signalToLimits[signal.name][0],
