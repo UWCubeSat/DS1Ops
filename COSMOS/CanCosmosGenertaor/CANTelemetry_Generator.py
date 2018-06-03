@@ -174,6 +174,7 @@ signalConversions = {
 	"2^-8s":"value * 2.0**-8",
 	"2^-8 s":"value * 2.0**-8",
 	"1/73 nanoTeslas":"value * 1.0/73",
+	"73 nanoTeslas":"value * 73",
 	"0.004375 deg/s":"value * 0.004375",
 	"60/32767 degrees":"value * 60.0/32767",
 	"1/32768 units":"value / 32768"
@@ -197,6 +198,7 @@ signalUnits = {
 	"m/s":"Meters_Per_Second m/s",
 	"m":"Meters m",
 	"1/73 nanoTeslas":"Nanoteslas nT",
+	"73 nanoTeslas":"Nanoteslas nT",
 	"0.004375 deg/s":"Degrees_Per_Second deg/s",
 	"60/32767 degrees":"Degrees deg",
 	"C":"Degrees_Celcius C",
