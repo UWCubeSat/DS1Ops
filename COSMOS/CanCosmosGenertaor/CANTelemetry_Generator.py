@@ -212,12 +212,15 @@ signalUnits = {
 
 # adds a FORMAT_STRING to the signal depending on what unit was used
 unitFormat = {
-  "m/s":"%0.4f",
-  "m":"%0.1f",
-  "u":"%0.4f",
-  "deg":"%0.4f",
-  "d":"%0.4f",
-  "s":"%0.4f"
+	"m/s":"%0.4f",
+	"m":"%0.1f",
+	"u":"%0.4f",
+	"deg":"%0.4f",
+	"d":"%0.4f",
+	"s":"%0.4f",
+	"C":"%0.3f",
+	"dK":"%0.3f",
+	"dk":"%0.3f"
 }
 
 # adds a FORMAT_STRING for specific signals. Overrides the unit formatting
