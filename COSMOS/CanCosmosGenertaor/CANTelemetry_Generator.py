@@ -209,6 +209,22 @@ signalUnits = {
 	"s":"Seconds s",
 	"1/32768 units":"Units u"
 }
+
+# adds a FORMAT_STRING to the signal depending on what unit was used
+unitFormat = {
+  "m/s":"%0.4f",
+  "m":"%0.1f",
+  "u":"%0.4f",
+  "deg":"%0.4f",
+  "d":"%0.4f",
+  "s":"%0.4f"
+}
+
+# adds a FORMAT_STRING for specific signals. Overrides the unit formatting
+signalFormat = {
+  "rc_adcs_estim_8_epoch":"%.0f"
+}
+
 signalsWithOverflow=[
 	"cmd_rollcall_met",
 	"grnd_epoch_val",
@@ -396,17 +412,21 @@ def createCosmosTlm(candb, tlmFileName):
 															signal.comment,
 															signalEndian))
 			if signal.unit in signalConversions:
-				tlmString +=("\t\t UNITS {}\n".format(signalUnits[signal.unit]))
-				tlmString +=("\t\t GENERIC_READ_CONVERSION_START\n")
+				tlmString +=("\t\tUNITS {}\n".format(signalUnits[signal.unit]))
+				tlmString +=("\t\tGENERIC_READ_CONVERSION_START\n")
 				tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
-				tlmString +=("\t\t GENERIC_READ_CONVERSION_END\n")
+				tlmString +=("\t\tGENERIC_READ_CONVERSION_END\n")
 			if signal.name in signalToLimits:
-				tlmString +=("\t\t LIMITS DEFAULT 1 ENABLED {} {} {} {}\n".format(
+				tlmString +=("\t\tLIMITS DEFAULT 1 ENABLED {} {} {} {}\n".format(
 															signalToLimits[signal.name][0],
 															signalToLimits[signal.name][1],
 															signalToLimits[signal.name][2],
 															signalToLimits[signal.name][3]
 															))
+			if signal.name in signalFormat:
+				tlmString += "\t\tFORMAT_STRING \"" + signalFormat[signal.name] + "\"\n"
+			elif signal.unit in unitFormat:
+				tlmString += "\t\tFORMAT_STRING \"" + unitFormat[signal.unit] + "\"\n"
 			signalStrings[signal._startbit] = tlmString
 		if signal_size != 64:
 			signalStrings[64] = ("\tAPPEND_ITEM PADDING {} UINT \"Padded bits for CAN data\"\n\n".format(64 - signal_size))
