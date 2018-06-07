@@ -8,7 +8,7 @@ TAB "Tab 1"
   PLOT LINEGRAPH
     TITLE "Sensor proc mag 2 (raw)"
     X_AXIS_TITLE "Time (Seconds)"
-    Y_AXIS_TITLE "garrets" LEFT
+    Y_AXIS_TITLE "nanoTeslas" LEFT
     Y_AXIS_TITLE "Valid" RIGHT
     SHOW_ABS_X_GRID_LABELS TRUE
     SHOW_X_GRID_LINES FALSE

@@ -173,9 +173,8 @@ signalConversions = {
 	"dmA (0.1mA)":"value * 0.0001",
 	"2^-8s":"value * 2.0**-8",
 	"2^-8 s":"value * 2.0**-8",
-	"s^-8 since J2000":"value * 1.0**-8",
-	"s^-8 since J2000 ":"value * 1.0**-8",
 	"1/73 nanoTeslas":"value * 1.0/73",
+	"73 nanoTeslas":"value * 73",
 	"0.004375 deg/s":"value * 0.004375",
 	"60/32767 degrees":"value * 60.0/32767",
 	"1/32768 units":"value / 32768"
@@ -196,11 +195,10 @@ signalUnits = {
 	"2^-8s":"Seconds s",
 	"2^-8 s":"Seconds s",
 	"r/s":"Radians_Per_Second r/s",
-	"s^-8 since J2000":"Seconds s",
-	"s^-8 since J2000 ":"Seconds s",
 	"m/s":"Meters_Per_Second m/s",
 	"m":"Meters m",
 	"1/73 nanoTeslas":"Nanoteslas nT",
+	"73 nanoTeslas":"Nanoteslas nT",
 	"0.004375 deg/s":"Degrees_Per_Second deg/s",
 	"60/32767 degrees":"Degrees deg",
 	"C":"Degrees_Celcius C",
@@ -209,6 +207,26 @@ signalUnits = {
 	"s":"Seconds s",
 	"1/32768 units":"Units u"
 }
+
+# adds a FORMAT_STRING to the signal depending on what unit was used
+unitFormat = {
+	"m/s":"%0.4f",
+	"m":"%0.1f",
+	"u":"%0.4f",
+	"deg":"%0.4f",
+	"d":"%0.4f",
+	"s":"%0.4f",
+	"C":"%0.3f",
+	"dK":"%0.3f",
+	"dk":"%0.3f",
+	"r/s":"%0.3f"
+}
+
+# adds a FORMAT_STRING for specific signals. Overrides the unit formatting
+signalFormat = {
+  "rc_adcs_estim_8_epoch":"%.0f"
+}
+
 signalsWithOverflow=[
 	"cmd_rollcall_met",
 	"grnd_epoch_val",
@@ -395,18 +413,23 @@ def createCosmosTlm(candb, tlmFileName):
 															signalType,
 															signal.comment,
 															signalEndian))
-			if signal.unit in signalConversions:
-				tlmString +=("\t\t UNITS {}\n".format(signalUnits[signal.unit]))
-				tlmString +=("\t\t GENERIC_READ_CONVERSION_START\n")
-				tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
-				tlmString +=("\t\t GENERIC_READ_CONVERSION_END\n")
+			if signal.unit in signalUnits:
+				tlmString +=("\t\tUNITS {}\n".format(signalUnits[signal.unit]))
+				if signal.unit in signalConversions:
+					tlmString +=("\t\tGENERIC_READ_CONVERSION_START\n")
+					tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
+					tlmString +=("\t\tGENERIC_READ_CONVERSION_END\n")
 			if signal.name in signalToLimits:
-				tlmString +=("\t\t LIMITS DEFAULT 1 ENABLED {} {} {} {}\n".format(
+				tlmString +=("\t\tLIMITS DEFAULT 1 ENABLED {} {} {} {}\n".format(
 															signalToLimits[signal.name][0],
 															signalToLimits[signal.name][1],
 															signalToLimits[signal.name][2],
 															signalToLimits[signal.name][3]
 															))
+			if signal.name in signalFormat:
+				tlmString += "\t\tFORMAT_STRING \"" + signalFormat[signal.name] + "\"\n"
+			elif signal.unit in unitFormat:
+				tlmString += "\t\tFORMAT_STRING \"" + unitFormat[signal.unit] + "\"\n"
 			signalStrings[signal._startbit] = tlmString
 		if signal_size != 64:
 			signalStrings[64] = ("\tAPPEND_ITEM PADDING {} UINT \"Padded bits for CAN data\"\n\n".format(64 - signal_size))
