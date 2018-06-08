@@ -6,8 +6,7 @@ MATRIXBYCOLUMNS 6 20 10
    LABEL "Reboots In Last Update"
    LABEL "Time Since Last Reboot"
    LABEL "Average Temperature"
-   
-   
+ 
    LABEL "EPS Dist Board"
   <%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
   LABEL "EPS Gen board"
