@@ -69,3 +69,12 @@ def setCurrentLevel(i)
     puts "WARNING. COULD NOT SET CURRENT LEVEL"
   end
 end
+
+def setVoltageLimit(v)
+  #begin
+    cmd("DIGITAL_LOAD", "SET_VOLTAGE_LIMIT", "voltage"=>v)
+  #rescue Exception => e
+  #  puts "WARNING. COULD NOT SET VOLTAGE LIMIT"
+  #end
+
+end
