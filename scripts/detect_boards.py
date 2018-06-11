@@ -29,11 +29,12 @@ def main():
         for i in range(len(ports_list)):
             name = ports_list[i]
             if name:
-                writeSSCOM(i, 256)
+                writeSSCOM(i, 256, "init")
             '''if name and not "FLATSAT_COMPORT_" + name in os.environ:
                 print("adding environment variable for " + name)
                 #os.system("call reg add \"HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment\"  /v FLATSAT_COMPORT_"+ name +" /d \"\"")  # calls the batch command
                 writeSSCOM(i, 256) #this writes a default null value of 256'''
+        print()
         timeout = 2  # seconds
         searchLen = 256  # attempts COMs 0 -> (searchLen - 1)
         threads = []
@@ -41,17 +42,23 @@ def main():
             t = threading.Thread(target=assignComPort, args=(i, timeout, 100))
             threads.append(t)
             t.start()
+        for t in threads:
+            t.join()
+        print()
         os.system("pause")
     else:
         #run again as admin
         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
 
-def writeSSCOM(ss_id, com_num):
+def writeSSCOM(ss_id, com_num,  output):
     if ports_list[ss_id]:
         var_name = "FLATSAT_COMPORT_" + ports_list[ss_id]
         #os.environ[var_name] = "COM" + str(com_num) #sets the current session's environment variables
-        os.system("setx " + var_name + " COM" + str(com_num) + " -m") #calls the batch command
-        print(var_name + " = COM" + str(com_num))
+        os.system("setx " + var_name + " COM" + str(com_num) + " -m > NUL") #calls the batch command
+        if(output == "verbose"):
+            print(var_name + " = COM" + str(com_num))
+        elif(output == "init"):
+            print(var_name + " assigned")
     else:
         print("id " + str(ss_id) + " not found")
 
@@ -64,7 +71,7 @@ def assignComPort(com_num, serial_timeout = 5, byte_timeout = 100, packet_timeou
             if output:# and len(output) == 48:
                 if len(output) == 48:
                     ss_id = output[1]
-                    writeSSCOM(ss_id, com_num)
+                    writeSSCOM(ss_id, com_num, "verbose")
                     return
                 else:
                     packet_count += 1
