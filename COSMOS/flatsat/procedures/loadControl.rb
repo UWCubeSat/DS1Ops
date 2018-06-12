@@ -71,10 +71,23 @@ def setCurrentLevel(i)
 end
 
 def setVoltageLimit(v)
-  #begin
+  begin
     cmd("DIGITAL_LOAD", "SET_VOLTAGE_LIMIT", "voltage"=>v)
-  #rescue Exception => e
-  #  puts "WARNING. COULD NOT SET VOLTAGE LIMIT"
-  #end
+  rescue Exception => e
+    puts "WARNING. COULD NOT SET VOLTAGE LIMIT"
+  end
+end
 
+def isVoltageBelow(limit)
+  begin
+    cmd("DIGITAL_LOAD GET_VOLTAGE")
+    v = tlm("DIGITAL_LOAD INPUT_VOLTAGE V")
+    if v< limit
+      return true
+    else
+      return false
+    end
+  rescue Exception => e
+    puts "WARNING. COULD NOT GET INPUT VOLTAGE"
+  end
 end
