@@ -30,9 +30,10 @@ module Cosmos
 	  end
 	  if @known
 		time=Time.now.to_i
-		hours=((time-@update_time)/3600).to_i
-		minutes=((time-@update_time-3600*hours)/60).to_i
-		@formatted_data="#{hours}:#{minutes}"
+		hours=((time-@update_time+5)/3600).to_i
+		minutes=((time-@update_time-3600*hours+5)/60).to_i
+		seconds = time-@update_time-minutes*60-hours*3600+5
+		@formatted_data="#{hours}:#{minutes}:#{seconds.to_i}"
 	  end
       super(@formatted_data)
 	  
