@@ -1,10 +1,11 @@
 SCREEN AUTO AUTO 1.0
 MATRIXBYCOLUMNS 6 20 10
    LABEL " "
-   LABEL "Time Since Last Update (Hours:Minutes)"
+   LABEL "Time Since Last Update (Hours:Minutes:Seconds)"
    LABEL "Received Packets"
    LABEL "Reboots In Last Update"
-   LABEL "Time Since Last Reboot (Hours:Minutes)"
+   #LABEL "Time Since Last Reboot (Hours:Minutes)"
+   LABEL "Total number of reboots"
    LABEL "Average Temperature"
  
    LABEL "EPS Dist Board"
