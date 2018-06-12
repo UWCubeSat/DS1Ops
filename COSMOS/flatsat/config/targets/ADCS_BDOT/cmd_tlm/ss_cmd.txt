@@ -20,6 +20,6 @@ COMMAND ADCS_BDOT MODE_OPERATION_SELECT LITTLE_ENDIAN "Choose magnetometer readi
   # This must ALWAYS be the first entry in any command packet
   <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 4 } %>
   
-  APPEND_PARAMETER CMD_MODE_OPERATION 8 UINT 0 3 0 "Choose which kind of reading, normal or testing, for magnetometer" LITTLE_ENDIAN
-    STATE CMD_MODE_OP_NORMAL 1
-	STATE CMD_SELF_TEST_OP 0
+  APPEND_PARAMETER CMD_MODE_OPERATION 8 UINT 0 3 0 "Choose mode for bdot" LITTLE_ENDIAN
+    STATE CMD_MODE_OP_NORMAL 0
+    STATE CMD_NAP_MODE 1
