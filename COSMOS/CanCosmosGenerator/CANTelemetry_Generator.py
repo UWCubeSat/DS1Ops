@@ -177,7 +177,16 @@ signalConversions = {
 	"73 nanoTeslas":"value * 73",
 	"0.004375 deg/s":"value * 0.004375",
 	"60/32767 degrees":"value * 60.0/32767",
-	"1/32768 units":"value / 32768"
+	"1/32768 units":"value / 32768",
+	"raw node voltage":"value * 0.004",
+	"raw current batt":"(value - 32767) / 3276.7",
+	"raw voltage":"23.6 * value / 65535",
+	"raw node current batt":"value / 327.68",
+	"msp temp":"(float)(value << 15)",
+	"raw node current dist":"value * 16.0 / 32768",
+	"raw dist battery volage":"2.8867925 * value",
+	"raw node current gen":"value * 1.5 / 32768",
+	"raw power gen":"value * 3 / 3276.8"
 }
 signalUnits = {
 	"1/73 nT":"Nanoteslas nT",
@@ -205,7 +214,16 @@ signalUnits = {
 	"deg C":"Degrees_Celcius C",
 	"Deg C":"Degrees_Celcius C",
 	"s":"Seconds s",
-	"1/32768 units":"Units u"
+	"1/32768 units":"Units u",
+	"raw node voltage":"Volts V",
+	"raw current batt":"Amps A",
+	"raw voltage":"Volts V",
+	"raw node current batt":"Amps A",
+	"msp temp", "Degrees_Celcius C",
+	"raw node current dist":"Amps A",
+	"raw dist battery voltage":"Volts V",
+	"raw node current gen":"Amps A",
+	"raw power gen":"Watts W"
 }
 
 # adds a FORMAT_STRING to the signal depending on what unit was used
@@ -224,7 +242,10 @@ unitFormat = {
 
 # adds a FORMAT_STRING for specific signals. Overrides the unit formatting
 signalFormat = {
-  "rc_adcs_estim_8_epoch":"%.0f"
+  "rc_adcs_estim_8_epoch":"%.0f",
+  "rc_eps_batt_2_node_v_min":"%.4f",
+  "rc_eps_batt_2_node_v_max":"%.4f",
+  "rc_eps_batt_2_node_v_avg":"%.4f"
 }
 
 signalsWithOverflow=[
