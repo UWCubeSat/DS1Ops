@@ -182,9 +182,9 @@ signalConversions = {
 	"raw current batt":"(value - 32767) / 3276.7",
 	"raw voltage":"23.6 * value / 65535",
 	"raw node current batt":"value / 327.68",
-	"msp temp":"(float)(value << 15)",
-	"raw node current dist":"value * 16.0 / 32768",
-	"raw dist battery volage":"2.8867925 * value",
+	"msp temp":"value / 1000.0",
+	"raw node current dist":"value / 2048.0",
+	"raw dist battery voltage":"7.21698125 * value / 4096",
 	"raw node current gen":"value * 1.5 / 32768",
 	"raw power gen":"value * 3 / 3276.8"
 }
@@ -219,7 +219,7 @@ signalUnits = {
 	"raw current batt":"Amps A",
 	"raw voltage":"Volts V",
 	"raw node current batt":"Amps A",
-	"msp temp", "Degrees_Celcius C",
+        "msp temp":"Degrees_Celcius C",
 	"raw node current dist":"Amps A",
 	"raw dist battery voltage":"Volts V",
 	"raw node current gen":"Amps A",
