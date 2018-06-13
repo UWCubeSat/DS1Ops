@@ -197,7 +197,7 @@ APPEND_ITEM ACCCHARGE 32 FLOAT "The accumulated charge of the batteries." LITTLE
       LIMITS DEFAULT 3 ENABLED 0 0 2200 2200
     ITEM BATTERYDIFFERENCE 0 0 DERIVED "Derived difference between battery voltages" LITTLE_ENDIAN
       GENERIC_READ_CONVERSION_START
-        (100*(packet.read('batteryvolt') - ( 2 * packet.read('batterynodevolt'))))
+        (1000*(packet.read('batteryvolt') - ( 2 * packet.read('batterynodevolt'))))
       GENERIC_READ_CONVERSION_END
       UNITS milivolts mV
       FORMAT_STRING "%0.4f"
