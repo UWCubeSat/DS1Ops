@@ -66,9 +66,29 @@ TELEMETRY ADCS_SENSORPROC MAG2_RAW BIG_ENDIAN "Magnetometer 2 readings"
       UNITS "nanoteslas" nT
       FORMAT_STRING "%0.4f"
       
-TELEMETRY ADCS_SENSORPROC MAG_VECTOR BIG_ENDIAN "Magnetometer vector"
+TELEMETRY ADCS_SENSORPROC MAG1_PROC BIG_ENDIAN "Processed mag 1 readings"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 113} %>
+    
+    APPEND_ITEM X 32 FLOAT "X" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 1e9
+      FORMAT_STRING "%0.4f"
+      UNITS "nanoteslas" nT
+    APPEND_ITEM Y 32 FLOAT "Y" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 1e9
+      FORMAT_STRING "%0.4f"
+      UNITS "nanoteslas" nT
+    APPEND_ITEM Z 32 FLOAT "Z" LITTLE_ENDIAN
+      POLY_READ_CONVERSION 0 1e9
+      FORMAT_STRING "%0.4f"
+      UNITS "nanoteslas" nT
+    APPEND_ITEM VALID 8 UINT "Magnetometer validity" LITTLE_ENDIAN
+      STATE INVALID 0 RED
+      STATE VALID 1 GREEN
+      
+TELEMETRY ADCS_SENSORPROC MAG2_PROC BIG_ENDIAN "Processed mag 2 readings"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 111} %>
     
     APPEND_ITEM X 32 FLOAT "X" LITTLE_ENDIAN
       POLY_READ_CONVERSION 0 1e9

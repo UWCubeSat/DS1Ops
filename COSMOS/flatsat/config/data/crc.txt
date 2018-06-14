@@ -6,10 +6,11 @@ USER_MODIFIED
 "config/system/system.txt" 0x6CB79668
 "config/targets/ADCS_BDOT/cmd_tlm/shared_cmd.txt" 0xF92464BC
 "config/targets/ADCS_BDOT/cmd_tlm/shared_tlm.txt" 0x27F0D4EB
-"config/targets/ADCS_BDOT/cmd_tlm/ss_cmd.txt" 0xA2651329
-"config/targets/ADCS_BDOT/cmd_tlm/ss_tlm.txt" 0xB89DCBA7
-"config/targets/ADCS_BDOT/cmd_tlm_server.txt" 0xBD64F517
-"config/targets/ADCS_BDOT/screens/magnetometer.txt" 0xABA7959C
+"config/targets/ADCS_BDOT/cmd_tlm/ss_cmd.txt" 0x0C727B7F
+"config/targets/ADCS_BDOT/cmd_tlm/ss_tlm.txt" 0xF6524EC3
+"config/targets/ADCS_BDOT/cmd_tlm_server.txt" 0x0A013309
+"config/targets/ADCS_BDOT/screens/continuous_magnetometer.txt" 0x5D068964
+"config/targets/ADCS_BDOT/screens/magnetometer.txt" 0xAF1BA40D
 "config/targets/ADCS_BDOT/screens/magnetorquer_info.txt" 0xFEC0381D
 "config/targets/ADCS_BDOT/screens/polling_timer_info.txt" 0x9C19F170
 "config/targets/ADCS_BDOT/screens/simulink_info.txt" 0xEB936F3F
@@ -18,7 +19,7 @@ USER_MODIFIED
 "config/targets/ADCS_ESTIM/cmd_tlm/shared_tlm.txt" 0xB5DBCFE5
 "config/targets/ADCS_ESTIM/cmd_tlm/ss_cmd.txt" 0x00000000
 "config/targets/ADCS_ESTIM/cmd_tlm/ss_tlm.txt" 0xC9B8144C
-"config/targets/ADCS_ESTIM/cmd_tlm_server.txt" 0xFA30D167
+"config/targets/ADCS_ESTIM/cmd_tlm_server.txt" 0xAB8856AA
 "config/targets/ADCS_ESTIM/screens/status.txt" 0x9F5A9ED8
 "config/targets/ADCS_ESTIM/target.txt" 0x0348F4C6
 "config/targets/ADCS_MPC/cmd_tlm/shared_cmd.txt" 0xEE1322BC
@@ -31,7 +32,7 @@ USER_MODIFIED
 "config/targets/ADCS_SENSORPROC/cmd_tlm/shared_cmd.txt" 0xF92144A7
 "config/targets/ADCS_SENSORPROC/cmd_tlm/shared_tlm.txt" 0x9EEE7635
 "config/targets/ADCS_SENSORPROC/cmd_tlm/ss_cmd.txt" 0x00000000
-"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_tlm.txt" 0xF15DF1D9
+"config/targets/ADCS_SENSORPROC/cmd_tlm/ss_tlm.txt" 0x97D78AE7
 "config/targets/ADCS_SENSORPROC/cmd_tlm/_sp_states.txt" 0x97A7E87B
 "config/targets/ADCS_SENSORPROC/cmd_tlm_server.txt" 0xA3FBA838
 "config/targets/ADCS_SENSORPROC/lib/adcs_sensorproc.rb" 0xA16FD675
@@ -41,25 +42,30 @@ USER_MODIFIED
 "config/targets/ADCS_SENSORPROC/screens/flashy_status.txt" 0x876C112F
 "config/targets/ADCS_SENSORPROC/screens/status.txt" 0x98B69088
 "config/targets/ADCS_SENSORPROC/target.txt" 0xB699233D
-"config/targets/CAN_LOCAL/cmd_tlm/cmd.txt" 0x9BD402A5
-"config/targets/CAN_LOCAL/cmd_tlm/tlm.txt" 0xF2F4F76A
+"config/targets/CAN_LOCAL/cmd_tlm/cmd.txt" 0x169729D9
+"config/targets/CAN_LOCAL/cmd_tlm/tlm.txt" 0x593FD8CF
 "config/targets/CAN_LOCAL/cmd_tlm_server.txt" 0xA0D749DF
 "config/targets/CAN_LOCAL/lib/can_local.rb" 0xD3E7E7E8
 "config/targets/CAN_LOCAL/lib/changeinvalue_widget.rb" 0x8C94FA5B
+"config/targets/CAN_LOCAL/lib/difference_widget.rb" 0xE19C741F
 "config/targets/CAN_LOCAL/lib/hourssinceupdate_widget.rb" 0x0C6C9DEE
 "config/targets/CAN_LOCAL/lib/lastupdate_widget.rb" 0x4D9A72BB
 "config/targets/CAN_LOCAL/lib/minutessinceupdate_widget.rb" 0xCCE10DEC
+"config/targets/CAN_LOCAL/lib/percent_widget.rb" 0x82591F6F
+"config/targets/CAN_LOCAL/lib/updatereason_widget.rb" 0x9A60AAEB
 "config/targets/CAN_LOCAL/procedures/can_local_script.rb" 0x67C406DE
 "config/targets/CAN_LOCAL/procedures/can_local_test.rb" 0xCF2DE1D1
 "config/targets/CAN_LOCAL/screens/adcs_estim_status.txt" 0xCFD7E262
 "config/targets/CAN_LOCAL/screens/adcs_mpc_status.txt" 0x0E72D88F
 "config/targets/CAN_LOCAL/screens/adcs_sensorproc_status.txt" 0x60376A05
-"config/targets/CAN_LOCAL/screens/CAN Summary.txt" 0xFEE6BAA0
+"config/targets/CAN_LOCAL/screens/CAN Summary.txt" 0x5AA08CDA
 "config/targets/CAN_LOCAL/screens/eps_batt_status.txt" 0x93A2BC7C
+"config/targets/CAN_LOCAL/screens/GEN status.txt" 0x61EC9F5A
+"config/targets/CAN_LOCAL/screens/power_domain_status.txt" 0x86816299
 "config/targets/CAN_LOCAL/screens/status.txt" 0x08DB4157
-"config/targets/CAN_LOCAL/screens/_sharedData.txt" 0xA9AE5222
+"config/targets/CAN_LOCAL/screens/_sharedData.txt" 0x560D8942
 "config/targets/CAN_LOCAL/target.txt" 0xAADF7DF4
-"config/targets/CAN_LOCAL_CMD/cmd_tlm/cmd.txt" 0x9BD402A5
+"config/targets/CAN_LOCAL_CMD/cmd_tlm/cmd.txt" 0x169729D9
 "config/targets/CAN_LOCAL_CMD/cmd_tlm/tlm.txt" 0x00000000
 "config/targets/CAN_LOCAL_CMD/cmd_tlm_server.txt" 0x65F7053F
 "config/targets/CAN_LOCAL_CMD/lib/can_local.rb" 0xD3E7E7E8
@@ -134,7 +140,7 @@ USER_MODIFIED
 "config/targets/MTQ/cmd_tlm/shared_cmd.txt" 0x5AEB8746
 "config/targets/MTQ/cmd_tlm/shared_tlm.txt" 0xF910D860
 "config/targets/MTQ/cmd_tlm/ss_cmd.txt" 0x6C436C76
-"config/targets/MTQ/cmd_tlm/ss_tlm.txt" 0x33E62440
+"config/targets/MTQ/cmd_tlm/ss_tlm.txt" 0x7517FCC5
 "config/targets/MTQ/cmd_tlm_server.txt" 0xC7AA3D28
 "config/targets/MTQ/screens/duty_percent.txt" 0x8C644F62
 "config/targets/MTQ/screens/fsw_bdot_command.txt" 0x296B9814
@@ -200,20 +206,31 @@ USER_MODIFIED
 "config/tools/tlm_extractor/adcs_sensorproc_photodiode.txt" 0xF5C151C1
 "config/tools/tlm_extractor/adcs_sensorproc_sunsensor.txt" 0x97E01999
 "config/tools/tlm_extractor/README.txt" 0x93B2C07E
-"config/tools/tlm_grapher/adcs_bdot_can_data.txt" 0x5043AB90
-"config/tools/tlm_grapher/adcs_mtq_can_data.txt" 0x3C247654
+"config/tools/tlm_grapher/adcs_estim_mag.txt" 0x798CEFB8
+"config/tools/tlm_grapher/adcs_estim_pos.txt" 0x96709863
+"config/tools/tlm_grapher/adcs_estim_sun.txt" 0x9E381C6D
 "config/tools/tlm_grapher/adcs_sp_imu.txt" 0xD7C4CFDC
 "config/tools/tlm_grapher/adcs_sp_mag1.txt" 0x030228C8
+"config/tools/tlm_grapher/adcs_sp_mag1_can.txt" 0xDAEEBCC1
+"config/tools/tlm_grapher/adcs_sp_mag2_can.txt" 0x1E03D571
 "config/tools/tlm_grapher/adcs_sp_sun.txt" 0x89B88D3E
 "config/tools/tlm_grapher/adcs_sp_sunvector.txt" 0x77273084
+"config/tools/tlm_grapher/adsc_estim_vel.txt" 0x2EA0BC04
 "config/tools/tlm_grapher/Bdot Simulink Tumble Status.txt" 0x27C7C47C
 "config/tools/tlm_grapher/Bdot_Environmental_Angular_Velocity.txt" 0x31A1FEE7
 "config/tools/tlm_grapher/bdot_magnetometer readings.txt" 0x020A4319
 "config/tools/tlm_grapher/busv-epsdist.txt" 0xADEB5989
+"config/tools/tlm_grapher/CAN_RC_adcs_bdot.txt" 0x1036A361
+"config/tools/tlm_grapher/CAN_RC_adcs_estim.txt" 0xF17AB4A4
+"config/tools/tlm_grapher/CAN_RC_adcs_mpc.txt" 0xA3E09E14
+"config/tools/tlm_grapher/CAN_RC_adcs_mtq.txt" 0x1CA211C2
+"config/tools/tlm_grapher/CAN_RC_adcs_sp.txt" 0x32F27144
+"config/tools/tlm_grapher/CAN_RC_eps_batt.txt" 0xB7BAFC92
+"config/tools/tlm_grapher/CAN_RC_eps_dist.txt" 0x9EB61BD2
+"config/tools/tlm_grapher/CAN_RC_eps_gen.txt" 0xB99B6900
+"config/tools/tlm_grapher/CAN_RC_ppt.txt" 0xEDBFD1DE
 "config/tools/tlm_grapher/currdraw-pdomain.txt" 0xE7756F54
 "config/tools/tlm_grapher/donecharging-ppt.txt" 0x82F38B26
-"config/tools/tlm_grapher/eps_batt_can_data.txt" 0xB7BAFC92
-"config/tools/tlm_grapher/eps_gen_can_data.txt" 0x77930A35
 "config/tools/tlm_grapher/mspinternaltemps.txt" 0xA742A4D3
 "config/tools/tlm_grapher/MTQ_Screen_BDOT_COMPARE.txt" 0x71D77AB0
 "config/tools/tlm_grapher/MTQ_Screen_BDOT_COMPARE_EP_edit.txt" 0x77BD1A39
@@ -225,7 +242,6 @@ USER_MODIFIED
 "config/tools/tlm_grapher/panelpowerstatus.txt" 0xB98FEF94
 "config/tools/tlm_grapher/paneltemps.txt" 0xD129376E
 "config/tools/tlm_grapher/powerdomainview.txt" 0xF2DBC6A3
-"config/tools/tlm_grapher/ppt_can_data.txt" 0xDA95FAE6
 "config/tools/tlm_grapher/README.txt" 0x93B2C07E
 "config/tools/tlm_grapher/ThusScreenThatJeffDidForHer.txt" 0xE6A86B99
 "config/tools/tlm_grapher/tlm_grapher.txt" 0x1F917C94
