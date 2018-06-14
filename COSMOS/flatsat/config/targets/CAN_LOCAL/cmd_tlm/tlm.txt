@@ -1,241 +1,3 @@
-TELEMETRY CAN_LOCAL gcmd_gen_set_pt_state BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252742 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_gen_set_pt_state_1 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_gen_set_pt_state_2 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_gen_set_pt_state_3 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_sp_set_thresh BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252743 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_sp_set_thresh_thresh 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 UNITS Nanoteslas nT
-		 GENERIC_READ_CONVERSION_START
-			value * 1.0/73
-		 GENERIC_READ_CONVERSION_END
-=======
-		UNITS Nanoteslas nT
-		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
-		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
-	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_ovc_ppt BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252741 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_ovc_ppt_ovc 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_ovc_eps BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252740 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_ovc_eps_ovc 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_ovc_wheels BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252739 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_ovc_wheels_ovc 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_ovc_estim BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252738 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_ovc_estim_ovc 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_ovc_bdot BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252737 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_ovc_bdot_ovc 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_ovc_rahs BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252736 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_ovc_rahs_ovc 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_ovc_com2 BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252735 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_ovc_com2_ovc 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_ovc_com1 BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252734 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_ovc_com1_ovc 32 FLOAT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_dist_set_pd_state BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302252733 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_dist_set_pd_state_com1 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_dist_set_pd_state_com2 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_dist_set_pd_state_rahs 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_dist_set_pd_state_bdot 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_dist_set_pd_state_estim 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_dist_set_pd_state_wheels 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_dist_set_pd_state_eps 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_dist_set_pd_state_ppt 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
-
-TELEMETRY CAN_LOCAL gcmd_mtq_pop BIG_ENDIAN 
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
-	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
-	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
-	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302449340 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE EXTENDED 1
-		STATE STANDARD 0
-	APPEND_ITEM gcmd_mtq_pop_x 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_mtq_pop_y 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_mtq_pop_z 2 UINT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
-
 TELEMETRY CAN_LOCAL rc_eps_batt_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -408,19 +170,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_16 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_16_ppt_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_16_ppt_c_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
-	APPEND_ITEM rc_eps_dist_16_ppt_c_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
-	APPEND_ITEM rc_eps_dist_16_ppt_c_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
-=======
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
 	APPEND_ITEM rc_eps_dist_16_ppt_c_max 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
 	APPEND_ITEM rc_eps_dist_16_ppt_c_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_9 BIG_ENDIAN 
@@ -439,31 +205,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_9 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_9_rahs_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_9_rahs_v_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_9_rahs_v_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_9_rahs_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_9_rahs_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_7 BIG_ENDIAN 
@@ -482,31 +240,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_7 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_7_com2_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_7_com2_v_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_7_com2_v_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_7_com2_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_7_com2_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_6 BIG_ENDIAN 
@@ -526,19 +276,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_6 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_6_com2_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_6_com2_c_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
-	APPEND_ITEM rc_eps_dist_6_com2_c_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
-	APPEND_ITEM rc_eps_dist_6_com2_c_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
-=======
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
 	APPEND_ITEM rc_eps_dist_6_com2_c_max 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
 	APPEND_ITEM rc_eps_dist_6_com2_c_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_5 BIG_ENDIAN 
@@ -557,31 +311,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_5 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_5_com1_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_5_com1_v_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_5_com1_v_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_5_com1_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_5_com1_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_3 BIG_ENDIAN 
@@ -600,31 +346,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_3 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_3_batt_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
-	APPEND_ITEM rc_eps_dist_3_batt_v_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
-	APPEND_ITEM rc_eps_dist_3_batt_v_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			7.21698125 * value / 4096
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
 	APPEND_ITEM rc_eps_dist_3_batt_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			7.21698125 * value / 4096
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
 	APPEND_ITEM rc_eps_dist_3_batt_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			7.21698125 * value / 4096
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_2 BIG_ENDIAN 
@@ -644,17 +382,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_2 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_2_uv_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_2_met 40 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 UNITS Seconds s
-		 GENERIC_READ_CONVERSION_START
-			value * 2.0**-8
-		 GENERIC_READ_CONVERSION_END
-=======
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-8
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_17 BIG_ENDIAN 
@@ -673,31 +404,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_17 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_17_ppt_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_17_ppt_v_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_17_ppt_v_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_17_ppt_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_17_ppt_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_14 BIG_ENDIAN 
@@ -717,19 +440,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_14 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_14_eps_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_14_eps_c_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_14_eps_c_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_14_eps_c_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-=======
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_14_eps_c_max 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_14_eps_c_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_13 BIG_ENDIAN 
@@ -748,31 +475,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_13 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_13_estim_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_13_estim_v_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_13_estim_v_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_13_estim_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_13_estim_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_11 BIG_ENDIAN 
@@ -791,31 +510,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_11 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_11_bdot_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_11_bdot_v_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_11_bdot_v_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_11_bdot_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_11_bdot_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_12 BIG_ENDIAN 
@@ -835,19 +546,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_12 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_12_estim_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_12_estim_c_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_12_estim_c_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_12_estim_c_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-=======
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_12_estim_c_max 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_12_estim_c_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_15 BIG_ENDIAN 
@@ -866,31 +581,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_15 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_15_eps_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_15_eps_v_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-	APPEND_ITEM rc_eps_dist_15_eps_v_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_15_eps_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM rc_eps_dist_15_eps_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_10 BIG_ENDIAN 
@@ -910,19 +617,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_10 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_10_bdot_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_10_bdot_c_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_10_bdot_c_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_10_bdot_c_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-=======
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_10_bdot_c_max 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_10_bdot_c_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_8 BIG_ENDIAN 
@@ -942,19 +653,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_8 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_8_rahs_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_8_rahs_c_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_8_rahs_c_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_8_rahs_c_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-=======
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_8_rahs_c_max 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_8_rahs_c_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_4 BIG_ENDIAN 
@@ -974,19 +689,23 @@ TELEMETRY CAN_LOCAL rc_eps_dist_4 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_4_com1_state 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_4_com1_c_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_4_com1_c_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-	APPEND_ITEM rc_eps_dist_4_com1_c_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
-=======
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_4_com1_c_max 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM rc_eps_dist_4_com1_c_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value * 0.001
+		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_dist_1 BIG_ENDIAN 
@@ -1005,31 +724,26 @@ TELEMETRY CAN_LOCAL rc_eps_dist_1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_1_temp_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		UNITS Celcius C
+		GENERIC_READ_CONVERSION_START
+			(55.0*(value-1255.0))/214.0 +30.0
+		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_dist_1_temp_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		UNITS Celcius C
+		GENERIC_READ_CONVERSION_START
+			(55.0*(value-1255.0))/214.0 +30.0
+		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_dist_1_temp_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 15 20 30 35
-=======
-		UNITS Degrees_Celcius C
+		UNITS Celcius C
 		GENERIC_READ_CONVERSION_START
-			value / 1000.0
+			(55.0*(value-1255.0))/214.0 +30.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
-	APPEND_ITEM rc_eps_dist_1_temp_max 16 UINT "None" BIG_ENDIAN
-		UNITS Degrees_Celcius C
-		GENERIC_READ_CONVERSION_START
-			value / 1000.0
-		GENERIC_READ_CONVERSION_END
-		LIMITS DEFAULT 1 ENABLED 15 20 30 35
-	APPEND_ITEM rc_eps_dist_1_temp_avg 16 UINT "None" BIG_ENDIAN
-		UNITS Degrees_Celcius C
-		GENERIC_READ_CONVERSION_START
-			value / 1000.0
-		GENERIC_READ_CONVERSION_END
-		LIMITS DEFAULT 1 ENABLED 15 20 30 35
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
+		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_dist_1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_mpc_11 BIG_ENDIAN 
@@ -1335,18 +1049,11 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_8 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_estim_8_epoch 40 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 UNITS Seconds s
-		 GENERIC_READ_CONVERSION_START
-			value * 2.0**-8
-		 GENERIC_READ_CONVERSION_END
-=======
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-8
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%.0f"
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM rc_adcs_estim_8_sgp4_flag 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_sc_in_sun 1 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_sc_above_gs 1 UINT "None" BIG_ENDIAN
@@ -1515,11 +1222,6 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_12 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_sp_12_mag2_y_max 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-	APPEND_ITEM rc_adcs_sp_12_mag2_y_avg 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_sp_12_mag2_z_min 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_sp_12_mag2_z_max 16 INT "None" BIG_ENDIAN
-=======
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
 			value * 73
@@ -1539,7 +1241,6 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_12 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 73
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_adcs_sp_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1556,11 +1257,6 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_11 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_sp_11_mag2_x_min 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-	APPEND_ITEM rc_adcs_sp_11_mag2_x_max 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_sp_11_mag2_x_avg 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_sp_11_mag2_y_min 16 INT "None" BIG_ENDIAN
-=======
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
 			value * 73
@@ -1580,7 +1276,6 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_11 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 73
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_adcs_sp_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1626,13 +1321,10 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_6 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_6_mag1_valid 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_6_mag2_valid 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_6_mag1_x_min 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-=======
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
 			value * 73
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_adcs_sp_17 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1711,11 +1403,6 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_10 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_sp_10_mag1_y_avg 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-	APPEND_ITEM rc_adcs_sp_10_mag1_z_min 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_sp_10_mag1_z_max 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_sp_10_mag1_z_avg 16 INT "None" BIG_ENDIAN
-=======
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
 			value * 73
@@ -1735,7 +1422,6 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_10 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 73
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_adcs_sp_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1769,11 +1455,6 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_9 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_sp_9_mag1_x_max 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-	APPEND_ITEM rc_adcs_sp_9_mag1_x_avg 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_sp_9_mag1_y_min 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_sp_9_mag1_y_max 16 INT "None" BIG_ENDIAN
-=======
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
 			value * 73
@@ -1793,7 +1474,6 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_9 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 73
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_adcs_sp_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1810,13 +1490,10 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_13 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_sp_13_mag2_z_avg 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-=======
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
 			value * 73
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM rc_adcs_sp_13_suna_min 16 INT "None" BIG_ENDIAN
 		UNITS Degrees deg
 		GENERIC_READ_CONVERSION_START
@@ -2618,31 +2295,23 @@ TELEMETRY CAN_LOCAL rc_eps_gen_8 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_8_pnl_3_power_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
-	APPEND_ITEM rc_eps_gen_8_pnl_3_power_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
-	APPEND_ITEM rc_eps_gen_8_pnl_3_power_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
-=======
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
 	APPEND_ITEM rc_eps_gen_8_pnl_3_power_max 16 UINT "None" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
 	APPEND_ITEM rc_eps_gen_8_pnl_3_power_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM rc_eps_gen_8_pnl_1_temp_min 8 INT "None" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
@@ -2665,39 +2334,29 @@ TELEMETRY CAN_LOCAL rc_eps_gen_7 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_7_pnl_1_power_avg 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
-	APPEND_ITEM rc_eps_gen_7_pnl_2_power_min 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
-	APPEND_ITEM rc_eps_gen_7_pnl_2_power_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
-	APPEND_ITEM rc_eps_gen_7_pnl_2_power_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
-=======
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
 	APPEND_ITEM rc_eps_gen_7_pnl_2_power_min 16 UINT "None" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
 	APPEND_ITEM rc_eps_gen_7_pnl_2_power_max 16 UINT "None" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
 	APPEND_ITEM rc_eps_gen_7_pnl_2_power_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_eps_gen_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -2714,39 +2373,29 @@ TELEMETRY CAN_LOCAL rc_eps_gen_6 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_6_pnl_3_current_max 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
-	APPEND_ITEM rc_eps_gen_6_pnl_3_current_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
-	APPEND_ITEM rc_eps_gen_6_pnl_1_power_min 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
-	APPEND_ITEM rc_eps_gen_6_pnl_1_power_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
-=======
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
 	APPEND_ITEM rc_eps_gen_6_pnl_3_current_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
 	APPEND_ITEM rc_eps_gen_6_pnl_1_power_min 16 UINT "None" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
 	APPEND_ITEM rc_eps_gen_6_pnl_1_power_max 16 UINT "None" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
-			value * 3 / 3276.8
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_eps_gen_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -2763,39 +2412,29 @@ TELEMETRY CAN_LOCAL rc_eps_gen_5 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_5_pnl_2_current_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
-	APPEND_ITEM rc_eps_gen_5_pnl_2_current_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
-	APPEND_ITEM rc_eps_gen_5_pnl_2_current_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
-	APPEND_ITEM rc_eps_gen_5_pnl_3_current_min 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
-=======
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
 	APPEND_ITEM rc_eps_gen_5_pnl_2_current_max 16 UINT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
 	APPEND_ITEM rc_eps_gen_5_pnl_2_current_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
 	APPEND_ITEM rc_eps_gen_5_pnl_3_current_min 16 UINT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_eps_gen_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -2812,39 +2451,29 @@ TELEMETRY CAN_LOCAL rc_eps_gen_4 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_4_pnl_3_voltage_avg 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-	APPEND_ITEM rc_eps_gen_4_pnl_1_current_min 16 INT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
-	APPEND_ITEM rc_eps_gen_4_pnl_1_current_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
-	APPEND_ITEM rc_eps_gen_4_pnl_1_current_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 	APPEND_ITEM rc_eps_gen_4_pnl_1_current_min 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
 	APPEND_ITEM rc_eps_gen_4_pnl_1_current_max 16 UINT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
 	APPEND_ITEM rc_eps_gen_4_pnl_1_current_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value * 1.5 / 32768
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_eps_gen_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -2861,39 +2490,29 @@ TELEMETRY CAN_LOCAL rc_eps_gen_3 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_3_pnl_2_voltage_max 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-	APPEND_ITEM rc_eps_gen_3_pnl_2_voltage_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-	APPEND_ITEM rc_eps_gen_3_pnl_3_voltage_min 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-	APPEND_ITEM rc_eps_gen_3_pnl_3_voltage_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 	APPEND_ITEM rc_eps_gen_3_pnl_2_voltage_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 	APPEND_ITEM rc_eps_gen_3_pnl_3_voltage_min 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 	APPEND_ITEM rc_eps_gen_3_pnl_3_voltage_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_eps_gen_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -2910,39 +2529,29 @@ TELEMETRY CAN_LOCAL rc_eps_gen_2 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-	APPEND_ITEM rc_eps_gen_2_pnl_2_voltage_min 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 	APPEND_ITEM rc_eps_gen_2_pnl_2_voltage_min 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 TELEMETRY CAN_LOCAL rc_eps_gen_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -3021,25 +2630,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_5 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_5_node_c_min 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-	APPEND_ITEM rc_eps_batt_5_node_c_max 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_eps_batt_5_node_c_avg 16 INT "None" BIG_ENDIAN
-=======
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value / 327.68
+			value * 0.0001
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_5_node_c_max 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value / 327.68
+			value * 0.0001
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_5_node_c_avg 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			value / 327.68
+			value * 0.0001
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM rc_eps_batt_5_batt_temp_min 8 INT "None" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 	APPEND_ITEM rc_eps_batt_5_batt_temp_max 8 INT "None" BIG_ENDIAN
@@ -3060,25 +2664,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_4 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_4_voltage_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-	APPEND_ITEM rc_eps_batt_4_voltage_max 16 UINT "None" BIG_ENDIAN
-	APPEND_ITEM rc_eps_batt_4_voltage_avg 16 UINT "None" BIG_ENDIAN
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_4_voltage_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_4_voltage_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			23.6 * value / 65535
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM rc_eps_batt_4_balancer_state 1 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_4_heater_state 1 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
@@ -3099,25 +2698,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_3 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_3_current_min 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-	APPEND_ITEM rc_eps_batt_3_current_max 16 INT "None" BIG_ENDIAN
-	APPEND_ITEM rc_eps_batt_3_current_avg 16 INT "None" BIG_ENDIAN
-=======
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			(value - 32767) / 3276.7
+			value * 0.01
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_3_current_max 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			(value - 32767) / 3276.7
+			value * 0.01
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_3_current_avg 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
-			(value - 32767) / 3276.7
+			value * 0.01
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM rc_eps_batt_3_batt_temp_avg 8 INT "None" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
@@ -3138,28 +2732,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_2 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_2_node_v_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-	APPEND_ITEM rc_eps_batt_2_node_v_max 16 UINT "None" BIG_ENDIAN
-	APPEND_ITEM rc_eps_batt_2_node_v_avg 16 UINT "None" BIG_ENDIAN
-=======
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			value * 0.004
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_2_node_v_max 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			value * 0.004
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_2_node_v_avg 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
-			value * 0.004
+			value * 0.001
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.4f"
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_batt_1 BIG_ENDIAN 
@@ -3178,31 +2764,26 @@ TELEMETRY CAN_LOCAL rc_eps_batt_1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_1_temp_min 16 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		UNITS Celcius C
+		GENERIC_READ_CONVERSION_START
+			(55.0*(value-1255.0))/214.0 +30.0
+		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_batt_1_temp_max 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		UNITS Celcius C
+		GENERIC_READ_CONVERSION_START
+			(55.0*(value-1255.0))/214.0 +30.0
+		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_batt_1_temp_avg 16 UINT "None" BIG_ENDIAN
-		 LIMITS DEFAULT 1 ENABLED 15 20 30 35
-=======
-		UNITS Degrees_Celcius C
+		UNITS Celcius C
 		GENERIC_READ_CONVERSION_START
-			value / 1000.0
+			(55.0*(value-1255.0))/214.0 +30.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
-	APPEND_ITEM rc_eps_batt_1_temp_max 16 UINT "None" BIG_ENDIAN
-		UNITS Degrees_Celcius C
-		GENERIC_READ_CONVERSION_START
-			value / 1000.0
-		GENERIC_READ_CONVERSION_END
-		LIMITS DEFAULT 1 ENABLED 15 20 30 35
-	APPEND_ITEM rc_eps_batt_1_temp_avg 16 UINT "None" BIG_ENDIAN
-		UNITS Degrees_Celcius C
-		GENERIC_READ_CONVERSION_START
-			value / 1000.0
-		GENERIC_READ_CONVERSION_END
-		LIMITS DEFAULT 1 ENABLED 15 20 30 35
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
+		FORMAT_STRING "%0.3f"
 	APPEND_ITEM rc_eps_batt_1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL cmd_ppt_set_count BIG_ENDIAN 
@@ -3652,22 +3233,6 @@ TELEMETRY CAN_LOCAL sensorproc_imu BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM sensorproc_imu_x 16 INT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 UNITS Degrees_Per_Second deg/s
-		 GENERIC_READ_CONVERSION_START
-			value * 0.004375
-		 GENERIC_READ_CONVERSION_END
-	APPEND_ITEM sensorproc_imu_y 16 INT "None" BIG_ENDIAN
-		 UNITS Degrees_Per_Second deg/s
-		 GENERIC_READ_CONVERSION_START
-			value * 0.004375
-		 GENERIC_READ_CONVERSION_END
-	APPEND_ITEM sensorproc_imu_z 16 INT "None" BIG_ENDIAN
-		 UNITS Degrees_Per_Second deg/s
-		 GENERIC_READ_CONVERSION_START
-			value * 0.004375
-		 GENERIC_READ_CONVERSION_END
-=======
 		UNITS Degrees_Per_Second deg/s
 		GENERIC_READ_CONVERSION_START
 			value * 0.004375
@@ -3682,7 +3247,6 @@ TELEMETRY CAN_LOCAL sensorproc_imu BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 0.004375
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM sensorproc_imu_valid 1 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
@@ -3736,17 +3300,10 @@ TELEMETRY CAN_LOCAL cmd_rollcall BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM cmd_rollcall_msp 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM cmd_rollcall_met 40 UINT "None" BIG_ENDIAN
-<<<<<<< HEAD
-		 UNITS Seconds s
-		 GENERIC_READ_CONVERSION_START
-			value * 2.0**-8
-		 GENERIC_READ_CONVERSION_END
-=======
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-8
 		GENERIC_READ_CONVERSION_END
->>>>>>> e59ab6378b1afed9e41abb5ae94ca5df08607af7
 	APPEND_ITEM cmd_rollcall_type 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
@@ -3762,7 +3319,7 @@ TELEMETRY CAN_LOCAL mtq_ack BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302448688 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 34013232 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM mtq_ack_phase 8 INT "None" BIG_ENDIAN
@@ -3785,7 +3342,7 @@ TELEMETRY CAN_LOCAL gen_panel_temp BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677075 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 36241619 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gen_panel_temp_y_pos 8 INT "None" BIG_ENDIAN
@@ -3806,7 +3363,7 @@ TELEMETRY CAN_LOCAL cmd_gen_rst BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 303300880 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 34865424 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_gen_rst_confirm 1 UINT "None" BIG_ENDIAN
@@ -3824,7 +3381,7 @@ TELEMETRY CAN_LOCAL cmd_ppt_single_fire BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 303300864 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 34865408 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_ppt_single_fire_with_pulse 1 UINT "None" BIG_ENDIAN
@@ -3843,7 +3400,7 @@ TELEMETRY CAN_LOCAL gen_panel_pwr BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304218322 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 35782866 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gen_panel_pwr_y_pos 16 UINT "None" BIG_ENDIAN
@@ -3876,7 +3433,7 @@ TELEMETRY CAN_LOCAL gen_panel_current BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304218321 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 35782865 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gen_panel_current_y_pos 16 UINT "None" BIG_ENDIAN
@@ -3908,7 +3465,7 @@ TELEMETRY CAN_LOCAL gen_panel_voltage BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 303169744 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 34734288 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gen_panel_voltage_y_pos 16 UINT "None" BIG_ENDIAN
@@ -3940,7 +3497,7 @@ TELEMETRY CAN_LOCAL mpc_vp BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305594402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 37158946 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM mpc_vp_status 1 UINT "None" BIG_ENDIAN
@@ -3958,7 +3515,7 @@ TELEMETRY CAN_LOCAL eps_batt_state BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 303169730 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 35782850 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM eps_batt_state_temp 8 INT "None" BIG_ENDIAN
@@ -3980,7 +3537,7 @@ TELEMETRY CAN_LOCAL eps_batt_current BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 303169729 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 35782849 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM eps_batt_current_c 16 INT "None" BIG_ENDIAN
@@ -4015,7 +3572,7 @@ TELEMETRY CAN_LOCAL eps_batt_voltage BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 303169728 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 35782848 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM eps_batt_voltage_v 16 UINT "None" BIG_ENDIAN
@@ -4091,7 +3648,7 @@ TELEMETRY CAN_LOCAL bdot_tumble_status BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 302448672 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 34013216 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM bdot_tumble_status_status 1 UINT "None" BIG_ENDIAN
@@ -4143,7 +3700,7 @@ TELEMETRY CAN_LOCAL msp_temp BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304676883 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 36241427 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM msp_temp_temp 16 UINT "None" BIG_ENDIAN
