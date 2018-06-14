@@ -26,6 +26,8 @@ PORT CTS_CMD_ROUTER 7780
 DEFAULT_PACKET_LOG_WRITER packet_log_writer.rb
 DEFAULT_PACKET_LOG_READER packet_log_reader.rb
 
+
+
 # Paths
 PATH LOGS ./outputs/logs
 PATH TMP ./outputs/tmp

@@ -213,12 +213,14 @@ signalsWithOverflow=[
 	"cmd_rollcall_met",
 	"grnd_epoch_val",
 	"rc_eps_dist_2_met",
-	"rc_adcs_estim_8_epoch"]
+	"rc_adcs_estim_8_epoch"
+]
 overFlowSignals=[
 	"cmd_rollcall_met_overflow",
 	"grnd_epoch_val_overflow",
 	"rc_eps_dist_2_met_overflow",
-	"rc_adcs_estim_8_epoch_overflow"]
+	"rc_adcs_estim_8_epoch_overflow"
+]
 def toPyObject(infile, **options):
 	dbs = {}
 
