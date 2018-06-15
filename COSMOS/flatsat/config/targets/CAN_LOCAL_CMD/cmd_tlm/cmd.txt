@@ -763,9 +763,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_16 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677458 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677458 
 	APPEND_PARAMETER rc_eps_dist_16_ppt_state 8 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_16_ppt_c_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_16_ppt_c_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_16_ppt_c_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_16_ppt_c_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_16_ppt_c_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_16_ppt_c_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_dist_9 BIG_ENDIAN 
@@ -854,9 +854,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_6 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677448 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677448 
 	APPEND_PARAMETER rc_eps_dist_6_com2_state 8 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_6_com2_c_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_6_com2_c_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_6_com2_c_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_6_com2_c_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_6_com2_c_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_6_com2_c_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_dist_5 BIG_ENDIAN 
@@ -1004,9 +1004,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_14 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677456 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677456 
 	APPEND_PARAMETER rc_eps_dist_14_eps_state 8 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_14_eps_c_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_14_eps_c_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_14_eps_c_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_14_eps_c_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_14_eps_c_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_14_eps_c_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_dist_13 BIG_ENDIAN 
@@ -1095,9 +1095,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_12 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677454 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677454 
 	APPEND_PARAMETER rc_eps_dist_12_estim_state 8 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_12_estim_c_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_12_estim_c_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_12_estim_c_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_12_estim_c_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_12_estim_c_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_12_estim_c_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_dist_15 BIG_ENDIAN 
@@ -1156,9 +1156,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_10 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677452 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677452 
 	APPEND_PARAMETER rc_eps_dist_10_bdot_state 8 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_10_bdot_c_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_10_bdot_c_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_10_bdot_c_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_10_bdot_c_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_10_bdot_c_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_10_bdot_c_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_dist_8 BIG_ENDIAN 
@@ -1187,9 +1187,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_8 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677450 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677450 
 	APPEND_PARAMETER rc_eps_dist_8_rahs_state 8 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_8_rahs_c_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_8_rahs_c_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_8_rahs_c_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_8_rahs_c_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_8_rahs_c_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_8_rahs_c_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_dist_4 BIG_ENDIAN 
@@ -1218,9 +1218,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_4 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677446 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677446 
 	APPEND_PARAMETER rc_eps_dist_4_com1_state 8 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_4_com1_c_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_4_com1_c_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_dist_4_com1_c_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_4_com1_c_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_4_com1_c_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_4_com1_c_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_dist_1 BIG_ENDIAN 
@@ -2970,9 +2970,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_gen_8 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677399 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677399 
-	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_8_pnl_1_temp_min 8 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
@@ -3001,10 +3001,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_gen_7 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677398 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677398 
-	APPEND_PARAMETER rc_eps_gen_7_pnl_1_power_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_7_pnl_1_power_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_eps_gen_6 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -3030,10 +3030,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_gen_6 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677397 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677397 
-	APPEND_PARAMETER rc_eps_gen_6_pnl_3_current_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_6_pnl_3_current_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_6_pnl_1_power_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_6_pnl_1_power_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_6_pnl_3_current_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_6_pnl_3_current_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_6_pnl_1_power_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_6_pnl_1_power_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_eps_gen_5 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -3059,10 +3059,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_gen_5 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677396 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677396 
-	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_5_pnl_3_current_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_5_pnl_3_current_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_eps_gen_4 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -3090,8 +3090,8 @@ COMMAND CAN_LOCAL_CMD rc_eps_gen_4 BIG_ENDIAN
 		STATE DEFAULT 304677395 
 	APPEND_PARAMETER rc_eps_gen_4_pnl_3_voltage_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_4_pnl_1_current_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_4_pnl_1_current_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_gen_4_pnl_1_current_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_4_pnl_1_current_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_4_pnl_1_current_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_eps_gen_3 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
