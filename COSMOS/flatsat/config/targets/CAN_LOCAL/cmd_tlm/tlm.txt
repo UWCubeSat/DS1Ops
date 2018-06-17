@@ -1554,7 +1554,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_11 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677438 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_11_omega_y_avg 64 FLOAT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mpc_11_omega_z 64 FLOAT "None" BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_7 BIG_ENDIAN 
@@ -1572,7 +1572,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_7 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677434 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_7_omega_x_max 64 FLOAT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mpc_7_omega_max 64 FLOAT "None" BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_8 BIG_ENDIAN 
@@ -1590,7 +1590,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_8 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677435 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_8_omega_x_avg 64 FLOAT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mpc_8_omega_avg 64 FLOAT "None" BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_9 BIG_ENDIAN 
@@ -1608,7 +1608,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_9 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677436 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_9_omega_y_min 64 FLOAT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mpc_9_omega_x 64 FLOAT "None" BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_5 BIG_ENDIAN 
@@ -1643,7 +1643,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_6 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677433 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_6_omega_x_min 64 FLOAT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mpc_6_omega_min 64 FLOAT "None" BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_4 BIG_ENDIAN 
@@ -1714,9 +1714,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_12 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677439 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_12_omega_z_min 64 FLOAT "None" BIG_ENDIAN
-		UNITS Radians_Per_Second r/s
-		FORMAT_STRING "%0.3f"
+	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+
 TELEMETRY CAN_LOCAL rc_adcs_mpc_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1732,9 +1731,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_13 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677440 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_13_omega_z_max 64 FLOAT "None" BIG_ENDIAN
-		UNITS Radians_Per_Second r/s
-		FORMAT_STRING "%0.3f"
+	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+
 TELEMETRY CAN_LOCAL rc_adcs_mpc_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1750,9 +1748,8 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_14 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677441 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_14_omega_z_avg 64 FLOAT "None" BIG_ENDIAN
-		UNITS Radians_Per_Second r/s
-		FORMAT_STRING "%0.3f"
+	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+
 TELEMETRY CAN_LOCAL rc_adcs_mpc_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -1768,7 +1765,7 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_10 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677437 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mpc_10_omega_y_max 64 FLOAT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mpc_10_omega_y 64 FLOAT "None" BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 TELEMETRY CAN_LOCAL rc_adcs_mpc_2 BIG_ENDIAN 
