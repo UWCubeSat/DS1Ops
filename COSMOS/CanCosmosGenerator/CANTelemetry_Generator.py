@@ -159,7 +159,7 @@ signalToLimits = {
 
 }
 signalConversions = {
-	"1/73 nT":"value * 1.0/73",
+	"1/73 nT":"value * 73.0",
 	"dK":"(55.0*(value-1255.0))/214.0 +30.0",
 	"dk":"(55.0*(value-1255.0))/214.0 +30.0",
 	"2^-15 seconds":"value * 2.0**-15",

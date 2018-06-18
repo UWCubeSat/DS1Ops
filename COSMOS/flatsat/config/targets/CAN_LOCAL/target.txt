@@ -9,6 +9,18 @@ IGNORE_PARAMETER ID
 # Ignored Items
 # (items you don't want to see by default in various tools)
 IGNORE_ITEM ID
+IGNORE_ITEM LENGTH
+IGNORE_ITEM FIXED_TYPE
+IGNORE_ITEM TAG
+IGNORE_ITEM TIMESTAMP_L
+IGNORE_ITEM FLAGS
+IGNORE_ITEM TIMESTAMP_H
+IGNORE_ITEM CHANNEL
+IGNORE_ITEM DLC
+IGNORE_ITEM CANID_PADDING
+IGNORE_ITEM CANID_RTR
+IGNORE_ITEM CANID_TYPE
+IGNORE_ITEM PADDING
 
 # You can explicitly define the command and telemetry files
 # you want to process and the order they are processed.
