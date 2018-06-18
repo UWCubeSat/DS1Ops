@@ -240,6 +240,13 @@ unitFormat = {
 	"r/s":"%0.3f"
 }
 
+enumToColor = { #these can be green, yellow, or red
+	"on":"GREEN",
+	"off_manual":"YELLOW",
+	"off_overcurrent":"RED",
+	"off_batt_undervoltage":"RED"
+}
+
 # adds a FORMAT_STRING for specific signals. Overrides the unit formatting
 signalFormat = {
   "rc_adcs_estim_8_epoch":"%.0f",
@@ -436,6 +443,14 @@ def createCosmosTlm(candb, tlmFileName):
 															signalType,
 															signal.comment,
 															signalEndian))
+			for key in sorted(signal._values.keys()):
+				if signal._values[key] in enumToColor:
+					tlmString +=("\t\tSTATE {} {} {}\n".format(signal._values[key].replace(" ", "_"),
+															key,
+															enumToColor[signal._values[key]]))
+				else:
+					tlmString +=("\t\tSTATE {} {}\n".format(signal._values[key].replace(" ", "_"),
+															key))
 			if signal.unit in signalUnits:
 				tlmString +=("\t\tUNITS {}\n".format(signalUnits[signal.unit]))
 				if signal.unit in signalConversions:
