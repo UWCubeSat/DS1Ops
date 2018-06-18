@@ -189,7 +189,7 @@ signalConversions = {
 	"raw power gen":"value * 3 / 3276.8"
 }
 signalUnits = {
-	"1/73 nT":"Nanoteslas nT",
+	"1/73 nT":"nanoTeslas nT",
 	"dK":"Celcius C",
 	"dk":"Celcius C",
 	"2^-15 seconds":"Seconds s",
@@ -207,7 +207,7 @@ signalUnits = {
 	"m/s":"Meters_Per_Second m/s",
 	"m":"Meters m",
 	"1/73 nanoTeslas":"Nanoteslas nT",
-	"73 nanoTeslas":"Nanoteslas nT",
+	"73 nanoTeslas":"nanoTeslas nT",
 	"0.004375 deg/s":"Degrees_Per_Second deg/s",
 	"60/32767 degrees":"Degrees deg",
 	"C":"Degrees_Celcius C",
