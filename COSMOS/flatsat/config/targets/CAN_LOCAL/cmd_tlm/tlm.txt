@@ -1,5 +1,5 @@
-TELEMETRY CAN_LOCAL gcmd_reset_minmax BIG_ENDIAN  
-	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " BIG_ENDIAN
+TELEMETRY CAN_LOCAL gcmd_reset_minmax BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
@@ -193,8 +193,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_bdot_h1 BIG_ENDIAN 
@@ -213,8 +225,20 @@ TELEMETRY CAN_LOCAL rc_adcs_bdot_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_eps_dist_h1 BIG_ENDIAN 
@@ -233,8 +257,20 @@ TELEMETRY CAN_LOCAL rc_eps_dist_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_dist_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_dist_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_dist_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_mpc_h1 BIG_ENDIAN 
@@ -253,8 +289,20 @@ TELEMETRY CAN_LOCAL rc_adcs_mpc_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mpc_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_mpc_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_mpc_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_mpc_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_estim_h1 BIG_ENDIAN 
@@ -273,8 +321,20 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_estim_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_estim_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_estim_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_estim_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_sp_h1 BIG_ENDIAN 
@@ -293,8 +353,20 @@ TELEMETRY CAN_LOCAL rc_adcs_sp_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_sp_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_sp_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_sp_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_sp_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_eps_gen_h1 BIG_ENDIAN 
@@ -313,8 +385,20 @@ TELEMETRY CAN_LOCAL rc_eps_gen_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_gen_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_gen_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_gen_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_eps_gen_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_adcs_mtq_h1 BIG_ENDIAN 
@@ -333,8 +417,20 @@ TELEMETRY CAN_LOCAL rc_adcs_mtq_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mtq_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_mtq_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_mtq_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_mtq_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL rc_ppt_h1 BIG_ENDIAN 
@@ -353,8 +449,20 @@ TELEMETRY CAN_LOCAL rc_ppt_h1 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_ppt_h1_temp_min 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_ppt_h1_temp_max 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_ppt_h1_temp_avg 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_ppt_h1_sysrstiv 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM rc_ppt_h1_reset_count 8 UINT "None" BIG_ENDIAN
 TELEMETRY CAN_LOCAL gcmd_mtq_pms BIG_ENDIAN 
@@ -376,6 +484,9 @@ TELEMETRY CAN_LOCAL gcmd_mtq_pms BIG_ENDIAN
 	APPEND_ITEM gcmd_mtq_pms_y 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM gcmd_mtq_pms_z 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM gcmd_mtq_pms_enable 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM PADDING 38 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gcmd_bdot_max_tumble BIG_ENDIAN 
@@ -414,6 +525,8 @@ TELEMETRY CAN_LOCAL gcmd_bdot_spam BIG_ENDIAN
 	APPEND_ITEM gcmd_bdot_spam_time_on 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM gcmd_bdot_spam_time_off 16 UINT "None" BIG_ENDIAN
 	APPEND_ITEM gcmd_bdot_spam_control 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 39 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gcmd_bdot_control BIG_ENDIAN 
@@ -432,6 +545,8 @@ TELEMETRY CAN_LOCAL gcmd_bdot_control BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_bdot_control_mode 1 UINT "None" BIG_ENDIAN
+		STATE normal_mode 0
+		STATE sleep_mode 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gcmd_bdot_mag_control BIG_ENDIAN 
@@ -450,6 +565,10 @@ TELEMETRY CAN_LOCAL gcmd_bdot_mag_control BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_bdot_mag_control_mode 2 UINT "None" BIG_ENDIAN
+		STATE auto_mode 0
+		STATE bdot_mode 1
+		STATE sp1_mode 2
+		STATE sp2_mode 3
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gcmd_bdot_pole_override BIG_ENDIAN 
@@ -468,8 +587,17 @@ TELEMETRY CAN_LOCAL gcmd_bdot_pole_override BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_bdot_pole_override_x 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_bdot_pole_override_y 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_bdot_pole_override_z 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gcmd_gen_set_pt_state BIG_ENDIAN 
@@ -488,8 +616,17 @@ TELEMETRY CAN_LOCAL gcmd_gen_set_pt_state BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_gen_set_pt_state_1 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_gen_set_pt_state_2 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_gen_set_pt_state_3 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gcmd_sp_set_thresh BIG_ENDIAN 
@@ -674,13 +811,37 @@ TELEMETRY CAN_LOCAL gcmd_dist_set_pd_state BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_dist_set_pd_state_com1 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_dist_set_pd_state_com2 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_dist_set_pd_state_rahs 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_dist_set_pd_state_bdot 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_dist_set_pd_state_estim 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_dist_set_pd_state_wheels 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_dist_set_pd_state_eps 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_dist_set_pd_state_ppt 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gcmd_mtq_pop BIG_ENDIAN 
@@ -699,8 +860,17 @@ TELEMETRY CAN_LOCAL gcmd_mtq_pop BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_mtq_pop_x 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_mtq_pop_y 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM gcmd_mtq_pop_z 2 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_batt_7 BIG_ENDIAN 
@@ -754,6 +924,8 @@ TELEMETRY CAN_LOCAL sensorproc_mag2 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM sensorproc_mag2_valid 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_adcs_estim_14 BIG_ENDIAN 
@@ -874,6 +1046,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_16 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_16_ppt_state 8 UINT "None" BIG_ENDIAN
+		STATE on 0 GREEN
+		STATE off_manual 1 YELLOW
+		STATE off_overcurrent 2 RED
+		STATE off_batt_undervoltage 3 RED
 	APPEND_ITEM rc_eps_dist_16_ppt_c_min 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -980,6 +1156,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_6 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_6_com2_state 8 UINT "None" BIG_ENDIAN
+		STATE on 0 GREEN
+		STATE off_manual 1 YELLOW
+		STATE off_overcurrent 2 RED
+		STATE off_batt_undervoltage 3 RED
 	APPEND_ITEM rc_eps_dist_6_com2_c_min 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1086,6 +1266,8 @@ TELEMETRY CAN_LOCAL rc_eps_dist_2 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_2_uv_state 8 UINT "None" BIG_ENDIAN
+		STATE normal 0
+		STATE undervoltage 1
 	APPEND_ITEM rc_eps_dist_2_met 40 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
@@ -1144,6 +1326,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_14 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_14_eps_state 8 UINT "None" BIG_ENDIAN
+		STATE on 0 GREEN
+		STATE off_manual 1 YELLOW
+		STATE off_overcurrent 2 RED
+		STATE off_batt_undervoltage 3 RED
 	APPEND_ITEM rc_eps_dist_14_eps_c_min 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1250,6 +1436,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_12 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_12_estim_state 8 UINT "None" BIG_ENDIAN
+		STATE on 0 GREEN
+		STATE off_manual 1 YELLOW
+		STATE off_overcurrent 2 RED
+		STATE off_batt_undervoltage 3 RED
 	APPEND_ITEM rc_eps_dist_12_estim_c_min 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1321,6 +1511,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_10 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_10_bdot_state 8 UINT "None" BIG_ENDIAN
+		STATE on 0 GREEN
+		STATE off_manual 1 YELLOW
+		STATE off_overcurrent 2 RED
+		STATE off_batt_undervoltage 3 RED
 	APPEND_ITEM rc_eps_dist_10_bdot_c_min 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1357,6 +1551,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_8 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_8_rahs_state 8 UINT "None" BIG_ENDIAN
+		STATE on 0 GREEN
+		STATE off_manual 1 YELLOW
+		STATE off_overcurrent 2 RED
+		STATE off_batt_undervoltage 3 RED
 	APPEND_ITEM rc_eps_dist_8_rahs_c_min 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1393,6 +1591,10 @@ TELEMETRY CAN_LOCAL rc_eps_dist_4 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_4_com1_state 8 UINT "None" BIG_ENDIAN
+		STATE on 0 GREEN
+		STATE off_manual 1 YELLOW
+		STATE off_overcurrent 2 RED
+		STATE off_batt_undervoltage 3 RED
 	APPEND_ITEM rc_eps_dist_4_com1_c_min 16 INT "None" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1716,8 +1918,14 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_8 BIG_ENDIAN
 		FORMAT_STRING "%.0f"
 	APPEND_ITEM rc_adcs_estim_8_sgp4_flag 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_sc_in_sun 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM rc_adcs_estim_8_sc_above_gs 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM rc_adcs_estim_8_tle_id 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 13 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_adcs_estim_7 BIG_ENDIAN 
@@ -2389,9 +2597,11 @@ TELEMETRY CAN_LOCAL rc_adcs_bdot_4 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_4_mag_z_avg 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_4_tumble 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 47 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_adcs_bdot_3 BIG_ENDIAN 
@@ -2412,22 +2622,22 @@ TELEMETRY CAN_LOCAL rc_adcs_bdot_3 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_3_mag_y_max 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_3_mag_y_avg 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_3_mag_z_min 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_3_mag_z_max 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 TELEMETRY CAN_LOCAL rc_adcs_bdot_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2447,22 +2657,22 @@ TELEMETRY CAN_LOCAL rc_adcs_bdot_2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_2_mag_x_min 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_2_mag_x_max 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_2_mag_x_avg 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_adcs_bdot_2_mag_y_min 16 INT "None" BIG_ENDIAN
 		UNITS Nanoteslas nT
 		GENERIC_READ_CONVERSION_START
-			value * 1.0/73
+			value * 73.0
 		GENERIC_READ_CONVERSION_END
 TELEMETRY CAN_LOCAL rc_adcs_bdot_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2599,7 +2809,11 @@ TELEMETRY CAN_LOCAL estim_state BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM estim_state_above_gs 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM estim_state_in_sun 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_adcs_mtq_5 BIG_ENDIAN 
@@ -3213,7 +3427,11 @@ TELEMETRY CAN_LOCAL rc_eps_batt_4 BIG_ENDIAN
 			23.6 * value / 65535
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_eps_batt_4_balancer_state 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM rc_eps_batt_4_heater_state 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_batt_3 BIG_ENDIAN 
@@ -3371,6 +3589,8 @@ TELEMETRY CAN_LOCAL cmd_ppt_halt BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_ppt_halt_confirm 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL ppt_firing_result BIG_ENDIAN 
@@ -3389,7 +3609,14 @@ TELEMETRY CAN_LOCAL ppt_firing_result BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM ppt_firing_result_code 8 UINT "None" BIG_ENDIAN
+		STATE fire_successful 0
+		STATE fire_overridden 1
+		STATE no_charge 2
+		STATE no_discharge 3
 	APPEND_ITEM ppt_firing_result_coulmb_good 8 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM ppt_firing_result_main_time 16 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
@@ -3401,7 +3628,13 @@ TELEMETRY CAN_LOCAL ppt_firing_result BIG_ENDIAN
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM ppt_firing_result_batt_good 8 INT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_ITEM ppt_firing_result_panel_good 8 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 TELEMETRY CAN_LOCAL tle_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -3501,6 +3734,8 @@ TELEMETRY CAN_LOCAL eps_pd_undervoltage BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM eps_pd_undervoltage_state 1 UINT "None" BIG_ENDIAN
+		STATE normal 0
+		STATE undervoltage 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL eps_pd_batt_voltage BIG_ENDIAN 
@@ -3524,6 +3759,12 @@ TELEMETRY CAN_LOCAL eps_pd_batt_voltage BIG_ENDIAN
 			value * 0.001
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM eps_pd_batt_voltage_agg 8 UINT "None" BIG_ENDIAN
+		STATE none 0
+		STATE avg 1
+		STATE count 2
+		STATE min 3
+		STATE max 4
+		STATE sum 5
 	APPEND_ITEM PADDING 40 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_pd_rst BIG_ENDIAN 
@@ -3561,7 +3802,11 @@ TELEMETRY CAN_LOCAL cmd_com2_run BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM cmd_com2_run_fileno 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM cmd_com2_run_jump 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM cmd_com2_run_clear 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 54 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL com2_state BIG_ENDIAN 
@@ -3602,7 +3847,18 @@ TELEMETRY CAN_LOCAL cmd_pd_enable BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_pd_enable_domain 8 UINT "None" BIG_ENDIAN
+		STATE ppt 0
+		STATE eps 1
+		STATE wheel 2
+		STATE estim 3
+		STATE bdot 4
+		STATE rahs 5
+		STATE com2 6
+		STATE com1 7
+		STATE unk 8
 	APPEND_ITEM cmd_pd_enable_enable 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 55 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_batt_rst BIG_ENDIAN 
@@ -3621,6 +3877,8 @@ TELEMETRY CAN_LOCAL cmd_batt_rst BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_batt_rst_confirm 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_batt_bal_enable BIG_ENDIAN 
@@ -3639,6 +3897,8 @@ TELEMETRY CAN_LOCAL cmd_batt_bal_enable BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_batt_bal_enable_enable 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_reboot_request BIG_ENDIAN 
@@ -3657,6 +3917,15 @@ TELEMETRY CAN_LOCAL cmd_reboot_request BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_reboot_request_domain 8 UINT "None" BIG_ENDIAN
+		STATE ppt 0
+		STATE eps 1
+		STATE wheel 2
+		STATE estim 3
+		STATE bdot 4
+		STATE rahs 5
+		STATE com2 6
+		STATE com1 7
+		STATE unk 8
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_ignore_fsw BIG_ENDIAN 
@@ -3675,6 +3944,8 @@ TELEMETRY CAN_LOCAL cmd_ignore_fsw BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_ignore_fsw_ignore 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_mtq_fsw BIG_ENDIAN 
@@ -3696,6 +3967,10 @@ TELEMETRY CAN_LOCAL cmd_mtq_fsw BIG_ENDIAN
 	APPEND_ITEM cmd_mtq_fsw_y 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM cmd_mtq_fsw_z 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM cmd_mtq_fsw_sc_mode 8 UINT "None" BIG_ENDIAN
+		STATE tumbling 0
+		STATE not_tumbling_alice 1
+		STATE not_tumbling_bob 2
+		STATE not_tumbling_charlie 3
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL eps_domain_output BIG_ENDIAN 
@@ -3714,6 +3989,15 @@ TELEMETRY CAN_LOCAL eps_domain_output BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM eps_domain_output_num 8 UINT "None" BIG_ENDIAN
+		STATE ppt 0
+		STATE eps 1
+		STATE wheel 2
+		STATE estim 3
+		STATE bdot 4
+		STATE rahs 5
+		STATE com2 6
+		STATE com1 7
+		STATE unk 8
 	APPEND_ITEM eps_domain_output_v 16 UINT "None" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
@@ -3730,7 +4014,11 @@ TELEMETRY CAN_LOCAL eps_domain_output BIG_ENDIAN
 			value * 0.001
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM eps_domain_output_oc_trip 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM eps_domain_output_state 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 6 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL sensorproc_imu BIG_ENDIAN 
@@ -3764,6 +4052,8 @@ TELEMETRY CAN_LOCAL sensorproc_imu BIG_ENDIAN
 			value * 0.004375
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM sensorproc_imu_valid 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL sensorproc_mag BIG_ENDIAN 
@@ -3797,6 +4087,8 @@ TELEMETRY CAN_LOCAL sensorproc_mag BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM sensorproc_mag_valid 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_rollcall BIG_ENDIAN 
@@ -3865,6 +4157,12 @@ TELEMETRY CAN_LOCAL gen_panel_temp BIG_ENDIAN
 	APPEND_ITEM gen_panel_temp_y_neg 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM gen_panel_temp_x_pos 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM gen_panel_temp_agg 8 UINT "None" BIG_ENDIAN
+		STATE none 0
+		STATE avg 1
+		STATE count 2
+		STATE min 3
+		STATE max 4
+		STATE sum 5
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_gen_rst BIG_ENDIAN 
@@ -3883,6 +4181,8 @@ TELEMETRY CAN_LOCAL cmd_gen_rst BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_gen_rst_confirm 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_ppt_single_fire BIG_ENDIAN 
@@ -3901,7 +4201,11 @@ TELEMETRY CAN_LOCAL cmd_ppt_single_fire BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM cmd_ppt_single_fire_with_pulse 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM cmd_ppt_single_fire_override 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gen_panel_pwr BIG_ENDIAN 
@@ -3935,6 +4239,12 @@ TELEMETRY CAN_LOCAL gen_panel_pwr BIG_ENDIAN
 			value * 0.001
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM gen_panel_pwr_agg 8 INT "None" BIG_ENDIAN
+		STATE none 0
+		STATE avg 1
+		STATE count 2
+		STATE min 3
+		STATE max 4
+		STATE sum 5
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gen_panel_current BIG_ENDIAN 
@@ -4017,6 +4327,8 @@ TELEMETRY CAN_LOCAL mpc_vp BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM mpc_vp_status 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL eps_batt_state BIG_ENDIAN 
@@ -4038,7 +4350,11 @@ TELEMETRY CAN_LOCAL eps_batt_state BIG_ENDIAN
 		UNITS Degrees_Celcius C
 	APPEND_ITEM eps_batt_state_soc 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM eps_batt_state_heat 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM eps_batt_state_bal 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 46 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL eps_batt_current BIG_ENDIAN 
@@ -4130,6 +4446,8 @@ TELEMETRY CAN_LOCAL sensorproc_sun BIG_ENDIAN
 	APPEND_ITEM sensorproc_sun_y 16 INT "None" BIG_ENDIAN
 	APPEND_ITEM sensorproc_sun_z 16 INT "None" BIG_ENDIAN
 	APPEND_ITEM sensorproc_sun_valid 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL cmd_mtq_bdot BIG_ENDIAN 
@@ -4168,6 +4486,8 @@ TELEMETRY CAN_LOCAL bdot_tumble_status BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM bdot_tumble_status_status 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL sync_2 BIG_ENDIAN 
@@ -4220,6 +4540,10 @@ TELEMETRY CAN_LOCAL msp_temp BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM msp_temp_temp 16 INT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL grnd_epoch BIG_ENDIAN 
