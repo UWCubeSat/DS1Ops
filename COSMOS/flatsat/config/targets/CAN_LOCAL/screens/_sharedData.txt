@@ -9,15 +9,12 @@ END
 HORIZONTAL
 CHANGEINVALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_RESET_COUNT "%d" FORMATTED 10 
 END
-#HORIZONTAL
-#TIMESINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_RESET_COUNT CONVERTED 10
-#END
+
 
 HORIZONTAL
 VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_RESET_COUNT
 END
 
 HORIZONTAL
-FORMATVALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG "%0.1f C"
-LIMITSBAR CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG
+VALUELIMITSBAR CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG
 END
