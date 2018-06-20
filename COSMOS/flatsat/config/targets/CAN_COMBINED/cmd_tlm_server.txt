@@ -1,9 +1,0 @@
-# This is a segment of the main cmd_tlm_server.txt that will be used with
-# AUTO_INTERFACE_TARGETS or INTERFACE_TARGET
-
-# NOTE: This line must be modified to match how your actual target connects.
-# See http://cosmosrb.com/docs/interfaces/ for more information.
-INTERFACE CAN_COMBINED_INT tcpip_client_interface.rb localhost 7779 7779 100 100 nil nil PREIDENTIFIED
-  TARGET CAN_COMBINED
-  # Add in the OverrideProtocol to allow override_tlm("CAN_COMBINED STATUS STRING = 'HI'")
-  PROTOCOL READ_WRITE can_protocol
