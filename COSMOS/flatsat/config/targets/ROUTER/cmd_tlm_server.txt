@@ -5,5 +5,5 @@
 # See http://cosmosrb.com/docs/interfaces/ for more information.
 ROUTER INST_ROUTER tcpip_server_interface.rb 2055 2055 10.0 nil LENGTH 32 16 7
   OPTION LISTEN_ADDRESS 127.0.0.1
-  ROUTE CAN_LOCAL_INT
-  ROUTE CAN_LOCAL_CMD_INT
+#~  ROUTE CAN_LOCAL_INT
+#~  ROUTE CAN_LOCAL_CMD_INT

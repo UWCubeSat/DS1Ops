@@ -4245,6 +4245,9 @@ TELEMETRY CAN_LOCAL mtq_ack BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM mtq_ack_phase 8 INT "None" BIG_ENDIAN
+		STATE measurement_phase 0
+		STATE actuation_phase 1
+		STATE pms_phase 2
 	APPEND_ITEM mtq_ack_source 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM mtq_ack_last_bdot_x 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM mtq_ack_last_bdot_y 8 INT "None" BIG_ENDIAN
