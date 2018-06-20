@@ -1,4 +1,4 @@
-SCREEN AUTO AUTO 1.0
+SCREEN AUTO AUTO 0.5
 
 TITLE "HuskySat-1: CAN Status Summary"
 
