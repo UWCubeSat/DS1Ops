@@ -541,9 +541,12 @@ def createCosmosCmd(candb, tlmFileName):
 															signal.comment,
 															signalEndian))
 			elif not (signal.name in overFlowSignals):
-				tlmString += ("\tAPPEND_PARAMETER {} {} {} MIN MAX  0 \"{}\" {}\n".format(signal.name,
+				int(signal.min)
+				tlmString += ("\tAPPEND_PARAMETER {} {} {} {} {}  0 \"{}\" {}\n".format(signal.name,
 															signal.signalsize,
 															signalType,
+															int(signal.min),
+															int(signal.max),
 															signal.comment,
 															signalEndian))
 			signalStrings[signal._startbit] = tlmString
