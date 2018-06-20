@@ -3825,9 +3825,9 @@ COMMAND CAN_LOCAL_CMD rc_eps_batt_3 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677378 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677378 
-	APPEND_PARAMETER rc_eps_batt_3_current_min 16 INT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_batt_3_current_max 16 INT MIN MAX  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER rc_eps_batt_3_current_avg 16 INT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_batt_3_current_min 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_batt_3_current_max 16 UINT MIN MAX  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_batt_3_current_avg 16 UINT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_3_batt_temp_avg 8 INT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
