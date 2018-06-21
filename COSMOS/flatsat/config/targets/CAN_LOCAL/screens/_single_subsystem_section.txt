@@ -1,0 +1,34 @@
+VERTICALBOX <%=subsyst %>  5 
+  
+  # Add CAN_RX_ERROR from h2 roll call packet
+  
+  MATRIXBYCOLUMNS 3
+  
+    LABEL "Temperature"
+    SPACER 5 10 EXPANDING MAXIMUM
+    HORIZONTAL
+      VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS 12
+      LIMITSBAR CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS
+    END
+    
+    LABEL "Number of Received Packets"
+    SPACER 5 10 EXPANDING MAXIMUM
+    VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RECEIVED_COUNT # COSMOS packet received count 10
+    
+    LABEL "Number of Reboots"
+    SPACER 5 10 EXPANDING MAXIMUM
+    VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_RESET_COUNT
+    
+    LABEL "Time Since Last Update"
+    SPACER 5 10 EXPANDING MAXIMUM
+    VERTICAL
+      TIMESINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_h1 RECEIVED_COUNT CONVERTED
+    END
+    
+    LABEL "CAN Receive Error"
+    SPACER 5 10 EXPANDING MAXIMUM
+    VALUE CAN_LOCAL RC_<%=subsyst %>_h2 RC_<%=subsyst %>_h2_CANRXERROR
+    
+  END
+
+END

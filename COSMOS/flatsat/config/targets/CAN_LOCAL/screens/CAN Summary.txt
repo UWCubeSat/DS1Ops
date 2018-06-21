@@ -1,29 +1,19 @@
 SCREEN AUTO AUTO 1.0
-MATRIXBYCOLUMNS 6 20 10
-   LABEL " "
-   LABEL "Time Since Last Update (Hours:Minutes:Seconds)"
-   LABEL "Received Packets"
-   LABEL "Reboots In Last Update"
-   #LABEL "Time Since Last Reboot (Hours:Minutes)"
-   LABEL "Total number of reboots"
-   LABEL "Average Temperature"
- 
-   LABEL "EPS Dist Board"
-  <%=render "_sharedData.txt", locals:{subsyst: 'EPS_DIST'}%>
-  LABEL "EPS Gen board"
-  <%=render "_sharedData.txt", locals:{subsyst: 'EPS_GEN'}%>
-  LABEL "BDOT"
-  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_BDOT'}%>
-  LABEL "ADCS Estim"
-  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
-  LABEL "ADCS MPC"
-  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MPC'}%>
-  LABEL "ADCS SensorProc"
-  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_SP'}%>
-  LABEL "ADCS MTQ"
-  <%=render "_sharedData.txt", locals:{subsyst: 'ADCS_MTQ'}%>
-  LABEL "PPT"
-  <%=render "_sharedData.txt", locals:{subsyst: 'PPT'}%>
-  LABEL "EPS Batt"
-  <%=render "_sharedData.txt", locals:{subsyst: 'EPS_BATT'}%>
+
+TITLE "HuskySat-1: CAN Status Summary"
+
+HORIZONTALLINE
+
+MATRIXBYCOLUMNS 3
+
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_DIST'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_GEN'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_MPC'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_SP'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'PPT'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_BATT'}%>
+
 END
