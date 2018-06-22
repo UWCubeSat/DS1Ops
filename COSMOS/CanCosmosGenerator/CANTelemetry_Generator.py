@@ -249,6 +249,22 @@ enumToColor = { #these can be green, yellow, or red
 	"off_batt_undervoltage":"RED"
 }
 
+frameToDerivedValues = {
+	"rc_eps_batt_7":["acc_charge_min", "acc_charge_avg", "acc_charge_max"]
+}
+
+derivedValueToConversion = {
+	"acc_charge_min":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
+	"acc_charge_avg":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
+	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576"
+}
+
+derivedValueToUnits = {
+	"acc_charge_min":"milliAmpH mAH",
+	"acc_charge_avg":"milliAmpH mAH",
+	"acc_charge_max":"milliAmpH mAH"
+}
+
 # adds a FORMAT_STRING for specific signals. Overrides the unit formatting
 signalFormat = {
   "rc_adcs_estim_8_epoch":"%.0f",
@@ -472,9 +488,17 @@ def createCosmosTlm(candb, tlmFileName):
 				tlmString += "\t\tFORMAT_STRING \"" + unitFormat[signal.unit] + "\"\n"
 			signalStrings[signal._startbit] = tlmString
 		if signal_size != 64:
-			signalStrings[64] = ("\tAPPEND_ITEM PADDING {} UINT \"Padded bits for CAN data\"\n\n".format(64 - signal_size))
+			signalStrings[64] = ("\tAPPEND_ITEM PADDING {} UINT \"Padded bits for CAN data\"\n".format(64 - signal_size))
 		for i in sorted(signalStrings.keys()):
 			tlmFile.write(signalStrings[i])
+		if frame.name in frameToDerivedValues.keys():
+			for derived in frameToDerivedValues[frame.name]:
+				tlmFile.write("\tITEM {} 0 0 DERIVED\n".format(derived))
+				if derived in derivedValueToUnits.keys():
+					tlmFile.write("\t\tUNITS {}\n".format(derivedValueToUnits[derived]))
+				if derived in derivedValueToConversion.keys():
+					tlmFile.write("\t\tGENERIC_READ_CONVERSION_START\n\t\t\t{}\n\t\tGENERIC_READ_CONVERSION_END\n".format(derivedValueToConversion[derived]))
+		tlmFile.write("\n")
 	tlmFile.write("""
 TELEMETRY CAN_LOCAL general_can_message BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
