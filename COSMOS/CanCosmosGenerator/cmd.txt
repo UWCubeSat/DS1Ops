@@ -633,6 +633,9 @@ COMMAND CAN_LOCAL_CMD gcmd_mtq_pms BIG_ENDIAN
 	APPEND_PARAMETER gcmd_mtq_pms_y 8 INT -100 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gcmd_mtq_pms_z 8 INT -100 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gcmd_mtq_pms_enable 2 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER PADDING 38 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gcmd_bdot_max_tumble BIG_ENDIAN 
@@ -694,6 +697,9 @@ COMMAND CAN_LOCAL_CMD gcmd_bdot_spam BIG_ENDIAN
 	APPEND_PARAMETER gcmd_bdot_spam_magnitude_y 8 INT -100 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gcmd_bdot_spam_magnitude_z 8 INT -100 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gcmd_bdot_spam_control 2 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER PADDING 6 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gcmd_bdot_control BIG_ENDIAN 
@@ -721,8 +727,12 @@ COMMAND CAN_LOCAL_CMD gcmd_bdot_control BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252746 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302252746 
-	APPEND_PARAMETER gcmd_bdot_control_mode 1 UINT 0 1  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER gcmd_bdot_control_mode 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE normal_mode 0
+		STATE sleep_mode 1
+		STATE spam_mag_self_test 2
+		STATE spam 3
+	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gcmd_bdot_mag_control BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -750,6 +760,10 @@ COMMAND CAN_LOCAL_CMD gcmd_bdot_mag_control BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252745 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302252745 
 	APPEND_PARAMETER gcmd_bdot_mag_control_mode 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE auto_mode 0
+		STATE bdot_mode 1
+		STATE sp1_mode 2
+		STATE sp2_mode 3
 	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gcmd_bdot_pole_override BIG_ENDIAN 
@@ -778,8 +792,17 @@ COMMAND CAN_LOCAL_CMD gcmd_bdot_pole_override BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252744 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302252744 
 	APPEND_PARAMETER gcmd_bdot_pole_override_x 2 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_bdot_pole_override_y 2 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_bdot_pole_override_z 2 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER PADDING 58 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gcmd_gen_set_pt_state BIG_ENDIAN 
@@ -808,8 +831,17 @@ COMMAND CAN_LOCAL_CMD gcmd_gen_set_pt_state BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252742 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302252742 
 	APPEND_PARAMETER gcmd_gen_set_pt_state_1 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_gen_set_pt_state_2 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_gen_set_pt_state_3 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER PADDING 58 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gcmd_sp_set_thresh BIG_ENDIAN 
@@ -1090,13 +1122,37 @@ COMMAND CAN_LOCAL_CMD gcmd_dist_set_pd_state BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252733 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302252733 
 	APPEND_PARAMETER gcmd_dist_set_pd_state_com1 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_dist_set_pd_state_com2 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_dist_set_pd_state_rahs 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_dist_set_pd_state_bdot 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_dist_set_pd_state_estim 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_dist_set_pd_state_wheels 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_dist_set_pd_state_eps 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_dist_set_pd_state_ppt 2 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER PADDING 48 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gcmd_mtq_pop BIG_ENDIAN 
@@ -1125,8 +1181,17 @@ COMMAND CAN_LOCAL_CMD gcmd_mtq_pop BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302449340 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302449340 
 	APPEND_PARAMETER gcmd_mtq_pop_x 2 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_mtq_pop_y 2 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER gcmd_mtq_pop_z 2 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER PADDING 58 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_batt_7 BIG_ENDIAN 
@@ -1188,6 +1253,8 @@ COMMAND CAN_LOCAL_CMD sensorproc_mag2 BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag2_y 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag2_z 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag2_valid 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_14 BIG_ENDIAN 
@@ -1372,6 +1439,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_16 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677458 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677458 
 	APPEND_PARAMETER rc_eps_dist_16_ppt_state 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE on 0
+		STATE off_manual 1
+		STATE off_overcurrent 2
+		STATE off_batt_undervoltage 3
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_min 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_max 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_avg 16 INT -32768 32767  0 "None" BIG_ENDIAN
@@ -1463,6 +1534,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_6 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677448 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677448 
 	APPEND_PARAMETER rc_eps_dist_6_com2_state 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE on 0
+		STATE off_manual 1
+		STATE off_overcurrent 2
+		STATE off_batt_undervoltage 3
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_min 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_max 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_avg 16 INT -32768 32767  0 "None" BIG_ENDIAN
@@ -1554,6 +1629,8 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_2 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677444 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677444 
 	APPEND_PARAMETER rc_eps_dist_2_uv_state 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE normal 0
+		STATE undervoltage 1
 	APPEND_PARAMETER rc_eps_dist_2_met 40 UINT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
 
@@ -1613,6 +1690,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_14 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677456 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677456 
 	APPEND_PARAMETER rc_eps_dist_14_eps_state 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE on 0
+		STATE off_manual 1
+		STATE off_overcurrent 2
+		STATE off_batt_undervoltage 3
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_min 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_max 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_avg 16 INT -32768 32767  0 "None" BIG_ENDIAN
@@ -1704,6 +1785,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_12 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677454 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677454 
 	APPEND_PARAMETER rc_eps_dist_12_estim_state 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE on 0
+		STATE off_manual 1
+		STATE off_overcurrent 2
+		STATE off_batt_undervoltage 3
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_min 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_max 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_avg 16 INT -32768 32767  0 "None" BIG_ENDIAN
@@ -1765,6 +1850,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_10 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677452 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677452 
 	APPEND_PARAMETER rc_eps_dist_10_bdot_state 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE on 0
+		STATE off_manual 1
+		STATE off_overcurrent 2
+		STATE off_batt_undervoltage 3
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_min 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_max 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_avg 16 INT -32768 32767  0 "None" BIG_ENDIAN
@@ -1796,6 +1885,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_8 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677450 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677450 
 	APPEND_PARAMETER rc_eps_dist_8_rahs_state 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE on 0
+		STATE off_manual 1
+		STATE off_overcurrent 2
+		STATE off_batt_undervoltage 3
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_min 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_max 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_avg 16 INT -32768 32767  0 "None" BIG_ENDIAN
@@ -1827,6 +1920,10 @@ COMMAND CAN_LOCAL_CMD rc_eps_dist_4 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677446 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677446 
 	APPEND_PARAMETER rc_eps_dist_4_com1_state 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE on 0
+		STATE off_manual 1
+		STATE off_overcurrent 2
+		STATE off_batt_undervoltage 3
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_min 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_max 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_avg 16 INT -32768 32767  0 "None" BIG_ENDIAN
@@ -2284,8 +2381,14 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_8 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_8_epoch 40 UINT MIN MAX  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_8_sgp4_flag 8 INT -1 1  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_8_sc_in_sun 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER rc_adcs_estim_8_sc_above_gs 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER rc_adcs_estim_8_tle_id 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 13 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_7 BIG_ENDIAN 
@@ -2992,6 +3095,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_bdot_4 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_4_last_spam_y_mtq_y 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_4_last_spam_y_mtq_z 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_4_tumble 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_bdot_3 BIG_ENDIAN 
@@ -3263,7 +3368,11 @@ COMMAND CAN_LOCAL_CMD estim_state BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302449336 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302449336 
 	APPEND_PARAMETER estim_state_above_gs 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER estim_state_in_sun 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_mtq_5 BIG_ENDIAN 
@@ -3861,7 +3970,11 @@ COMMAND CAN_LOCAL_CMD rc_eps_batt_4 BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_4_voltage_max 16 UINT 0 65535  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_4_voltage_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_4_balancer_state 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER rc_eps_batt_4_heater_state 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 14 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_batt_3 BIG_ENDIAN 
@@ -4035,6 +4148,8 @@ COMMAND CAN_LOCAL_CMD cmd_ppt_halt BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  285475076 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 285475076 
 	APPEND_PARAMETER cmd_ppt_halt_confirm 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD ppt_firing_result BIG_ENDIAN 
@@ -4063,11 +4178,24 @@ COMMAND CAN_LOCAL_CMD ppt_firing_result BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677104 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677104 
 	APPEND_PARAMETER ppt_firing_result_code 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE fire_successful 0
+		STATE fire_overridden 1
+		STATE no_charge 2
+		STATE no_discharge 3
 	APPEND_PARAMETER ppt_firing_result_coulmb_good 8 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER ppt_firing_result_main_time 16 UINT 0 65535  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER ppt_firing_result_ign_time 16 UINT 0 65535  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER ppt_firing_result_batt_good 8 INT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 	APPEND_PARAMETER ppt_firing_result_panel_good 8 UINT 0 2  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
 COMMAND CAN_LOCAL_CMD tle_5 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -4227,6 +4355,8 @@ COMMAND CAN_LOCAL_CMD eps_pd_undervoltage BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304218338 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304218338 
 	APPEND_PARAMETER eps_pd_undervoltage_state 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE normal 0
+		STATE undervoltage 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD eps_pd_batt_voltage BIG_ENDIAN 
@@ -4256,6 +4386,12 @@ COMMAND CAN_LOCAL_CMD eps_pd_batt_voltage BIG_ENDIAN
 		STATE DEFAULT 304218337 
 	APPEND_PARAMETER eps_pd_batt_voltage_val 16 UINT 0 10000  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER eps_pd_batt_voltage_agg 8 UINT 0 5  0 "None" BIG_ENDIAN
+		STATE none 0
+		STATE avg 1
+		STATE count 2
+		STATE min 3
+		STATE max 4
+		STATE sum 5
 	APPEND_PARAMETER PADDING 40 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_pd_rst BIG_ENDIAN 
@@ -4313,7 +4449,11 @@ COMMAND CAN_LOCAL_CMD cmd_com2_run BIG_ENDIAN
 		STATE DEFAULT 302514673 
 	APPEND_PARAMETER cmd_com2_run_fileno 8 UINT 0 255  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER cmd_com2_run_jump 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER cmd_com2_run_clear 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 54 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD com2_state BIG_ENDIAN 
@@ -4372,7 +4512,18 @@ COMMAND CAN_LOCAL_CMD cmd_pd_enable BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303300865 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 303300865 
 	APPEND_PARAMETER cmd_pd_enable_domain 8 UINT 0 8  0 "None" BIG_ENDIAN
+		STATE ppt 0
+		STATE eps 1
+		STATE wheel 2
+		STATE estim 3
+		STATE bdot 4
+		STATE rahs 5
+		STATE com2 6
+		STATE com1 7
+		STATE unk 8
 	APPEND_PARAMETER cmd_pd_enable_enable 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 55 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_batt_rst BIG_ENDIAN 
@@ -4401,6 +4552,8 @@ COMMAND CAN_LOCAL_CMD cmd_batt_rst BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304349442 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304349442 
 	APPEND_PARAMETER cmd_batt_rst_confirm 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_batt_bal_enable BIG_ENDIAN 
@@ -4429,6 +4582,8 @@ COMMAND CAN_LOCAL_CMD cmd_batt_bal_enable BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304349443 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304349443 
 	APPEND_PARAMETER cmd_batt_bal_enable_enable 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_reboot_request BIG_ENDIAN 
@@ -4457,6 +4612,15 @@ COMMAND CAN_LOCAL_CMD cmd_reboot_request BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  1310728 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 1310728 
 	APPEND_PARAMETER cmd_reboot_request_domain 8 UINT 0 8  0 "None" BIG_ENDIAN
+		STATE ppt 0
+		STATE eps 1
+		STATE wheel 2
+		STATE estim 3
+		STATE bdot 4
+		STATE rahs 5
+		STATE com2 6
+		STATE com1 7
+		STATE unk 8
 	APPEND_PARAMETER PADDING 56 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_ignore_fsw BIG_ENDIAN 
@@ -4485,6 +4649,8 @@ COMMAND CAN_LOCAL_CMD cmd_ignore_fsw BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304349220 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304349220 
 	APPEND_PARAMETER cmd_ignore_fsw_ignore 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_mtq_fsw BIG_ENDIAN 
@@ -4516,6 +4682,10 @@ COMMAND CAN_LOCAL_CMD cmd_mtq_fsw BIG_ENDIAN
 	APPEND_PARAMETER cmd_mtq_fsw_y 8 INT -100 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER cmd_mtq_fsw_z 8 INT -100 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER cmd_mtq_fsw_sc_mode 8 UINT 0 3  0 "None" BIG_ENDIAN
+		STATE tumbling 0
+		STATE not_tumbling_alice 1
+		STATE not_tumbling_bob 2
+		STATE not_tumbling_charlie 3
 	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD eps_domain_output BIG_ENDIAN 
@@ -4544,11 +4714,24 @@ COMMAND CAN_LOCAL_CMD eps_domain_output BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304218336 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304218336 
 	APPEND_PARAMETER eps_domain_output_num 8 UINT 0 8  0 "None" BIG_ENDIAN
+		STATE ppt 0
+		STATE eps 1
+		STATE wheel 2
+		STATE estim 3
+		STATE bdot 4
+		STATE rahs 5
+		STATE com2 6
+		STATE com1 7
+		STATE unk 8
 	APPEND_PARAMETER eps_domain_output_v 16 UINT 0 10000  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER eps_domain_output_v_c 16 UINT 0 3200  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER eps_domain_output_v_c_max 16 UINT 0 3200  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER eps_domain_output_oc_trip 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER eps_domain_output_state 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 6 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD sensorproc_imu BIG_ENDIAN 
@@ -4580,6 +4763,8 @@ COMMAND CAN_LOCAL_CMD sensorproc_imu BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_imu_y 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_imu_z 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_imu_valid 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD sensorproc_mag BIG_ENDIAN 
@@ -4611,6 +4796,8 @@ COMMAND CAN_LOCAL_CMD sensorproc_mag BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag_y 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag_z 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag_valid 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_rollcall BIG_ENDIAN 
@@ -4669,6 +4856,9 @@ COMMAND CAN_LOCAL_CMD mtq_ack BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302448688 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302448688 
 	APPEND_PARAMETER mtq_ack_phase 8 INT -128 3  0 "None" BIG_ENDIAN
+		STATE measurement_phase 0
+		STATE actuation_phase 1
+		STATE pms_phase 2
 	APPEND_PARAMETER mtq_ack_source 8 INT -128 1  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER mtq_ack_last_bdot_x 8 INT -128 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER mtq_ack_last_bdot_y 8 INT -128 100  0 "None" BIG_ENDIAN
@@ -4705,6 +4895,12 @@ COMMAND CAN_LOCAL_CMD gen_panel_temp BIG_ENDIAN
 	APPEND_PARAMETER gen_panel_temp_y_neg 8 INT -128 127  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gen_panel_temp_x_pos 8 INT -128 127  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gen_panel_temp_agg 8 UINT 0 5  0 "None" BIG_ENDIAN
+		STATE none 0
+		STATE avg 1
+		STATE count 2
+		STATE min 3
+		STATE max 4
+		STATE sum 5
 	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_gen_rst BIG_ENDIAN 
@@ -4733,6 +4929,8 @@ COMMAND CAN_LOCAL_CMD cmd_gen_rst BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303300880 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 303300880 
 	APPEND_PARAMETER cmd_gen_rst_confirm 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_ppt_single_fire BIG_ENDIAN 
@@ -4761,7 +4959,11 @@ COMMAND CAN_LOCAL_CMD cmd_ppt_single_fire BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303300864 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 303300864 
 	APPEND_PARAMETER cmd_ppt_single_fire_with_pulse 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER cmd_ppt_single_fire_override 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gen_panel_pwr BIG_ENDIAN 
@@ -4793,6 +4995,12 @@ COMMAND CAN_LOCAL_CMD gen_panel_pwr BIG_ENDIAN
 	APPEND_PARAMETER gen_panel_pwr_y_neg 16 UINT 0 20000  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gen_panel_pwr_x_pos 16 UINT 0 20000  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gen_panel_pwr_agg 8 INT 0 5  0 "None" BIG_ENDIAN
+		STATE none 0
+		STATE avg 1
+		STATE count 2
+		STATE min 3
+		STATE max 4
+		STATE sum 5
 	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gen_panel_current BIG_ENDIAN 
@@ -4881,6 +5089,8 @@ COMMAND CAN_LOCAL_CMD mpc_vp BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305594402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 305594402 
 	APPEND_PARAMETER mpc_vp_status 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD eps_batt_state BIG_ENDIAN 
@@ -4911,7 +5121,11 @@ COMMAND CAN_LOCAL_CMD eps_batt_state BIG_ENDIAN
 	APPEND_PARAMETER eps_batt_state_temp 8 INT -128 127  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER eps_batt_state_soc 8 UINT 0 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER eps_batt_state_heat 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER eps_batt_state_bal 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 46 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD eps_batt_current BIG_ENDIAN 
@@ -5001,6 +5215,8 @@ COMMAND CAN_LOCAL_CMD sensorproc_sun BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_sun_y 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_sun_z 16 INT -32768 32767  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_sun_valid 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD cmd_mtq_bdot BIG_ENDIAN 
@@ -5059,6 +5275,8 @@ COMMAND CAN_LOCAL_CMD bdot_tumble_status BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302448672 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302448672 
 	APPEND_PARAMETER bdot_tumble_status_status 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD sync_2 BIG_ENDIAN 

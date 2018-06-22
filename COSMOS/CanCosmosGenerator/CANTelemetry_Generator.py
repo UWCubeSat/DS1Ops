@@ -549,6 +549,9 @@ def createCosmosCmd(candb, tlmFileName):
 															int(signal.max),
 															signal.comment,
 															signalEndian))
+			for key in sorted(signal._values.keys()):
+				tlmString +=("\t\tSTATE {} {}\n".format(signal._values[key].replace(" ", "_"),
+															key))
 			signalStrings[signal._startbit] = tlmString
 		if signal_size != 64:
 			signalStrings[64] = ("\tAPPEND_PARAMETER PADDING {} UINT MIN MAX 0 \"Padded bits for CAN data\"\n\n".format(64 - signal_size))
