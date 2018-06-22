@@ -65,23 +65,4 @@ VERTICALBOX "Magnetorquer" 5 5
   END
 END
 
-VERTICALBOX "System" 5 5
-  MATRIXBYCOLUMNS 3 5 5
-    LABEL "Temperature"
-    VALUE CAN_LOCAL "rc_adcs_bdot_h1" "rc_adcs_bdot_h1_temp_min" WITH_UNITS 8
-    LIMITSBAR CAN_LOCAL "rc_adcs_bdot_h1" "rc_adcs_bdot_h1_temp_min" WITH_UNITS   
-    ########
-    LABEL "Reboots"
-    VALUE CAN_LOCAL "rc_adcs_bdot_h1" "rc_adcs_bdot_h1_reset_count" RAW 8
-    SPACER 1 1
-    ########
-    LABEL "Packets Received"
-    VALUE CAN_LOCAL "rc_adcs_bdot_h1" "received_count" RAW 8
-    SPACER 1 1
-    ########
-    LABEL "CAN RX Errors"
-    VALUE CAN_LOCAL "rc_adcs_bdot_h2" "rc_adcs_bdot_h2_canrxerror" RAW 8
-    SPACER 1 1
-  END
-END
-
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT'}%>
