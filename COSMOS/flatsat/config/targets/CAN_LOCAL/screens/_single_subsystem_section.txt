@@ -4,25 +4,25 @@ VERTICALBOX <%=subsyst %> 5
   
   MATRIXBYCOLUMNS 3 4 4
     LABEL "Temperature"
-    VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS 6
+    VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS 8
     LIMITSBAR CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS
   END
   
   MATRIXBYCOLUMNS 5 4 4
     
     LABEL "Received Packets"
-    VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RECEIVED_COUNT CONVERTED 6 # COSMOS packet received count 10
+    VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RECEIVED_COUNT CONVERTED 8 # COSMOS packet received count 10
     SPACER 20 10
     LABEL "Reboots"
-    VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_RESET_COUNT CONVERTED 6
+    VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_RESET_COUNT CONVERTED 8
     
     LABEL "Time Since Last Update"
     VERTICAL
-      TIMESINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_h1 RECEIVED_COUNT CONVERTED 6
+      TIMESINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_h1 RECEIVED_COUNT FORMATTED 8
     END
     SPACER 20 10
     LABEL "CAN Receive Error"
-    VALUE CAN_LOCAL RC_<%=subsyst %>_h2 RC_<%=subsyst %>_h2_CANRXERROR RAW 6
+    VALUE CAN_LOCAL RC_<%=subsyst %>_h2 RC_<%=subsyst %>_h2_CANRXERROR RAW 8
     
   END
 

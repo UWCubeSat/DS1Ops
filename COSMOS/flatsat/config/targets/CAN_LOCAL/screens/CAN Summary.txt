@@ -1,19 +1,18 @@
-SCREEN AUTO AUTO 0.5
+SCREEN AUTO AUTO 0.2
 
 TITLE "HuskySat-1: CAN Status Summary"
 
 HORIZONTALLINE
 
-MATRIXBYCOLUMNS 3
+MATRIXBYCOLUMNS 2
 
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_DIST'}%>
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_GEN'}%>
-<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_BATT'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'PPT'}%>
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_ESTIM'}%>
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_MPC'}%>
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT'}%>
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_SP'}%>
-<%=render "_single_subsystem_section.txt", locals:{subsyst: 'PPT'}%>
-<%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_BATT'}%>
 
 END
