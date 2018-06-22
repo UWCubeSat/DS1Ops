@@ -581,12 +581,16 @@ TELEMETRY CAN_LOCAL gcmd_bdot_spam BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 302252747 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM gcmd_bdot_spam_time_on 8 UINT "None" BIG_ENDIAN
+	APPEND_ITEM gcmd_bdot_spam_time_on 16 UINT "None" BIG_ENDIAN
 	APPEND_ITEM gcmd_bdot_spam_time_off 16 UINT "None" BIG_ENDIAN
-	APPEND_ITEM gcmd_bdot_spam_control 1 UINT "None" BIG_ENDIAN
+	APPEND_ITEM gcmd_bdot_spam_magnitude_x 8 INT "None" BIG_ENDIAN
+	APPEND_ITEM gcmd_bdot_spam_magnitude_y 8 INT "None" BIG_ENDIAN
+	APPEND_ITEM gcmd_bdot_spam_magnitude_z 8 INT "None" BIG_ENDIAN
+	APPEND_ITEM gcmd_bdot_spam_control 2 UINT "None" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 39 UINT "Padded bits for CAN data"
+		STATE null 2
+	APPEND_ITEM PADDING 6 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL gcmd_bdot_control BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
