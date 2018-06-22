@@ -691,7 +691,7 @@ COMMAND CAN_LOCAL_CMD gcmd_bdot_spam BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252747 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302252747 
-	APPEND_PARAMETER gcmd_bdot_spam_time_on 16 UINT 0 255  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_bdot_spam_time_on 16 UINT 0 65535  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gcmd_bdot_spam_time_off 16 UINT 0 65535  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gcmd_bdot_spam_magnitude_x 8 INT -100 100  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER gcmd_bdot_spam_magnitude_y 8 INT -100 100  0 "None" BIG_ENDIAN
