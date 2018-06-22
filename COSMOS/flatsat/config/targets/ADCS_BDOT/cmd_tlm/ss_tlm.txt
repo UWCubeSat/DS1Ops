@@ -25,7 +25,6 @@ TELEMETRY ADCS_BDOT CONTINUOUS_MAGNETOMETER BIG_ENDIAN "Magnetometer readings"
 TELEMETRY ADCS_BDOT MTQ_INFO BIG_ENDIAN "Magnetorquer Info readings"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 126} %>
-	
     
     APPEND_ITEM X_DIPOLE 8 INT "Value of x-dipole to send to MTQ when tumble status is high" LITTLE_ENDIAN
     APPEND_ITEM Y_DIPOLE 8 INT "Value of y-dipole to send to MTQ when tumble status is high" LITTLE_ENDIAN
@@ -43,6 +42,17 @@ TELEMETRY ADCS_BDOT SIMULINK_INFO BIG_ENDIAN "Simulink outputs"
 	STATE TUMBLING 1 RED
 	STATE NOT_TUMBLING 0 GREEN
 
+TELEMETRY ADCS_BDOT STATE_STATUS BIG_ENDIAN "Bdot State"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 119} %>
+	
+    APPEND_ITEM BDOT_STATE_STATUS 8 UINT "State of bdot" LITTLE_ENDIAN	
+    APPEND_ITEM MAG_SELECTION_MODE 8 UINT "Magnetometer Selection Mode" LITTLE_ENDIAN
+    APPEND_ITEM CURRENT_LISTENING_MAG 8 UINT "Current magnetometer bdot is listening to" LITTLE_ENDIAN
+    APPEND_ITEM CALIBRATION_SWITCH 8 UINT "Current switch setting on magnetometer calibration" LITTLE_ENDIAN
+	STATE CALIBRATION_ON 1 GREEN
+	STAET CALIBRATION_OFF 0 RED
+	
 TELEMETRY ADCS_BDOT POLLING_TIMER BIG_ENDIAN "All 8 Polling Timer Information"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 123} %>

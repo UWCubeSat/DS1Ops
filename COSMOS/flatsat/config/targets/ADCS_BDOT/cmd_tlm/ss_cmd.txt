@@ -15,3 +15,37 @@ COMMAND ADCS_BDOT MAG_SELECT LITTLE_ENDIAN "Enable/disable a pretend sensor"
     STATE BDOT_MAG 1
     STATE SP_MAG1 2
     STATE SP_MAG2 3
+
+COMMAND ADCS_BDOT MODE_OPERATION_SELECT LITTLE_ENDIAN "Choose magnetometer reading mode"
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 3 } %>
+  
+  APPEND_PARAMETER CMD_MODE_OPERATION 8 UINT 0 3 0 "Choose mode for bdot" LITTLE_ENDIAN
+    STATE CMD_MODE_OP_NORMAL 0
+    STATE CMD_NAP_MODE 1
+
+
+COMMAND ADCS_BDOT MAX_TUMBLING_TIME_SELECT LITTLE_ENDIAN "COnfigure the maximum bdot tumbling time in minutes"
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 4 } %>
+  
+  APPEND_PARAMETER MAX_TUMBLE_TIME_MIN 16 UINT 0 65535 0 "Configure max tumbling time" LITTLE_ENDIAN
+    UNITS minutes Min
+
+COMMAND ADCS_BDOT SPAM_SETTINGS LITTLE_ENDIAN "Configure SPAM Mode Settings on Bdot"
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 5 } %>
+  
+  APPEND_PARAMETER SPAM_OFF_TIME_MINUTES 16 UINT 0 65535 0 "Minutes in between SPAM" LITTLE_ENDIAN
+  APPEND_PARAMETER SPAM_ON_TIME_MINUTES 8 UINT 0 255 0 "Minutes in SPAM mode" LITTLE_ENDIAN
+  APPEND_PARAMETER SPAM_SWITCH 8 UINT 0 1 0 "Turn SPAM mode on or off" LITTLE_ENDIAN
+    STATE SPAM_ON 1
+    STATE SPAM_OFF 0
+
+COMMAND ADCS_BDOT MAG_CALIBRATION_SETTING LITTLE_ENDIAN "Turn on/off calibration when reading magnetometer"
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 6 } %>
+  
+  APPEND_PARAMETER CALIBRATION_SWITCH 8 UINT 0 1 0 "Turn magnetometer calibration on or off" LITTLE_ENDIAN
+    STATE CALIBRATION_ON 1
+    STATE CALIBRATION_OFF 0
