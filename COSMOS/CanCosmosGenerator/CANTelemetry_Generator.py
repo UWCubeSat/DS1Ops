@@ -177,7 +177,7 @@ signalConversions = {
 	"73 nanoTeslas":"value * 73",
 	"0.004375 deg/s":"value * 0.004375",
 	"60/32767 degrees":"value * 60.0/32767",
-	"1/32768 units":"value / 32768",
+	"1/32768 units":"value * 3.051757e-5",
 	"raw node voltage":"value * 0.004",
 	"raw current batt":"(value - 32767) / 3276.7",
 	"raw voltage":"23.6 * value / 65535",
