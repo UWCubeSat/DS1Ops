@@ -50,6 +50,20 @@ TELEMETRY ADCS_BDOT STATE_STATUS BIG_ENDIAN "Bdot State"
     APPEND_ITEM MAG_SELECTION_MODE 8 UINT "Magnetometer Selection Mode" LITTLE_ENDIAN
     APPEND_ITEM CURRENT_LISTENING_MAG 8 UINT "Current magnetometer bdot is listening to" LITTLE_ENDIAN
 	
+TELEMETRY ADCS_BDOT CALIBRATION_STATUS BIG_ENDIAN "Bdot Calibration"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 118} %>
+	
+    APPEND_ITEM BDOT_CALIBRATION_SWITCH_STATUS 8 UINT "Calibration switch, 1 = ON, 0 = OFF" LITTLE_ENDIAN
+		STATE CALIBRATION_ON 1 RED
+		STATE CALIBRATION_OFF 0 GREEN
+    APPEND_ITEM CALIBRATION_FACTOR_X 8 UINT "Calibration factor for x magnetometer readings" LITTLE_ENDIAN
+    APPEND_ITEM CALIBRATION_FACTOR_Y 8 UINT "Calibration factor for y magnetometer readings" LITTLE_ENDIAN
+	APPEND_ITEM CALIBRATION_FACTOR_Z 8 UINT "Calibration factor for z magnetometer readings" LITTLE_ENDIAN
+	
+	
+	
+	
 	
 TELEMETRY ADCS_BDOT POLLING_TIMER BIG_ENDIAN "All 8 Polling Timer Information"
     # This must ALWAYS be the first entry in any telemetry packet
