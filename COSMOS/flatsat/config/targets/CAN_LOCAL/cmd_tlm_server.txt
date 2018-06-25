@@ -3,5 +3,5 @@
 
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
-INTERFACE CAN_LOCAL_INT tcpip_server_interface.rb NIL 4000 10 nil LENGTH 0 16 0 1 BIG_ENDIAN
+INTERFACE CAN_REMOTE_INT tcpip_client_interface_authorized.rb tlm.amsatfox.org 41043 41043 uw_ground amsat 6 10 nil LENGTH
   TARGET CAN_LOCAL
