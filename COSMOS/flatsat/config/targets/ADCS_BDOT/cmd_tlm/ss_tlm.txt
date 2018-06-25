@@ -57,9 +57,9 @@ TELEMETRY ADCS_BDOT CALIBRATION_STATUS BIG_ENDIAN "Bdot Calibration"
     APPEND_ITEM BDOT_CALIBRATION_SWITCH_STATUS 8 UINT "Calibration switch, 1 = ON, 0 = OFF" LITTLE_ENDIAN
 		STATE CALIBRATION_ON 1 RED
 		STATE CALIBRATION_OFF 0 GREEN
-    APPEND_ITEM CALIBRATION_FACTOR_X 8 UINT "Calibration factor for x magnetometer readings" LITTLE_ENDIAN
-    APPEND_ITEM CALIBRATION_FACTOR_Y 8 UINT "Calibration factor for y magnetometer readings" LITTLE_ENDIAN
-	APPEND_ITEM CALIBRATION_FACTOR_Z 8 UINT "Calibration factor for z magnetometer readings" LITTLE_ENDIAN
+    APPEND_ITEM CALIBRATION_FACTOR_X 32 FLOAT "Calibration factor for x magnetometer readings" LITTLE_ENDIAN
+    APPEND_ITEM CALIBRATION_FACTOR_Y 32 FLOAT "Calibration factor for y magnetometer readings" LITTLE_ENDIAN
+	APPEND_ITEM CALIBRATION_FACTOR_Z 32 FLOAT "Calibration factor for z magnetometer readings" LITTLE_ENDIAN
 	
 	
 	
