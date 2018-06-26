@@ -35,6 +35,7 @@ import canmatrix.copy as cmcp
 temperatureLimits=[15, 20, 30, 35]
 signalToLimits = {
 		"rc_eps_batt_h1_temp_avg":temperatureLimits,
+	"rc_eps_batt_3_batt_temp_avg":temperatureLimits,
 	"rc_adcs_bdot_h1_temp_avg":temperatureLimits,
 	"rc_ppt_h1_temp_avg":temperatureLimits,
 	"rc_eps_dist_h1_temp_avg":temperatureLimits,
@@ -155,7 +156,12 @@ signalToLimits = {
 	"rc_eps_gen_8_pnl_3_power_max":[0.06,1.0,3.0,4.0],
 	"rc_eps_gen_9_pnl_1_temp_max":[17,19.5,23,25],
 	"rc_eps_gen_9_pnl_2_temp_max":[17,19.5,23,25],
-	"rc_eps_gen_9_pnl_3_temp_max":[17,19.5,23,25]
+	"rc_eps_gen_9_pnl_3_temp_max":[17,19.5,23,25],
+
+	"rc_eps_batt_4_voltage_avg":[5.2, 5.8, 7.3, 7.7],
+	"rc_eps_batt_3_current_avg":[-10.0, -8.0, 4.5, 6.0],
+	"rc_eps_batt_2_node_v_avg":[2.6, 2.9, 3.65, 3.85],
+	"rc_eps_batt_5_node_c_avg":[-10.0, -8.0, 4.5, 6.0]
 
 }
 signalConversions = {
@@ -177,7 +183,7 @@ signalConversions = {
 	"73 nanoTeslas":"value * 73",
 	"0.004375 deg/s":"value * 0.004375",
 	"60/32767 degrees":"value * 60.0/32767",
-	"1/32768 units":"value * 3.051757e-5",
+	"1/32768 units":"value / 32768",
 	"raw node voltage":"value * 0.004",
 	"raw current batt":"(value - 32767) / 3276.7",
 	"raw voltage":"23.6 * value / 65535",
@@ -233,9 +239,7 @@ unitFormat = {
 	"m/s":"%0.4f",
 	"m":"%0.1f",
 	"u":"%0.4f",
-	"1/32768 units":"%0.4f",
 	"deg":"%0.4f",
-	"0.004375 deg/s":"%0.2f",
 	"d":"%0.4f",
 	"s":"%0.4f",
 	"C":"%0.3f",
@@ -272,7 +276,19 @@ signalFormat = {
   "rc_adcs_estim_8_epoch":"%.0f",
   "rc_eps_batt_2_node_v_min":"%.4f",
   "rc_eps_batt_2_node_v_max":"%.4f",
-  "rc_eps_batt_2_node_v_avg":"%.4f"
+  "rc_eps_batt_2_node_v_avg":"%.4f",
+
+  "rc_eps_batt_5_node_c_min":"%.3f",
+  "rc_eps_batt_5_node_c_max":"%.3f",
+  "rc_eps_batt_5_node_c_avg":"%.3f",
+
+  "rc_eps_batt_4_voltage_min":"%.3f",
+  "rc_eps_batt_4_voltage_max":"%.3f",
+  "rc_eps_batt_4_voltage_avg":"%.3f",
+
+  "rc_eps_batt_3_current_min":"%.3f",
+  "rc_eps_batt_3_current_max":"%.3f",
+  "rc_eps_batt_3_current_avg":"%.3f"
 }
 
 signalsWithOverflow=[
