@@ -156,7 +156,7 @@ signalToLimits = {
 	"rc_eps_gen_8_pnl_3_power_max":[0.06,1.0,3.0,4.0],
 	"rc_eps_gen_9_pnl_1_temp_max":[17,19.5,23,25],
 	"rc_eps_gen_9_pnl_2_temp_max":[17,19.5,23,25],
-	"rc_eps_gen_9_pnl_3_temp_max":[17,19.5,23,25]
+	"rc_eps_gen_9_pnl_3_temp_max":[17,19.5,23,25],
 
 	"rc_eps_batt_4_voltage_avg":[5.2, 5.8, 7.3, 7.7],
 	"rc_eps_batt_3_current_avg":[-10.0, -8.0, 4.5, 6.0],
