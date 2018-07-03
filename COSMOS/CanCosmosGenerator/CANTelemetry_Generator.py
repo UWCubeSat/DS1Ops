@@ -177,7 +177,7 @@ signalConversions = {
 	"2^-15s":"value * 2.0**-15",
 	"dmA (0.1mA)":"value * 0.0001",
 	"2^-8s":"value * 2.0**-8",
-	"2^-8 s":"value >> 16", #note that this unit should actually be "2^-16 s"
+	"2^-8 s":"value >> 8",
 	"1/73 nanoTeslas":"value * 1.0/73",
 	"73 nanoTeslas":"value * 73",
 	"0.004375 deg/s":"value * 0.004375",
