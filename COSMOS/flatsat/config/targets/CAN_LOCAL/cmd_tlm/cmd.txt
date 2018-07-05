@@ -483,7 +483,11 @@ COMMAND CAN_LOCAL_CMD rc_ppt_h2 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677478 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677478 
 	APPEND_PARAMETER rc_ppt_h2_canrxerror 8 UINT 0 255  0 "the PPT MCP's RX error buffer" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 56 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER rc_ppt_h2_last_fire_result 2 UINT 0 3  0 "The result of the last PPT fire" BIG_ENDIAN
+		STATE fire_successful 0
+		STATE no_main_charge 1
+		STATE no_main_discharge 2
+	APPEND_PARAMETER PADDING 54 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_batt_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3649,14 +3653,14 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mtq_2 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677388 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677388 
-	APPEND_PARAMETER rc_adcs_mtq_2_bdot_x_avg 8 UINT 0 255  0 "Average X BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_2_bdot_x_max 8 UINT 0 255  0 "Max X BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_2_bdot_x_min 8 UINT 0 255  0 "Min X BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_2_bdot_y_avg 8 UINT 0 255  0 "Average Y BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_2_bdot_y_max 8 UINT 0 255  0 "Max Y BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_2_bdot_y_min 8 UINT 0 255  0 "Min Y BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_2_bdot_z_avg 8 UINT 0 255  0 "Average Z BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_2_bdot_z_max 8 UINT 0 255  0 "Max Z BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_2_bdot_x_avg 8 INT -100 100  0 "Average X BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_2_bdot_x_max 8 INT -100 100  0 "Max X BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_2_bdot_x_min 8 INT -100 100  0 "Min X BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_2_bdot_y_avg 8 INT -100 100  0 "Average Y BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_2_bdot_y_max 8 INT -100 100  0 "Max Y BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_2_bdot_y_min 8 INT -100 100  0 "Min Y BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_2_bdot_z_avg 8 INT -100 100  0 "Average Z BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_2_bdot_z_max 8 INT -100 100  0 "Max Z BDOT command" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mtq_1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -3768,7 +3772,9 @@ COMMAND CAN_LOCAL_CMD rc_ppt_1 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677384 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677384 
-	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER rc_ppt_1_fire_count 16 UINT 0 65535  0 "Total number of times the PPT has fired" BIG_ENDIAN
+	APPEND_PARAMETER rc_ppt_1_fault_count 16 UINT 0 65535  0 "PPT fault count" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_gen_9 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 

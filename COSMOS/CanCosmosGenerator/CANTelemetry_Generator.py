@@ -280,17 +280,17 @@ signalFormat = {
   "rc_eps_batt_2_node_v_max":"%.4f",
   "rc_eps_batt_2_node_v_avg":"%.4f",
 
-  "rc_eps_batt_5_node_c_min":"%.3f",
-  "rc_eps_batt_5_node_c_max":"%.3f",
-  "rc_eps_batt_5_node_c_avg":"%.3f",
+  "rc_eps_batt_5_node_c_min":"%.4f",
+  "rc_eps_batt_5_node_c_max":"%.4f",
+  "rc_eps_batt_5_node_c_avg":"%.4f",
 
-  "rc_eps_batt_4_voltage_min":"%.3f",
-  "rc_eps_batt_4_voltage_max":"%.3f",
-  "rc_eps_batt_4_voltage_avg":"%.3f",
+  "rc_eps_batt_4_voltage_min":"%.4f",
+  "rc_eps_batt_4_voltage_max":"%.4f",
+  "rc_eps_batt_4_voltage_avg":"%.4f",
 
-  "rc_eps_batt_3_current_min":"%.3f",
-  "rc_eps_batt_3_current_max":"%.3f",
-  "rc_eps_batt_3_current_avg":"%.3f"
+  "rc_eps_batt_3_current_min":"%.4f",
+  "rc_eps_batt_3_current_max":"%.4f",
+  "rc_eps_batt_3_current_avg":"%.4f"
 
 }
 

@@ -3739,20 +3739,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_5 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value / 327.68
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_5_node_c_max 16 INT "Current into the node between batteries. Indicates battery ballancing state." BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 327.68
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_5_node_c_avg 16 INT "Current into the node between batteries. Indicates battery ballancing state." BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 327.68
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED -10.0 -8.0 4.5 6.0
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_5_batt_temp_min 8 INT "Battery temperature indicated by TMP36 mounted to the batteries." BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
@@ -3784,20 +3784,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_4 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			23.6 * value / 65535
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_4_voltage_max 16 UINT "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			23.6 * value / 65535
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_4_voltage_avg 16 UINT "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			23.6 * value / 65535
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_4_balancer_state 1 UINT "State of the battery balancer. enabeling the battery balancer only gives it permission to ballance. " BIG_ENDIAN
 		STATE false 0
 		STATE true 1
@@ -3826,20 +3826,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_3 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			(value - 32767) / 3276.7
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_3_current_max 16 UINT "Maximum battery current seen since last min/max reset" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			(value - 32767) / 3276.7
 		GENERIC_READ_CONVERSION_END
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_3_current_avg 16 UINT "Average current into or out of the battery" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			(value - 32767) / 3276.7
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED -10.0 -8.0 4.5 6.0
-		FORMAT_STRING "%.3f"
+		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_3_batt_temp_avg 8 INT "Battery temperature indicated by TMP36 mounted to the batteries." BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
