@@ -1,3 +1,95 @@
+TELEMETRY CAN_LOCAL rc_adcs_bdot_7 BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 304677489 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM rc_adcs_bdot_7_spam_magnitude_x 8 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_7_spam_magnitude_y 8 INT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_7_spam_magnitude_z 8 INT "None" BIG_ENDIAN
+	APPEND_ITEM PADDING 40 UINT "Padded bits for CAN data"
+
+TELEMETRY CAN_LOCAL rc_adcs_bdot_6 BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 304677488 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM rc_adcs_bdot_6_spam_off_time 16 UINT "Current setting for the time in minutes of SPAM not being on" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_6_spam_on_time 16 UINT "Current setting for the time in minutes of SPAM being on" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_6_spam_control 1 UINT "Current setting on whether or not spam is enabled" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_adcs_bdot_6_max_tumble_time 16 UINT "Current max tumbling time that bdot can be in until it swtiches to SLEEP_MODE automatically" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_6_current_state 2 UINT "State that bdot is in. Chooses mode that bdot is in: 0 = NORMAL_MODE , 1 = SLEEP_MODE, 2 = SPAM_MAG_SELF_TEST, 3 = SPAM" BIG_ENDIAN
+		STATE normal_mode 0
+		STATE sleep_mode 1
+		STATE spam_mag_self_test 2
+		STATE spam 3
+	APPEND_ITEM rc_adcs_bdot_6_pop_status_x 1 UINT "Current status of whether or not POP is enable for specified axis " BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_adcs_bdot_6_pop_status_y 1 UINT "Current status of whether or not POP is enable for specified axis " BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_adcs_bdot_6_pop_status_z 1 UINT "Current status of whether or not POP is enable for specified axis " BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_adcs_bdot_6_gain_ovr_status_x 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_adcs_bdot_6_gain_ovr_status_y 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_adcs_bdot_6_gain_ovr_status_z 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_adcs_bdot_6_mag_control 2 UINT "Shows the current state of magnetometer control on bdot. Choose the best fit magnetometer from ground. 0 = Auto, 1 = MAG_BDOT, 2 = MAG_SP1, 3 = MAG_SP2" BIG_ENDIAN
+		STATE auto_mode 0
+		STATE bdot_mode 1
+		STATE sp1_mode 2
+		STATE sp2_mode 3
+	APPEND_ITEM PADDING 5 UINT "Padded bits for CAN data"
+
+TELEMETRY CAN_LOCAL gcmd_ppt_multiple_fire BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 302252753 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM gcmd_ppt_multiple_fire_count 8 UINT "How many times to fire" BIG_ENDIAN
+	APPEND_ITEM gcmd_ppt_multiple_fire_override 1 UINT "Ppt fire override" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM PADDING 55 UINT "Padded bits for CAN data"
+
 TELEMETRY CAN_LOCAL gcmd_mtq_pwm_time BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -244,7 +336,14 @@ TELEMETRY CAN_LOCAL rc_ppt_h2 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_ppt_h2_canrxerror 8 UINT "the PPT MCP's RX error buffer" BIG_ENDIAN
-	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_ppt_h2_last_fire_result 2 UINT "The result of the last PPT fire:
+0 - fire successful
+1 - main didn't charge
+2 - main didn't discharge" BIG_ENDIAN
+		STATE fire_successful 0
+		STATE no_main_charge 1
+		STATE no_main_discharge 2
+	APPEND_ITEM PADDING 54 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_batt_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1406,7 +1505,7 @@ TELEMETRY CAN_LOCAL rc_eps_dist_2 BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_2_met 40 UINT "Mission elapsed time first 4 bytes" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
-			value * 2.0**-8
+			value >> 8
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
@@ -2058,7 +2157,7 @@ TELEMETRY CAN_LOCAL rc_adcs_estim_8 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_8_epoch 40 UINT "Epoch used in position and velocity calculation" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
-			value * 2.0**-8
+			value >> 8
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%.0f"
 	APPEND_ITEM rc_adcs_estim_8_sgp4_flag 8 INT "Flag telling what mode ESTIM is propagating the orbit in" BIG_ENDIAN
@@ -3124,14 +3223,14 @@ TELEMETRY CAN_LOCAL rc_adcs_mtq_2 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677388 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mtq_2_bdot_x_avg 8 UINT "Average X BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_2_bdot_x_max 8 UINT "Max X BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_2_bdot_x_min 8 UINT "Min X BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_2_bdot_y_avg 8 UINT "Average Y BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_2_bdot_y_max 8 UINT "Max Y BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_2_bdot_y_min 8 UINT "Min Y BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_2_bdot_z_avg 8 UINT "Average Z BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_2_bdot_z_max 8 UINT "Max Z BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_2_bdot_x_avg 8 INT "Average X BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_2_bdot_x_max 8 INT "Max X BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_2_bdot_x_min 8 INT "Min X BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_2_bdot_y_avg 8 INT "Average Y BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_2_bdot_y_max 8 INT "Max Y BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_2_bdot_y_min 8 INT "Min Y BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_2_bdot_z_avg 8 INT "Average Z BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_2_bdot_z_max 8 INT "Max Z BDOT command" BIG_ENDIAN
 
 TELEMETRY CAN_LOCAL rc_adcs_mtq_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3229,7 +3328,13 @@ TELEMETRY CAN_LOCAL rc_ppt_1 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677384 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_ppt_1_fire_count 16 UINT "Total number of times the PPT has fired" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_1_fault_count 16 UINT "PPT fault count" BIG_ENDIAN
+		UNITS Seconds s
+		GENERIC_READ_CONVERSION_START
+			value * 2.0**-15
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_gen_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3637,16 +3742,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_5 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value / 327.68
 		GENERIC_READ_CONVERSION_END
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_5_node_c_max 16 INT "Current into the node between batteries. Indicates battery ballancing state." BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 327.68
 		GENERIC_READ_CONVERSION_END
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_5_node_c_avg 16 INT "Current into the node between batteries. Indicates battery ballancing state." BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 327.68
 		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED -10.0 -8.0 4.5 6.0
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_5_batt_temp_min 8 INT "Battery temperature indicated by TMP36 mounted to the batteries." BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
@@ -3678,16 +3787,20 @@ TELEMETRY CAN_LOCAL rc_eps_batt_4 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			23.6 * value / 65535
 		GENERIC_READ_CONVERSION_END
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_4_voltage_max 16 UINT "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			23.6 * value / 65535
 		GENERIC_READ_CONVERSION_END
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_4_voltage_avg 16 UINT "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			23.6 * value / 65535
 		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_4_balancer_state 1 UINT "State of the battery balancer. enabeling the battery balancer only gives it permission to ballance. " BIG_ENDIAN
 		STATE false 0
 		STATE true 1
@@ -3716,21 +3829,26 @@ TELEMETRY CAN_LOCAL rc_eps_batt_3 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			(value - 32767) / 3276.7
 		GENERIC_READ_CONVERSION_END
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_3_current_max 16 UINT "Maximum battery current seen since last min/max reset" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			(value - 32767) / 3276.7
 		GENERIC_READ_CONVERSION_END
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_3_current_avg 16 UINT "Average current into or out of the battery" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			(value - 32767) / 3276.7
 		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED -10.0 -8.0 4.5 6.0
+		FORMAT_STRING "%.3f"
 	APPEND_ITEM rc_eps_batt_3_batt_temp_avg 8 INT "Battery temperature indicated by TMP36 mounted to the batteries." BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_batt_2 BIG_ENDIAN 
@@ -3765,6 +3883,7 @@ TELEMETRY CAN_LOCAL rc_eps_batt_2 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
+		LIMITS DEFAULT 1 ENABLED 2.6 2.9 3.65 3.85
 		FORMAT_STRING "%.4f"
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
@@ -4386,7 +4505,7 @@ TELEMETRY CAN_LOCAL cmd_rollcall BIG_ENDIAN
 	APPEND_ITEM cmd_rollcall_met 40 UINT "Mission Elapsed Time" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
-			value * 2.0**-8
+			value >> 8
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM cmd_rollcall_type 8 UINT "Rollcall Type (Unused for now)" BIG_ENDIAN
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
@@ -4846,7 +4965,7 @@ TELEMETRY CAN_LOCAL grnd_epoch BIG_ENDIAN
 	APPEND_ITEM grnd_epoch_val 40 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
-			value * 2.0**-8
+			value >> 8
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 24 UINT "Padded bits for CAN data"
 

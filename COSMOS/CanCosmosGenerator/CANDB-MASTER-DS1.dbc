@@ -34,6 +34,7 @@ NS_ :
 BS_:
 
 BU_: ppt eps_batt eps_dist eps_gen adcs_rwz adcs_rwy adcs_rwx adcs_mtq rahs adcs_sensorproc adcs_mpc adcs_estim adcs_bdot com_1 com_2
+VAL_TABLE_ fire_result 2 "no main discharge" 1 "no main charge" 0 "fire successful" ;
 VAL_TABLE_ mtq_phase 2 "pms_phase" 1 "actuation_phase" 0 "measurement_phase" ;
 VAL_TABLE_ bdot_mag_mode 3 "sp2 mode" 2 "sp1 mode" 1 "bdot mode" 0 "auto mode" ;
 VAL_TABLE_ bdot_control_mode 3 "spam" 2 "spam mag self test" 1 "sleep mode" 0 "normal mode" ;
@@ -48,6 +49,29 @@ VAL_TABLE_ node 15 "rahs" 14 "com_2" 13 "com_1" 12 "adcs_mtq" 11 "adcs_sensorpro
 VAL_TABLE_ agg 5 "sum" 4 "max" 3 "min" 2 "count" 1 "avg" 0 "none" ;
 VAL_TABLE_ bool 1 "true" 0 "false" ;
 
+
+BO_ 2452161137 rc_adcs_bdot_7: 3 Vector__XXX
+ SG_ rc_adcs_bdot_7_spam_magnitude_z : 16|8@1- (1,0) [-127|128] "" Vector__XXX
+ SG_ rc_adcs_bdot_7_spam_magnitude_y : 8|8@1- (1,0) [-127|128] "" Vector__XXX
+ SG_ rc_adcs_bdot_7_spam_magnitude_x : 0|8@1- (1,0) [-127|128] "" Vector__XXX
+
+BO_ 2452161136 rc_adcs_bdot_6: 8 Vector__XXX
+ SG_ rc_adcs_bdot_6_spam_on_time : 16|16@1+ (1,0) [0|65535] "minutes" Vector__XXX
+ SG_ rc_adcs_bdot_6_spam_off_time : 0|16@1+ (1,0) [0|65535] "minutes" Vector__XXX
+ SG_ rc_adcs_bdot_6_spam_control : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ rc_adcs_bdot_6_pop_status_z : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ rc_adcs_bdot_6_pop_status_y : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ rc_adcs_bdot_6_pop_status_x : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ rc_adcs_bdot_6_max_tumble_time : 33|16@1+ (1,0) [0|65535] "minutes" Vector__XXX
+ SG_ rc_adcs_bdot_6_mag_control : 57|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ rc_adcs_bdot_6_gain_ovr_status_z : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ rc_adcs_bdot_6_gain_ovr_status_y : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ rc_adcs_bdot_6_gain_ovr_status_x : 54|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ rc_adcs_bdot_6_current_state : 49|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 2449736401 gcmd_ppt_multiple_fire: 2 Vector__XXX
+ SG_ gcmd_ppt_multiple_fire_override : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ gcmd_ppt_multiple_fire_count : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 2449736400 gcmd_mtq_pwm_time: 2 Vector__XXX
  SG_ gcmd_mtq_pwm_time_measurement : 8|8@1+ (1,0) [0|255] "seconds" Vector__XXX
@@ -88,7 +112,8 @@ BO_ 2452161128 rc_eps_gen_h2: 8 Vector__XXX
 BO_ 2452161127 rc_adcs_mtq_h2: 1 Vector__XXX
  SG_ rc_adcs_mtq_h2_canrxerror : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 2452161126 rc_ppt_h2: 1 Vector__XXX
+BO_ 2452161126 rc_ppt_h2: 2 Vector__XXX
+ SG_ rc_ppt_h2_last_fire_result : 8|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ rc_ppt_h2_canrxerror : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 2452161125 rc_eps_batt_h1: 8 Vector__XXX
@@ -190,7 +215,7 @@ BO_ 2449736390 gcmd_gen_set_pt_state: 1 Vector__XXX
  SG_ gcmd_gen_set_pt_state_2 : 2|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ gcmd_gen_set_pt_state_1 : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 2449736391 gcmd_sp_set_thresh: 1 Vector__XXX
+BO_ 2449736391 gcmd_sp_set_thresh: 2 Vector__XXX
  SG_ gcmd_sp_set_thresh_thresh : 0|16@1+ (1,0) [0|65535] "1/73 nanoTeslas" Vector__XXX
 
 BO_ 2449736389 gcmd_dist_set_pd_ovc_ppt: 4 Vector__XXX
@@ -295,8 +320,8 @@ BO_ 2452161093 rc_eps_dist_3: 6 Vector__XXX
 
 BO_ 2452161092 rc_eps_dist_2: 6 Vector__XXX
  SG_ rc_eps_dist_2_uv_state : 0|8@1+ (1,0) [0|3] "" Vector__XXX
- SG_ rc_eps_dist_2_met_overflow : 40|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_eps_dist_2_met : 8|32@1+ (1,0) [0|4294967296] "2^-8 s" Vector__XXX
+ SG_ rc_eps_dist_2_met_overflow : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ rc_eps_dist_2_met : 16|32@1+ (1,0) [0|4294967296] "2^-8 s" Vector__XXX
 
 BO_ 2452161107 rc_eps_dist_17: 6 Vector__XXX
  SG_ rc_eps_dist_17_ppt_v_min : 0|16@1+ (1,0) [0|65535] "raw node voltage" Vector__XXX
@@ -580,14 +605,14 @@ BO_ 2452161037 rc_adcs_mtq_3: 8 Vector__XXX
  SG_ rc_adcs_mtq_3_bdot_z_min : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 2452161036 rc_adcs_mtq_2: 8 Vector__XXX
- SG_ rc_adcs_mtq_2_bdot_z_max : 56|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_adcs_mtq_2_bdot_z_avg : 48|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_adcs_mtq_2_bdot_y_min : 40|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_adcs_mtq_2_bdot_y_max : 32|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_adcs_mtq_2_bdot_y_avg : 24|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_adcs_mtq_2_bdot_x_min : 16|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_adcs_mtq_2_bdot_x_max : 8|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rc_adcs_mtq_2_bdot_x_avg : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ rc_adcs_mtq_2_bdot_z_max : 56|8@1- (1,0) [-100|100] "" Vector__XXX
+ SG_ rc_adcs_mtq_2_bdot_z_avg : 48|8@1- (1,0) [-100|100] "" Vector__XXX
+ SG_ rc_adcs_mtq_2_bdot_y_min : 40|8@1- (1,0) [-100|100] "" Vector__XXX
+ SG_ rc_adcs_mtq_2_bdot_y_max : 32|8@1- (1,0) [-100|100] "" Vector__XXX
+ SG_ rc_adcs_mtq_2_bdot_y_avg : 24|8@1- (1,0) [-100|100] "" Vector__XXX
+ SG_ rc_adcs_mtq_2_bdot_x_min : 16|8@1- (1,0) [-100|100] "" Vector__XXX
+ SG_ rc_adcs_mtq_2_bdot_x_max : 8|8@1- (1,0) [-100|100] "" Vector__XXX
+ SG_ rc_adcs_mtq_2_bdot_x_avg : 0|8@1- (1,0) [-100|100] "" Vector__XXX
 
 BO_ 2452161035 rc_adcs_mtq_1: 8 Vector__XXX
 
@@ -602,7 +627,9 @@ BO_ 2452161033 rc_ppt_2: 8 Vector__XXX
  SG_ rc_ppt_2_main_chg_max : 16|16@1+ (1,0) [-32768|32767] "2^-15 seconds" Vector__XXX
  SG_ rc_ppt_2_main_chg_avg : 32|16@1+ (1,0) [-32768|32767] "2^-15 seconds" Vector__XXX
 
-BO_ 2452161032 rc_ppt_1: 8 Vector__XXX
+BO_ 2452161032 rc_ppt_1: 4 Vector__XXX
+ SG_ rc_ppt_1_fault_count : 16|16@1+ (1,0) [0|65535] "2^-15s" Vector__XXX
+ SG_ rc_ppt_1_fire_count : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
 BO_ 2452161048 rc_eps_gen_9: 8 Vector__XXX
  SG_ rc_eps_gen_9_pnl_3_temp_min : 40|8@1- (1,0) [-128|127] "raw tmp36" Vector__XXX
@@ -887,6 +914,17 @@ BO_TX_BU_ 2148794376 : adcs_bdot,adcs_estim,adcs_mpc,adcs_mtq,adcs_rwx,adcs_rwy,
 BO_TX_BU_ 2452160531 : eps_batt,adcs_bdot,adcs_estim,adcs_mpc,adcs_mtq,adcs_rwx,adcs_rwy,adcs_rwz,adcs_sensorproc,com_1,com_2,eps_dist,eps_gen,ppt,rahs;
 
 
+CM_ SG_ 2452161136 rc_adcs_bdot_6_spam_on_time "Current setting for the time in minutes of SPAM being on";
+CM_ SG_ 2452161136 rc_adcs_bdot_6_spam_off_time "Current setting for the time in minutes of SPAM not being on";
+CM_ SG_ 2452161136 rc_adcs_bdot_6_spam_control "Current setting on whether or not spam is enabled";
+CM_ SG_ 2452161136 rc_adcs_bdot_6_pop_status_z "Current status of whether or not POP is enable for specified axis ";
+CM_ SG_ 2452161136 rc_adcs_bdot_6_pop_status_y "Current status of whether or not POP is enable for specified axis ";
+CM_ SG_ 2452161136 rc_adcs_bdot_6_pop_status_x "Current status of whether or not POP is enable for specified axis ";
+CM_ SG_ 2452161136 rc_adcs_bdot_6_max_tumble_time "Current max tumbling time that bdot can be in until it swtiches to SLEEP_MODE automatically";
+CM_ SG_ 2452161136 rc_adcs_bdot_6_mag_control "Shows the current state of magnetometer control on bdot. Choose the best fit magnetometer from ground. 0 = Auto, 1 = MAG_BDOT, 2 = MAG_SP1, 3 = MAG_SP2";
+CM_ SG_ 2452161136 rc_adcs_bdot_6_current_state "State that bdot is in. Chooses mode that bdot is in: 0 = NORMAL_MODE , 1 = SLEEP_MODE, 2 = SPAM_MAG_SELF_TEST, 3 = SPAM";
+CM_ SG_ 2449736401 gcmd_ppt_multiple_fire_override "Ppt fire override";
+CM_ SG_ 2449736401 gcmd_ppt_multiple_fire_count "How many times to fire";
 CM_ SG_ 2449736399 gcmd_eps_batt_fulldef_const_volt "Limits for detecting a full state on the battery (voltage must be greater than this value)";
 CM_ SG_ 2449736399 gcmd_eps_batt_fulldef_chg_curr "Limits for detecting a full state on the battery (current must be less than this value)";
 CM_ SG_ 2452161116 rc_adcs_bdot_5_last_spam_z_mtq_z "the averages of one axis of magnetometer readings during one axis of the last spam";
@@ -900,6 +938,10 @@ CM_ SG_ 2452161130 rc_adcs_estim_h2_canrxerror "Estim MCP's RX error buffer";
 CM_ SG_ 2452161129 rc_adcs_sp_h2_canrxerror "SP MCP's RX error buffer";
 CM_ SG_ 2452161128 rc_eps_gen_h2_canrxerror "GEN MCP's RX error buffer";
 CM_ SG_ 2452161127 rc_adcs_mtq_h2_canrxerror "the MTQ MCP's RX error buffer";
+CM_ SG_ 2452161126 rc_ppt_h2_last_fire_result "The result of the last PPT fire:
+0 - fire successful
+1 - main didn't charge
+2 - main didn't discharge";
 CM_ SG_ 2452161126 rc_ppt_h2_canrxerror "the PPT MCP's RX error buffer";
 CM_ SG_ 2452161125 rc_eps_batt_h1_temp_min "Temperature of MSP";
 CM_ SG_ 2452161125 rc_eps_batt_h1_temp_max "Temperature of MSP";
@@ -1184,6 +1226,8 @@ CM_ SG_ 2452161033 rc_ppt_2_total_fire_count "Total Fire count";
 CM_ SG_ 2452161033 rc_ppt_2_main_chg_min "Main Charge Time Minimum";
 CM_ SG_ 2452161033 rc_ppt_2_main_chg_max "Main Charge Time Maximum";
 CM_ SG_ 2452161033 rc_ppt_2_main_chg_avg "Main Charge Time Average";
+CM_ SG_ 2452161032 rc_ppt_1_fault_count "PPT fault count";
+CM_ SG_ 2452161032 rc_ppt_1_fire_count "Total number of times the PPT has fired";
 CM_ SG_ 2452161048 rc_eps_gen_9_pnl_3_temp_min "Panel 3 Temp min";
 CM_ SG_ 2452161048 rc_eps_gen_9_pnl_3_temp_max "Panel 3 Temp max";
 CM_ SG_ 2452161048 rc_eps_gen_9_pnl_3_temp_avg "Panel 3 Temp avg";
@@ -1342,6 +1386,17 @@ CM_ SG_ 2452160531 msp_temp_temp "temp of msp";
 CM_ SG_ 2449932985 grnd_epoch_val_overflow "Overflow of epoch (time between millenium and when we launched)";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "BusType" "CAN";
+VAL_ 2452161136 rc_adcs_bdot_6_spam_control 1 "true" 0 "false" ;
+VAL_ 2452161136 rc_adcs_bdot_6_pop_status_z 1 "true" 0 "false" ;
+VAL_ 2452161136 rc_adcs_bdot_6_pop_status_y 1 "true" 0 "false" ;
+VAL_ 2452161136 rc_adcs_bdot_6_pop_status_x 1 "true" 0 "false" ;
+VAL_ 2452161136 rc_adcs_bdot_6_mag_control 3 "sp2 mode" 2 "sp1 mode" 1 "bdot mode" 0 "auto mode" ;
+VAL_ 2452161136 rc_adcs_bdot_6_gain_ovr_status_z 1 "true" 0 "false" ;
+VAL_ 2452161136 rc_adcs_bdot_6_gain_ovr_status_y 1 "true" 0 "false" ;
+VAL_ 2452161136 rc_adcs_bdot_6_gain_ovr_status_x 1 "true" 0 "false" ;
+VAL_ 2452161136 rc_adcs_bdot_6_current_state 3 "spam" 2 "spam mag self test" 1 "sleep mode" 0 "normal mode" ;
+VAL_ 2449736401 gcmd_ppt_multiple_fire_override 1 "true" 0 "false" ;
+VAL_ 2452161126 rc_ppt_h2_last_fire_result 2 "no main discharge" 1 "no main charge" 0 "fire successful" ;
 VAL_ 2449736397 gcmd_mtq_pms_enable 2 "null" 1 "true" 0 "false" ;
 VAL_ 2449736395 gcmd_bdot_spam_control 2 "null" 1 "true" 0 "false" ;
 VAL_ 2449736394 gcmd_bdot_control_mode 3 "spam" 2 "spam mag self test" 1 "sleep mode" 0 "normal mode" ;
