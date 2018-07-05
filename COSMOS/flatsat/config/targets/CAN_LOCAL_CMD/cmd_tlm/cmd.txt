@@ -483,10 +483,7 @@ COMMAND CAN_LOCAL_CMD rc_ppt_h2 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677478 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677478 
 	APPEND_PARAMETER rc_ppt_h2_canrxerror 8 UINT 0 255  0 "the PPT MCP's RX error buffer" BIG_ENDIAN
-	APPEND_PARAMETER rc_ppt_h2_last_fire_result 2 UINT 0 3  0 "The result of the last PPT fire:
-0 - fire successful
-1 - main didn't charge
-2 - main didn't discharge" BIG_ENDIAN
+	APPEND_PARAMETER rc_ppt_h2_last_fire_result 2 UINT 0 3  0 "The result of the last PPT fire" BIG_ENDIAN
 		STATE fire_successful 0
 		STATE no_main_charge 1
 		STATE no_main_discharge 2

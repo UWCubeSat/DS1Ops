@@ -336,10 +336,7 @@ TELEMETRY CAN_LOCAL rc_ppt_h2 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_ppt_h2_canrxerror 8 UINT "the PPT MCP's RX error buffer" BIG_ENDIAN
-	APPEND_ITEM rc_ppt_h2_last_fire_result 2 UINT "The result of the last PPT fire:
-0 - fire successful
-1 - main didn't charge
-2 - main didn't discharge" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_h2_last_fire_result 2 UINT "The result of the last PPT fire" BIG_ENDIAN
 		STATE fire_successful 0
 		STATE no_main_charge 1
 		STATE no_main_discharge 2
