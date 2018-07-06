@@ -5,6 +5,7 @@ VERTICALBOX <%=subsyst %> 5
   MATRIXBYCOLUMNS 3 4 4
     LABEL "Temperature"
     VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS 8
+      SETTING ENABLE_AGING FALSE
     LIMITSBAR CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS
   END
   
@@ -12,17 +13,21 @@ VERTICALBOX <%=subsyst %> 5
     
     LABEL "Received Packets"
     VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RECEIVED_COUNT CONVERTED 8 # COSMOS packet received count 10
+      SETTING ENABLE_AGING FALSE
     SPACER 20 10
     LABEL "Reboots"
     VALUE CAN_LOCAL RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_RESET_COUNT CONVERTED 8
+      SETTING ENABLE_AGING FALSE
     
     LABEL "Time Since Last Update"
     VERTICAL
       TIMESINCEUPDATE CAN_LOCAL RC_<%=subsyst %>_h1 RECEIVED_COUNT FORMATTED 8
+        SETTING ENABLE_AGING FALSE
     END
     SPACER 20 10
     LABEL "CAN Receive Error"
     VALUE CAN_LOCAL RC_<%=subsyst %>_h2 RC_<%=subsyst %>_h2_CANRXERROR RAW 8
+      SETTING ENABLE_AGING FALSE
     
   END
 
