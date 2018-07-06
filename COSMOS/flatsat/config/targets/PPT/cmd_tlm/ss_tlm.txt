@@ -7,6 +7,10 @@ TELEMETRY PPT MAIN_DONE BIG_ENDIAN "main done charging"
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>
 	
 	APPEND_ITEM TIME 16 UINT "clock time at off" LITTLE_ENDIAN
+		UNITS seconds s
+		GENERIC_READ_CONVERSION_START
+			value / 2.0**15
+		GENERIC_READ_CONVERSION_END
 
 TELEMETRY PPT IGNITER_DONE BIG_ENDIAN "igniter done charging"
 	
@@ -14,6 +18,10 @@ TELEMETRY PPT IGNITER_DONE BIG_ENDIAN "igniter done charging"
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 4} %>
 	
 	APPEND_ITEM TIME 16 UINT "clock time at off" LITTLE_ENDIAN
+		UNITS seconds s
+		GENERIC_READ_CONVERSION_START
+			value / 2.0**15
+		GENERIC_READ_CONVERSION_END
 	
 TELEMETRY PPT TIMING BIG_ENDIAN "the current firing timings"
 	<%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 5} %>

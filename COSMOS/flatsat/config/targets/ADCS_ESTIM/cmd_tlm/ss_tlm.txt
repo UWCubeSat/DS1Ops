@@ -27,8 +27,14 @@ TELEMETRY ADCS_ESTIM INPUT_TLE BIG_ENDIAN "TLE from CAN"
     APPEND_ITEM MNM 32 FLOAT "Mean motion" LITTLE_ENDIAN
       FORMAT_STRING "%0.4f"
       UNITS rev/day rev/d
-    APPEND_ITEM TLEID 8 UINT "TLE ID" LITTLE_ENDIAN
-
+    APPEND_ITEM TLE_ID 2 UINT "Current TLE ID" LITTLE_ENDIAN
+		APPEND_ITEM ACK_5 1 UINT "Ack. of TLE packet 5" LITTLE_ENDIAN
+		APPEND_ITEM ACK_4 1 UINT "Ack. of TLE packet 4" LITTLE_ENDIAN
+		APPEND_ITEM ACK_3 1 UINT "Ack. of TLE packet 3" LITTLE_ENDIAN
+		APPEND_ITEM ACK_2 1 UINT "Ack. of TLE packet 2" LITTLE_ENDIAN
+		APPEND_ITEM ACK_1 1 UINT "Ack. of TLE packet 1" LITTLE_ENDIAN
+		APPEND_ITEM NEXT_TLEID 1 UINT "Incoming TLE ID" LITTLE_ENDIAN
+		
 TELEMETRY ADCS_ESTIM INPUT_MET BIG_ENDIAN "Mission elapsed time"
     # This must ALWAYS be the first entry in any telemetry packet
     <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 3} %>

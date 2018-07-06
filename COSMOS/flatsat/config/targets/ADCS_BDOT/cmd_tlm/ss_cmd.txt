@@ -41,3 +41,11 @@ COMMAND ADCS_BDOT SPAM_SETTINGS LITTLE_ENDIAN "Configure SPAM Mode Settings on B
   APPEND_PARAMETER SPAM_SWITCH 8 UINT 0 1 0 "Turn SPAM mode on or off" LITTLE_ENDIAN
     STATE SPAM_ON 1
     STATE SPAM_OFF 0
+
+COMMAND ADCS_BDOT MAG_CALIBRATION_SETTING LITTLE_ENDIAN "Turn on/off calibration when reading magnetometer"
+  # This must ALWAYS be the first entry in any command packet
+  <%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 6 } %>
+  
+  APPEND_PARAMETER CALIBRATION_SWITCH 8 UINT 0 1 0 "Turn magnetometer calibration on or off" LITTLE_ENDIAN
+    STATE CALIBRATION_ON 1
+    STATE CALIBRATION_OFF 0

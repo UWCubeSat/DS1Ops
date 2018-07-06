@@ -35,6 +35,7 @@ import canmatrix.copy as cmcp
 temperatureLimits=[15, 20, 30, 35]
 signalToLimits = {
 		"rc_eps_batt_h1_temp_avg":temperatureLimits,
+	"rc_eps_batt_3_batt_temp_avg":temperatureLimits,
 	"rc_adcs_bdot_h1_temp_avg":temperatureLimits,
 	"rc_ppt_h1_temp_avg":temperatureLimits,
 	"rc_eps_dist_h1_temp_avg":temperatureLimits,
@@ -155,8 +156,12 @@ signalToLimits = {
 	"rc_eps_gen_8_pnl_3_power_max":[0.06,1.0,3.0,4.0],
 	"rc_eps_gen_9_pnl_1_temp_max":[17,19.5,23,25],
 	"rc_eps_gen_9_pnl_2_temp_max":[17,19.5,23,25],
-	"rc_eps_gen_9_pnl_3_temp_max":[17,19.5,23,25]
+	"rc_eps_gen_9_pnl_3_temp_max":[17,19.5,23,25],
 
+	"rc_eps_batt_4_voltage_avg":[5.2, 5.8, 7.3, 7.7],
+	"rc_eps_batt_3_current_avg":[-10.0, -8.0, 4.5, 6.0],
+	"rc_eps_batt_2_node_v_avg":[2.6, 2.9, 3.65, 3.85],
+	"rc_eps_batt_5_node_c_avg":[-10.0, -8.0, 4.5, 6.0]
 }
 signalConversions = {
 	"1/73 nT":"value * 73.0",
@@ -172,12 +177,12 @@ signalConversions = {
 	"2^-15s":"value * 2.0**-15",
 	"dmA (0.1mA)":"value * 0.0001",
 	"2^-8s":"value * 2.0**-8",
-	"2^-8 s":"value * 2.0**-8",
+	"2^-8 s":"value >> 8",
 	"1/73 nanoTeslas":"value * 1.0/73",
 	"73 nanoTeslas":"value * 73",
 	"0.004375 deg/s":"value * 0.004375",
 	"60/32767 degrees":"value * 60.0/32767",
-	"1/32768 units":"value / 32768",
+	"1/32768 units":"value * 3.051757e-5",
 	"raw node voltage":"value * 0.004",
 	"raw current batt":"(value - 32767) / 3276.7",
 	"raw voltage":"23.6 * value / 65535",
@@ -233,13 +238,16 @@ unitFormat = {
 	"m/s":"%0.4f",
 	"m":"%0.1f",
 	"u":"%0.4f",
+	"1/32768 units":"%0.4f",
 	"deg":"%0.4f",
+	"0.004375 deg/s":"%0.2f",
 	"d":"%0.4f",
 	"s":"%0.4f",
 	"C":"%0.3f",
 	"dK":"%0.3f",
 	"dk":"%0.3f",
 	"r/s":"%0.3f"
+        
 }
 
 enumToColor = { #these can be green, yellow, or red
@@ -250,19 +258,21 @@ enumToColor = { #these can be green, yellow, or red
 }
 
 frameToDerivedValues = {
-	"rc_eps_batt_7":["acc_charge_min", "acc_charge_avg", "acc_charge_max"]
+	"rc_eps_batt_7":["acc_charge_min", "acc_charge_avg", "acc_charge_max", "rc_eps_batt_7_voltage_diff"]
 }
 
 derivedValueToConversion = {
 	"acc_charge_min":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
 	"acc_charge_avg":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
-	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576"
+	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
+	"rc_eps_batt_7_voltage_diff":"(1000 * System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_4\", \"RC_EPS_BATT_4_VOLTAGE_AVG\") - (2 * System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_2\", \"RC_EPS_BATT_2_NODE_V_AVG\")))"
 }
 
 derivedValueToUnits = {
 	"acc_charge_min":"milliAmpH mAH",
 	"acc_charge_avg":"milliAmpH mAH",
-	"acc_charge_max":"milliAmpH mAH"
+	"acc_charge_max":"milliAmpH mAH",
+	"rc_eps_batt_7_voltage_diff":"milliVolts mV"
 }
 
 # adds a FORMAT_STRING for specific signals. Overrides the unit formatting
@@ -270,7 +280,21 @@ signalFormat = {
   "rc_adcs_estim_8_epoch":"%.0f",
   "rc_eps_batt_2_node_v_min":"%.4f",
   "rc_eps_batt_2_node_v_max":"%.4f",
-  "rc_eps_batt_2_node_v_avg":"%.4f"
+  "rc_eps_batt_2_node_v_avg":"%.4f",
+
+  "rc_eps_batt_5_node_c_min":"%.4f",
+  "rc_eps_batt_5_node_c_max":"%.4f",
+  "rc_eps_batt_5_node_c_avg":"%.4f",
+
+  "rc_eps_batt_4_voltage_min":"%.4f",
+  "rc_eps_batt_4_voltage_max":"%.4f",
+  "rc_eps_batt_4_voltage_avg":"%.4f",
+
+  "rc_eps_batt_3_current_min":"%.4f",
+  "rc_eps_batt_3_current_max":"%.4f",
+  "rc_eps_batt_3_current_avg":"%.4f",
+
+  "rc_eps_batt_7_voltage_diff":"%.4f"
 }
 
 signalsWithOverflow=[
@@ -498,6 +522,10 @@ def createCosmosTlm(candb, tlmFileName):
 					tlmFile.write("\t\tUNITS {}\n".format(derivedValueToUnits[derived]))
 				if derived in derivedValueToConversion.keys():
 					tlmFile.write("\t\tGENERIC_READ_CONVERSION_START\n\t\t\t{}\n\t\tGENERIC_READ_CONVERSION_END\n".format(derivedValueToConversion[derived]))
+				if derived in signalFormat:
+					tlmFile.write("\t\tFORMAT_STRING \"" + signalFormat[derived] + "\"\n")
+				elif derived in unitFormat:
+					tlmFile.write("\t\tFORMAT_STRING \"" + unitFormat[derived] + "\"\n")
 		tlmFile.write("\n")
 	tlmFile.write("""
 TELEMETRY CAN_LOCAL general_can_message BIG_ENDIAN 
