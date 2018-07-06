@@ -258,19 +258,21 @@ enumToColor = { #these can be green, yellow, or red
 }
 
 frameToDerivedValues = {
-	"rc_eps_batt_7":["acc_charge_min", "acc_charge_avg", "acc_charge_max"]
+	"rc_eps_batt_7":["acc_charge_min", "acc_charge_avg", "acc_charge_max", "rc_eps_batt_7_voltage_diff"]
 }
 
 derivedValueToConversion = {
 	"acc_charge_min":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
 	"acc_charge_avg":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
-	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576"
+	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
+	"rc_eps_batt_7_voltage_diff":"(1000 * System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_4\", \"RC_EPS_BATT_4_VOLTAGE_AVG\") - (2 * System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_2\", \"RC_EPS_BATT_2_NODE_V_AVG\")))"
 }
 
 derivedValueToUnits = {
 	"acc_charge_min":"milliAmpH mAH",
 	"acc_charge_avg":"milliAmpH mAH",
-	"acc_charge_max":"milliAmpH mAH"
+	"acc_charge_max":"milliAmpH mAH",
+	"rc_eps_batt_7_voltage_diff":"milliVolts mV"
 }
 
 # adds a FORMAT_STRING for specific signals. Overrides the unit formatting
@@ -290,8 +292,9 @@ signalFormat = {
 
   "rc_eps_batt_3_current_min":"%.4f",
   "rc_eps_batt_3_current_max":"%.4f",
-  "rc_eps_batt_3_current_avg":"%.4f"
+  "rc_eps_batt_3_current_avg":"%.4f",
 
+  "rc_eps_batt_7_voltage_diff":"%.4f"
 }
 
 signalsWithOverflow=[
@@ -519,6 +522,10 @@ def createCosmosTlm(candb, tlmFileName):
 					tlmFile.write("\t\tUNITS {}\n".format(derivedValueToUnits[derived]))
 				if derived in derivedValueToConversion.keys():
 					tlmFile.write("\t\tGENERIC_READ_CONVERSION_START\n\t\t\t{}\n\t\tGENERIC_READ_CONVERSION_END\n".format(derivedValueToConversion[derived]))
+				if derived in signalFormat:
+					tlmFile.write("\t\tFORMAT_STRING \"" + signalFormat[derived] + "\"\n")
+				elif derived in unitFormat:
+					tlmFile.write("\t\tFORMAT_STRING \"" + unitFormat[derived] + "\"\n")
 		tlmFile.write("\n")
 	tlmFile.write("""
 TELEMETRY CAN_LOCAL general_can_message BIG_ENDIAN 

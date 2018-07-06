@@ -31,6 +31,10 @@ TITLE "Battery State"
       VALUE CAN_LOCAL rc_eps_batt_5 rc_eps_batt_5_node_c_avg WITH_UNITS 8
       LIMITSBAR CAN_LOCAL rc_eps_batt_5 rc_eps_batt_5_node_c_avg WITH_UNITS
     END
+    MATRIXBYCOLUMNS 2 10 4
+      LABEL "Battery Difference:"
+      VALUE CAN_LOCAL rc_eps_batt_7 rc_eps_batt_7_voltage_diff WITH_UNITS
+    END
   END
 
   HORIZONTALLINE  
@@ -60,6 +64,9 @@ TITLE "Battery State"
     END
     MATRIXBYCOLUMNS 2 10 4
       LABEL "MET of last full charge:" 
-      VALUE CAN_LOCAL rc_eps_batt_6 rc_eps_batt_6_last_charge WITH_UNITS
+      VERTICAL
+        TIMESINCEUPDATE CAN_LOCAL rc_eps_batt_6 rc_eps_batt_6_last_charge RAW 8
+      END
+      # VALUE CAN_LOCAL rc_eps_batt_6 rc_eps_batt_6_last_charge WITH_UNITS
     END
   END
