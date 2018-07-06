@@ -4,7 +4,7 @@ TITLE "HuskySat-1: CAN Status Summary"
 
 HORIZONTALLINE
 
-MATRIXBYCOLUMNS 2
+MATRIXBYCOLUMNS 3
 
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_DIST'}%>
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_GEN'}%>
@@ -14,5 +14,6 @@ MATRIXBYCOLUMNS 2
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_MPC'}%>
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT'}%>
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_SP'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_MTQ'}%>
 
 END
