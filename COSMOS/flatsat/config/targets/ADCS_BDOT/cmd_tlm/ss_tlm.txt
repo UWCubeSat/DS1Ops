@@ -51,7 +51,7 @@ TELEMETRY ADCS_BDOT STATE_STATUS BIG_ENDIAN "Bdot State"
     APPEND_ITEM CURRENT_LISTENING_MAG 8 UINT "Current magnetometer bdot is listening to" LITTLE_ENDIAN
     APPEND_ITEM CALIBRATION_SWITCH 8 UINT "Current switch setting on magnetometer calibration" LITTLE_ENDIAN
 	STATE CALIBRATION_ON 1 GREEN
-	STAET CALIBRATION_OFF 0 RED
+	STATE CALIBRATION_OFF 0 RED
 	
 TELEMETRY ADCS_BDOT POLLING_TIMER BIG_ENDIAN "All 8 Polling Timer Information"
     # This must ALWAYS be the first entry in any telemetry packet
