@@ -4,6 +4,14 @@ TITLE "HuskySat-1: CAN Status Summary"
 
 HORIZONTALLINE
 
+HORIZONTAL
+  SPACER FIXED FIXED EXPANDING
+  LABEL "Mission Elapsed Time:"
+  SPACER 10 10
+  VALUE CAN_LOCAL RC_EPS_DIST_2 RC_EPS_DIST_2_MET WITH_UNITS 8
+  SPACER FIXED FIXED EXPANDING
+END
+
 MATRIXBYCOLUMNS 3
 
 <%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_DIST'}%>
