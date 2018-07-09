@@ -70,3 +70,14 @@ TITLE "Battery State"
       # VALUE CAN_LOCAL rc_eps_batt_6 rc_eps_batt_6_last_charge WITH_UNITS
     END
   END
+  
+  HORIZONTALLINE
+  
+  VERTICALBOX "Controls" 5
+    MATRIXBYCOLUMNS 4 10 4
+      LABEL "Batt Balancer"
+      VALUE CAN_LOCAL_CMD rc_eps_batt_4 rc_eps_batt_4_balancer_state FORMATTED
+      BUTTON "Enable" 'cmd("CAN_LOCAL CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE ENABLE")'
+      BUTTON "Disable" 'cmd("CAN_LOCAL CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE DISABLE")'
+    END
+  END
