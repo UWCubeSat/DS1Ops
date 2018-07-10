@@ -193,7 +193,7 @@ signalConversions = {
 	"raw node current gen":"value * 1.5 / 32768",
 	"raw power gen":"value * 3 / 3276.8",
 	"raw tmp36":"value - 50",
-        "ocpThresh":"value / 20"
+        "ocpThresh":"value / 20.0"
 }
 signalUnits = {
 	"1/73 nT":"nanoTeslas nT",
