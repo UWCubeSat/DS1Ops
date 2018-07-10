@@ -1,4 +1,4 @@
-SCREEN AUTO AUTO 1.0
+SCREEN 650 AUTO 1.0
 
 TITLE "Battery State"
 
@@ -76,8 +76,14 @@ TITLE "Battery State"
   VERTICALBOX "Controls" 5
     MATRIXBYCOLUMNS 4 10 4
       LABEL "Batt Balancer"
-      VALUE CAN_LOCAL_CMD rc_eps_batt_4 rc_eps_batt_4_balancer_state FORMATTED
-      BUTTON "Enable" 'cmd("CAN_LOCAL CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE ENABLE")'
-      BUTTON "Disable" 'cmd("CAN_LOCAL CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE DISABLE")'
+      VALUE CAN_LOCAL rc_eps_batt_4 rc_eps_batt_4_balancer_state FORMATTED
+      BUTTON "Enable" 'cmd("CAN_LOCAL_CMD CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE ENABLE")'
+      BUTTON "Disable" 'cmd("CAN_LOCAL_CMD CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE DISABLE")'
+    END
+    MATRIXBYCOLUMNS 4 10 4
+      LABEL "Heater Automation"
+      VALUE CAN_LOCAL gcmd_batt_set_heater_check gcmd_batt_set_heater_check_state FORMATTED
+      BUTTON "Enable" 'cmd("CAN_LOCAL GCMD_BATT_SET_HEATER_CHECK with GCMD_BATT_SET_HEATER_CHECK_STATE ENABLE")'
+      BUTTON "Disable" 'cmd("CAN_LOCAL GCMD_BATT_SET_HEATER_CHECK with GCMD_BATT_SET_HEATER_CHECK_STATE DISABLE")'
     END
   END
