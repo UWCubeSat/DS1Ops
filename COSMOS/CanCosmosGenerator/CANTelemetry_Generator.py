@@ -192,7 +192,8 @@ signalConversions = {
 	"raw dist battery voltage":"7.21698125 * value / 4096",
 	"raw node current gen":"value * 1.5 / 32768",
 	"raw power gen":"value * 3 / 3276.8",
-	"raw tmp36":"value - 50"
+	"raw tmp36":"value - 50",
+        "ocpThresh":"value / 20"
 }
 signalUnits = {
 	"1/73 nT":"nanoTeslas nT",
@@ -230,7 +231,8 @@ signalUnits = {
 	"raw dist battery voltage":"Volts V",
 	"raw node current gen":"Amps A",
 	"raw power gen":"Watts W",
-	"raw tmp36":"Degrees_Celcius C"
+	"raw tmp36":"Degrees_Celcius C",
+        "ocpThresh":"Volts V"
 }
 
 # adds a FORMAT_STRING to the signal depending on what unit was used
