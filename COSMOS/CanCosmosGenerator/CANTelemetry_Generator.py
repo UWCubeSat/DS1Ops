@@ -232,7 +232,7 @@ signalUnits = {
 	"raw node current gen":"Amps A",
 	"raw power gen":"Watts W",
 	"raw tmp36":"Degrees_Celcius C",
-        "ocpThresh":"Volts V"
+        "ocpThresh":"Amps A"
 }
 
 # adds a FORMAT_STRING to the signal depending on what unit was used
