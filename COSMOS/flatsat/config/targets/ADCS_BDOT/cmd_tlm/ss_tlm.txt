@@ -4,11 +4,11 @@ TELEMETRY ADCS_BDOT MAGNETOMETER BIG_ENDIAN "Magnetometer readings"
 	
     
     APPEND_ITEM X_AXIS 32 FLOAT "X-axis magnetometer reading in nT" LITTLE_ENDIAN
-	UNITS nanoTesla nT
+	UNITS nanoTeslas nT
     APPEND_ITEM Y_AXIS 32 FLOAT "Y-axis magnetometer reading in nT" LITTLE_ENDIAN
-	UNITS nanoTesla nT
+	UNITS nanoTeslas nT
     APPEND_ITEM Z_AXIS 32 FLOAT "Z-axis magnetometer reading in nT" LITTLE_ENDIAN
-	UNITS nanoTesla nT
+	UNITS nanoTeslas nT
 
 TELEMETRY ADCS_BDOT CONTINUOUS_MAGNETOMETER BIG_ENDIAN "Magnetometer readings"
     # This must ALWAYS be the first entry in any telemetry packet
@@ -16,11 +16,11 @@ TELEMETRY ADCS_BDOT CONTINUOUS_MAGNETOMETER BIG_ENDIAN "Magnetometer readings"
 	
     
     APPEND_ITEM X_AXIS 32 FLOAT "X-axis magnetometer reading in nT" LITTLE_ENDIAN
-	UNITS nanoTesla nT
+	UNITS nanoTeslas nT
     APPEND_ITEM Y_AXIS 32 FLOAT "Y-axis magnetometer reading in nT" LITTLE_ENDIAN
-	UNITS nanoTesla nT
+	UNITS nanoTeslas nT
     APPEND_ITEM Z_AXIS 32 FLOAT "Z-axis magnetometer reading in nT" LITTLE_ENDIAN
-	UNITS nanoTesla nT
+	UNITS nanoTeslas nT
 
 TELEMETRY ADCS_BDOT MTQ_INFO BIG_ENDIAN "Magnetorquer Info readings"
     # This must ALWAYS be the first entry in any telemetry packet
@@ -49,9 +49,21 @@ TELEMETRY ADCS_BDOT STATE_STATUS BIG_ENDIAN "Bdot State"
     APPEND_ITEM BDOT_STATE_STATUS 8 UINT "State of bdot" LITTLE_ENDIAN	
     APPEND_ITEM MAG_SELECTION_MODE 8 UINT "Magnetometer Selection Mode" LITTLE_ENDIAN
     APPEND_ITEM CURRENT_LISTENING_MAG 8 UINT "Current magnetometer bdot is listening to" LITTLE_ENDIAN
-    APPEND_ITEM CALIBRATION_SWITCH 8 UINT "Current switch setting on magnetometer calibration" LITTLE_ENDIAN
-	STATE CALIBRATION_ON 1 GREEN
-	STATE CALIBRATION_OFF 0 RED
+	
+TELEMETRY ADCS_BDOT CALIBRATION_STATUS BIG_ENDIAN "Bdot Calibration"
+    # This must ALWAYS be the first entry in any telemetry packet
+    <%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 118} %>
+	
+    APPEND_ITEM BDOT_CALIBRATION_SWITCH_STATUS 8 UINT "Calibration switch, 1 = ON, 0 = OFF" LITTLE_ENDIAN
+		STATE CALIBRATION_ON 1 RED
+		STATE CALIBRATION_OFF 0 GREEN
+    APPEND_ITEM CALIBRATION_FACTOR_X 32 FLOAT "Calibration factor for x magnetometer readings" LITTLE_ENDIAN
+    APPEND_ITEM CALIBRATION_FACTOR_Y 32 FLOAT "Calibration factor for y magnetometer readings" LITTLE_ENDIAN
+	APPEND_ITEM CALIBRATION_FACTOR_Z 32 FLOAT "Calibration factor for z magnetometer readings" LITTLE_ENDIAN
+	
+	
+	
+	
 	
 TELEMETRY ADCS_BDOT POLLING_TIMER BIG_ENDIAN "All 8 Polling Timer Information"
     # This must ALWAYS be the first entry in any telemetry packet
