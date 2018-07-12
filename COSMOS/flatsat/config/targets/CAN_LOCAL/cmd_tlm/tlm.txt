@@ -1,3 +1,71 @@
+TELEMETRY CAN_LOCAL rc_eps_dist_18 BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303039195 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM rc_eps_dist_18_bdot_ocp_thresh 9 UINT "BDOT current threshold" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value / 20.0
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_eps_dist_18_com2_ocp_thresh 9 UINT "COM2 current threshold" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value / 20.0
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_eps_dist_18_eps_ocp_thresh 9 UINT "EPS current threshold" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value / 20.0
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_eps_dist_18_estim_ocp_thresh 9 UINT "ESTIM current threshold" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value / 20.0
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_eps_dist_18_ppt_ocp_thresh 9 UINT "PPT current threshold" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value / 20.0
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_eps_dist_18_rahs_ocp_thresh 9 UINT "RAHS current threshold" BIG_ENDIAN
+		UNITS Amps A
+		GENERIC_READ_CONVERSION_START
+			value / 20.0
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM PADDING 10 UINT "Padded bits for CAN data"
+
+TELEMETRY CAN_LOCAL gcmd_batt_set_heater_check BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303039194 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM gcmd_batt_set_heater_check_state 2 UINT "the state of heater automation" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
+
 TELEMETRY CAN_LOCAL dist_autoseq_get_met_rsp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -168,7 +236,9 @@ TELEMETRY CAN_LOCAL rc_adcs_bdot_7 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_7_spam_magnitude_x 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_7_spam_magnitude_y 8 INT "None" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_7_spam_magnitude_z 8 INT "None" BIG_ENDIAN
-	APPEND_ITEM PADDING 40 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_bdot_7_dipole_var_y 16 UINT "The variance of sent dipole commands" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_bdot_7_dipole_var_z 16 UINT "The variance of sent dipole commands" BIG_ENDIAN
+	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_adcs_bdot_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -309,7 +379,7 @@ TELEMETRY CAN_LOCAL rc_adcs_bdot_5 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_bdot_5_diplole_var_x 16 UINT "The variance of sent dipole commands" BIG_ENDIAN
 
 TELEMETRY CAN_LOCAL gcmd_reset_minmax BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3313,7 +3383,9 @@ TELEMETRY CAN_LOCAL rc_adcs_mtq_5 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mtq_5_fsw_ignore 8 UINT "Flight Software Ignore" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_reset_counts 8 UINT "Number of resets" BIG_ENDIAN
-	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_mtq_5_cmds_x_var 16 UINT "Variance in BDot's x dipole commands" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_5_cmds_y_var 16 UINT "Variance in BDot's y dipole commands" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_5_cmds_z_var 16 UINT "Variance in BDot's z dipole commands" BIG_ENDIAN
 
 TELEMETRY CAN_LOCAL rc_adcs_mtq_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3851,7 +3923,13 @@ TELEMETRY CAN_LOCAL rc_eps_gen_1 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677392 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_eps_gen_1_pnl_1_enabled 1 UINT "whether gen panel 1 is enabled" BIG_ENDIAN
+	APPEND_ITEM rc_eps_gen_1_pnl_2_enabled 1 UINT "whether gen panel 2 is enabled" BIG_ENDIAN
+	APPEND_ITEM rc_eps_gen_1_pnl_3_enabled 1 UINT "whether gen panel 3 is enabled" BIG_ENDIAN
+	APPEND_ITEM rc_eps_gen_1_pnl_1_charging 1 UINT "whether gen panel 1 is charing" BIG_ENDIAN
+	APPEND_ITEM rc_eps_gen_1_pnl_2_charging 1 UINT "whether gen panel 2 is charing" BIG_ENDIAN
+	APPEND_ITEM rc_eps_gen_1_pnl_3_charging 1 UINT "whether gen panel 3 is charing" BIG_ENDIAN
+	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_batt_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
