@@ -3,7 +3,7 @@
 
 # NOTE: This line must be modified to match how your actual target connects.
 # See http://cosmosrb.com/docs/interfaces/ for more information.
-ROUTER AMSAT_ROUTER tcpip_server_interface.rb 1235 1235 10.0 nil LENGTH 0 16 0 1 BIG_ENDIAN 
+ROUTER AMSAT_ROUTER tcpip_server_interface.rb 1235 1235 10.0 nil LENGTH 32 16 7
 #~  OPTION LISTEN_ADDRESS 127.0.0.1
   ROUTE AMSAT_TLM_INT
   ROUTE AMSAT_CMD_INT

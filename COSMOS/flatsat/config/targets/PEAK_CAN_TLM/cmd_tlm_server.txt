@@ -3,5 +3,5 @@
 
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
-INTERFACE PEAK_CAN_TLM_INT tcpip_server_interface.rb NIL 4000 10 nil LENGTH 0 16 0 1 BIG_ENDIAN
+INTERFACE PEAK_CAN_TLM_INT tcpip_server_interface.rb NIL 4000 10 nil LENGTH 32 16 7
   TARGET PEAK_CAN_TLM
