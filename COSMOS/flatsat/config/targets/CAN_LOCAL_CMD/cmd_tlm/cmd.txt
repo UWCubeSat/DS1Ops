@@ -1,3 +1,57 @@
+COMMAND CAN_LOCAL_CMD gcmd_dist_reset_mission BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252767 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252767 
+	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD gcmd_dist_self_restart BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252766 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252766 
+	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+
 COMMAND CAN_LOCAL_CMD rc_eps_dist_18 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -4418,11 +4472,23 @@ COMMAND CAN_LOCAL_CMD rc_eps_gen_1 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677392 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677392 
 	APPEND_PARAMETER rc_eps_gen_1_pnl_1_enabled 1 UINT 0 1  0 "whether gen panel 1 is enabled" BIG_ENDIAN
+		STATE DISABLED 0
+		STATE ENABLED 1
 	APPEND_PARAMETER rc_eps_gen_1_pnl_2_enabled 1 UINT 0 1  0 "whether gen panel 2 is enabled" BIG_ENDIAN
+		STATE DISABLED 0
+		STATE ENABLED 1
 	APPEND_PARAMETER rc_eps_gen_1_pnl_3_enabled 1 UINT 0 1  0 "whether gen panel 3 is enabled" BIG_ENDIAN
+		STATE DISABLED 0
+		STATE ENABLED 1
 	APPEND_PARAMETER rc_eps_gen_1_pnl_1_charging 1 UINT 0 1  0 "whether gen panel 1 is charing" BIG_ENDIAN
+		STATE NOTCHARGING 0
+		STATE CHARGING 1
 	APPEND_PARAMETER rc_eps_gen_1_pnl_2_charging 1 UINT 0 1  0 "whether gen panel 2 is charing" BIG_ENDIAN
+		STATE NOTCHARGING 0
+		STATE CHARGING 1
 	APPEND_PARAMETER rc_eps_gen_1_pnl_3_charging 1 UINT 0 1  0 "whether gen panel 3 is charing" BIG_ENDIAN
+		STATE NOTCHARGING 0
+		STATE CHARGING 1
 	APPEND_PARAMETER PADDING 58 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_batt_6 BIG_ENDIAN 
