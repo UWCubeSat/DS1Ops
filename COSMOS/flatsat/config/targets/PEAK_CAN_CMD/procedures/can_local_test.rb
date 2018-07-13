@@ -9,8 +9,8 @@ class Can_localTest < Cosmos::Test
   # end
 
   def test_command
-    cmd("CAN_LOCAL COMMAND")
-    wait_check("CAN_LOCAL STATUS BOOL == 'FALSE'", 5)
+    cmd("PEAK_CAN COMMAND")
+    wait_check("PEAK_CAN STATUS BOOL == 'FALSE'", 5)
   end
 
   # def teardown

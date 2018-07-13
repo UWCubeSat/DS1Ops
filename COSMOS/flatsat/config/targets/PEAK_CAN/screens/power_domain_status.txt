@@ -1,0 +1,189 @@
+SCREEN AUTO AUTO 1.0
+
+  TITLE "Power Domain Status"
+
+  VERTICALBOX
+    LABELVALUE PEAK_CAN RC_EPS_DIST_1 RECEIVED_TIMEFORMATTED WITH_UNITS 25  # COSMOS Received Time (Local time zone, Formatted string)
+    LABELVALUE PEAK_CAN RC_EPS_DIST_1 RECEIVED_COUNT # COSMOS packet received count
+    
+    HORIZONTALLINE   
+      HORIZONTAL 
+        #SPACER 30 10
+		LABEL "BATT V:"
+		VERTICALBOX
+		HORIZONTAL
+		LABEL "Min: "
+        VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_3 RC_EPS_DIST_3_BATT_V_MIN WITH_UNITS
+		END
+		HORIZONTAL
+		LABEL "Average: "
+		VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_3 RC_EPS_DIST_3_BATT_V_AVG WITH_UNITS
+		END
+		HORIZONTAL
+		LABEL "Max: "
+		VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_3 RC_EPS_DIST_3_BATT_V_MAX WITH_UNITS
+		END
+		END
+      END
+    HORIZONTALLINE  
+  
+    MATRIXBYCOLUMNS 2 10 10
+	  HORIZONTALBOX
+      LABEL "COM1->  "
+      LABEL "Current:" 
+	  VERTICAL
+	  LABEL "Min:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_4 RC_EPS_DIST_4_COM1_C_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_4 RC_EPS_DIST_4_COM1_C_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_4 RC_EPS_DIST_4_COM1_C_MAX WITH_UNITS 20 # Current draw by the power domain.
+	   END
+	  SPACER 10 10
+      LABEL "Bus V:" 
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_5 RC_EPS_DIST_5_COM1_V_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_5 RC_EPS_DIST_5_COM1_V_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_5 RC_EPS_DIST_5_COM1_V_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  END
+	 
+	  HORIZONTALBOX
+	  LABEL "COM2->  "
+      LABEL "Current:"      
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_6 RC_EPS_DIST_6_COM2_C_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_6 RC_EPS_DIST_6_COM2_C_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_6 RC_EPS_DIST_6_COM2_C_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+      LABEL "Bus V:" 
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_7 RC_EPS_DIST_7_COM2_V_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_7 RC_EPS_DIST_7_COM2_V_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_7 RC_EPS_DIST_7_COM2_V_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  END
+		 
+      HORIZONTALBOX	 
+	  LABEL "RAHS->  "
+      LABEL "Current:"      
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_8 RC_EPS_DIST_8_RAHS_C_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_8 RC_EPS_DIST_8_RAHS_C_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_8 RC_EPS_DIST_8_RAHS_C_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  SPACER 10 10
+      LABEL "Bus V:"
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_9 RC_EPS_DIST_9_RAHS_V_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_9 RC_EPS_DIST_9_RAHS_V_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_9 RC_EPS_DIST_9_RAHS_V_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  END
+	  
+	  HORIZONTALBOX
+	  LABEL "BDOT->  "
+      LABEL "Current:"
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_10 RC_EPS_DIST_10_BDOT_C_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_10 RC_EPS_DIST_10_BDOT_C_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_10 RC_EPS_DIST_10_BDOT_C_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  SPACER 10 10
+      LABEL "Bus V:" 
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_11 RC_EPS_DIST_11_BDOT_V_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_11 RC_EPS_DIST_11_BDOT_V_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_11 RC_EPS_DIST_11_BDOT_V_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  END
+	  
+	  HORIZONTALBOX
+	  LABEL "ESTIM->  "
+      LABEL "Current:"  
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_12 RC_EPS_DIST_12_ESTIM_C_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_12 RC_EPS_DIST_12_ESTIM_C_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_12 RC_EPS_DIST_12_ESTIM_C_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  SPACER 10 10
+      LABEL "Bus V:" 
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_13 RC_EPS_DIST_13_ESTIM_V_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_13 RC_EPS_DIST_13_ESTIM_V_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_13 RC_EPS_DIST_13_ESTIM_V_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  END
+	  
+	  HORIZONTALBOX
+	  LABEL "EPS->  "
+      LABEL "Current:"
+      VERTICAL      
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_14 RC_EPS_DIST_14_EPS_C_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_14 RC_EPS_DIST_14_EPS_C_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_14 RC_EPS_DIST_14_EPS_C_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  SPACER 10 10
+      LABEL "Bus V:" 
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_15 RC_EPS_DIST_15_EPS_V_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_15 RC_EPS_DIST_15_EPS_V_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_15 RC_EPS_DIST_15_EPS_V_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  END
+	  
+	  HORIZONTALBOX
+	  LABEL "PPT->  "
+      LABEL "Current:"      
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_16 RC_EPS_DIST_16_PPT_C_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_16 RC_EPS_DIST_16_PPT_C_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_16 RC_EPS_DIST_16_PPT_C_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  SPACER 10 10
+      LABEL "Bus V:" 
+	  VERTICAL
+	  LABEL "Min:"
+      VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_17 RC_EPS_DIST_17_PPT_V_MIN WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Average:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_17 RC_EPS_DIST_17_PPT_V_AVG WITH_UNITS 20 # Current draw by the power domain.
+	  LABEL "Max:"
+	  VALUELIMITSBAR PEAK_CAN RC_EPS_DIST_17 RC_EPS_DIST_17_PPT_V_MAX WITH_UNITS 20 # Current draw by the power domain.
+	  END
+	  END
+
