@@ -1,13 +1,13 @@
 require 'cosmos'
 
-class Com1Cmd
+class CanRouter
   attr_reader :tgt_name
 
   # It is good practice to pass in the name of the target when instantiating
   # the library. This way if the target name changes by COSMOS target name
   # substitution or by simply renaming in the filesystem, the library continues
   # to work simply by passing in the new name.
-  def initialize(tgt_name = 'COM1_CMD')
+  def initialize(tgt_name = 'CAN_ROUTER')
     @tgt_name = tgt_name
   end
 

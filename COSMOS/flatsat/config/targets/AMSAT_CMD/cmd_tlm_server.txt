@@ -3,5 +3,6 @@
 
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
-INTERFACE PEAK_CAN_TLM_INT tcpip_server_interface.rb NIL 4000 10 nil LENGTH 0 16 0 1 BIG_ENDIAN
-  TARGET PEAK_CAN_TLM
+
+INTERFACE AMSAT_CMD_INT tcpip_client_interface.rb 192.168.1.159 8897 NIL 10 1 LENGTH 
+  TARGET AMSAT_CMD

@@ -3,6 +3,5 @@
 
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
-
-INTERFACE COM1_CMD_INT tcpip_client_interface.rb 192.168.1.159 8897 NIL 10 1 LENGTH
-  TARGET COM1_CMD
+INTERFACE AMSAT_TLM_INT tcpip_server_interface.rb NIL 2000 10 nil LENGTH 0 16 0 1 BIG_ENDIAN
+  TARGET AMSAT_TLM
