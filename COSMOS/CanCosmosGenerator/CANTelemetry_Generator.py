@@ -256,7 +256,11 @@ enumToColor = { #these can be green, yellow, or red
 	"on":"GREEN",
 	"off_manual":"YELLOW",
 	"off_overcurrent":"RED",
-	"off_batt_undervoltage":"RED"
+	"off_batt_undervoltage":"RED",
+	"ENABLED":"GREEN",
+	"DISABLED":"RED",
+	"CHARGING":"GREEN",
+	"NOTCHARGING":"YELLOW"
 }
 
 frameToDerivedValues = {
