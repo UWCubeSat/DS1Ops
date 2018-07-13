@@ -1,0 +1,25 @@
+SCREEN AUTO AUTO 1.0
+
+  VERTICALBOX
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE RECEIVED_TIMESECONDS # COSMOS Received Time (UTC, Floating point, Unix epoch)
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE RECEIVED_TIMEFORMATTED # COSMOS Received Time (Local time zone, Formatted string)
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE RECEIVED_COUNT # COSMOS packet received count
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE LENGTH # Length of TCP-ized CAN message (always 36/0x24 bytes) 
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE FIXED_TYPE # Fixed message type for CAN
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE TAG # NOT USED in current PCAN-Ethernet Gateway DR hardware/software.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE TIMESTAMP_L # Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE TIMESTAMP_H # Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE CHANNEL # NOT USED in current PCAN-Ethernet Gateway DR hardware/software.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE DLC # Date Length Count from the CAN message.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE FLAGS # NOT USED in current PCAN-Ethernet Gateway DR hardware/software.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE CANID_PADDING # Fixed value of 0 - reserved.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE CANID_RTR # RTR value.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE CANID_TYPE # Indicates whether the message is a standard or extended frame.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE CANID_ID # The ID (normal or extended) portion of the 'CAN ID' set of headers.
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE EPS_BATT_STATE_BAL # None
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE EPS_BATT_STATE_HEAT # None
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE EPS_BATT_STATE_SOC # None
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE EPS_BATT_STATE_TEMP # None
+    LABELVALUE CAN_LOCAL EPS_BATT_STATE PADDING # Padded bits for CAN data
+  END
+
