@@ -1,4 +1,4 @@
-TELEMETRY PEAK_CAN gcmd_dist_reset_mission BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_reset_mission BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -15,7 +15,7 @@ TELEMETRY PEAK_CAN gcmd_dist_reset_mission BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_self_restart BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_self_restart BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -32,7 +32,7 @@ TELEMETRY PEAK_CAN gcmd_dist_self_restart BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_18 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_18 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -79,7 +79,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_18 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 10 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_10 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -99,7 +99,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_10 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_10_dipole_var_z 16 UINT "The variance of sent dipole commands" BIG_ENDIAN
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_9 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -131,7 +131,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_9 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_8 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -167,7 +167,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_8 BIG_ENDIAN
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN gcmd_batt_set_heater_check BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_batt_set_heater_check BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -188,7 +188,7 @@ TELEMETRY PEAK_CAN gcmd_batt_set_heater_check BIG_ENDIAN
 		STATE null 2
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN eps_dist_autoseq_get_met_rsp BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM eps_dist_autoseq_get_met_rsp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -210,7 +210,7 @@ TELEMETRY PEAK_CAN eps_dist_autoseq_get_met_rsp BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN eps_dist_autoseq_get_ind_rsp BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM eps_dist_autoseq_get_ind_rsp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -227,7 +227,7 @@ TELEMETRY PEAK_CAN eps_dist_autoseq_get_ind_rsp BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM eps_dist_autoseq_get_ind_rsp_ind 64 UINT "the indices, as an 8-element array" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN gcmd_autoseq_get_met BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_autoseq_get_met BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -245,7 +245,7 @@ TELEMETRY PEAK_CAN gcmd_autoseq_get_met BIG_ENDIAN
 	APPEND_ITEM gcmd_autoseq_get_met_index 8 UINT "the index" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_autoseq_get_indices BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_autoseq_get_indices BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -263,7 +263,7 @@ TELEMETRY PEAK_CAN gcmd_autoseq_get_indices BIG_ENDIAN
 	APPEND_ITEM gcmd_autoseq_get_indices_id 29 UINT "the CAN Id" BIG_ENDIAN
 	APPEND_ITEM PADDING 35 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_autoseq_remove_can_id BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_autoseq_remove_can_id BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -281,7 +281,7 @@ TELEMETRY PEAK_CAN gcmd_autoseq_remove_can_id BIG_ENDIAN
 	APPEND_ITEM gcmd_autoseq_remove_can_id_id 29 UINT "remove all occurrences of the specified CAN Id in the autosequencer" BIG_ENDIAN
 	APPEND_ITEM PADDING 35 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_autoseq_rm_at_index BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_autoseq_rm_at_index BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -299,7 +299,7 @@ TELEMETRY PEAK_CAN gcmd_autoseq_rm_at_index BIG_ENDIAN
 	APPEND_ITEM gcmd_autoseq_rm_at_index_index 8 UINT "the index" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_autoseq_add_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_autoseq_add_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -316,7 +316,7 @@ TELEMETRY PEAK_CAN gcmd_autoseq_add_2 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_autoseq_add_2_data 64 UINT "the data of the CAN packet to be added to the autosequencer" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN gcmd_autoseq_add_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_autoseq_add_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -340,7 +340,7 @@ TELEMETRY PEAK_CAN gcmd_autoseq_add_1 BIG_ENDIAN
 	APPEND_ITEM gcmd_autoseq_add_1_sendflg 1 UINT "whether the CAN packet should send" BIG_ENDIAN
 	APPEND_ITEM PADDING 2 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_7 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -370,7 +370,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_7 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_6 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -421,7 +421,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_6 BIG_ENDIAN
 		STATE sp2_mode 3
 	APPEND_ITEM PADDING 5 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_ppt_multiple_fire BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_ppt_multiple_fire BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -442,7 +442,7 @@ TELEMETRY PEAK_CAN gcmd_ppt_multiple_fire BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 55 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_mtq_pwm_time BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_mtq_pwm_time BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -461,7 +461,7 @@ TELEMETRY PEAK_CAN gcmd_mtq_pwm_time BIG_ENDIAN
 	APPEND_ITEM gcmd_mtq_pwm_time_measurement 8 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_eps_batt_fulldef BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_eps_batt_fulldef BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -479,7 +479,7 @@ TELEMETRY PEAK_CAN gcmd_eps_batt_fulldef BIG_ENDIAN
 	APPEND_ITEM gcmd_eps_batt_fulldef_const_volt 32 FLOAT "Limits for detecting a full state on the battery (voltage must be greater than this value)" BIG_ENDIAN
 	APPEND_ITEM gcmd_eps_batt_fulldef_chg_curr 32 FLOAT "Limits for detecting a full state on the battery (current must be less than this value)" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -511,7 +511,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_5 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_reset_minmax BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_reset_minmax BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -528,7 +528,7 @@ TELEMETRY PEAK_CAN gcmd_reset_minmax BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_batt_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -546,7 +546,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_h2 BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_h2_canrxerror 8 UINT "the Batt MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -564,7 +564,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_h2_canrxerror 8 UINT "the BDOT MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -582,7 +582,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_h2 BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_h2_canrxerror 8 UINT "the Dist MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -600,7 +600,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_h2_canrxerror 8 UINT "the MPC MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -618,7 +618,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_h2_canrxerror 8 UINT "Estim MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -636,7 +636,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_h2_canrxerror 8 UINT "SP MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_gen_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -654,7 +654,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_h2 BIG_ENDIAN
 	APPEND_ITEM rc_eps_gen_h2_canrxerror 8 UINT "GEN MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_mtq_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mtq_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -672,7 +672,7 @@ TELEMETRY PEAK_CAN rc_adcs_mtq_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_h2_canrxerror 8 UINT "the MTQ MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_ppt_h2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_ppt_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -694,7 +694,7 @@ TELEMETRY PEAK_CAN rc_ppt_h2 BIG_ENDIAN
 		STATE no_main_discharge 2
 	APPEND_ITEM PADDING 54 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_batt_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -730,7 +730,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_h1 BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -766,7 +766,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_h1 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_eps_dist_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -802,7 +802,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_h1 BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -838,7 +838,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_h1 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_estim_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -874,7 +874,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_h1 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_sp_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -910,7 +910,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_h1 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_eps_gen_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -946,7 +946,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_h1 BIG_ENDIAN
 	APPEND_ITEM rc_eps_gen_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_eps_gen_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_mtq_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mtq_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -982,7 +982,7 @@ TELEMETRY PEAK_CAN rc_adcs_mtq_h1 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_ppt_h1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_ppt_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1018,7 +1018,7 @@ TELEMETRY PEAK_CAN rc_ppt_h1 BIG_ENDIAN
 	APPEND_ITEM rc_ppt_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 	APPEND_ITEM rc_ppt_h1_reset_count 8 UINT "None" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN gcmd_mtq_pms BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_mtq_pms BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1042,7 +1042,7 @@ TELEMETRY PEAK_CAN gcmd_mtq_pms BIG_ENDIAN
 		STATE null 2
 	APPEND_ITEM PADDING 38 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_bdot_max_tumble BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_bdot_max_tumble BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1060,7 +1060,7 @@ TELEMETRY PEAK_CAN gcmd_bdot_max_tumble BIG_ENDIAN
 	APPEND_ITEM gcmd_bdot_max_tumble_time 16 UINT "Chooses the maximum time bdot is tumbling continuously. If bdot tumbles for longer than this time, will automatically go into sleep mode. Units: Minutes" BIG_ENDIAN
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_bdot_spam BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_bdot_spam BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1086,7 +1086,7 @@ TELEMETRY PEAK_CAN gcmd_bdot_spam BIG_ENDIAN
 		STATE null 2
 	APPEND_ITEM PADDING 6 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_bdot_control BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_bdot_control BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1108,7 +1108,7 @@ TELEMETRY PEAK_CAN gcmd_bdot_control BIG_ENDIAN
 		STATE spam 3
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_bdot_mag_control BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_bdot_mag_control BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1130,7 +1130,7 @@ TELEMETRY PEAK_CAN gcmd_bdot_mag_control BIG_ENDIAN
 		STATE sp2_mode 3
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_bdot_pole_override BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_bdot_pole_override BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1162,7 +1162,7 @@ TELEMETRY PEAK_CAN gcmd_bdot_pole_override BIG_ENDIAN
 		STATE null 2
 	APPEND_ITEM PADDING 34 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_gen_set_pt_state BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_gen_set_pt_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1191,7 +1191,7 @@ TELEMETRY PEAK_CAN gcmd_gen_set_pt_state BIG_ENDIAN
 		STATE null 2
 	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_sp_set_thresh BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_sp_set_thresh BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1213,7 +1213,7 @@ TELEMETRY PEAK_CAN gcmd_sp_set_thresh BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_ppt BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_ovc_ppt BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1231,7 +1231,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_ppt BIG_ENDIAN
 	APPEND_ITEM gcmd_dist_set_pd_ovc_ppt_ovc 32 FLOAT "Set PD overcurrent PPT" BIG_ENDIAN
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_eps BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_ovc_eps BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1249,7 +1249,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_eps BIG_ENDIAN
 	APPEND_ITEM gcmd_dist_set_pd_ovc_eps_ovc 32 FLOAT "Set PD Overcurrent EPS" BIG_ENDIAN
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_wheels BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_ovc_wheels BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1267,7 +1267,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_wheels BIG_ENDIAN
 	APPEND_ITEM gcmd_dist_set_pd_ovc_wheels_ovc 32 FLOAT "Set PD Overcurrent Weels" BIG_ENDIAN
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_estim BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_ovc_estim BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1285,7 +1285,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_estim BIG_ENDIAN
 	APPEND_ITEM gcmd_dist_set_pd_ovc_estim_ovc 32 FLOAT "Set PD overcurrent ESTIM" BIG_ENDIAN
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_bdot BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_ovc_bdot BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1303,7 +1303,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_bdot BIG_ENDIAN
 	APPEND_ITEM gcmd_dist_set_pd_ovc_bdot_ovc 32 FLOAT "Set PD overcurrent BDOT" BIG_ENDIAN
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_rahs BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_ovc_rahs BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1321,7 +1321,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_rahs BIG_ENDIAN
 	APPEND_ITEM gcmd_dist_set_pd_ovc_rahs_ovc 32 FLOAT "Set PD overcurrent RAHS" BIG_ENDIAN
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_com2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_ovc_com2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1339,7 +1339,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_com2 BIG_ENDIAN
 	APPEND_ITEM gcmd_dist_set_pd_ovc_com2_ovc 32 FLOAT "set PD Overcurrent Com2" BIG_ENDIAN
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_com1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_ovc_com1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1357,7 +1357,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_ovc_com1 BIG_ENDIAN
 	APPEND_ITEM gcmd_dist_set_pd_ovc_com1_ovc 32 FLOAT "Set PD Overcurrent Com1" BIG_ENDIAN
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_dist_set_pd_state BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_dist_set_pd_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1406,7 +1406,7 @@ TELEMETRY PEAK_CAN gcmd_dist_set_pd_state BIG_ENDIAN
 		STATE null 2
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gcmd_mtq_pop BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gcmd_mtq_pop BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1435,7 +1435,7 @@ TELEMETRY PEAK_CAN gcmd_mtq_pop BIG_ENDIAN
 		STATE null 2
 	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_batt_7 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1476,7 +1476,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_7 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%.4f"
 
-TELEMETRY PEAK_CAN sensorproc_mag2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM sensorproc_mag2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1511,7 +1511,7 @@ TELEMETRY PEAK_CAN sensorproc_mag2 BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_14 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1529,7 +1529,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_14 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_14_mag_z 64 FLOAT "z component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_13 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1547,7 +1547,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_13 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_13_mag_y 64 FLOAT "y component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_12 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1565,7 +1565,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_12 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_12_mag_x 64 FLOAT "x component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_11 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1583,7 +1583,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_11 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_11_sun_z 64 FLOAT "z component of unit vector from spacecraft to sun" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_10 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1601,7 +1601,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_10 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_10_sun_y 64 FLOAT "y component of unit vector from spacecraft to sun" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_9 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1619,7 +1619,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_9 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_9_sun_x 64 FLOAT "x component of unit vector from spacecraft to sun" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_eps_dist_16 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_16 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1659,7 +1659,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_16 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_9 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1694,7 +1694,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_9 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_7 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1729,7 +1729,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_7 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_6 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1769,7 +1769,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_6 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1804,7 +1804,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_5 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1839,7 +1839,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_3 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1864,7 +1864,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_2 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_17 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_17 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1899,7 +1899,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_17 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_14 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1939,7 +1939,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_14 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_13 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1974,7 +1974,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_13 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_11 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2009,7 +2009,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_11 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_12 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2049,7 +2049,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_12 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_15 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2084,7 +2084,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_15 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_10 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2124,7 +2124,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_10 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_8 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2164,7 +2164,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_8 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2204,7 +2204,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_4 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_dist_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_dist_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2221,7 +2221,7 @@ TELEMETRY PEAK_CAN rc_eps_dist_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_11 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2240,7 +2240,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_11 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_7 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2259,7 +2259,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_7 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_8 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2278,7 +2278,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_8 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_9 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2297,7 +2297,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_9 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2315,7 +2315,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_5 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_5_sc_quat_4 64 FLOAT "The fourth element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_6 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2334,7 +2334,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_6 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2352,7 +2352,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_4 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_4_sc_quat_3 64 FLOAT "The third element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2370,7 +2370,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_3 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_3_sc_quat_2 64 FLOAT "The second element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_15 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2389,7 +2389,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_15 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_15_point_true 8 UINT "Proportion of samples where attitude is within 20 degrees of commanded vector" BIG_ENDIAN
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_12 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2406,7 +2406,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_12 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_13 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2423,7 +2423,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_13 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_14 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2440,7 +2440,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_14 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_10 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2459,7 +2459,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_10 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2477,7 +2477,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_2_sc_quat_1 64 FLOAT "The first element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_mpc_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2494,7 +2494,7 @@ TELEMETRY PEAK_CAN rc_adcs_mpc_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_8 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2527,7 +2527,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_8 BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 13 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_7 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2546,7 +2546,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_7 BIG_ENDIAN
 		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_6 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2565,7 +2565,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_6 BIG_ENDIAN
 		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2584,7 +2584,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_5 BIG_ENDIAN
 		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2603,7 +2603,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_4 BIG_ENDIAN
 		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2622,7 +2622,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_2 BIG_ENDIAN
 		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2641,7 +2641,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_3 BIG_ENDIAN
 		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 
-TELEMETRY PEAK_CAN rc_adcs_estim_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_estim_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2658,7 +2658,7 @@ TELEMETRY PEAK_CAN rc_adcs_estim_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_12 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2694,7 +2694,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_12 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_adcs_sp_11 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2730,7 +2730,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_11 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_adcs_sp_7 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2747,7 +2747,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_7 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_6 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2782,7 +2782,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_6 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_adcs_sp_17 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_17 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2811,7 +2811,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_17 BIG_ENDIAN
 		FORMAT_STRING "%0.2f"
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_16 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_16 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2851,7 +2851,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_16 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.2f"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_10 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2887,7 +2887,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_10 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_adcs_sp_8 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2904,7 +2904,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_8 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_9 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2940,7 +2940,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_9 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_adcs_sp_13 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2976,7 +2976,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_13 BIG_ENDIAN
 			value * 60.0/32767
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_adcs_sp_15 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3012,7 +3012,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_15 BIG_ENDIAN
 		FORMAT_STRING "%0.2f"
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_14 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3045,7 +3045,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_14 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_14_sun_valid 8 UINT "Sum of last 255 processed sun sensor valid bits" BIG_ENDIAN
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3085,7 +3085,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_5 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3125,7 +3125,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_4 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3165,7 +3165,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_3 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.2f"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3205,7 +3205,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_2 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.2f"
 
-TELEMETRY PEAK_CAN rc_adcs_sp_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_sp_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3222,7 +3222,7 @@ TELEMETRY PEAK_CAN rc_adcs_sp_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3257,7 +3257,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_4 BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3293,7 +3293,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_3 BIG_ENDIAN
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3329,7 +3329,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_2 BIG_ENDIAN
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_adcs_bdot_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3365,7 +3365,7 @@ TELEMETRY PEAK_CAN rc_adcs_bdot_1 BIG_ENDIAN
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN estim_sun_unit_z BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM estim_sun_unit_z BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3383,7 +3383,7 @@ TELEMETRY PEAK_CAN estim_sun_unit_z BIG_ENDIAN
 	APPEND_ITEM estim_sun_unit_z_val 64 FLOAT "Unit vector of where the sun is at x" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN estim_sun_unit_y BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM estim_sun_unit_y BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3401,7 +3401,7 @@ TELEMETRY PEAK_CAN estim_sun_unit_y BIG_ENDIAN
 	APPEND_ITEM estim_sun_unit_y_val 64 FLOAT "Unit vector of where the sun is at y" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN estim_sun_unit_x BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM estim_sun_unit_x BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3419,7 +3419,7 @@ TELEMETRY PEAK_CAN estim_sun_unit_x BIG_ENDIAN
 	APPEND_ITEM estim_sun_unit_x_val 64 FLOAT "Unit vector of where the sun is at z" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN estim_mag_unit_z BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM estim_mag_unit_z BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3437,7 +3437,7 @@ TELEMETRY PEAK_CAN estim_mag_unit_z BIG_ENDIAN
 	APPEND_ITEM estim_mag_unit_z_val 64 FLOAT "Unit vector of direction of magnetic field x" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN estim_mag_unit_y BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM estim_mag_unit_y BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3455,7 +3455,7 @@ TELEMETRY PEAK_CAN estim_mag_unit_y BIG_ENDIAN
 	APPEND_ITEM estim_mag_unit_y_val 64 FLOAT "Unit vector of direction of magnetic field y" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN estim_mag_unit_x BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM estim_mag_unit_x BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3473,7 +3473,7 @@ TELEMETRY PEAK_CAN estim_mag_unit_x BIG_ENDIAN
 	APPEND_ITEM estim_mag_unit_x_val 64 FLOAT "Unit vector of direction of magnetic field z" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY PEAK_CAN estim_state BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM estim_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3496,7 +3496,7 @@ TELEMETRY PEAK_CAN estim_state BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_adcs_mtq_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mtq_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3517,7 +3517,7 @@ TELEMETRY PEAK_CAN rc_adcs_mtq_5 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_cmds_y_var 16 UINT "Variance in BDot's dipole commands" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_cmds_z_var 16 UINT "Variance in BDot's dipole commands" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_mtq_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mtq_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3541,7 +3541,7 @@ TELEMETRY PEAK_CAN rc_adcs_mtq_4 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_4_duty_z1_avg 8 UINT "Average Z Duty" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_4_duty_z2_avg 8 UINT "Average Z Duty" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_mtq_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mtq_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3565,7 +3565,7 @@ TELEMETRY PEAK_CAN rc_adcs_mtq_3 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_3_fsw_y_min 8 UINT "Min Y FSW command" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_3_fsw_z_avg 8 UINT "Average Z FSW command" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_mtq_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mtq_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3589,7 +3589,7 @@ TELEMETRY PEAK_CAN rc_adcs_mtq_2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_2_bdot_z_avg 8 INT "Average Z BDOT command" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_2_bdot_z_max 8 INT "Max Z BDOT command" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_adcs_mtq_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_adcs_mtq_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3606,7 +3606,7 @@ TELEMETRY PEAK_CAN rc_adcs_mtq_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_ppt_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_ppt_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3638,7 +3638,7 @@ TELEMETRY PEAK_CAN rc_ppt_3 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_ppt_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_ppt_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3670,7 +3670,7 @@ TELEMETRY PEAK_CAN rc_ppt_2 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM rc_ppt_2_total_fire_count 16 UINT "Total Fire count" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN rc_ppt_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_ppt_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3693,7 +3693,7 @@ TELEMETRY PEAK_CAN rc_ppt_1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_gen_9 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3757,7 +3757,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_9 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 
-TELEMETRY PEAK_CAN rc_eps_gen_8 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3798,7 +3798,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_8 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_gen_7 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3838,7 +3838,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_7 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
 
-TELEMETRY PEAK_CAN rc_eps_gen_6 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3878,7 +3878,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_6 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
 
-TELEMETRY PEAK_CAN rc_eps_gen_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3918,7 +3918,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_5 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
 
-TELEMETRY PEAK_CAN rc_eps_gen_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3958,7 +3958,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_4 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
 
-TELEMETRY PEAK_CAN rc_eps_gen_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3998,7 +3998,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_3 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 
-TELEMETRY PEAK_CAN rc_eps_gen_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4038,7 +4038,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_2 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 
-TELEMETRY PEAK_CAN rc_eps_gen_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4073,7 +4073,7 @@ TELEMETRY PEAK_CAN rc_eps_gen_1 BIG_ENDIAN
 		STATE CHARGING 1 GREEN
 	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_batt_6 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4097,7 +4097,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_6 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_batt_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4142,7 +4142,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_5 BIG_ENDIAN
 			value - 50
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN rc_eps_batt_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4184,7 +4184,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_4 BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_batt_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4226,7 +4226,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_3 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_batt_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4262,7 +4262,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_2 BIG_ENDIAN
 		FORMAT_STRING "%.4f"
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN rc_eps_batt_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM rc_eps_batt_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4279,7 +4279,7 @@ TELEMETRY PEAK_CAN rc_eps_batt_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_ppt_set_count BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_ppt_set_count BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4297,7 +4297,7 @@ TELEMETRY PEAK_CAN cmd_ppt_set_count BIG_ENDIAN
 	APPEND_ITEM cmd_ppt_set_count_count 8 UINT "Number of times PPT fires" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_ppt_time_upd BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_ppt_time_upd BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4333,7 +4333,7 @@ TELEMETRY PEAK_CAN cmd_ppt_time_upd BIG_ENDIAN
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN cmd_ppt_halt BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_ppt_halt BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4353,7 +4353,7 @@ TELEMETRY PEAK_CAN cmd_ppt_halt BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN ppt_firing_result BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM ppt_firing_result BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4396,7 +4396,7 @@ TELEMETRY PEAK_CAN ppt_firing_result BIG_ENDIAN
 		STATE true 1
 		STATE null 2
 
-TELEMETRY PEAK_CAN tle_5 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM tle_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4413,7 +4413,7 @@ TELEMETRY PEAK_CAN tle_5 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM tle_5_mnm 64 FLOAT "None" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN tle_4 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM tle_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4431,7 +4431,7 @@ TELEMETRY PEAK_CAN tle_4 BIG_ENDIAN
 	APPEND_ITEM tle_4_raan 32 FLOAT "TLE Rt ascension of the asc. node" BIG_ENDIAN
 	APPEND_ITEM tle_4_aop 32 FLOAT "TLE Argument of perigee" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN tle_3 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM tle_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4449,7 +4449,7 @@ TELEMETRY PEAK_CAN tle_3 BIG_ENDIAN
 	APPEND_ITEM tle_3_inc 32 FLOAT "TLE Orbital inclination" BIG_ENDIAN
 	APPEND_ITEM tle_3_ecc 32 FLOAT "TLE Eccentricity" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN tle_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM tle_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4466,7 +4466,7 @@ TELEMETRY PEAK_CAN tle_2 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM tle_2_day 64 FLOAT "TLE Day of yr" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN tle_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM tle_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4484,7 +4484,7 @@ TELEMETRY PEAK_CAN tle_1 BIG_ENDIAN
 	APPEND_ITEM tle_1_bstar 32 FLOAT "TLE BSTAR drag term" BIG_ENDIAN
 	APPEND_ITEM tle_1_mna 32 FLOAT "None" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN eps_pd_undervoltage BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM eps_pd_undervoltage BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4504,7 +4504,7 @@ TELEMETRY PEAK_CAN eps_pd_undervoltage BIG_ENDIAN
 		STATE undervoltage 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN eps_pd_batt_voltage BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM eps_pd_batt_voltage BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4533,7 +4533,7 @@ TELEMETRY PEAK_CAN eps_pd_batt_voltage BIG_ENDIAN
 		STATE sum 5
 	APPEND_ITEM PADDING 40 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_pd_rst BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_pd_rst BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4551,7 +4551,7 @@ TELEMETRY PEAK_CAN cmd_pd_rst BIG_ENDIAN
 	APPEND_ITEM cmd_pd_rst_confirm 1 UINT "Are you sure you want to rst pd aggs?" BIG_ENDIAN
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_com2_run BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_com2_run BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4575,7 +4575,7 @@ TELEMETRY PEAK_CAN cmd_com2_run BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 54 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN com2_state BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM com2_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4598,7 +4598,7 @@ TELEMETRY PEAK_CAN com2_state BIG_ENDIAN
 	APPEND_ITEM com2_state_curr_file 8 UINT "which fille is comm2 running rn" BIG_ENDIAN
 	APPEND_ITEM com2_state_health_state 8 UINT "health state codes" BIG_ENDIAN
 
-TELEMETRY PEAK_CAN cmd_pd_enable BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_pd_enable BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4628,7 +4628,7 @@ TELEMETRY PEAK_CAN cmd_pd_enable BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 55 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_batt_rst BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_batt_rst BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4648,7 +4648,7 @@ TELEMETRY PEAK_CAN cmd_batt_rst BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_batt_bal_enable BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_batt_bal_enable BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4668,7 +4668,7 @@ TELEMETRY PEAK_CAN cmd_batt_bal_enable BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_reboot_request BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_reboot_request BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4695,7 +4695,7 @@ TELEMETRY PEAK_CAN cmd_reboot_request BIG_ENDIAN
 		STATE unk 8
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_ignore_fsw BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_ignore_fsw BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4715,7 +4715,7 @@ TELEMETRY PEAK_CAN cmd_ignore_fsw BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_mtq_fsw BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_mtq_fsw BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4740,7 +4740,7 @@ TELEMETRY PEAK_CAN cmd_mtq_fsw BIG_ENDIAN
 		STATE not_tumbling_charlie 3
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN eps_domain_output BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM eps_domain_output BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4788,7 +4788,7 @@ TELEMETRY PEAK_CAN eps_domain_output BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 6 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN sensorproc_imu BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM sensorproc_imu BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4826,7 +4826,7 @@ TELEMETRY PEAK_CAN sensorproc_imu BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN sensorproc_mag BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM sensorproc_mag BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4861,7 +4861,7 @@ TELEMETRY PEAK_CAN sensorproc_mag BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_rollcall BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_rollcall BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4885,7 +4885,7 @@ TELEMETRY PEAK_CAN cmd_rollcall BIG_ENDIAN
 	APPEND_ITEM cmd_rollcall_type 8 UINT "Rollcall Type (Unused for now)" BIG_ENDIAN
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN mtq_ack BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM mtq_ack BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4912,7 +4912,7 @@ TELEMETRY PEAK_CAN mtq_ack BIG_ENDIAN
 	APPEND_ITEM mtq_ack_last_fsw_y 8 INT "last fsw y command received " BIG_ENDIAN
 	APPEND_ITEM mtq_ack_last_fsw_z 8 INT "last fsw z command received " BIG_ENDIAN
 
-TELEMETRY PEAK_CAN gen_panel_temp BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gen_panel_temp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4939,7 +4939,7 @@ TELEMETRY PEAK_CAN gen_panel_temp BIG_ENDIAN
 		STATE sum 5
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_gen_rst BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_gen_rst BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4959,7 +4959,7 @@ TELEMETRY PEAK_CAN cmd_gen_rst BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_ppt_single_fire BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_ppt_single_fire BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4982,7 +4982,7 @@ TELEMETRY PEAK_CAN cmd_ppt_single_fire BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gen_panel_pwr BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gen_panel_pwr BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5021,7 +5021,7 @@ TELEMETRY PEAK_CAN gen_panel_pwr BIG_ENDIAN
 		STATE sum 5
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gen_panel_current BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gen_panel_current BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5053,7 +5053,7 @@ TELEMETRY PEAK_CAN gen_panel_current BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN gen_panel_voltage BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM gen_panel_voltage BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5085,7 +5085,7 @@ TELEMETRY PEAK_CAN gen_panel_voltage BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN mpc_vp BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM mpc_vp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5105,7 +5105,7 @@ TELEMETRY PEAK_CAN mpc_vp BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN eps_batt_state BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM eps_batt_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5131,7 +5131,7 @@ TELEMETRY PEAK_CAN eps_batt_state BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 46 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN eps_batt_current BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM eps_batt_current BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5167,7 +5167,7 @@ TELEMETRY PEAK_CAN eps_batt_current BIG_ENDIAN
 			value * 0.0001
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN eps_batt_voltage BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM eps_batt_voltage BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5203,7 +5203,7 @@ TELEMETRY PEAK_CAN eps_batt_voltage BIG_ENDIAN
 			value * 0.001
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY PEAK_CAN sensorproc_sun BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM sensorproc_sun BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5226,7 +5226,7 @@ TELEMETRY PEAK_CAN sensorproc_sun BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN cmd_mtq_bdot BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM cmd_mtq_bdot BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5246,7 +5246,7 @@ TELEMETRY PEAK_CAN cmd_mtq_bdot BIG_ENDIAN
 	APPEND_ITEM cmd_mtq_bdot_z 8 INT "bdot command for z direction" BIG_ENDIAN
 	APPEND_ITEM PADDING 40 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN bdot_tumble_status BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM bdot_tumble_status BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5266,7 +5266,7 @@ TELEMETRY PEAK_CAN bdot_tumble_status BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN sync_2 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM sync_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5283,7 +5283,7 @@ TELEMETRY PEAK_CAN sync_2 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN sync_1 BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM sync_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5300,7 +5300,7 @@ TELEMETRY PEAK_CAN sync_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN msp_temp BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM msp_temp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5322,7 +5322,7 @@ TELEMETRY PEAK_CAN msp_temp BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
-TELEMETRY PEAK_CAN grnd_epoch BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM grnd_epoch BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -5345,7 +5345,7 @@ TELEMETRY PEAK_CAN grnd_epoch BIG_ENDIAN
 	APPEND_ITEM PADDING 24 UINT "Padded bits for CAN data"
 
 
-TELEMETRY PEAK_CAN general_can_message BIG_ENDIAN 
+TELEMETRY PEAK_CAN_TLM general_can_message BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
