@@ -1,3 +1,462 @@
+COMMAND CAN_LOCAL_CMD gcmd_ppt_halt BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  285475076 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 285475076 
+	APPEND_PARAMETER gcmd_ppt_halt_confirm 1 UINT 0 1  0 "Are you sure you want to halt the ppt?" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD gcmd_dist_reset_mission BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252767 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252767 
+	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD gcmd_dist_self_restart BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252766 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252766 
+	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD rc_eps_dist_18 BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677595 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 304677595 
+	APPEND_PARAMETER rc_eps_dist_18_bdot_ocp_thresh 9 UINT 0 511  0 "BDOT current threshold" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_18_com2_ocp_thresh 9 UINT 0 511  0 "COM2 current threshold" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_18_eps_ocp_thresh 9 UINT 0 511  0 "EPS current threshold" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_18_estim_ocp_thresh 9 UINT 0 511  0 "ESTIM current threshold" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_18_ppt_ocp_thresh 9 UINT 0 511  0 "PPT current threshold" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_18_rahs_ocp_thresh 9 UINT 0 511  0 "RAHS current threshold" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 10 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD rc_adcs_bdot_10 BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677597 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 304677597 
+	APPEND_PARAMETER rc_adcs_bdot_10_dipole_var_x 16 UINT 0 65535  0 "The variance of sent dipole commands" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_10_dipole_var_y 16 UINT 0 65535  0 "The variance of sent dipole commands" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_10_dipole_var_z 16 UINT 0 65535  0 "The variance of sent dipole commands" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD rc_adcs_bdot_9 BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677491 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 304677491 
+	APPEND_PARAMETER rc_adcs_bdot_9_spam_off_z_mtq_x 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_9_spam_off_z_mtq_y 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_9_spam_off_z_mtq_z 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD rc_adcs_bdot_8 BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677490 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 304677490 
+	APPEND_PARAMETER rc_adcs_bdot_8_spam_off_x_mtq_z 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_8_spam_off_y_mtq_x 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_8_spam_off_y_mtq_y 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_8_spam_off_y_mtq_z 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+COMMAND CAN_LOCAL_CMD gcmd_batt_set_heater_check BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  301990618 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 301990618 
+	APPEND_PARAMETER gcmd_batt_set_heater_check_state 2 UINT 0 3  0 "the state of heater automation" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD eps_dist_autoseq_get_met_rsp BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303039193 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303039193 
+	APPEND_PARAMETER eps_dist_autoseq_get_met_rsp_met 32 UINT 0 4294967295  0 "the MET" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD eps_dist_autoseq_get_ind_rsp BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303039192 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303039192 
+	APPEND_PARAMETER eps_dist_autoseq_get_ind_rsp_ind 64 UINT 0 18446744073709600768  0 "the indices, as an 8-element array" BIG_ENDIAN
+COMMAND CAN_LOCAL_CMD gcmd_autoseq_get_met BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252759 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252759 
+	APPEND_PARAMETER gcmd_autoseq_get_met_index 8 UINT 0 255  0 "the index" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 56 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD gcmd_autoseq_get_indices BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252758 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252758 
+	APPEND_PARAMETER gcmd_autoseq_get_indices_id 29 UINT 0 536870911  0 "the CAN Id" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 35 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD gcmd_autoseq_remove_can_id BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252757 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252757 
+	APPEND_PARAMETER gcmd_autoseq_remove_can_id_id 29 UINT 0 536870911  0 "remove all occurrences of the specified CAN Id in the autosequencer" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 35 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD gcmd_autoseq_rm_at_index BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252756 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252756 
+	APPEND_PARAMETER gcmd_autoseq_rm_at_index_index 8 UINT 0 255  0 "the index" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 56 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND CAN_LOCAL_CMD gcmd_autoseq_add_2 BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252755 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252755 
+	APPEND_PARAMETER gcmd_autoseq_add_2_data 64 UINT 0 18446744073709600768  0 "the data of the CAN packet to be added to the autosequencer" BIG_ENDIAN
+COMMAND CAN_LOCAL_CMD gcmd_autoseq_add_1 BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252754 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252754 
+	APPEND_PARAMETER gcmd_autoseq_add_1_can_id 29 UINT 0 536870911  0 "the CAN Id of the message to add" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_autoseq_add_1_met 32 UINT 0 4294967295  0 "the MET of the entry to add" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_autoseq_add_1_sendflg 1 UINT 0 1  0 "whether the CAN packet should send" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 2 UINT MIN MAX 0 "Padded bits for CAN data"
+
 COMMAND CAN_LOCAL_CMD rc_adcs_bdot_7 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -26,7 +485,9 @@ COMMAND CAN_LOCAL_CMD rc_adcs_bdot_7 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_7_spam_magnitude_x 8 INT -127 128  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_7_spam_magnitude_y 8 INT -127 128  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_7_spam_magnitude_z 8 INT -127 128  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 40 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER rc_adcs_bdot_7_spam_off_x_mtq_x 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_7_spam_off_x_mtq_y 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_bdot_6 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -201,9 +662,9 @@ COMMAND CAN_LOCAL_CMD rc_adcs_bdot_5 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677468 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677468 
-	APPEND_PARAMETER rc_adcs_bdot_5_last_spam_z_mtq_x 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_bdot_5_last_spam_z_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_bdot_5_last_spam_z_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_5_spam_on_z_mtq_x 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_5_spam_on_z_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_5_spam_on_z_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD gcmd_reset_minmax BIG_ENDIAN 
@@ -368,8 +829,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_h2 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677482 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677482 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628906 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628906 
 	APPEND_PARAMETER rc_adcs_estim_h2_canrxerror 8 UINT 0 255  0 "Estim MCP's RX error buffer" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 56 UINT MIN MAX 0 "Padded bits for CAN data"
 
@@ -632,8 +1093,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_h1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677473 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677473 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628897 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628897 
 	APPEND_PARAMETER rc_adcs_estim_h1_temp_min 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
@@ -1438,8 +1899,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_14 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677465 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677465 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628889 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628889 
 	APPEND_PARAMETER rc_adcs_estim_14_mag_z 64 FLOAT -1 1  0 "z component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_13 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1464,8 +1925,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_13 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677464 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677464 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628888 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628888 
 	APPEND_PARAMETER rc_adcs_estim_13_mag_y 64 FLOAT -1 1  0 "y component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_12 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1490,8 +1951,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_12 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677463 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677463 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628887 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628887 
 	APPEND_PARAMETER rc_adcs_estim_12_mag_x 64 FLOAT -1 1  0 "x component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_11 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1516,8 +1977,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_11 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677462 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677462 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628886 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628886 
 	APPEND_PARAMETER rc_adcs_estim_11_sun_z 64 FLOAT -1 1  0 "z component of unit vector from spacecraft to sun" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_10 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1542,8 +2003,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_10 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677461 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677461 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628885 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628885 
 	APPEND_PARAMETER rc_adcs_estim_10_sun_y 64 FLOAT -1 1  0 "y component of unit vector from spacecraft to sun" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_9 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1568,8 +2029,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_9 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677460 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677460 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628884 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628884 
 	APPEND_PARAMETER rc_adcs_estim_9_sun_x 64 FLOAT -1 1  0 "x component of unit vector from spacecraft to sun" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_eps_dist_16 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2137,8 +2598,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_11 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677438 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677438 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628862 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628862 
 	APPEND_PARAMETER rc_adcs_mpc_11_omega_z 64 FLOAT -10 10  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_7 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2163,8 +2624,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_7 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677434 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677434 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628858 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628858 
 	APPEND_PARAMETER rc_adcs_mpc_7_omega_max 64 FLOAT 0 10  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_8 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2189,8 +2650,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_8 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677435 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677435 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628859 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628859 
 	APPEND_PARAMETER rc_adcs_mpc_8_omega_avg 64 FLOAT 0 10  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_9 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2215,8 +2676,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_9 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677436 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677436 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628860 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628860 
 	APPEND_PARAMETER rc_adcs_mpc_9_omega_x 64 FLOAT -10 10  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_5 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2241,8 +2702,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_5 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677432 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677432 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628856 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628856 
 	APPEND_PARAMETER rc_adcs_mpc_5_sc_quat_4 64 FLOAT -1 1  0 "The fourth element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_6 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2267,8 +2728,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_6 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677433 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677433 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628857 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628857 
 	APPEND_PARAMETER rc_adcs_mpc_6_omega_min 64 FLOAT 0 10  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_4 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2293,8 +2754,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677431 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677431 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628855 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628855 
 	APPEND_PARAMETER rc_adcs_mpc_4_sc_quat_3 64 FLOAT -1 1  0 "The third element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_3 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2319,8 +2780,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_3 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677430 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677430 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628854 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628854 
 	APPEND_PARAMETER rc_adcs_mpc_3_sc_quat_2 64 FLOAT -1 1  0 "The second element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_15 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2345,8 +2806,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_15 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677442 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677442 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628866 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628866 
 	APPEND_PARAMETER rc_adcs_mpc_15_sc_mode 8 UINT 0 32  0 "The current operating mode of the ADCS system" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mpc_15_point_true 8 UINT 0 255  0 "Proportion of samples where attitude is within 20 degrees of commanded vector" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 48 UINT MIN MAX 0 "Padded bits for CAN data"
@@ -2374,8 +2835,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_12 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677439 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677439 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628863 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628863 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_13 BIG_ENDIAN 
@@ -2401,8 +2862,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_13 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677440 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677440 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628864 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628864 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_14 BIG_ENDIAN 
@@ -2428,8 +2889,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_14 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677441 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677441 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628865 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628865 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_10 BIG_ENDIAN 
@@ -2455,8 +2916,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_10 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677437 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677437 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628861 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628861 
 	APPEND_PARAMETER rc_adcs_mpc_10_omega_y 64 FLOAT -10 10  0 "None" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_2 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2481,8 +2942,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_2 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677429 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677429 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628853 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628853 
 	APPEND_PARAMETER rc_adcs_mpc_2_sc_quat_1 64 FLOAT -1 1  0 "The first element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mpc_1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2507,8 +2968,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mpc_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677428 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677428 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628852 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628852 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_8 BIG_ENDIAN 
@@ -2534,8 +2995,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_8 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677427 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677427 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628851 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628851 
 	APPEND_PARAMETER rc_adcs_estim_8_epoch 40 UINT MIN MAX  0 "Epoch used in position and velocity calculation" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_8_sgp4_flag 8 INT -1 1  0 "Flag telling what mode ESTIM is propagating the orbit in" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_8_sc_in_sun 1 UINT 0 1  0 "Boolean indicating whether the s/c thinks it is in the sun or not." BIG_ENDIAN
@@ -2572,8 +3033,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_7 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677426 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677426 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628850 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628850 
 	APPEND_PARAMETER rc_adcs_estim_7_vel_z 64 FLOAT -169999999999999993883079578865998174333346074304075874502773119193537729178160565864330091787584707988572262467983188919169916105593357174268369962062473635296474636515660464935663040684957844303524367815028553272712298986386310828644513212353921123253311675499856875650512437415429217994623324794855339589632 169999999999999993883079578865998174333346074304075874502773119193537729178160565864330091787584707988572262467983188919169916105593357174268369962062473635296474636515660464935663040684957844303524367815028553272712298986386310828644513212353921123253311675499856875650512437415429217994623324794855339589632  0 "The inertial velocity the satellite thinks we have" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_6 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2598,8 +3059,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_6 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677425 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677425 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628849 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628849 
 	APPEND_PARAMETER rc_adcs_estim_6_vel_y 64 FLOAT -169999999999999993883079578865998174333346074304075874502773119193537729178160565864330091787584707988572262467983188919169916105593357174268369962062473635296474636515660464935663040684957844303524367815028553272712298986386310828644513212353921123253311675499856875650512437415429217994623324794855339589632 169999999999999993883079578865998174333346074304075874502773119193537729178160565864330091787584707988572262467983188919169916105593357174268369962062473635296474636515660464935663040684957844303524367815028553272712298986386310828644513212353921123253311675499856875650512437415429217994623324794855339589632  0 "The inertial velocity the satellite thinks we have" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_5 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2624,8 +3085,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_5 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677424 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677424 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628848 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628848 
 	APPEND_PARAMETER rc_adcs_estim_5_vel_x 64 FLOAT -169999999999999993883079578865998174333346074304075874502773119193537729178160565864330091787584707988572262467983188919169916105593357174268369962062473635296474636515660464935663040684957844303524367815028553272712298986386310828644513212353921123253311675499856875650512437415429217994623324794855339589632 169999999999999993883079578865998174333346074304075874502773119193537729178160565864330091787584707988572262467983188919169916105593357174268369962062473635296474636515660464935663040684957844303524367815028553272712298986386310828644513212353921123253311675499856875650512437415429217994623324794855339589632  0 "The inertial velocity the satellite thinks we have" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_4 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2650,8 +3111,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677423 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677423 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628847 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628847 
 	APPEND_PARAMETER rc_adcs_estim_4_pos_z 64 FLOAT -7000000 7000000  0 "Inertial position that the ADCS system thinks the satellite is at" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_2 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2676,8 +3137,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_2 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677421 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677421 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628845 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628845 
 	APPEND_PARAMETER rc_adcs_estim_2_pos_x 64 FLOAT -7000000 7000000  0 "Inertial position that the ADCS system thinks the satellite is at" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_3 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2702,8 +3163,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_3 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677422 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677422 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628846 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628846 
 	APPEND_PARAMETER rc_adcs_estim_3_pos_y 64 FLOAT -7000000 7000000  0 "Inertial position that the ADCS system thinks the satellite is at" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_estim_1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2728,8 +3189,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_estim_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677420 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677420 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628844 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628844 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_sp_12 BIG_ENDIAN 
@@ -2755,8 +3216,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_12 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677414 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677414 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628838 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628838 
 	APPEND_PARAMETER rc_adcs_sp_12_mag2_y_max 16 INT -32768 32767  0 "Magnetometer 2 Y axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_12_mag2_y_avg 16 INT -32768 32767  0 "Magnetometer 2 Y axis avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_12_mag2_z_min 16 INT -32768 32767  0 "Magnetometer 2 Z axis min" BIG_ENDIAN
@@ -2784,8 +3245,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_11 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677413 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677413 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628837 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628837 
 	APPEND_PARAMETER rc_adcs_sp_11_mag2_x_min 16 INT -32768 32767  0 "Magnetometer 2 X axis min" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_11_mag2_x_max 16 INT -32768 32767  0 "Magnetometer 2 X axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_11_mag2_x_avg 16 INT -32768 32767  0 "Magnetometer 2 X axis avg" BIG_ENDIAN
@@ -2813,8 +3274,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_7 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677409 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677409 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628833 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628833 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_sp_6 BIG_ENDIAN 
@@ -2840,8 +3301,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_6 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677408 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677408 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628832 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628832 
 	APPEND_PARAMETER rc_adcs_sp_6_sun_z_max 16 INT -32768 32767  0 " Sun Sensor Z axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_6_sun_z_avg 16 INT -32768 32767  0 " Sun Sensor Z axis avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_6_mag1_valid 8 UINT 0 255  0 "Sum of last 255 processed mag valid bits" BIG_ENDIAN
@@ -2870,8 +3331,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_17 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677419 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677419 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628843 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628843 
 	APPEND_PARAMETER rc_adcs_sp_17_imu_z_max 16 INT -32768 32767  0 "IMU Z axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_17_imu_z_avg 16 INT -32768 32767  0 "IMU Z axis avg" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
@@ -2899,8 +3360,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_16 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677418 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677418 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628842 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628842 
 	APPEND_PARAMETER rc_adcs_sp_16_imu_y_min 16 INT -32768 32767  0 "IMU Y axis min" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_16_imu_y_max 16 INT -32768 32767  0 "IMU Y axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_16_imu_y_avg 16 INT -32768 32767  0 "IMU Y axis avg" BIG_ENDIAN
@@ -2928,8 +3389,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_10 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677412 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677412 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628836 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628836 
 	APPEND_PARAMETER rc_adcs_sp_10_mag1_y_avg 16 INT -32768 32767  0 "Magnetometer 1 Y axis avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_10_mag1_z_min 16 INT -32768 32767  0 "Magnetometer 1 Z axis min" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_10_mag1_z_max 16 INT -32768 32767  0 "Magnetometer 1 Z axis max" BIG_ENDIAN
@@ -2957,8 +3418,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_8 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677410 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677410 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628834 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628834 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_sp_9 BIG_ENDIAN 
@@ -2984,8 +3445,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_9 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677411 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677411 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628835 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628835 
 	APPEND_PARAMETER rc_adcs_sp_9_mag1_x_max 16 INT -32768 32767  0 "Magnetometer 1 X axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_9_mag1_x_avg 16 INT -32768 32767  0 "Magnetometer 1 X axis avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_9_mag1_y_min 16 INT -32768 32767  0 "Magnetometer 1 Y axis min" BIG_ENDIAN
@@ -3013,8 +3474,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_13 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677415 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677415 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628839 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628839 
 	APPEND_PARAMETER rc_adcs_sp_13_mag2_z_avg 16 INT -32768 32767  0 "Magnetometer 2 Z axis avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_13_suna_min 16 INT -32768 32767  0 "Minimum alpha value from the sun sensor" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_13_suna_max 16 INT -32768 32767  0 "Maximum alpha value from the sun sensor" BIG_ENDIAN
@@ -3042,8 +3503,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_15 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677417 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677417 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628841 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628841 
 	APPEND_PARAMETER rc_adcs_sp_15_imu_valid 8 UINT 0 255  0 "Sum of last 255 processed imu valid bits" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_15_imu_x_min 16 INT -32768 32767  0 "IMU X axis min" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_15_imu_x_max 16 INT -32768 32767  0 "IMU X axis max" BIG_ENDIAN
@@ -3073,8 +3534,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_14 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677416 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677416 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628840 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628840 
 	APPEND_PARAMETER rc_adcs_sp_14_sunb_min 16 INT -32768 32767  0 "Minimum beta value from the sun sensor" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_14_sunb_max 16 INT -32768 32767  0 "Maximum beta value from the sun sensor" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_14_sunb_avg 16 INT -32768 32767  0 "Average beta value from the sun sensor" BIG_ENDIAN
@@ -3104,8 +3565,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_5 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677407 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677407 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628831 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628831 
 	APPEND_PARAMETER rc_adcs_sp_5_sun_y_min 16 INT -32768 32767  0 " Sun Sensor Y axis min" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_5_sun_y_max 16 INT -32768 32767  0 " Sun Sensor Y axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_5_sun_y_avg 16 INT -32768 32767  0 " Sun Sensor Y axis avg" BIG_ENDIAN
@@ -3133,8 +3594,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677406 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677406 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628830 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628830 
 	APPEND_PARAMETER rc_adcs_sp_4_imup_z_avg 16 INT -32768 32767  0 "Processed IMU Z axis avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_4_sun_x_min 16 INT -32768 32767  0 " Sun Sensor X axis min" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_4_sun_x_max 16 INT -32768 32767  0 " Sun Sensor X axis max" BIG_ENDIAN
@@ -3162,8 +3623,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_3 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677405 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677405 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628829 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628829 
 	APPEND_PARAMETER rc_adcs_sp_3_imup_y_max 16 INT -32768 32767  0 "Processed IMU Y axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_3_imup_y_avg 16 INT -32768 32767  0 "Processed IMU Y axis avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_3_imup_z_min 16 INT -32768 32767  0 "Processed IMU Z axis min" BIG_ENDIAN
@@ -3191,8 +3652,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_2 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677404 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677404 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628828 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628828 
 	APPEND_PARAMETER rc_adcs_sp_2_imup_x_min 16 INT -32768 32767  0 "Processed IMU X axis min" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_2_imup_x_max 16 INT -32768 32767  0 "Processed IMU X axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_2_imup_x_avg 16 INT -32768 32767  0 "Processed IMU X axis avg" BIG_ENDIAN
@@ -3220,8 +3681,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_sp_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677403 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677403 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628827 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628827 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_adcs_bdot_4 BIG_ENDIAN 
@@ -3250,8 +3711,8 @@ COMMAND CAN_LOCAL_CMD rc_adcs_bdot_4 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677402 
 	APPEND_PARAMETER rc_adcs_bdot_4_mag_z_avg 16 INT -32768 32767  0 "Z Average reading in nT" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_bdot_4_last_spam_y_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_bdot_4_last_spam_y_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_4_spam_on_y_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_4_spam_on_y_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_4_tumble 1 UINT 0 1  0 "Tumble Status" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
@@ -3340,10 +3801,10 @@ COMMAND CAN_LOCAL_CMD rc_adcs_bdot_1 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677382 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677382 
-	APPEND_PARAMETER rc_adcs_bdot_1_last_spam_x_mtq_x 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_bdot_1_last_spam_x_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_bdot_1_last_spam_x_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_bdot_1_last_spam_y_mtq_x 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_1_spam_on_x_mtq_x 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_1_spam_on_x_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_1_spam_on_x_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_1_spam_on_y_mtq_x 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD estim_sun_unit_z BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -3560,8 +4021,9 @@ COMMAND CAN_LOCAL_CMD rc_adcs_mtq_5 BIG_ENDIAN
 		STATE DEFAULT 304677391 
 	APPEND_PARAMETER rc_adcs_mtq_5_fsw_ignore 8 UINT 0 255  0 "Flight Software Ignore" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mtq_5_reset_counts 8 UINT 0 255  0 "Number of resets" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 48 UINT MIN MAX 0 "Padded bits for CAN data"
-
+	APPEND_PARAMETER rc_adcs_mtq_5_cmds_x_var 16 UINT 0 65535  0 "Variance in BDot's dipole commands" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_5_cmds_y_var 16 UINT 0 65535  0 "Variance in BDot's dipole commands" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_5_cmds_z_var 16 UINT 0 65535  0 "Variance in BDot's dipole commands" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD rc_adcs_mtq_4 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -3711,8 +4173,8 @@ COMMAND CAN_LOCAL_CMD rc_ppt_3 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677386 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677386 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628810 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628810 
 	APPEND_PARAMETER rc_ppt_3_ign_chg_min 16 UINT -32768 32767  0 "Main Charge Time Minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_3_ign_chg_max 16 UINT -32768 32767  0 "Main Charge Time Minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_3_ign_chg_avg 16 UINT -32768 32767  0 "Main Charge Time Minimum" BIG_ENDIAN
@@ -3741,8 +4203,8 @@ COMMAND CAN_LOCAL_CMD rc_ppt_2 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677385 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677385 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628809 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628809 
 	APPEND_PARAMETER rc_ppt_2_main_chg_min 16 UINT -32768 32767  0 "Main Charge Time Minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_2_main_chg_max 16 UINT -32768 32767  0 "Main Charge Time Maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_2_main_chg_avg 16 UINT -32768 32767  0 "Main Charge Time Average" BIG_ENDIAN
@@ -3770,8 +4232,8 @@ COMMAND CAN_LOCAL_CMD rc_ppt_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677384 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677384 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628808 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628808 
 	APPEND_PARAMETER rc_ppt_1_fire_count 16 UINT 0 65535  0 "Total number of times the PPT has fired" BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_1_fault_count 16 UINT 0 65535  0 "PPT fault count" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
@@ -4039,7 +4501,25 @@ COMMAND CAN_LOCAL_CMD rc_eps_gen_1 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677392 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677392 
-	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER rc_eps_gen_1_pnl_1_enabled 1 UINT 0 1  0 "whether gen panel 1 is enabled" BIG_ENDIAN
+		STATE DISABLED 0
+		STATE ENABLED 1
+	APPEND_PARAMETER rc_eps_gen_1_pnl_2_enabled 1 UINT 0 1  0 "whether gen panel 2 is enabled" BIG_ENDIAN
+		STATE DISABLED 0
+		STATE ENABLED 1
+	APPEND_PARAMETER rc_eps_gen_1_pnl_3_enabled 1 UINT 0 1  0 "whether gen panel 3 is enabled" BIG_ENDIAN
+		STATE DISABLED 0
+		STATE ENABLED 1
+	APPEND_PARAMETER rc_eps_gen_1_pnl_1_charging 1 UINT 0 1  0 "whether gen panel 1 is charing" BIG_ENDIAN
+		STATE NOTCHARGING 0
+		STATE CHARGING 1
+	APPEND_PARAMETER rc_eps_gen_1_pnl_2_charging 1 UINT 0 1  0 "whether gen panel 2 is charing" BIG_ENDIAN
+		STATE NOTCHARGING 0
+		STATE CHARGING 1
+	APPEND_PARAMETER rc_eps_gen_1_pnl_3_charging 1 UINT 0 1  0 "whether gen panel 3 is charing" BIG_ENDIAN
+		STATE NOTCHARGING 0
+		STATE CHARGING 1
+	APPEND_PARAMETER PADDING 58 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD rc_eps_batt_6 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4282,36 +4762,6 @@ COMMAND CAN_LOCAL_CMD cmd_ppt_time_upd BIG_ENDIAN
 	APPEND_PARAMETER cmd_ppt_time_upd_ign_delay 16 UINT 0 65535  0 "PPT Main Igniter Delay" BIG_ENDIAN
 	APPEND_PARAMETER cmd_ppt_time_upd_ign_charge 16 UINT 0 65535  0 "PPT Igniter Charge Time" BIG_ENDIAN
 	APPEND_PARAMETER cmd_ppt_time_upd_cooldown 16 UINT 0 65535  0 "PPT Cooldown Time" BIG_ENDIAN
-COMMAND CAN_LOCAL_CMD cmd_ppt_halt BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  285475076 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 285475076 
-	APPEND_PARAMETER cmd_ppt_halt_confirm 1 UINT 0 1  0 "Are you sure you want to halt the ppt?" BIG_ENDIAN
-		STATE false 0
-		STATE true 1
-	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
-
 COMMAND CAN_LOCAL_CMD ppt_firing_result BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -4335,8 +4785,8 @@ COMMAND CAN_LOCAL_CMD ppt_firing_result BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677104 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677104 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628528 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628528 
 	APPEND_PARAMETER ppt_firing_result_code 8 UINT 0 3  0 "fire successful / fire overriden / no charge / no discharge" BIG_ENDIAN
 		STATE fire_successful 0
 		STATE fire_overridden 1
@@ -4489,71 +4939,6 @@ COMMAND CAN_LOCAL_CMD tle_1 BIG_ENDIAN
 		STATE DEFAULT 302448708 
 	APPEND_PARAMETER tle_1_bstar 32 FLOAT -339999999999999996123846586046231871488 339999999999999996123846586046231871488  0 "TLE BSTAR drag term" BIG_ENDIAN
 	APPEND_PARAMETER tle_1_mna 32 FLOAT -339999999999999996123846586046231871488 339999999999999996123846586046231871488  0 "None" BIG_ENDIAN
-COMMAND CAN_LOCAL_CMD eps_pd_undervoltage BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304218338 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304218338 
-	APPEND_PARAMETER eps_pd_undervoltage_state 1 UINT 0 1  0 "None" BIG_ENDIAN
-		STATE normal 0
-		STATE undervoltage 1
-	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD eps_pd_batt_voltage BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304218337 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304218337 
-	APPEND_PARAMETER eps_pd_batt_voltage_val 16 UINT 0 10000  0 "batt voltage at the pd board" BIG_ENDIAN
-	APPEND_PARAMETER eps_pd_batt_voltage_agg 8 UINT 0 5  0 "batt voltage at the pd board aggregate" BIG_ENDIAN
-		STATE none 0
-		STATE avg 1
-		STATE count 2
-		STATE min 3
-		STATE max 4
-		STATE sum 5
-	APPEND_PARAMETER PADDING 40 UINT MIN MAX 0 "Padded bits for CAN data"
-
 COMMAND CAN_LOCAL_CMD cmd_pd_rst BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -4577,12 +4962,12 @@ COMMAND CAN_LOCAL_CMD cmd_pd_rst BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304218385 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304218385 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302121233 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302121233 
 	APPEND_PARAMETER cmd_pd_rst_confirm 1 UINT 0 1  0 "Are you sure you want to rst pd aggs?" BIG_ENDIAN
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
-COMMAND CAN_LOCAL_CMD cmd_com2_run BIG_ENDIAN 
+COMMAND CAN_LOCAL_CMD gcmd_com2_run BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
@@ -4607,11 +4992,11 @@ COMMAND CAN_LOCAL_CMD cmd_com2_run BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302514673 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302514673 
-	APPEND_PARAMETER cmd_com2_run_fileno 8 UINT 0 255  0 "Which file to run" BIG_ENDIAN
-	APPEND_PARAMETER cmd_com2_run_jump 1 UINT 0 1  0 "Do you want to jump the queue?" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_com2_run_fileno 8 UINT 0 255  0 "Which file to run" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_com2_run_jump 1 UINT 0 1  0 "Do you want to jump the queue?" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_PARAMETER cmd_com2_run_clear 1 UINT 0 1  0 "Do you want to clear the queue and run? " BIG_ENDIAN
+	APPEND_PARAMETER gcmd_com2_run_clear 1 UINT 0 1  0 "Do you want to clear the queue and run? " BIG_ENDIAN
 		STATE false 0
 		STATE true 1
 	APPEND_PARAMETER PADDING 54 UINT MIN MAX 0 "Padded bits for CAN data"
@@ -4639,8 +5024,8 @@ COMMAND CAN_LOCAL_CMD com2_state BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304611824 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304611824 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303563248 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303563248 
 	APPEND_PARAMETER com2_state_uptime 16 UINT 0 65535  0 "time since least mcu reboot" BIG_ENDIAN
 	APPEND_PARAMETER com2_state_qlen 16 UINT 0 65535  0 "length of the queue of py files to run" BIG_ENDIAN
 	APPEND_PARAMETER com2_state_qfilesize 16 UINT 0 65535  0 "size of most recent queue file" BIG_ENDIAN
@@ -4669,8 +5054,8 @@ COMMAND CAN_LOCAL_CMD cmd_pd_enable BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303300865 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 303300865 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252289 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252289 
 	APPEND_PARAMETER cmd_pd_enable_domain 8 UINT 0 8  0 "Which domain to enable" BIG_ENDIAN
 		STATE ppt 0
 		STATE eps 1
@@ -4709,8 +5094,8 @@ COMMAND CAN_LOCAL_CMD cmd_batt_rst BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304349442 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304349442 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252290 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252290 
 	APPEND_PARAMETER cmd_batt_rst_confirm 1 UINT 0 1  0 "Do we really want to reset all stastics?" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
@@ -4739,8 +5124,8 @@ COMMAND CAN_LOCAL_CMD cmd_batt_bal_enable BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304349443 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304349443 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252291 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252291 
 	APPEND_PARAMETER cmd_batt_bal_enable_enable 1 UINT 0 1  0 "enable? (or disable if false)" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
@@ -4769,8 +5154,8 @@ COMMAND CAN_LOCAL_CMD cmd_reboot_request BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  1310728 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 1310728 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  262152 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 262152 
 	APPEND_PARAMETER cmd_reboot_request_domain 8 UINT 0 8  0 "domain to reboot" BIG_ENDIAN
 		STATE ppt 0
 		STATE eps 1
@@ -4806,8 +5191,8 @@ COMMAND CAN_LOCAL_CMD cmd_ignore_fsw BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304349220 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304349220 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252068 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252068 
 	APPEND_PARAMETER cmd_ignore_fsw_ignore 1 UINT 0 1  0 "ignore the bdot commands from fsw" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
@@ -4836,8 +5221,8 @@ COMMAND CAN_LOCAL_CMD cmd_mtq_fsw BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304349219 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304349219 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252067 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252067 
 	APPEND_PARAMETER cmd_mtq_fsw_x 8 INT -100 100  0 "bdot command for x direction" BIG_ENDIAN
 	APPEND_PARAMETER cmd_mtq_fsw_y 8 INT -100 100  0 "bdot command for y direction" BIG_ENDIAN
 	APPEND_PARAMETER cmd_mtq_fsw_z 8 INT -100 100  0 "bdot command for z direction" BIG_ENDIAN
@@ -4847,52 +5232,6 @@ COMMAND CAN_LOCAL_CMD cmd_mtq_fsw BIG_ENDIAN
 		STATE not_tumbling_bob 2
 		STATE not_tumbling_charlie 3
 	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD eps_domain_output BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304218336 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304218336 
-	APPEND_PARAMETER eps_domain_output_num 8 UINT 0 8  0 "Output Statistics for which domain?" BIG_ENDIAN
-		STATE ppt 0
-		STATE eps 1
-		STATE wheel 2
-		STATE estim 3
-		STATE bdot 4
-		STATE rahs 5
-		STATE com2 6
-		STATE com1 7
-		STATE unk 8
-	APPEND_PARAMETER eps_domain_output_v 16 UINT 0 10000  0 "Power Domain Output Voltage" BIG_ENDIAN
-	APPEND_PARAMETER eps_domain_output_v_c 16 UINT 0 3200  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER eps_domain_output_v_c_max 16 UINT 0 3200  0 "None" BIG_ENDIAN
-	APPEND_PARAMETER eps_domain_output_oc_trip 1 UINT 0 1  0 "Power Domain Overcurrent Trip" BIG_ENDIAN
-		STATE false 0
-		STATE true 1
-	APPEND_PARAMETER eps_domain_output_state 1 UINT 0 1  0 "Weather output is enabled or disabled" BIG_ENDIAN
-		STATE false 0
-		STATE true 1
-	APPEND_PARAMETER PADDING 6 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD sensorproc_imu BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -5013,8 +5352,8 @@ COMMAND CAN_LOCAL_CMD mtq_ack BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302448688 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 302448688 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303497264 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303497264 
 	APPEND_PARAMETER mtq_ack_phase 8 INT -128 3  0 "specifies what state the coils are in - measurement or actuation phase " BIG_ENDIAN
 		STATE measurement_phase 0
 		STATE actuation_phase 1
@@ -5026,73 +5365,6 @@ COMMAND CAN_LOCAL_CMD mtq_ack BIG_ENDIAN
 	APPEND_PARAMETER mtq_ack_last_fsw_x 8 INT -128 100  0 "last fsw x command received " BIG_ENDIAN
 	APPEND_PARAMETER mtq_ack_last_fsw_y 8 INT -128 100  0 "last fsw y command received " BIG_ENDIAN
 	APPEND_PARAMETER mtq_ack_last_fsw_z 8 INT -128 100  0 "last fsw z command received " BIG_ENDIAN
-COMMAND CAN_LOCAL_CMD gen_panel_temp BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677075 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677075 
-	APPEND_PARAMETER gen_panel_temp_y_pos 8 INT -128 127  0 "Gen panel voltage for +y panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_temp_y_neg 8 INT -128 127  0 "Gen panel voltage for -y panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_temp_x_pos 8 INT -128 127  0 "Gen panel voltage for +x panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_temp_agg 8 UINT 0 5  0 "Aggregate for power (max, avg, none...)" BIG_ENDIAN
-		STATE none 0
-		STATE avg 1
-		STATE count 2
-		STATE min 3
-		STATE max 4
-		STATE sum 5
-	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD cmd_gen_rst BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303300880 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 303300880 
-	APPEND_PARAMETER cmd_gen_rst_confirm 1 UINT 0 1  0 "Are you sure you want to rst gen aggs?" BIG_ENDIAN
-		STATE false 0
-		STATE true 1
-	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
-
 COMMAND CAN_LOCAL_CMD cmd_ppt_single_fire BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -5116,8 +5388,8 @@ COMMAND CAN_LOCAL_CMD cmd_ppt_single_fire BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303300864 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 303300864 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252288 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252288 
 	APPEND_PARAMETER cmd_ppt_single_fire_with_pulse 1 UINT 0 1  0 "Do we fire or just charge?" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
@@ -5125,103 +5397,6 @@ COMMAND CAN_LOCAL_CMD cmd_ppt_single_fire BIG_ENDIAN
 		STATE false 0
 		STATE true 1
 	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD gen_panel_pwr BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304218322 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304218322 
-	APPEND_PARAMETER gen_panel_pwr_y_pos 16 UINT 0 20000  0 "Gen panel voltage for +y panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_pwr_y_neg 16 UINT 0 20000  0 "Gen panel voltage for -y panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_pwr_x_pos 16 UINT 0 20000  0 "Gen panel voltage for +x panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_pwr_agg 8 INT 0 5  0 "Aggregate for power (max, avg, none...)" BIG_ENDIAN
-		STATE none 0
-		STATE avg 1
-		STATE count 2
-		STATE min 3
-		STATE max 4
-		STATE sum 5
-	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD gen_panel_current BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304218321 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304218321 
-	APPEND_PARAMETER gen_panel_current_y_pos 16 UINT 0 1000  0 "Gen panel current for +y panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_current_y_neg 16 UINT 0 1000  0 "Gen panel current for -y panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_current_x_pos 16 UINT 0 1000  0 "Gen panel current for +x panel" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD gen_panel_voltage BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303169744 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 303169744 
-	APPEND_PARAMETER gen_panel_voltage_y_pos 16 UINT 0 20000  0 "Gen panel voltage for +y panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_voltage_y_neg 16 UINT 0 20000  0 "Gen panel voltage for -y panel" BIG_ENDIAN
-	APPEND_PARAMETER gen_panel_voltage_x_pos 16 UINT 0 20000  0 "Gen panel voltage for +x panel" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD mpc_vp BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -5253,99 +5428,6 @@ COMMAND CAN_LOCAL_CMD mpc_vp BIG_ENDIAN
 		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
 
-COMMAND CAN_LOCAL_CMD eps_batt_state BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303169730 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 303169730 
-	APPEND_PARAMETER eps_batt_state_temp 8 INT -128 127  0 "Battery temperature" BIG_ENDIAN
-	APPEND_PARAMETER eps_batt_state_soc 8 UINT 0 100  0 "State of charge from coulomb counter" BIG_ENDIAN
-	APPEND_PARAMETER eps_batt_state_heat 1 UINT 0 1  0 "State of the battery heater switch" BIG_ENDIAN
-		STATE false 0
-		STATE true 1
-	APPEND_PARAMETER eps_batt_state_bal 1 UINT 0 1  0 "State of the battery balancer" BIG_ENDIAN
-		STATE false 0
-		STATE true 1
-	APPEND_PARAMETER PADDING 46 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD eps_batt_current BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303169729 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 303169729 
-	APPEND_PARAMETER eps_batt_current_c 16 INT -700 1200  0 "Instantaneous net current into batteries" BIG_ENDIAN
-	APPEND_PARAMETER eps_batt_current_max_c 16 INT -700 1200  0 "Max current into batteries" BIG_ENDIAN
-	APPEND_PARAMETER eps_batt_current_min_c 16 INT -700 1200  0 "Min current into batteries" BIG_ENDIAN
-	APPEND_PARAMETER eps_batt_current_node_c 16 INT -1000 1000  0 "current at the node between batteries" BIG_ENDIAN
-COMMAND CAN_LOCAL_CMD eps_batt_voltage BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303169728 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 303169728 
-	APPEND_PARAMETER eps_batt_voltage_v 16 UINT 0 10000  0 "battery voltage" BIG_ENDIAN
-	APPEND_PARAMETER eps_batt_voltage_min_v 16 UINT 0 10000  0 "minimum battery voltage" BIG_ENDIAN
-	APPEND_PARAMETER eps_batt_voltage_node_v 16 UINT 0 10000  0 "voltage at the node between batteries" BIG_ENDIAN
-	APPEND_PARAMETER eps_batt_voltage_v_max_delta 16 UINT 0 10000  0 "Maximum Difference in battery Voltage" BIG_ENDIAN
 COMMAND CAN_LOCAL_CMD sensorproc_sun BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -5402,8 +5484,8 @@ COMMAND CAN_LOCAL_CMD cmd_mtq_bdot BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304545825 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304545825 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303497249 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303497249 
 	APPEND_PARAMETER cmd_mtq_bdot_x 8 INT -100 100  0 "bdot command for x direction" BIG_ENDIAN
 	APPEND_PARAMETER cmd_mtq_bdot_y 8 INT -100 100  0 "bdot command for y direction" BIG_ENDIAN
 	APPEND_PARAMETER cmd_mtq_bdot_z 8 INT -100 100  0 "bdot command for z direction" BIG_ENDIAN
@@ -5432,39 +5514,12 @@ COMMAND CAN_LOCAL_CMD bdot_tumble_status BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302448672 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 302448672 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304545824 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 304545824 
 	APPEND_PARAMETER bdot_tumble_status_status 1 UINT 0 1  0 "bdot tumble status boolean" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
 	APPEND_PARAMETER PADDING 63 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD sync_2 BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  65554 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 65554 
-	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD sync_1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -5489,37 +5544,9 @@ COMMAND CAN_LOCAL_CMD sync_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  65553 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 65553 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  2162705 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 2162705 
 	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
-
-COMMAND CAN_LOCAL_CMD msp_temp BIG_ENDIAN 
-	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
- 		STATE DEFAULT 36 
-	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
-		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
-		STATE DEFAULT 8 
-	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
-		STATE DEFAULT 2 
-	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
-		STATE DEFAULT 0 
-	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
-		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304676883 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304676883 
-	APPEND_PARAMETER msp_temp_temp 16 INT -32768 32767  0 "temp of msp" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 48 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND CAN_LOCAL_CMD grnd_epoch BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
