@@ -1,3 +1,44 @@
+TELEMETRY CAN_LOCAL gcmd_dist_autoshutoff BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 302252847 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM gcmd_dist_autoshutoff_com2 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_rahs 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_bdot 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_estim 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_eps 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_ppt 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM PADDING 52 UINT "Padded bits for CAN data"
+
 TELEMETRY CAN_LOCAL gcmd_ppt_halt BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -546,7 +587,16 @@ TELEMETRY CAN_LOCAL gcmd_reset_minmax BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 302252750 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM gcmd_reset_minmax_bdot 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_ppt 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_dist 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_gen 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_batt 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_estim 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_mpc 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_sensorproc 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_mtq 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM PADDING 55 UINT "Padded bits for CAN data"
 
 TELEMETRY CAN_LOCAL rc_eps_batt_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
