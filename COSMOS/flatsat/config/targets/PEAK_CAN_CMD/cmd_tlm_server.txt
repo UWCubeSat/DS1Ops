@@ -4,5 +4,5 @@
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
 
-INTERFACE PEAK_CAN_CMD_INT tcpip_client_interface.rb 192.168.1.10 3000 NIL 10 1 LENGTH 
+INTERFACE PEAK_CAN_CMD_INT tcpip_client_interface.rb 192.168.1.10 3000 NIL 10 1  LENGTH 0 16 0 1 BIG_ENDIAN 
   TARGET PEAK_CAN_CMD
