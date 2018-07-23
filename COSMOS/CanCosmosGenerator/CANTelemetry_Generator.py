@@ -268,10 +268,10 @@ frameToDerivedValues = {
 }
 
 derivedValueToConversion = {
-	"acc_charge_min":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
-	"acc_charge_avg":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
-	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
-	"rc_eps_batt_7_voltage_diff":"(1000 * System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_4\", \"RC_EPS_BATT_4_VOLTAGE_AVG\") - (2 * System.telemetry.value(\"CAN_LOCAL\", \"RC_EPS_BATT_2\", \"RC_EPS_BATT_2_NODE_V_AVG\")))"
+	"acc_charge_min":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
+	"acc_charge_avg":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
+	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
+	"rc_eps_batt_7_voltage_diff":"(1000 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_4\", \"RC_EPS_BATT_4_VOLTAGE_AVG\") - (2 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_2\", \"RC_EPS_BATT_2_NODE_V_AVG\")))"
 }
 
 derivedValueToUnits = {
@@ -453,8 +453,9 @@ def tlmGetType(signal):
 def createCosmosTlm(candb, tlmFileName):
 	tlmFile = open(tlmFileName, "w")
 	tlm_id = 0;
+	interfaceName = tlmFileName[:-8] #grabs the filename minus _tlm.txt
 	for frame in candb.frames:
-		tlmFile.write("TELEMETRY CAN_LOCAL {} BIG_ENDIAN \n".format(frame.name))
+		tlmFile.write("TELEMETRY {}_TLM {} BIG_ENDIAN \n".format(interfaceName, frame.name))
 		tlmFile.write("\tAPPEND_ITEM LENGTH 16 UINT \"Length of TCP-ized CAN message (always 36/0x24 bytes) \" \n ")
 		tlmFile.write("\tAPPEND_ID_ITEM FIXED_TYPE 16 UINT 128 \"Fixed message type for CAN\" BIG_ENDIAN\n")
 		tlmFile.write("\tAPPEND_ITEM TAG 64 UINT \"NOT USED in current PCAN-Ethernet Gateway DR hardware/software.\"\n")
@@ -527,14 +528,14 @@ def createCosmosTlm(candb, tlmFileName):
 				if derived in derivedValueToUnits.keys():
 					tlmFile.write("\t\tUNITS {}\n".format(derivedValueToUnits[derived]))
 				if derived in derivedValueToConversion.keys():
-					tlmFile.write("\t\tGENERIC_READ_CONVERSION_START\n\t\t\t{}\n\t\tGENERIC_READ_CONVERSION_END\n".format(derivedValueToConversion[derived]))
+					tlmFile.write("\t\tGENERIC_READ_CONVERSION_START\n\t\t\t{}\n\t\tGENERIC_READ_CONVERSION_END\n".format(derivedValueToConversion[derived].replace("{}", format(interfaceName))))
 				if derived in signalFormat:
 					tlmFile.write("\t\tFORMAT_STRING \"" + signalFormat[derived] + "\"\n")
 				elif derived in unitFormat:
 					tlmFile.write("\t\tFORMAT_STRING \"" + unitFormat[derived] + "\"\n")
 		tlmFile.write("\n")
 	tlmFile.write("""
-TELEMETRY CAN_LOCAL general_can_message BIG_ENDIAN 
+TELEMETRY {}_TLM general_can_message BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -552,12 +553,13 @@ TELEMETRY CAN_LOCAL general_can_message BIG_ENDIAN
 	APPEND_ITEM DATA 64 UINT "CAN data"
 
 
-	""")
+	""".format(interfaceName))
 def createCosmosCmd(candb, tlmFileName):
 	tlmFile = open(tlmFileName, "w")
 	tlm_id = 0;
+	interfaceName = tlmFileName[:-8] #grabs the filename minus _cmd.txt
 	for frame in candb.frames:
-		tlmFile.write("COMMAND CAN_LOCAL_CMD {} BIG_ENDIAN \n".format(frame.name))
+		tlmFile.write("COMMAND {}_CMD {} BIG_ENDIAN \n".format(interfaceName, frame.name))
 		tlmFile.write("\tAPPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 \"Length of TCP-ized CAN message (always 36/0x24 bytes) \" \n ")
 		tlmFile.write("\t\tSTATE DEFAULT 36 \n")
 		tlmFile.write("\tAPPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 \"Fixed message type for CAN\" BIG_ENDIAN\n")
@@ -643,8 +645,10 @@ def main():
 
 	CANObj = toPyObject(infile, **cmdlineOptions.__dict__)
 
-	createCosmosCmd(CANObj, "cmd.txt")
-	createCosmosTlm(CANObj, "tlm.txt")
+	createCosmosCmd(CANObj, "AMSAT_cmd.txt")
+	createCosmosTlm(CANObj, "AMSAT_tlm.txt")
+	createCosmosCmd(CANObj, "PEAK_CAN_cmd.txt")
+	createCosmosTlm(CANObj, "PEAK_CAN_tlm.txt")
 
 
 if __name__ == '__main__':

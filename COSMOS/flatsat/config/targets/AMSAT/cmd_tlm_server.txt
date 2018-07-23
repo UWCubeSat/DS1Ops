@@ -1,0 +1,9 @@
+# This is a segment of the main cmd_tlm_server.txt that will be used with
+# AUTO_INTERFACE_TARGETS or INTERFACE_TARGET
+
+# NOTE: This line must be modified to match how your actual target connects.
+# See http://cosmosrb.com/docs/interfaces/ for more information.
+INTERFACE AMSAT_INT tcpip_client_interface.rb 192.168.1.152 1235 1235 10.0 nil LENGTH 0 16 0 1 BIG_ENDIAN
+  TARGET AMSAT
+  # Add in the OverrideProtocol to allow override_tlm("CAN_FUSION STATUS STRING = 'HI'")
+#~  PROTOCOL READ_WRITE OverrideProtkocol
