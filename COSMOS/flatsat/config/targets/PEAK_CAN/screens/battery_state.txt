@@ -80,8 +80,8 @@ TITLE "Battery State"
         VALUE PEAK_CAN rc_eps_batt_4 rc_eps_batt_4_balancer_state FORMATTED
       END
       VERTICAL 5
-        BUTTON "Enable" 'cmd("PEAK_CAN_CMD CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE ENABLE")'
-        BUTTON "Disable" 'cmd("PEAK_CAN_CMD CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE DISABLE")'
+        BUTTON "Enable" 'cmd("PEAK_CAN CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE ENABLE")'
+        BUTTON "Disable" 'cmd("PEAK_CAN CMD_BATT_BAL_ENABLE with CMD_BATT_BAL_ENABLE DISABLE")'
         HORIZONTALLINE
       END
       
