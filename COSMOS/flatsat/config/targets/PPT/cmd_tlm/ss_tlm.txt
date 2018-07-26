@@ -29,3 +29,12 @@ TELEMETRY PPT TIMING BIG_ENDIAN "the current firing timings"
 	APPEND_ITEM MAIN_IGNITER_DELAY 16 UINT "the delay between main low and igniter high" LITTLE_ENDIAN
 	APPEND_ITEM IGNITER_CHARGE_TIME 16 UINT "the time igniter is high" LITTLE_ENDIAN
 	APPEND_ITEM COOLDOWN_TIME 16 UINT "the time between igniter low and main high" LITTLE_ENDIAN
+
+TELEMETRY PPT FIRE_INFO BIG_ENDIAN "info about firing"
+	<%= render "../../SYSTEM/cmd_tlm/_shared_tlm_header.txt", locals: {id: 6} %>
+	APPEND_ITEM LAST_FIRE_RESULT 8 UINT "result of the last fire" LITTLE_ENDIAN
+		STATE 0 fire_successful
+		STATE 1 main_failed_charge
+		STATE 2 main_failed_discharge
+	APPEND_ITEM FIRE_COUNT 16 UINT "count of total fires"
+	APPEND_ITEM FAULT_COUNT 16 UINT "count of total faults"
