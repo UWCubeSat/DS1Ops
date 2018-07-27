@@ -3,7 +3,7 @@
 
 # NOTE: This line must be modified to match how your actual target connects.
 # See http://cosmosrb.com/docs/interfaces/ for more information.
-INTERFACE AMSAT_INT tcpip_client_interface.rb localhost 1235 1235 10.0 nil LENGTH 0 16 0 1 BIG_ENDIAN
-  TARGET AMSAT
-  # Add in the OverrideProtocol to allow override_tlm("CAN_FUSION STATUS STRING = 'HI'")
-#~  PROTOCOL READ_WRITE OverrideProtkocol
+INTERFACE KVASER_LEAF_INT tcpip_server_interface.rb 1000 1000 10 nil LENGTH 0 16 0 1 BIG_ENDIAN
+  TARGET KVASER_LEAF
+  # Add in the OverrideProtocol to allow override_tlm("KVASER_LEAF STATUS STRING = 'HI'")
+#~  PROTOCOL READ_WRITE OverrideProtocol
