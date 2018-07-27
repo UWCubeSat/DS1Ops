@@ -819,6 +819,26 @@ TELEMETRY AMSAT_TLM rc_eps_batt_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_eps_batt_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_batt_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_bdot_h1 BIG_ENDIAN 
@@ -855,6 +875,26 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_bdot_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_bdot_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN 
@@ -891,6 +931,26 @@ TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_eps_dist_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_dist_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_mpc_h1 BIG_ENDIAN 
@@ -927,6 +987,26 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_mpc_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_mpc_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_estim_h1 BIG_ENDIAN 
@@ -963,6 +1043,26 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_estim_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_estim_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_sp_h1 BIG_ENDIAN 
@@ -999,6 +1099,26 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_sp_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_sp_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_eps_gen_h1 BIG_ENDIAN 
@@ -1035,6 +1155,26 @@ TELEMETRY AMSAT_TLM rc_eps_gen_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_eps_gen_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_gen_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_mtq_h1 BIG_ENDIAN 
@@ -1071,6 +1211,26 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_mtq_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_mtq_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_ppt_h1 BIG_ENDIAN 
@@ -1107,6 +1267,26 @@ TELEMETRY AMSAT_TLM rc_ppt_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_ppt_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_ppt_h1_reset_count 8 UINT "None" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM gcmd_mtq_pms BIG_ENDIAN 
