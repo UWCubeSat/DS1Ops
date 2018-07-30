@@ -257,6 +257,8 @@ enumToColor = { #these can be green, yellow, or red
 	"off_manual":"YELLOW",
 	"off_overcurrent":"RED",
 	"off_batt_undervoltage":"RED",
+	"off_initial":"YELLOW",
+	"unknown":"RED",
 	"ENABLED":"GREEN",
 	"DISABLED":"RED",
 	"CHARGING":"GREEN",

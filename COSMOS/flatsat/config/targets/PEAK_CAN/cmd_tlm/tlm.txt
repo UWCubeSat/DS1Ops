@@ -1910,6 +1910,8 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_16 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_16_ppt_c_min 16 INT "PPT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2020,6 +2022,8 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_6 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_6_com2_c_min 16 INT "COM2 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2190,6 +2194,8 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_14 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_14_eps_c_min 16 INT "EPS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2300,6 +2306,8 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_12 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_12_estim_c_min 16 INT "ESTIM domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2375,6 +2383,8 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_10 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_10_bdot_c_min 16 INT "BDOT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2415,6 +2425,8 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_8 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_8_rahs_c_min 16 INT "RAHS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2455,6 +2467,8 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_4 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_4_com1_c_min 16 INT "COM1 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -3080,7 +3094,30 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_sp_17 BIG_ENDIAN
 			value * 0.004375
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.2f"
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_sp_17_i2c_result_mag_1 8 UINT "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_ITEM rc_adcs_sp_17_i2c_result_mag_2 8 UINT "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_ITEM rc_adcs_sp_17_i2c_result_imu 8 UINT "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_ITEM rc_adcs_sp_17_i2c_result_sun 8 UINT "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
 
 TELEMETRY PEAK_CAN_TLM rc_adcs_sp_16 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
