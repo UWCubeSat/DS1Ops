@@ -31,5 +31,8 @@ VERTICALBOX <%=subsyst %> 5
       SETTING ENABLE_AGING FALSE
     
   END
+  
+  # LABEL "PD State"
+	VALUE PEAK_CAN RC_EPS_DIST_<%=rcNum %> RC_EPS_DIST_<%=rcNum %>_<%=pdName %>_STATE CONVERTED 12
 
 END

@@ -5,6 +5,8 @@ TITLE "BDOT Status"
 MATRIXBYCOLUMNS 2 5 5
   LABEL "Tumbling?"
   VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_tumble" CONVERTED 5
+  LABEL "State"
+  VALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_current_state" CONVERTED 13
 END
 
 VERTICALBOX "Magnetometer" 5 5
@@ -34,19 +36,19 @@ VERTICALBOX "Magnetometer" 5 5
   SECTIONHEADER "SPAM Readings"
   MATRIXBYCOLUMNS 4 5 5
     LABEL "X-axis SPAM"
-    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_last_spam_x_mtq_x" WITH_UNITS
-    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_last_spam_x_mtq_y" WITH_UNITS
-    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_last_spam_x_mtq_z" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_spam_on_x_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_spam_on_x_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_spam_on_x_mtq_z" WITH_UNITS
     ########
     LABEL "Y-axis SPAM"
-    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_last_spam_y_mtq_x" WITH_UNITS
-    VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_last_spam_y_mtq_y" WITH_UNITS
-    VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_last_spam_y_mtq_z" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_spam_on_y_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_spam_on_y_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_spam_on_y_mtq_z" WITH_UNITS
     ########
     LABEL "Z-axis SPAM"
-    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_last_spam_z_mtq_x" WITH_UNITS
-    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_last_spam_z_mtq_y" WITH_UNITS
-    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_last_spam_z_mtq_z" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_spam_on_z_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_spam_on_z_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_spam_on_z_mtq_z" WITH_UNITS
   END
 END
 
@@ -65,4 +67,4 @@ VERTICALBOX "Magnetorquer" 5 5
   END
 END
 
-<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT', pdName: 'BDOT', rcNum: '10'}%>
