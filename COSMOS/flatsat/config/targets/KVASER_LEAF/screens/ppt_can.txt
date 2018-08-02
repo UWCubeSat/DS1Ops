@@ -1,5 +1,4 @@
 SCREEN AUTO AUTO 1.0
-<%=render "_single_subsystem_section.txt", locals:{subsyst: 'PPT', pdName: 'PPT', rcNum: '16'}%>
 
 MATRIXBYCOLUMNS 2
 LABEL "Reset Reason"

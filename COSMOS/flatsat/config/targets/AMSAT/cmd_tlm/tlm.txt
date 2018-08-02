@@ -1,3 +1,24 @@
+TELEMETRY AMSAT_TLM gcmd_autoseq_enable BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 302252849 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM gcmd_autoseq_enable_enable 8 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
+
 TELEMETRY AMSAT_TLM gcmd_batt_set_bal_auto BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -3030,7 +3051,10 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_7 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 303628833 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_sp_7_mag1_var_x 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_sp_7_mag1_var_y 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_sp_7_mag1_var_z 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_adcs_sp_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3210,7 +3234,10 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_8 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 303628834 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_sp_8_mag2_var_x 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_sp_8_mag2_var_y 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_sp_8_mag2_var_z 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_adcs_sp_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3929,22 +3956,7 @@ TELEMETRY AMSAT_TLM rc_ppt_3 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 303628810 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_ppt_3_ign_chg_min 16 UINT "Main Charge Time Minimum" BIG_ENDIAN
-		UNITS Seconds s
-		GENERIC_READ_CONVERSION_START
-			value * 2.0**-15
-		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_3_ign_chg_max 16 UINT "Main Charge Time Minimum" BIG_ENDIAN
-		UNITS Seconds s
-		GENERIC_READ_CONVERSION_START
-			value * 2.0**-15
-		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_3_ign_chg_avg 16 UINT "Main Charge Time Minimum" BIG_ENDIAN
-		UNITS Seconds s
-		GENERIC_READ_CONVERSION_START
-			value * 2.0**-15
-		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
+	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_ppt_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3961,22 +3973,26 @@ TELEMETRY AMSAT_TLM rc_ppt_2 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 303628809 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_ppt_2_main_chg_min 16 UINT "Main Charge Time Minimum" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_2_main_charge_time 16 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_2_main_chg_max 16 UINT "Main Charge Time Maximum" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_2_main_ign_delay 16 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_2_main_chg_avg 16 UINT "Main Charge Time Average" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_2_ign_charge_time 16 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_2_total_fire_count 16 UINT "Total Fire count" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_2_cooldown_time 16 UINT "None" BIG_ENDIAN
+		UNITS Seconds s
+		GENERIC_READ_CONVERSION_START
+			value * 2.0**-15
+		GENERIC_READ_CONVERSION_END
 
 TELEMETRY AMSAT_TLM rc_ppt_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3995,11 +4011,16 @@ TELEMETRY AMSAT_TLM rc_ppt_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_ppt_1_fire_count 16 UINT "Total number of times the PPT has fired" BIG_ENDIAN
 	APPEND_ITEM rc_ppt_1_fault_count 16 UINT "PPT fault count" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_1_last_main_charge 16 UINT "Main Charge Time Average" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_ppt_1_smt_wait_time 16 UINT "None" BIG_ENDIAN
+		UNITS Seconds s
+		GENERIC_READ_CONVERSION_START
+			value * 2.0**-15
+		GENERIC_READ_CONVERSION_END
 
 TELEMETRY AMSAT_TLM rc_eps_gen_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4490,7 +4511,13 @@ TELEMETRY AMSAT_TLM rc_eps_batt_4 BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_4_heater_state 1 UINT "State of the battery heater switch" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_eps_batt_4_heater_auto_state 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_eps_batt_4_bal_auto_state 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM PADDING 12 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_eps_batt_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -5124,7 +5151,10 @@ TELEMETRY AMSAT_TLM cmd_ppt_single_fire BIG_ENDIAN
 	APPEND_ITEM cmd_ppt_single_fire_override 1 UINT "Do we fire or just charge?" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
+	APPEND_ITEM cmd_ppt_single_fire_override_smt 1 UINT "Whether the Schmidt Trigger is checked" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM PADDING 61 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM mpc_vp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
