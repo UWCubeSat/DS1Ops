@@ -2176,7 +2176,8 @@ COMMAND AMSAT_CMD sensorproc_mag2 BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag2_valid 1 UINT 0 1  0 "None" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER sensorproc_mag2_bdot_valid 1 UINT 0 1  0 "Whether the reading is valid for bdot" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 14 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD rc_adcs_estim_14 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4364,6 +4365,8 @@ COMMAND AMSAT_CMD rc_adcs_mtq_5 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677391 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677391 
 	APPEND_PARAMETER rc_adcs_mtq_5_fsw_ignore 8 UINT 0 255  0 "Flight Software Ignore" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER rc_adcs_mtq_5_reset_counts 8 UINT 0 255  0 "Number of resets" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mtq_5_cmds_x_var 16 UINT 0 65535  0 "Variance in BDot's dipole commands" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mtq_5_cmds_y_var 16 UINT 0 65535  0 "Variance in BDot's dipole commands" BIG_ENDIAN
@@ -4426,14 +4429,14 @@ COMMAND AMSAT_CMD rc_adcs_mtq_3 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677389 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677389 
-	APPEND_PARAMETER rc_adcs_mtq_3_bdot_z_min 8 UINT 0 255  0 "MinZ BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_avg 8 UINT 0 255  0 "Average X FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_max 8 UINT 0 255  0 "Max X FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_min 8 UINT 0 255  0 "Min X FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_avg 8 UINT 0 255  0 "Average Y FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_max 8 UINT 0 255  0 "Max Y FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_min 8 UINT 0 255  0 "Min Y FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_z_avg 8 UINT 0 255  0 "Average Z FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_bdot_z_min 8 INT -128 127  0 "MinZ BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_avg 8 INT -128 127  0 "Average X FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_max 8 INT -128 127  0 "Max X FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_min 8 INT -128 127  0 "Min X FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_avg 8 INT -128 127  0 "Average Y FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_max 8 INT -128 127  0 "Max Y FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_min 8 INT -128 127  0 "Min Y FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_z_avg 8 INT -128 127  0 "Average Z FSW command" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_mtq_2 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -5644,7 +5647,8 @@ COMMAND AMSAT_CMD sensorproc_mag BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag_valid 1 UINT 0 1  0 "Sun Angle Validity" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER sensorproc_mag_bdot_valid 1 UINT 0 1  0 "Whether the reading is valid for bdot" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 14 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD cmd_rollcall BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 

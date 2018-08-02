@@ -1801,7 +1801,8 @@ TELEMETRY AMSAT_TLM sensorproc_mag2 BIG_ENDIAN
 	APPEND_ITEM sensorproc_mag2_valid 1 UINT "None" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
+	APPEND_ITEM sensorproc_mag2_bdot_valid 1 UINT "Whether the reading is valid for bdot" BIG_ENDIAN
+	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_adcs_estim_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3847,6 +3848,8 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_5 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mtq_5_fsw_ignore 8 UINT "Flight Software Ignore" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM rc_adcs_mtq_5_reset_counts 8 UINT "Number of resets" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_cmds_x_var 16 UINT "Variance in BDot's dipole commands" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_cmds_y_var 16 UINT "Variance in BDot's dipole commands" BIG_ENDIAN
@@ -3891,14 +3894,14 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_3 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677389 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mtq_3_bdot_z_min 8 UINT "MinZ BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_x_avg 8 UINT "Average X FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_x_max 8 UINT "Max X FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_x_min 8 UINT "Min X FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_y_avg 8 UINT "Average Y FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_y_max 8 UINT "Max Y FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_y_min 8 UINT "Min Y FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_z_avg 8 UINT "Average Z FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_bdot_z_min 8 INT "MinZ BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_x_avg 8 INT "Average X FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_x_max 8 INT "Max X FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_x_min 8 INT "Min X FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_y_avg 8 INT "Average Y FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_y_max 8 INT "Max Y FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_y_min 8 INT "Min Y FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_z_avg 8 INT "Average Z FSW command" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_mtq_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -5077,7 +5080,8 @@ TELEMETRY AMSAT_TLM sensorproc_mag BIG_ENDIAN
 	APPEND_ITEM sensorproc_mag_valid 1 UINT "Sun Angle Validity" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
+	APPEND_ITEM sensorproc_mag_bdot_valid 1 UINT "Whether the reading is valid for bdot" BIG_ENDIAN
+	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM cmd_rollcall BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
