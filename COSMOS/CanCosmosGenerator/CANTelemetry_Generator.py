@@ -193,7 +193,8 @@ signalConversions = {
 	"raw node current gen":"value * 1.5 / 32768",
 	"raw power gen":"value * 3 / 3276.8",
 	"raw tmp36":"value - 50",
-        "ocpThresh":"value / 20.0"
+    "ocpThresh":"value / 20.0",
+	"bdot gain":"value / 100.0"
 }
 signalUnits = {
 	"1/73 nT":"nanoTeslas nT",
@@ -505,10 +506,10 @@ def createCosmosTlm(candb, tlmFileName):
 															key))
 			if signal.unit in signalUnits:
 				tlmString +=("\t\tUNITS {}\n".format(signalUnits[signal.unit]))
-				if signal.unit in signalConversions:
-					tlmString +=("\t\tGENERIC_READ_CONVERSION_START\n")
-					tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
-					tlmString +=("\t\tGENERIC_READ_CONVERSION_END\n")
+			if signal.unit in signalConversions:
+				tlmString +=("\t\tGENERIC_READ_CONVERSION_START\n")
+				tlmString +=("\t\t\t"+ signalConversions[signal.unit] + "\n")
+				tlmString +=("\t\tGENERIC_READ_CONVERSION_END\n")
 			if signal.name in signalToLimits:
 				tlmString +=("\t\tLIMITS DEFAULT 1 ENABLED {} {} {} {}\n".format(
 															signalToLimits[signal.name][0],
