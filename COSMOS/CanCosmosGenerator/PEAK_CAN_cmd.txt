@@ -2365,8 +2365,7 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_16 BIG_ENDIAN
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE off_autoshutoff 5
-		STATE unknown 6
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_min 16 INT -32768 32767  0 "PPT domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_max 16 INT -32768 32767  0 "PPT domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_avg 16 INT -32768 32767  0 "PPT domain current average" BIG_ENDIAN
@@ -2463,8 +2462,7 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_6 BIG_ENDIAN
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE off_autoshutoff 5
-		STATE unknown 6
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_min 16 INT -32768 32767  0 "COM2 domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_max 16 INT -32768 32767  0 "COM2 domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_avg 16 INT -32768 32767  0 "COM2 domain current average" BIG_ENDIAN
@@ -2622,8 +2620,7 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_14 BIG_ENDIAN
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE off_autoshutoff 5
-		STATE unknown 6
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_min 16 INT -32768 32767  0 "EPS domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_max 16 INT -32768 32767  0 "EPS domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_avg 16 INT -32768 32767  0 "EPS domain current average" BIG_ENDIAN
@@ -2720,8 +2717,7 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_12 BIG_ENDIAN
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE off_autoshutoff 5
-		STATE unknown 6
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_min 16 INT -32768 32767  0 "ESTIM domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_max 16 INT -32768 32767  0 "ESTIM domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_avg 16 INT -32768 32767  0 "ESTIM domain current average" BIG_ENDIAN
@@ -2788,8 +2784,7 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_10 BIG_ENDIAN
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE off_autoshutoff 5
-		STATE unknown 6
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_min 16 INT -32768 32767  0 "BDOT domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_max 16 INT -32768 32767  0 "BDOT domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_avg 16 INT -32768 32767  0 "BDOT domain current average" BIG_ENDIAN
@@ -2826,8 +2821,7 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_8 BIG_ENDIAN
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE off_autoshutoff 5
-		STATE unknown 6
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_min 16 INT -32768 32767  0 "RAHS domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_max 16 INT -32768 32767  0 "RAHS domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_avg 16 INT -32768 32767  0 "RAHS domain current average" BIG_ENDIAN
@@ -2864,8 +2858,7 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_4 BIG_ENDIAN
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE off_autoshutoff 5
-		STATE unknown 6
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_min 16 INT -32768 32767  0 "COM1 domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_max 16 INT -32768 32767  0 "COM1 domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_avg 16 INT -32768 32767  0 "COM1 domain current average" BIG_ENDIAN

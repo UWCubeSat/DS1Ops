@@ -1,3 +1,86 @@
+TELEMETRY AMSAT_TLM gcmd_autoseq_enable BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 302252849 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM gcmd_autoseq_enable_enable 8 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
+
+TELEMETRY AMSAT_TLM gcmd_batt_set_bal_auto BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 302252848 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM gcmd_batt_set_bal_auto_state 2 UINT "What state the battery balancer automation should be set to" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
+
+TELEMETRY AMSAT_TLM gcmd_dist_autoshutoff BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 302252847 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM gcmd_dist_autoshutoff_com2 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_rahs 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_bdot 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_estim 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_eps 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM gcmd_dist_autoshutoff_ppt 2 UINT "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_ITEM PADDING 52 UINT "Padded bits for CAN data"
+
 TELEMETRY AMSAT_TLM gcmd_ppt_halt BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -149,7 +232,14 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_9 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_bdot_9_dipole_gain_y 8 UINT "None" BIG_ENDIAN
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_adcs_bdot_9_dipole_gain_z 8 UINT "None" BIG_ENDIAN
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 
 TELEMETRY AMSAT_TLM rc_adcs_bdot_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -388,7 +478,10 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_7 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_START
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_bdot_7_dipole_gain_x 8 UINT "None" BIG_ENDIAN
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
 
 TELEMETRY AMSAT_TLM rc_adcs_bdot_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -406,11 +499,14 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_6 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_6_spam_off_time 16 UINT "Current setting for the time in minutes of SPAM not being on" BIG_ENDIAN
+		UNITS Minutes min
 	APPEND_ITEM rc_adcs_bdot_6_spam_on_time 16 UINT "Current setting for the time in minutes of SPAM being on" BIG_ENDIAN
+		UNITS Minutes min
 	APPEND_ITEM rc_adcs_bdot_6_spam_control 1 UINT "Current setting on whether or not spam is enabled" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
 	APPEND_ITEM rc_adcs_bdot_6_max_tumble_time 16 UINT "Current max tumbling time that bdot can be in until it swtiches to SLEEP_MODE automatically" BIG_ENDIAN
+		UNITS Minutes min
 	APPEND_ITEM rc_adcs_bdot_6_current_state 2 UINT "State that bdot is in. Chooses mode that bdot is in: 0 = NORMAL_MODE , 1 = SLEEP_MODE, 2 = SPAM_MAG_SELF_TEST, 3 = SPAM" BIG_ENDIAN
 		STATE normal_mode 0
 		STATE sleep_mode 1
@@ -546,7 +642,16 @@ TELEMETRY AMSAT_TLM gcmd_reset_minmax BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 302252750 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM gcmd_reset_minmax_bdot 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_ppt 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_dist 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_gen 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_batt 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_estim 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_mpc 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_sensorproc 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM gcmd_reset_minmax_mtq 1 UINT "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_ITEM PADDING 55 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_eps_batt_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -748,6 +853,26 @@ TELEMETRY AMSAT_TLM rc_eps_batt_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_eps_batt_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_batt_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_bdot_h1 BIG_ENDIAN 
@@ -784,6 +909,26 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_bdot_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_bdot_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN 
@@ -798,7 +943,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677475 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305726051 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_h1_temp_min 16 INT "Temperature of MSP" BIG_ENDIAN
@@ -820,6 +965,26 @@ TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_eps_dist_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_dist_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_mpc_h1 BIG_ENDIAN 
@@ -856,6 +1021,26 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_mpc_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_mpc_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_estim_h1 BIG_ENDIAN 
@@ -892,6 +1077,26 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_estim_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_estim_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_sp_h1 BIG_ENDIAN 
@@ -928,6 +1133,26 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_sp_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_sp_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_eps_gen_h1 BIG_ENDIAN 
@@ -964,6 +1189,26 @@ TELEMETRY AMSAT_TLM rc_eps_gen_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_eps_gen_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_gen_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_mtq_h1 BIG_ENDIAN 
@@ -1000,6 +1245,26 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_adcs_mtq_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_mtq_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_ppt_h1 BIG_ENDIAN 
@@ -1036,6 +1301,26 @@ TELEMETRY AMSAT_TLM rc_ppt_h1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
 	APPEND_ITEM rc_ppt_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_ppt_h1_reset_count 8 UINT "None" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM gcmd_mtq_pms BIG_ENDIAN 
@@ -1078,6 +1363,7 @@ TELEMETRY AMSAT_TLM gcmd_bdot_max_tumble BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_bdot_max_tumble_time 16 UINT "Chooses the maximum time bdot is tumbling continuously. If bdot tumbles for longer than this time, will automatically go into sleep mode. Units: Minutes" BIG_ENDIAN
+		UNITS Minutes min
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM gcmd_bdot_spam BIG_ENDIAN 
@@ -1096,7 +1382,9 @@ TELEMETRY AMSAT_TLM gcmd_bdot_spam BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM gcmd_bdot_spam_time_on 16 UINT "Chooses the amount of minutes in between SPAM" BIG_ENDIAN
+		UNITS Minutes min
 	APPEND_ITEM gcmd_bdot_spam_time_off 16 UINT "Chooses the amount of time SPAM should be on for" BIG_ENDIAN
+		UNITS Minutes min
 	APPEND_ITEM gcmd_bdot_spam_magnitude_x 8 INT "What magnitude the magnetorquer should spam on x axis" BIG_ENDIAN
 	APPEND_ITEM gcmd_bdot_spam_magnitude_y 8 INT "What magnitude the magnetorquer should spam on y axis" BIG_ENDIAN
 	APPEND_ITEM gcmd_bdot_spam_magnitude_z 8 INT "What magnitude the magnetorquer should spam on z axis" BIG_ENDIAN
@@ -1467,7 +1755,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_7 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677466 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305726042 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_7_acc_charge_min 16 UINT "Acumulated charge minimum" BIG_ENDIAN
@@ -1529,7 +1817,8 @@ TELEMETRY AMSAT_TLM sensorproc_mag2 BIG_ENDIAN
 	APPEND_ITEM sensorproc_mag2_valid 1 UINT "None" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
+	APPEND_ITEM sensorproc_mag2_bdot_valid 1 UINT "Whether the reading is valid for bdot" BIG_ENDIAN
+	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_adcs_estim_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1659,6 +1948,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_16 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_16_ppt_c_min 16 INT "PPT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1769,6 +2060,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_6 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_6_com2_c_min 16 INT "COM2 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1939,6 +2232,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_14 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_14_eps_c_min 16 INT "EPS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2049,6 +2344,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_12 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_12_estim_c_min 16 INT "ESTIM domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2124,6 +2421,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_10 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_10_bdot_c_min 16 INT "BDOT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2164,6 +2463,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_8 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_8_rahs_c_min 16 INT "RAHS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2196,7 +2497,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677446 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305726022 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_4_com1_state 8 UINT "COM1 domain state" BIG_ENDIAN
@@ -2204,6 +2505,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_4 BIG_ENDIAN
 		STATE off_manual 1 YELLOW
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
+		STATE off_initial 4 YELLOW
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_4_com1_c_min 16 INT "COM1 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2765,7 +3068,10 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_7 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 303628833 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_sp_7_mag1_var_x 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_sp_7_mag1_var_y 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_sp_7_mag1_var_z 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_adcs_sp_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2829,7 +3135,30 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_17 BIG_ENDIAN
 			value * 0.004375
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.2f"
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_sp_17_i2c_result_mag_1 8 UINT "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_ITEM rc_adcs_sp_17_i2c_result_mag_2 8 UINT "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_ITEM rc_adcs_sp_17_i2c_result_imu 8 UINT "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_ITEM rc_adcs_sp_17_i2c_result_sun 8 UINT "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
 
 TELEMETRY AMSAT_TLM rc_adcs_sp_16 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2922,7 +3251,10 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_8 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 303628834 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_adcs_sp_8_mag2_var_x 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_sp_8_mag2_var_y 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_sp_8_mag2_var_z 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_adcs_sp_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3532,6 +3864,8 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_5 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_mtq_5_fsw_ignore 8 UINT "Flight Software Ignore" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_ITEM rc_adcs_mtq_5_reset_counts 8 UINT "Number of resets" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_cmds_x_var 16 UINT "Variance in BDot's dipole commands" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_cmds_y_var 16 UINT "Variance in BDot's dipole commands" BIG_ENDIAN
@@ -3576,14 +3910,14 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_3 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 304677389 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_adcs_mtq_3_bdot_z_min 8 UINT "MinZ BDOT command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_x_avg 8 UINT "Average X FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_x_max 8 UINT "Max X FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_x_min 8 UINT "Min X FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_y_avg 8 UINT "Average Y FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_y_max 8 UINT "Max Y FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_y_min 8 UINT "Min Y FSW command" BIG_ENDIAN
-	APPEND_ITEM rc_adcs_mtq_3_fsw_z_avg 8 UINT "Average Z FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_bdot_z_min 8 INT "MinZ BDOT command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_x_avg 8 INT "Average X FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_x_max 8 INT "Max X FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_x_min 8 INT "Min X FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_y_avg 8 INT "Average Y FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_y_max 8 INT "Max Y FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_y_min 8 INT "Min Y FSW command" BIG_ENDIAN
+	APPEND_ITEM rc_adcs_mtq_3_fsw_z_avg 8 INT "Average Z FSW command" BIG_ENDIAN
 
 TELEMETRY AMSAT_TLM rc_adcs_mtq_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3641,22 +3975,7 @@ TELEMETRY AMSAT_TLM rc_ppt_3 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 303628810 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_ppt_3_ign_chg_min 16 UINT "Main Charge Time Minimum" BIG_ENDIAN
-		UNITS Seconds s
-		GENERIC_READ_CONVERSION_START
-			value * 2.0**-15
-		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_3_ign_chg_max 16 UINT "Main Charge Time Minimum" BIG_ENDIAN
-		UNITS Seconds s
-		GENERIC_READ_CONVERSION_START
-			value * 2.0**-15
-		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_3_ign_chg_avg 16 UINT "Main Charge Time Minimum" BIG_ENDIAN
-		UNITS Seconds s
-		GENERIC_READ_CONVERSION_START
-			value * 2.0**-15
-		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
+	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_ppt_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3673,22 +3992,26 @@ TELEMETRY AMSAT_TLM rc_ppt_2 BIG_ENDIAN
 	APPEND_ID_ITEM CANID_ID 29 UINT 303628809 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM rc_ppt_2_main_chg_min 16 UINT "Main Charge Time Minimum" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_2_main_charge_time 16 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_2_main_chg_max 16 UINT "Main Charge Time Maximum" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_2_main_ign_delay 16 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_2_main_chg_avg 16 UINT "Main Charge Time Average" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_2_ign_charge_time 16 UINT "None" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM rc_ppt_2_total_fire_count 16 UINT "Total Fire count" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_2_cooldown_time 16 UINT "None" BIG_ENDIAN
+		UNITS Seconds s
+		GENERIC_READ_CONVERSION_START
+			value * 2.0**-15
+		GENERIC_READ_CONVERSION_END
 
 TELEMETRY AMSAT_TLM rc_ppt_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3707,11 +4030,16 @@ TELEMETRY AMSAT_TLM rc_ppt_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rc_ppt_1_fire_count 16 UINT "Total number of times the PPT has fired" BIG_ENDIAN
 	APPEND_ITEM rc_ppt_1_fault_count 16 UINT "PPT fault count" BIG_ENDIAN
+	APPEND_ITEM rc_ppt_1_last_main_charge 16 UINT "Main Charge Time Average" BIG_ENDIAN
 		UNITS Seconds s
 		GENERIC_READ_CONVERSION_START
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
-	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_ppt_1_smt_wait_time 16 UINT "None" BIG_ENDIAN
+		UNITS Seconds s
+		GENERIC_READ_CONVERSION_START
+			value * 2.0**-15
+		GENERIC_READ_CONVERSION_END
 
 TELEMETRY AMSAT_TLM rc_eps_gen_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3789,7 +4117,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_8 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677399 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305725975 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_8_pnl_3_power_min 16 INT "Panel 3 Current min" BIG_ENDIAN
@@ -3830,7 +4158,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_7 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677398 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305725974 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_7_pnl_1_power_avg 16 INT "Panel 1 Current avg" BIG_ENDIAN
@@ -3870,7 +4198,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_6 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677397 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305725973 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_6_pnl_3_current_max 16 INT "Panel 3 Current max" BIG_ENDIAN
@@ -4174,7 +4502,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677379 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305725955 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_4_voltage_min 16 UINT "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
@@ -4202,7 +4530,13 @@ TELEMETRY AMSAT_TLM rc_eps_batt_4 BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_4_heater_state 1 UINT "State of the battery heater switch" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_eps_batt_4_heater_auto_state 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM rc_eps_batt_4_bal_auto_state 1 UINT "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM PADDING 12 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_eps_batt_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4762,7 +5096,8 @@ TELEMETRY AMSAT_TLM sensorproc_mag BIG_ENDIAN
 	APPEND_ITEM sensorproc_mag_valid 1 UINT "Sun Angle Validity" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
+	APPEND_ITEM sensorproc_mag_bdot_valid 1 UINT "Whether the reading is valid for bdot" BIG_ENDIAN
+	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM cmd_rollcall BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4836,7 +5171,10 @@ TELEMETRY AMSAT_TLM cmd_ppt_single_fire BIG_ENDIAN
 	APPEND_ITEM cmd_ppt_single_fire_override 1 UINT "Do we fire or just charge?" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
+	APPEND_ITEM cmd_ppt_single_fire_override_smt 1 UINT "Whether the Schmidt Trigger is checked" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_ITEM PADDING 61 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM mpc_vp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4850,7 +5188,7 @@ TELEMETRY AMSAT_TLM mpc_vp BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305594402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 302448674 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM mpc_vp_status 1 UINT "None" BIG_ENDIAN

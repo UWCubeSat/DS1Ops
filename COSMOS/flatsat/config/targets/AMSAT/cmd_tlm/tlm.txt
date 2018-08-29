@@ -1949,7 +1949,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_16 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_16_ppt_c_min 16 INT "PPT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2061,7 +2062,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_6 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_6_com2_c_min 16 INT "COM2 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2233,7 +2235,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_14 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_14_eps_c_min 16 INT "EPS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2345,7 +2348,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_12 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_12_estim_c_min 16 INT "ESTIM domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2422,7 +2426,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_10 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_10_bdot_c_min 16 INT "BDOT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2464,7 +2469,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_8 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_8_rahs_c_min 16 INT "RAHS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2506,7 +2512,8 @@ TELEMETRY AMSAT_TLM rc_eps_dist_4 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_4_com1_c_min 16 INT "COM1 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START

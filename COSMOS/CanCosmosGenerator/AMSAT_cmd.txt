@@ -1,3 +1,116 @@
+COMMAND AMSAT_CMD gcmd_autoseq_enable BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252849 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252849 
+	APPEND_PARAMETER gcmd_autoseq_enable_enable 8 UINT 0 255  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER PADDING 56 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND AMSAT_CMD gcmd_batt_set_bal_auto BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252848 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252848 
+	APPEND_PARAMETER gcmd_batt_set_bal_auto_state 2 UINT 0 3  0 "What state the battery balancer automation should be set to" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
+
+COMMAND AMSAT_CMD gcmd_dist_autoshutoff BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252847 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302252847 
+	APPEND_PARAMETER gcmd_dist_autoshutoff_com2 2 UINT 0 3  0 "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER gcmd_dist_autoshutoff_rahs 2 UINT 0 3  0 "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER gcmd_dist_autoshutoff_bdot 2 UINT 0 3  0 "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER gcmd_dist_autoshutoff_estim 2 UINT 0 3  0 "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER gcmd_dist_autoshutoff_eps 2 UINT 0 3  0 "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER gcmd_dist_autoshutoff_ppt 2 UINT 0 3  0 "Whether autoshutoff is enabled on the power domain" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+		STATE null 2
+	APPEND_PARAMETER PADDING 52 UINT MIN MAX 0 "Padded bits for CAN data"
+
 COMMAND AMSAT_CMD gcmd_ppt_halt BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -173,8 +286,8 @@ COMMAND AMSAT_CMD rc_adcs_bdot_9 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_9_spam_off_z_mtq_x 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_9_spam_off_z_mtq_y 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_9_spam_off_z_mtq_z 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
-
+	APPEND_PARAMETER rc_adcs_bdot_9_dipole_gain_y 8 UINT 0 255  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_bdot_9_dipole_gain_z 8 UINT 0 255  0 "None" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_bdot_8 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -487,8 +600,7 @@ COMMAND AMSAT_CMD rc_adcs_bdot_7 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_7_spam_magnitude_z 8 INT -127 128  0 "None" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_7_spam_off_x_mtq_x 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_7_spam_off_x_mtq_y 16 INT -32768 -32767  0 "Last spam reading with mtq off 1/73 nT" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 8 UINT MIN MAX 0 "Padded bits for CAN data"
-
+	APPEND_PARAMETER rc_adcs_bdot_7_dipole_gain_x 8 UINT 0 255  0 "None" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_bdot_6 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -692,7 +804,16 @@ COMMAND AMSAT_CMD gcmd_reset_minmax BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252750 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302252750 
-	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER gcmd_reset_minmax_bdot 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_reset_minmax_ppt 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_reset_minmax_dist 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_reset_minmax_gen 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_reset_minmax_batt 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_reset_minmax_estim 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_reset_minmax_mpc 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_reset_minmax_sensorproc 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER gcmd_reset_minmax_mtq 1 UINT 0 1  0 "Whether to reset the subsystem" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 55 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD rc_eps_batt_h2 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -979,6 +1100,26 @@ COMMAND AMSAT_CMD rc_eps_batt_h1 BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_eps_batt_h1_reset_count 8 UINT 0 255  0 "Reset Count" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_bdot_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1009,6 +1150,26 @@ COMMAND AMSAT_CMD rc_adcs_bdot_h1 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_adcs_bdot_h1_reset_count 8 UINT 0 255  0 "Reset Count" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_eps_dist_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1033,12 +1194,32 @@ COMMAND AMSAT_CMD rc_eps_dist_h1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677475 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677475 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305726051 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305726051 
 	APPEND_PARAMETER rc_eps_dist_h1_temp_min 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_eps_dist_h1_reset_count 8 UINT 0 255  0 "Reset Count" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_mpc_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1069,6 +1250,26 @@ COMMAND AMSAT_CMD rc_adcs_mpc_h1 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mpc_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mpc_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mpc_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_adcs_mpc_h1_reset_count 8 UINT 0 255  0 "Reset Count" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_estim_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1099,6 +1300,26 @@ COMMAND AMSAT_CMD rc_adcs_estim_h1 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_estim_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_adcs_estim_h1_reset_count 8 UINT 0 255  0 "Reset Count" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_sp_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1129,6 +1350,26 @@ COMMAND AMSAT_CMD rc_adcs_sp_h1 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_adcs_sp_h1_reset_count 8 UINT 0 255  0 "Reset Count" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_eps_gen_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1159,6 +1400,26 @@ COMMAND AMSAT_CMD rc_eps_gen_h1 BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_eps_gen_h1_reset_count 8 UINT 0 255  0 "Reset Count" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_mtq_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1189,6 +1450,26 @@ COMMAND AMSAT_CMD rc_adcs_mtq_h1 BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mtq_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mtq_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mtq_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_adcs_mtq_h1_reset_count 8 UINT 0 255  0 "Reset Count" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_ppt_h1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1219,6 +1500,26 @@ COMMAND AMSAT_CMD rc_ppt_h1 BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_h1_sysrstiv 8 UINT 0 255  0 "Reason for reset" BIG_ENDIAN
+		STATE No_interrupt_pending 0
+		STATE (BOR)_Brownout 2
+		STATE (BOR)_RSTIFG_RST/NMI 6
+		STATE (BOR)_LPMx.5_wake_up 8
+		STATE (BOR)_Security_violation 10
+		STATE (BOR)_SVSHIFG_SVSH_event 14
+		STATE (POR)_PMMSWPOR_software_POR 20
+		STATE (PUC)_WDTIFG_watchdog_timeout 22
+		STATE (PUC)_WDTPW_password_violation 24
+		STATE (PUC)_FRCTLPW_password_violation 26
+		STATE (PUC)_Uncorrectable_FRAM_bit_err 28
+		STATE (PUC)_Peripheral_area_fetch 30
+		STATE (PUC)_PMMPW_PMM_pwd_violation 32
+		STATE (PUC)_MPUPW_MPU_pwd_violation 34
+		STATE (PUC)_CSPW_CS_password_violation 36
+		STATE (PUC)_MPUSEGIPIFGencapIPmemSeg 38
+		STATE (PUC)_MPUSEGIIFGinfoMemSegViol 40
+		STATE (PUC)_MPUSEG1IFG_seg_1_mem_viol 42
+		STATE (PUC)_MPUSEG2IFG_seg_2_mem_viol 44
+		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_PARAMETER rc_ppt_h1_reset_count 8 UINT 0 255  0 "None" BIG_ENDIAN
 COMMAND AMSAT_CMD gcmd_mtq_pms BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -1836,8 +2137,8 @@ COMMAND AMSAT_CMD rc_eps_batt_7 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677466 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677466 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305726042 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305726042 
 	APPEND_PARAMETER rc_eps_batt_7_acc_charge_min 16 UINT 0 65535  0 "Acumulated charge minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_7_acc_charge_max 16 UINT 0 65535  0 "Accumulated charge maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_7_acc_charge_avg 16 UINT 0 65535  0 "Accumulated charge avg" BIG_ENDIAN
@@ -1874,7 +2175,8 @@ COMMAND AMSAT_CMD sensorproc_mag2 BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag2_valid 1 UINT 0 1  0 "None" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER sensorproc_mag2_bdot_valid 1 UINT 0 1  0 "Whether the reading is valid for bdot" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 14 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD rc_adcs_estim_14 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -2062,6 +2364,8 @@ COMMAND AMSAT_CMD rc_eps_dist_16 BIG_ENDIAN
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
+		STATE off_initial 4
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_min 16 INT -32768 32767  0 "PPT domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_max 16 INT -32768 32767  0 "PPT domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_avg 16 INT -32768 32767  0 "PPT domain current average" BIG_ENDIAN
@@ -2157,6 +2461,8 @@ COMMAND AMSAT_CMD rc_eps_dist_6 BIG_ENDIAN
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
+		STATE off_initial 4
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_min 16 INT -32768 32767  0 "COM2 domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_max 16 INT -32768 32767  0 "COM2 domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_avg 16 INT -32768 32767  0 "COM2 domain current average" BIG_ENDIAN
@@ -2313,6 +2619,8 @@ COMMAND AMSAT_CMD rc_eps_dist_14 BIG_ENDIAN
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
+		STATE off_initial 4
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_min 16 INT -32768 32767  0 "EPS domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_max 16 INT -32768 32767  0 "EPS domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_avg 16 INT -32768 32767  0 "EPS domain current average" BIG_ENDIAN
@@ -2408,6 +2716,8 @@ COMMAND AMSAT_CMD rc_eps_dist_12 BIG_ENDIAN
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
+		STATE off_initial 4
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_min 16 INT -32768 32767  0 "ESTIM domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_max 16 INT -32768 32767  0 "ESTIM domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_avg 16 INT -32768 32767  0 "ESTIM domain current average" BIG_ENDIAN
@@ -2473,6 +2783,8 @@ COMMAND AMSAT_CMD rc_eps_dist_10 BIG_ENDIAN
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
+		STATE off_initial 4
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_min 16 INT -32768 32767  0 "BDOT domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_max 16 INT -32768 32767  0 "BDOT domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_avg 16 INT -32768 32767  0 "BDOT domain current average" BIG_ENDIAN
@@ -2508,6 +2820,8 @@ COMMAND AMSAT_CMD rc_eps_dist_8 BIG_ENDIAN
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
+		STATE off_initial 4
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_min 16 INT -32768 32767  0 "RAHS domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_max 16 INT -32768 32767  0 "RAHS domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_avg 16 INT -32768 32767  0 "RAHS domain current average" BIG_ENDIAN
@@ -2536,13 +2850,15 @@ COMMAND AMSAT_CMD rc_eps_dist_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677446 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677446 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305726022 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305726022 
 	APPEND_PARAMETER rc_eps_dist_4_com1_state 8 UINT 0 3  0 "COM1 domain state" BIG_ENDIAN
 		STATE on 0
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
+		STATE off_initial 4
+		STATE unknown 5
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_min 16 INT -32768 32767  0 "COM1 domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_max 16 INT -32768 32767  0 "COM1 domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_4_com1_c_avg 16 INT -32768 32767  0 "COM1 domain current average" BIG_ENDIAN
@@ -3276,7 +3592,10 @@ COMMAND AMSAT_CMD rc_adcs_sp_7 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628833 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 303628833 
-	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER rc_adcs_sp_7_mag1_var_x 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_sp_7_mag1_var_y 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_sp_7_mag1_var_z 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD rc_adcs_sp_6 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3335,8 +3654,30 @@ COMMAND AMSAT_CMD rc_adcs_sp_17 BIG_ENDIAN
 		STATE DEFAULT 303628843 
 	APPEND_PARAMETER rc_adcs_sp_17_imu_z_max 16 INT -32768 32767  0 "IMU Z axis max" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_sp_17_imu_z_avg 16 INT -32768 32767  0 "IMU Z axis avg" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
-
+	APPEND_PARAMETER rc_adcs_sp_17_i2c_result_mag_1 8 UINT 0 255  0 "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_PARAMETER rc_adcs_sp_17_i2c_result_mag_2 8 UINT 0 255  0 "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_PARAMETER rc_adcs_sp_17_i2c_result_imu 8 UINT 0 255  0 "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
+	APPEND_PARAMETER rc_adcs_sp_17_i2c_result_sun 8 UINT 0 255  0 "None" BIG_ENDIAN
+		STATE no_error 0
+		STATE start_timeout 1
+		STATE stop_timeout 2
+		STATE nack 3
+		STATE transmit_timeout 4
 COMMAND AMSAT_CMD rc_adcs_sp_16 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -3420,7 +3761,10 @@ COMMAND AMSAT_CMD rc_adcs_sp_8 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628834 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 303628834 
-	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER rc_adcs_sp_8_mag2_var_x 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_sp_8_mag2_var_y 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_sp_8_mag2_var_z 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD rc_adcs_sp_9 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4020,6 +4364,8 @@ COMMAND AMSAT_CMD rc_adcs_mtq_5 BIG_ENDIAN
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677391 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677391 
 	APPEND_PARAMETER rc_adcs_mtq_5_fsw_ignore 8 UINT 0 255  0 "Flight Software Ignore" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
 	APPEND_PARAMETER rc_adcs_mtq_5_reset_counts 8 UINT 0 255  0 "Number of resets" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mtq_5_cmds_x_var 16 UINT 0 65535  0 "Variance in BDot's dipole commands" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_mtq_5_cmds_y_var 16 UINT 0 65535  0 "Variance in BDot's dipole commands" BIG_ENDIAN
@@ -4082,14 +4428,14 @@ COMMAND AMSAT_CMD rc_adcs_mtq_3 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677389 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 304677389 
-	APPEND_PARAMETER rc_adcs_mtq_3_bdot_z_min 8 UINT 0 255  0 "MinZ BDOT command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_avg 8 UINT 0 255  0 "Average X FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_max 8 UINT 0 255  0 "Max X FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_min 8 UINT 0 255  0 "Min X FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_avg 8 UINT 0 255  0 "Average Y FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_max 8 UINT 0 255  0 "Max Y FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_min 8 UINT 0 255  0 "Min Y FSW command" BIG_ENDIAN
-	APPEND_PARAMETER rc_adcs_mtq_3_fsw_z_avg 8 UINT 0 255  0 "Average Z FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_bdot_z_min 8 INT -128 127  0 "MinZ BDOT command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_avg 8 INT -128 127  0 "Average X FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_max 8 INT -128 127  0 "Max X FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_x_min 8 INT -128 127  0 "Min X FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_avg 8 INT -128 127  0 "Average Y FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_max 8 INT -128 127  0 "Max Y FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_y_min 8 INT -128 127  0 "Min Y FSW command" BIG_ENDIAN
+	APPEND_PARAMETER rc_adcs_mtq_3_fsw_z_avg 8 INT -128 127  0 "Average Z FSW command" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_adcs_mtq_2 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -4175,10 +4521,7 @@ COMMAND AMSAT_CMD rc_ppt_3 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628810 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 303628810 
-	APPEND_PARAMETER rc_ppt_3_ign_chg_min 16 UINT -32768 32767  0 "Main Charge Time Minimum" BIG_ENDIAN
-	APPEND_PARAMETER rc_ppt_3_ign_chg_max 16 UINT -32768 32767  0 "Main Charge Time Minimum" BIG_ENDIAN
-	APPEND_PARAMETER rc_ppt_3_ign_chg_avg 16 UINT -32768 32767  0 "Main Charge Time Minimum" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD rc_ppt_2 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4205,10 +4548,10 @@ COMMAND AMSAT_CMD rc_ppt_2 BIG_ENDIAN
 		STATE DEFAULT 1 
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628809 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 303628809 
-	APPEND_PARAMETER rc_ppt_2_main_chg_min 16 UINT -32768 32767  0 "Main Charge Time Minimum" BIG_ENDIAN
-	APPEND_PARAMETER rc_ppt_2_main_chg_max 16 UINT -32768 32767  0 "Main Charge Time Maximum" BIG_ENDIAN
-	APPEND_PARAMETER rc_ppt_2_main_chg_avg 16 UINT -32768 32767  0 "Main Charge Time Average" BIG_ENDIAN
-	APPEND_PARAMETER rc_ppt_2_total_fire_count 16 UINT -32768 32767  0 "Total Fire count" BIG_ENDIAN
+	APPEND_PARAMETER rc_ppt_2_main_charge_time 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_ppt_2_main_ign_delay 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_ppt_2_ign_charge_time 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_ppt_2_cooldown_time 16 UINT 0 65535  0 "None" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_ppt_1 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -4236,8 +4579,8 @@ COMMAND AMSAT_CMD rc_ppt_1 BIG_ENDIAN
 		STATE DEFAULT 303628808 
 	APPEND_PARAMETER rc_ppt_1_fire_count 16 UINT 0 65535  0 "Total number of times the PPT has fired" BIG_ENDIAN
 	APPEND_PARAMETER rc_ppt_1_fault_count 16 UINT 0 65535  0 "PPT fault count" BIG_ENDIAN
-	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
-
+	APPEND_PARAMETER rc_ppt_1_last_main_charge 16 UINT -32768 32767  0 "Main Charge Time Average" BIG_ENDIAN
+	APPEND_PARAMETER rc_ppt_1_smt_wait_time 16 UINT 0 65535  0 "None" BIG_ENDIAN
 COMMAND AMSAT_CMD rc_eps_gen_9 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -4294,8 +4637,8 @@ COMMAND AMSAT_CMD rc_eps_gen_8 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677399 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677399 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725975 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305725975 
 	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_min 16 INT -32768 32767  0 "Panel 3 Current min" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_max 16 INT -32768 32767  0 "Panel 3 Current max" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_avg 16 INT -32768 32767  0 "Panel 3 Current avg" BIG_ENDIAN
@@ -4325,8 +4668,8 @@ COMMAND AMSAT_CMD rc_eps_gen_7 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677398 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677398 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725974 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305725974 
 	APPEND_PARAMETER rc_eps_gen_7_pnl_1_power_avg 16 INT -32768 32767  0 "Panel 1 Current avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_min 16 INT -32768 32767  0 "Panel 2 Current min" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_max 16 INT -32768 32767  0 "Panel 2 Current max" BIG_ENDIAN
@@ -4354,8 +4697,8 @@ COMMAND AMSAT_CMD rc_eps_gen_6 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677397 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677397 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725973 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305725973 
 	APPEND_PARAMETER rc_eps_gen_6_pnl_3_current_max 16 INT -32768 32767  0 "Panel 3 Current max" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_6_pnl_3_current_avg 16 INT -32768 32767  0 "Panel 3 Current avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_6_pnl_1_power_min 16 INT -32768 32767  0 "Panel 1 Current min" BIG_ENDIAN
@@ -4604,8 +4947,8 @@ COMMAND AMSAT_CMD rc_eps_batt_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677379 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677379 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725955 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305725955 
 	APPEND_PARAMETER rc_eps_batt_4_voltage_min 16 UINT 0 65535  0 "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_4_voltage_max 16 UINT 0 65535  0 "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_4_voltage_avg 16 UINT 0 65535  0 "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
@@ -4615,7 +4958,13 @@ COMMAND AMSAT_CMD rc_eps_batt_4 BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_4_heater_state 1 UINT 0 1  0 "State of the battery heater switch" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_PARAMETER PADDING 14 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER rc_eps_batt_4_heater_auto_state 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_PARAMETER rc_eps_batt_4_bal_auto_state 1 UINT 0 1  0 "None" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_PARAMETER PADDING 12 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD rc_eps_batt_3 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -5297,7 +5646,8 @@ COMMAND AMSAT_CMD sensorproc_mag BIG_ENDIAN
 	APPEND_PARAMETER sensorproc_mag_valid 1 UINT 0 1  0 "Sun Angle Validity" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_PARAMETER PADDING 15 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER sensorproc_mag_bdot_valid 1 UINT 0 1  0 "Whether the reading is valid for bdot" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 14 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD cmd_rollcall BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -5396,7 +5746,10 @@ COMMAND AMSAT_CMD cmd_ppt_single_fire BIG_ENDIAN
 	APPEND_PARAMETER cmd_ppt_single_fire_override 1 UINT 0 1  0 "Do we fire or just charge?" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
-	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER cmd_ppt_single_fire_override_smt 1 UINT 0 1  0 "Whether the Schmidt Trigger is checked" BIG_ENDIAN
+		STATE false 0
+		STATE true 1
+	APPEND_PARAMETER PADDING 61 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND AMSAT_CMD mpc_vp BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -5421,8 +5774,8 @@ COMMAND AMSAT_CMD mpc_vp BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305594402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 305594402 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302448674 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 302448674 
 	APPEND_PARAMETER mpc_vp_status 1 UINT 0 1  0 "None" BIG_ENDIAN
 		STATE false 0
 		STATE true 1
