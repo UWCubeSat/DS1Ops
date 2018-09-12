@@ -147,7 +147,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_18 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677595 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303629019 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_18_bdot_ocp_thresh 9 UINT "BDOT current threshold" BIG_ENDIAN
@@ -495,7 +495,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_6 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677488 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628912 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_6_spam_off_time 16 UINT "Current setting for the time in minutes of SPAM not being on" BIG_ENDIAN
@@ -607,7 +607,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_5 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677468 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628892 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_5_spam_on_z_mtq_x 16 INT "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
@@ -1940,7 +1940,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_16 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677458 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628882 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_16_ppt_state 8 UINT "PPT domain state" BIG_ENDIAN
@@ -1949,8 +1949,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_16 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE off_autoshutoff 5
-		STATE unknown 6 RED
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_16_ppt_c_min 16 INT "PPT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -1983,7 +1982,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_9 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677451 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628875 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_9_rahs_v_min 16 UINT "RAHS domain voltage minimum" BIG_ENDIAN
@@ -2018,7 +2017,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_7 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677449 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628873 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_7_com2_v_min 16 UINT "COM2 domain voltage minimum" BIG_ENDIAN
@@ -2053,7 +2052,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_6 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677448 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628872 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_6_com2_state 8 UINT "COM2 domain state" BIG_ENDIAN
@@ -2062,8 +2061,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_6 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE off_autoshutoff 5
-		STATE unknown 6 RED
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_6_com2_c_min 16 INT "COM2 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2096,7 +2094,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_5 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677447 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628871 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_5_com1_v_min 16 UINT "COM1 domain voltage minimum" BIG_ENDIAN
@@ -2131,7 +2129,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_3 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677445 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628869 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_3_batt_v_min 16 UINT "Battery voltage minimum" BIG_ENDIAN
@@ -2166,7 +2164,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_2 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677444 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628868 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_2_uv_state 8 UINT "Undervoltage State" BIG_ENDIAN
@@ -2191,7 +2189,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_17 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677459 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628883 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_17_ppt_v_min 16 UINT "PPT domain voltage minimum" BIG_ENDIAN
@@ -2226,7 +2224,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_14 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677456 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628880 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_14_eps_state 8 UINT "EPS domain state" BIG_ENDIAN
@@ -2235,8 +2233,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_14 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE off_autoshutoff 5
-		STATE unknown 6 RED
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_14_eps_c_min 16 INT "EPS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2269,7 +2266,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_13 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677455 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628879 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_13_estim_v_min 16 UINT "ESTIM domain voltage minimum" BIG_ENDIAN
@@ -2304,7 +2301,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_11 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677453 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628877 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_11_bdot_v_min 16 UINT "BDOT domain voltage minimum" BIG_ENDIAN
@@ -2339,7 +2336,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_12 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677454 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628878 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_12_estim_state 8 UINT "ESTIM domain state" BIG_ENDIAN
@@ -2348,8 +2345,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_12 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE off_autoshutoff 5
-		STATE unknown 6 RED
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_12_estim_c_min 16 INT "ESTIM domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2382,7 +2378,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_15 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677457 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628881 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_15_eps_v_min 16 UINT "EPS domain voltage minimum" BIG_ENDIAN
@@ -2417,7 +2413,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_10 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677452 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628876 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_10_bdot_state 8 UINT "BDOT domain state" BIG_ENDIAN
@@ -2426,8 +2422,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_10 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE off_autoshutoff 5
-		STATE unknown 6 RED
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_10_bdot_c_min 16 INT "BDOT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2460,7 +2455,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_8 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677450 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628874 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_8_rahs_state 8 UINT "RAHS domain state" BIG_ENDIAN
@@ -2469,8 +2464,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_8 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE off_autoshutoff 5
-		STATE unknown 6 RED
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_8_rahs_c_min 16 INT "RAHS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -2503,7 +2497,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305726022 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 304677446 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_4_com1_state 8 UINT "COM1 domain state" BIG_ENDIAN
@@ -2512,8 +2506,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_4 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE off_autoshutoff 5
-		STATE unknown 6 RED
+		STATE unknown 5 RED
 	APPEND_ITEM rc_eps_dist_4_com1_c_min 16 INT "COM1 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
@@ -3593,7 +3586,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628826 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_4_mag_z_avg 16 INT "Z Average reading in nT" BIG_ENDIAN
@@ -3628,7 +3621,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_3 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677401 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628825 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_3_mag_y_max 16 INT "Y Maximum reading in nT" BIG_ENDIAN
@@ -3664,7 +3657,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_2 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677383 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628807 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_2_mag_x_min 16 INT "X Minium reading in nT" BIG_ENDIAN
@@ -3700,7 +3693,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_1 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677382 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628806 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_1_spam_on_x_mtq_x 16 INT "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
@@ -4060,7 +4053,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_9 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677400 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628824 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_9_pnl_1_temp_max 8 INT "Panel 1 Temp max" BIG_ENDIAN
@@ -4245,7 +4238,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_5 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677396 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628820 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_5_pnl_2_current_min 16 INT "Panel 2 Current min" BIG_ENDIAN
@@ -4285,7 +4278,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677395 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628819 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_4_pnl_3_voltage_avg 16 UINT "Panel 3 Voltage avg" BIG_ENDIAN
@@ -4325,7 +4318,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_3 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677394 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628818 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_3_pnl_2_voltage_max 16 UINT "Panel 2 Voltage max" BIG_ENDIAN
@@ -4365,7 +4358,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_2 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677393 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628817 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_min 16 UINT "Panel 1 Voltage min" BIG_ENDIAN
@@ -4405,7 +4398,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_1 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677392 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628816 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_1_pnl_1_enabled 1 UINT "whether gen panel 1 is enabled" BIG_ENDIAN
