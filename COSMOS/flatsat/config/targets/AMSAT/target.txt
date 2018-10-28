@@ -1,3 +1,4 @@
+REQUIRE SlackLimitResponse.rb
 # Ignored Parameters
 IGNORE_PARAMETER OPCODE
 
