@@ -518,6 +518,8 @@ def createCosmosTlm(candb, tlmFileName):
 															signalToLimits[signal.name][2],
 															signalToLimits[signal.name][3]
 															))
+				tlmString +="\t\tLIMITS_RESPONSE SlackLimitResponse.rb\n"
+                                
 			if signal.name in signalFormat:
 				tlmString += "\t\tFORMAT_STRING \"" + signalFormat[signal.name] + "\"\n"
 			elif signal.unit in unitFormat:
