@@ -12,11 +12,11 @@ def self.isOn()
     cmd("DIGITAL_LOAD", "GET_INPUT_STATE")
     
     state= tlm("DIGITAL_LOAD STATUS STATE")
-   
+    time = tlm("DIGITAL_LOAD STATUS PACKET_TIMESECONDS")
     if state == 1
-      return true
+      return [time, true]
     else
-      return false
+      return [time, false]
     end
   rescue Exception =>e
     puts "WARNING. COULD NOT GET INPUT STATE"
@@ -83,10 +83,11 @@ def self.isVoltageBelow(limit)
   begin
     cmd("DIGITAL_LOAD GET_VOLTAGE")
     v = tlm("DIGITAL_LOAD INPUT_VOLTAGE V")
+	time = tlm("DIGITAL_LOAD INPUT_VOLTAGE PACKET_TIMESECONDS")
     if v< limit
-      return true
+      return [time, true]
     else
-      return false
+      return [time, false]
     end
   rescue Exception => e
     puts "WARNING. COULD NOT GET INPUT VOLTAGE"
@@ -97,7 +98,8 @@ def self.getCurrent()
   begin
     cmd("DIGITAL_LOAD GET_CURRENT")
     i = tlm("DIGITAL_LOAD INPUT_CURRENT I")
-    return i
+	time = tlm("DIGITAL_LOAD INPUT_CURRENT PACKET_TIMESECONDS")
+    return [time, i]
   rescue Exception => e
     puts "WARNING. COULD NOT GET INPUT CURRENT"
 	return nil
@@ -108,18 +110,8 @@ def self.getVoltage()
   begin
     cmd("DIGITAL_LOAD GET_CURRENT")
     v = tlm("DIGITAL_LOAD INPUT_VOLTAGE V")
-    return v
-  rescue Exception => e
-    puts "WARNING. COULD NOT GET INPUT CURRENT"
-	return nil
-  end
-end
-
-def self.getCurrent()
-  begin
-    cmd("DIGITAL_LOAD ENABLE_SENSE")
-    i = tlm("DIGITAL_LOAD INPUT_CURRENT I")
-    return i
+	time = tlm("DIGITAL_LOAD STATUS PACKET_TIMESECONDS")
+    return [time, v]
   rescue Exception => e
     puts "WARNING. COULD NOT GET INPUT CURRENT"
 	return nil

@@ -134,57 +134,57 @@ def self.getStatus()
   return stat
 end
 
-def self.setOverVoltage(channel, voltage)
+def self.setOverVoltage(voltage)
   begin
-  cmd("PS_DP811A", "SET_OOVER_VOLTAGE", "voltage" => voltage,"channel"=>channel)
+  cmd("PS_DP811A", "SET_OOVER_VOLTAGE", "voltage" => voltage,"channel"=>1)
   rescue Exception =>e
   puts "WARNING COULD NOT SET OVER VOLTAGE"
   end
 end
 
-def self.setOverCurrent(channel, current)
+def self.setOverCurrent(current)
   begin
-  cmd("PS_DP811A", "SET_OOVER_CURRENT", "current" => voltage,"channel"=>channel)
+  cmd("PS_DP811A", "SET_OOVER_CURRENT", "current" => voltage,"channel"=>1)
   rescue Exception =>e
   puts "WARNING COULD NOT SET OVER VOLTAGE"
   end
 end
 
-def self.overVoltageOff(channel)
+def self.overVoltageOff()
   begin
-  cmd("PS_DP811A", "TURN_OFF_OVER_VOLTAGE","channel"=>channel)
+  cmd("PS_DP811A", "TURN_OFF_OVER_VOLTAGE","channel"=>1)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN OFF OVERVOLTAGE"
   end
 end
 
-def self.overVoltageOn(channel)
+def self.overVoltageOn()
   begin
-  cmd("PS_DP811A", "TURN_ON_OVER_VOLTAGE","channel"=>channel)
+  cmd("PS_DP811A", "TURN_ON_OVER_VOLTAGE","channel"=>1)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN ON OVERVOLTAGE"
   end
 end
 
-def self.overCurrentOff(channel)
+def self.overCurrentOff()
   begin
-  cmd("PS_DP811A", "TURN_OFF_OVER_CURRENT","channel"=>channel)
+  cmd("PS_DP811A", "TURN_OFF_OVER_CURRENT","channel"=>1)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN OFF OVERCURRENT"
   end
 end
 
-def self.overCurrentOn(channel)
+def self.overCurrentOn()
   begin
-  cmd("PS_DP811A", "TURN_ON_OVER_Current","channel"=>channel)
+  cmd("PS_DP811A", "TURN_ON_OVER_Current","channel"=>1)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN ON OVERCURRENT"
   end
 end
 
-def self.senseOn(channel)
+def self.senseOn(1)
   begin
-  cmd("PS_DP811A", "TURN_ON_SENSE","channel"=>channel)
+  cmd("PS_DP811A", "TURN_ON_SENSE","channel"=>1)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN ON SENSE"
   end
