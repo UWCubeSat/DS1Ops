@@ -7,7 +7,7 @@ def turnOn()
   end
 end
 
-def isOn()
+def self.isOn()
   begin
     cmd("DIGITAL_LOAD", "GET_INPUT_STATE")
     
@@ -23,7 +23,7 @@ def isOn()
   end
 end
 
-def turnOff()
+def self.turnOff()
   begin
     cmd("DIGITAL_LOAD", "TURN_OFF")
   rescue Exception =>e
@@ -31,7 +31,7 @@ def turnOff()
   end
 end
 
-def setConstantCurrentMode()
+def self.setConstantCurrentMode()
   begin
     cmd("DIGITAL_LOAD", "SET_CONSTANT_CURRENT_MODE")
   rescue Exception =>e
@@ -39,7 +39,7 @@ def setConstantCurrentMode()
   end
 end
 
-def setConstantVoltageMode()
+def self.setConstantVoltageMode()
   begin
     cmd("DIGITAL_LOAD", "SET_CONSTANT_VOLTAGE_MODE")
   rescue Exception =>e
@@ -47,7 +47,7 @@ def setConstantVoltageMode()
   end
 end
 
-def setConstantPowerMode()
+def self.setConstantPowerMode()
   begin
     cmd("DIGITAL_LOAD", "SET_CONSTANT_POWER_MODE")
   rescue Exception =>e
@@ -55,7 +55,7 @@ def setConstantPowerMode()
   end
 end
 
-def setConstantResistanceMode()
+def self.setConstantResistanceMode()
   begin
     cmd("DIGITAL_LOAD", "SET_CONSTANT_RESISTANCE_MODE")
   rescue Exception =>e
@@ -63,7 +63,7 @@ def setConstantResistanceMode()
   end
 end
 
-def setCurrentLevel(i)
+def self.setCurrentLevel(i)
   begin
     cmd("DIGITAL_LOAD", "SET_CURRENT", "current"=>i)
   rescue Exception =>e
@@ -71,7 +71,7 @@ def setCurrentLevel(i)
   end
 end
 
-def setVoltageLimit(v)
+def self.setVoltageLimit(v)
   begin
     cmd("DIGITAL_LOAD", "SET_VOLTAGE_LIMIT", "voltage"=>v)
   rescue Exception => e
@@ -79,7 +79,7 @@ def setVoltageLimit(v)
   end
 end
 
-def isVoltageBelow(limit)
+def self.isVoltageBelow(limit)
   begin
     cmd("DIGITAL_LOAD GET_VOLTAGE")
     v = tlm("DIGITAL_LOAD INPUT_VOLTAGE V")
@@ -93,7 +93,7 @@ def isVoltageBelow(limit)
   end
 end
 
-def getCurrent()
+def self.getCurrent()
   begin
     cmd("DIGITAL_LOAD GET_CURRENT")
     i = tlm("DIGITAL_LOAD INPUT_CURRENT I")
@@ -104,7 +104,7 @@ def getCurrent()
   end
 end
 
-def getVoltage()
+def self.getVoltage()
   begin
     cmd("DIGITAL_LOAD GET_CURRENT")
     v = tlm("DIGITAL_LOAD INPUT_VOLTAGE V")
@@ -115,7 +115,7 @@ def getVoltage()
   end
 end
 
-def getCurrent()
+def self.getCurrent()
   begin
     cmd("DIGITAL_LOAD ENABLE_SENSE")
     i = tlm("DIGITAL_LOAD INPUT_CURRENT I")

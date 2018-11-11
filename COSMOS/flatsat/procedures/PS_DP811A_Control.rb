@@ -1,4 +1,4 @@
-class DP811A
+
 
 class ChannelStatus
   def initialize(v, i, p)
@@ -63,8 +63,8 @@ class StatusPacket
 end
 
 
-
-def channelOn(channel)
+class DP811A
+def self.channelOn(channel)
   begin 
   cmd("PS_DP811A", "TURN_ON_CHANNEL","channel"=>channel)
   rescue Exception =>e
@@ -72,7 +72,7 @@ def channelOn(channel)
   end
 end
 
-def channelOff(channel)
+def self.channelOff(channel)
   begin
   cmd("PS_DP811A", "TURN_OFF_CHANNEL","channel"=>channel)
   rescue Exception =>e
@@ -80,7 +80,7 @@ def channelOff(channel)
   end
 end
 
-def setVoltage(channel, voltage)
+def self.setVoltage(channel, voltage)
   begin
   cmd("PS_DP811A", "SET_VOLTAGE", "voltage" => voltage,"channel"=>channel)
   rescue Exception =>e
@@ -88,7 +88,7 @@ def setVoltage(channel, voltage)
   end
 end
 
-def setCurrent(channel, current)
+def self.setCurrent(channel, current)
   begin
   cmd("PS_DP811A", "SET_CURRENT", "current" => current,"channel"=>channel)
   rescue Exception =>e
@@ -96,7 +96,7 @@ def setCurrent(channel, current)
   end
 end
 
-def isChannelOn(channel)
+def self.isChannelOn(channel)
   begin
   cmd("PS_DP811A","GETCHANNELSTATE", "channel"=>channel)
   state=tlm("PS_DP811A CH#{channel}_STATE STATE")
@@ -108,7 +108,7 @@ def isChannelOn(channel)
   puts "WARNING COULD CHECK CHANNEL STATUS"
   end
 end
-def getStatus()
+def self.getStatus()
   begin 
   cmd("PS_DP811A","GETSTATUS")
   v=tlm("PS_DP811A PS_STATUS V_CH1")
@@ -134,7 +134,7 @@ def getStatus()
   return stat
 end
 
-def setOverVoltage(channel, voltage)
+def self.setOverVoltage(channel, voltage)
   begin
   cmd("PS_DP811A", "SET_OOVER_VOLTAGE", "voltage" => voltage,"channel"=>channel)
   rescue Exception =>e
@@ -142,7 +142,7 @@ def setOverVoltage(channel, voltage)
   end
 end
 
-def setOverCurrent(channel, current)
+def self.setOverCurrent(channel, current)
   begin
   cmd("PS_DP811A", "SET_OOVER_CURRENT", "current" => voltage,"channel"=>channel)
   rescue Exception =>e
@@ -150,7 +150,7 @@ def setOverCurrent(channel, current)
   end
 end
 
-def overVoltageOff(channel)
+def self.overVoltageOff(channel)
   begin
   cmd("PS_DP811A", "TURN_OFF_OVER_VOLTAGE","channel"=>channel)
   rescue Exception =>e
@@ -158,7 +158,7 @@ def overVoltageOff(channel)
   end
 end
 
-def overVoltageOn(channel)
+def self.overVoltageOn(channel)
   begin
   cmd("PS_DP811A", "TURN_ON_OVER_VOLTAGE","channel"=>channel)
   rescue Exception =>e
@@ -166,7 +166,7 @@ def overVoltageOn(channel)
   end
 end
 
-def overCurrentOff(channel)
+def self.overCurrentOff(channel)
   begin
   cmd("PS_DP811A", "TURN_OFF_OVER_CURRENT","channel"=>channel)
   rescue Exception =>e
@@ -174,7 +174,7 @@ def overCurrentOff(channel)
   end
 end
 
-def overCurrentOn(channel)
+def self.overCurrentOn(channel)
   begin
   cmd("PS_DP811A", "TURN_ON_OVER_Current","channel"=>channel)
   rescue Exception =>e
@@ -182,7 +182,7 @@ def overCurrentOn(channel)
   end
 end
 
-def senseOn(channel)
+def self.senseOn(channel)
   begin
   cmd("PS_DP811A", "TURN_ON_SENSE","channel"=>channel)
   rescue Exception =>e
