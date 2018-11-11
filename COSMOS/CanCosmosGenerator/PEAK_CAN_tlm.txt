@@ -1,3 +1,35 @@
+TELEMETRY PEAK_CAN_TLM rc_eps_gen_10 BIG_ENDIAN 
+	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
+	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM DLC 8 UINT "Date Length Count from the CAN message."
+	APPEND_ITEM FLAGS 16 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
+	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
+	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305726258 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE EXTENDED 1
+		STATE STANDARD 0
+	APPEND_ITEM rc_eps_gen_10_pnl_1_power_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Watts W
+		GENERIC_READ_CONVERSION_START
+			value * 3 / 3276.8
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_eps_gen_10_pnl_2_power_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Watts W
+		GENERIC_READ_CONVERSION_START
+			value * 3 / 3276.8
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_eps_gen_10_pnl_3_power_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Watts W
+		GENERIC_READ_CONVERSION_START
+			value * 3 / 3276.8
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
+
 TELEMETRY PEAK_CAN_TLM gcmd_autoseq_enable BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
@@ -147,7 +179,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_18 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677595 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303629019 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_18_bdot_ocp_thresh 9 UINT "BDOT current threshold" BIG_ENDIAN
@@ -495,7 +527,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_6 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677488 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628912 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_6_spam_off_time 16 UINT "Current setting for the time in minutes of SPAM not being on" BIG_ENDIAN
@@ -607,7 +639,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_5 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677468 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628892 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_5_spam_on_z_mtq_x 16 INT "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
@@ -840,18 +872,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_batt_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_batt_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_batt_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -896,18 +931,21 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_bdot_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_bdot_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_bdot_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -943,7 +981,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_h1 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305726051 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 304677475 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_h1_temp_min 16 INT "Temperature of MSP" BIG_ENDIAN
@@ -952,18 +990,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -1008,18 +1049,21 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_mpc_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_mpc_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_mpc_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -1064,18 +1108,21 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_estim_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_estim_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_estim_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_estim_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -1120,18 +1167,21 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_sp_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_sp_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_sp_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_sp_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -1176,18 +1226,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -1232,18 +1285,21 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_mtq_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_mtq_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_mtq_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_adcs_mtq_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -1288,18 +1344,21 @@ TELEMETRY PEAK_CAN_TLM rc_ppt_h1 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_ppt_h1_temp_max 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_ppt_h1_temp_avg 16 INT "Temperature of MSP" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_ppt_h1_sysrstiv 8 UINT "Reason for reset" BIG_ENDIAN
 		STATE No_interrupt_pending 0
 		STATE (BOR)_Brownout 2
@@ -1755,7 +1814,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_7 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305726042 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628890 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_7_acc_charge_min 16 UINT "Acumulated charge minimum" BIG_ENDIAN
@@ -1940,7 +1999,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_16 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677458 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628882 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_16_ppt_state 8 UINT "PPT domain state" BIG_ENDIAN
@@ -1949,25 +2008,29 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_16 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5 RED
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_16_ppt_c_min 16 INT "PPT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_16_ppt_c_max 16 INT "PPT domain current maximum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_16_ppt_c_avg 16 INT "PPT domain current average" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.1 0.25 0.4 0.5
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_9 BIG_ENDIAN 
@@ -1982,7 +2045,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_9 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677451 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628875 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_9_rahs_v_min 16 UINT "RAHS domain voltage minimum" BIG_ENDIAN
@@ -1991,18 +2054,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_9 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_9_rahs_v_max 16 UINT "RAHS domain voltage maximum" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_9_rahs_v_avg 16 UINT "RAHS domain voltage average" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_7 BIG_ENDIAN 
@@ -2017,7 +2083,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_7 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677449 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628873 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_7_com2_v_min 16 UINT "COM2 domain voltage minimum" BIG_ENDIAN
@@ -2026,18 +2092,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_7 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_7_com2_v_max 16 UINT "COM2 domain voltage maximum" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_7_com2_v_avg 16 UINT "COM2 domain voltage average" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_6 BIG_ENDIAN 
@@ -2052,7 +2121,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_6 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677448 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628872 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_6_com2_state 8 UINT "COM2 domain state" BIG_ENDIAN
@@ -2061,25 +2130,29 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_6 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5 RED
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_6_com2_c_min 16 INT "COM2 domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_6_com2_c_max 16 INT "COM2 domain current maximum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_6_com2_c_avg 16 INT "COM2 domain current average" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.07 0.095 0.135 0.2
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_5 BIG_ENDIAN 
@@ -2094,7 +2167,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_5 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677447 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628871 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_5_com1_v_min 16 UINT "COM1 domain voltage minimum" BIG_ENDIAN
@@ -2103,18 +2176,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_5 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_5_com1_v_max 16 UINT "COM1 domain voltage maximum" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_5_com1_v_avg 16 UINT "COM1 domain voltage average" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_3 BIG_ENDIAN 
@@ -2129,7 +2205,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_3 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677445 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628869 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_3_batt_v_min 16 UINT "Battery voltage minimum" BIG_ENDIAN
@@ -2138,18 +2214,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_3 BIG_ENDIAN
 			7.21698125 * value / 4096
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_3_batt_v_max 16 UINT "Battery voltage maximum" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			7.21698125 * value / 4096
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_3_batt_v_avg 16 UINT "Battery voltage average" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			7.21698125 * value / 4096
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_2 BIG_ENDIAN 
@@ -2164,7 +2243,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_2 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677444 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628868 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_2_uv_state 8 UINT "Undervoltage State" BIG_ENDIAN
@@ -2189,7 +2268,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_17 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677459 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628883 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_17_ppt_v_min 16 UINT "PPT domain voltage minimum" BIG_ENDIAN
@@ -2198,18 +2277,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_17 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_17_ppt_v_max 16 UINT "PPT domain voltage maximum" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_17_ppt_v_avg 16 UINT "PPT domain voltage average" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_14 BIG_ENDIAN 
@@ -2224,7 +2306,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_14 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677456 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628880 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_14_eps_state 8 UINT "EPS domain state" BIG_ENDIAN
@@ -2233,25 +2315,29 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_14 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5 RED
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_14_eps_c_min 16 INT "EPS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_14_eps_c_max 16 INT "EPS domain current maximum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_14_eps_c_avg 16 INT "EPS domain current average" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_13 BIG_ENDIAN 
@@ -2266,7 +2352,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_13 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677455 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628879 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_13_estim_v_min 16 UINT "ESTIM domain voltage minimum" BIG_ENDIAN
@@ -2275,18 +2361,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_13 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_13_estim_v_max 16 UINT "ESTIM domain voltage maximum" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_13_estim_v_avg 16 UINT "ESTIM domain voltage average" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_11 BIG_ENDIAN 
@@ -2301,7 +2390,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_11 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677453 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628877 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_11_bdot_v_min 16 UINT "BDOT domain voltage minimum" BIG_ENDIAN
@@ -2310,18 +2399,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_11 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_11_bdot_v_max 16 UINT "BDOT domain voltage maximum" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_11_bdot_v_avg 16 UINT "BDOT domain voltage average" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_12 BIG_ENDIAN 
@@ -2336,7 +2428,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_12 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677454 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628878 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_12_estim_state 8 UINT "ESTIM domain state" BIG_ENDIAN
@@ -2345,25 +2437,29 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_12 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5 RED
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_12_estim_c_min 16 INT "ESTIM domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_12_estim_c_max 16 INT "ESTIM domain current maximum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_12_estim_c_avg 16 INT "ESTIM domain current average" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_15 BIG_ENDIAN 
@@ -2378,7 +2474,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_15 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677457 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628881 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_15_eps_v_min 16 UINT "EPS domain voltage minimum" BIG_ENDIAN
@@ -2387,18 +2483,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_15 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_15_eps_v_max 16 UINT "EPS domain voltage maximum" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_15_eps_v_avg 16 UINT "EPS domain voltage average" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.5 3.0 7.0 10.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_10 BIG_ENDIAN 
@@ -2413,7 +2512,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_10 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677452 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628876 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_10_bdot_state 8 UINT "BDOT domain state" BIG_ENDIAN
@@ -2422,25 +2521,29 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_10 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5 RED
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_10_bdot_c_min 16 INT "BDOT domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_10_bdot_c_max 16 INT "BDOT domain current maximum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_10_bdot_c_avg 16 INT "BDOT domain current average" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_8 BIG_ENDIAN 
@@ -2455,7 +2558,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_8 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677450 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628874 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_8_rahs_state 8 UINT "RAHS domain state" BIG_ENDIAN
@@ -2464,25 +2567,29 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_8 BIG_ENDIAN
 		STATE off_overcurrent 2 RED
 		STATE off_batt_undervoltage 3 RED
 		STATE off_initial 4 YELLOW
-		STATE unknown 5 RED
+		STATE off_autoshutoff 5 RED
+		STATE unknown 6 RED
 	APPEND_ITEM rc_eps_dist_8_rahs_c_min 16 INT "RAHS domain current minimum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_8_rahs_c_max 16 INT "RAHS domain current maximum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_8_rahs_c_avg 16 INT "RAHS domain current average" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_4 BIG_ENDIAN 
@@ -2497,7 +2604,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305726022 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 304677446 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_dist_4_com1_state 8 UINT "COM1 domain state" BIG_ENDIAN
@@ -2513,18 +2620,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_4 BIG_ENDIAN
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_4_com1_c_max 16 INT "COM1 domain current maximum" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_dist_4_com1_c_avg 16 INT "COM1 domain current average" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value / 2048.0
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.01 0.08 0.12 0.15
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_dist_1 BIG_ENDIAN 
@@ -2539,10 +2649,21 @@ TELEMETRY PEAK_CAN_TLM rc_eps_dist_1 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677443 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305136195 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_eps_dist_1_batt_v_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Volts V
+		GENERIC_READ_CONVERSION_START
+			7.21698125 * value / 4096
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM rc_eps_dist_1_com1_c_avg 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_eps_dist_1_temp_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Degrees_Celcius C
+		GENERIC_READ_CONVERSION_START
+			value / 100.0
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_adcs_mpc_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -3586,7 +3707,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628826 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_4_mag_z_avg 16 INT "Z Average reading in nT" BIG_ENDIAN
@@ -3621,7 +3742,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_3 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677401 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628825 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_3_mag_y_max 16 INT "Y Maximum reading in nT" BIG_ENDIAN
@@ -3657,7 +3778,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_2 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677383 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628807 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_2_mag_x_min 16 INT "X Minium reading in nT" BIG_ENDIAN
@@ -3693,7 +3814,7 @@ TELEMETRY PEAK_CAN_TLM rc_adcs_bdot_1 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677382 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628806 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_adcs_bdot_1_spam_on_x_mtq_x 16 INT "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
@@ -4053,7 +4174,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_9 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677400 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628824 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_9_pnl_1_temp_max 8 INT "Panel 1 Temp max" BIG_ENDIAN
@@ -4062,48 +4183,56 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_9 BIG_ENDIAN
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_9_pnl_1_temp_avg 8 INT "Panel 1 Temp avg" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_9_pnl_2_temp_min 8 INT "Panel 2 Temp min" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_9_pnl_2_temp_max 8 INT "Panel 2 Temp max" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_9_pnl_2_temp_avg 8 INT "Panel 2 Temp avg" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_9_pnl_3_temp_min 8 INT "Panel 3 Temp min" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_9_pnl_3_temp_max 8 INT "Panel 3 Temp max" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_9_pnl_3_temp_avg 8 INT "Panel 3 Temp avg" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 
 TELEMETRY PEAK_CAN_TLM rc_eps_gen_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4117,7 +4246,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_8 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305725975 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628823 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_8_pnl_3_power_min 16 INT "Panel 3 Current min" BIG_ENDIAN
@@ -4126,24 +4255,28 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_8 BIG_ENDIAN
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_8_pnl_3_power_max 16 INT "Panel 3 Current max" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_8_pnl_3_power_avg 16 INT "Panel 3 Current avg" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_8_pnl_1_temp_min 8 INT "Panel 1 Temp min" BIG_ENDIAN
 		UNITS Degrees_Celcius C
 		GENERIC_READ_CONVERSION_START
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_gen_7 BIG_ENDIAN 
@@ -4158,7 +4291,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_7 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305725974 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628822 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_7_pnl_1_power_avg 16 INT "Panel 1 Current avg" BIG_ENDIAN
@@ -4167,24 +4300,28 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_7 BIG_ENDIAN
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_7_pnl_2_power_min 16 INT "Panel 2 Current min" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_7_pnl_2_power_max 16 INT "Panel 2 Current max" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_7_pnl_2_power_avg 16 INT "Panel 2 Current avg" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 
 TELEMETRY PEAK_CAN_TLM rc_eps_gen_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4198,7 +4335,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_6 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305725973 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628821 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_6_pnl_3_current_max 16 INT "Panel 3 Current max" BIG_ENDIAN
@@ -4207,24 +4344,28 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_6 BIG_ENDIAN
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_6_pnl_3_current_avg 16 INT "Panel 3 Current avg" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_6_pnl_1_power_min 16 INT "Panel 1 Current min" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_6_pnl_1_power_max 16 INT "Panel 1 Current max" BIG_ENDIAN
 		UNITS Watts W
 		GENERIC_READ_CONVERSION_START
 			value * 3 / 3276.8
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 
 TELEMETRY PEAK_CAN_TLM rc_eps_gen_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4238,7 +4379,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_5 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677396 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628820 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_5_pnl_2_current_min 16 INT "Panel 2 Current min" BIG_ENDIAN
@@ -4247,24 +4388,28 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_5 BIG_ENDIAN
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_5_pnl_2_current_max 16 INT "Panel 2 Current max" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_5_pnl_2_current_avg 16 INT "Panel 2 Current avg" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.45 0.6
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_5_pnl_3_current_min 16 INT "Panel 3 Current min" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
+		LIMITS_RESPONSE SlackLimitResponse.rb
 
 TELEMETRY PEAK_CAN_TLM rc_eps_gen_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4278,7 +4423,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677395 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628819 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_4_pnl_3_voltage_avg 16 UINT "Panel 3 Voltage avg" BIG_ENDIAN
@@ -4287,24 +4432,28 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_4 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_4_pnl_1_current_min 16 INT "Panel 1 Current min" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_4_pnl_1_current_max 16 INT "Panel 1 Current max" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_4_pnl_1_current_avg 16 INT "Panel 1 Current avg" BIG_ENDIAN
 		UNITS Amps A
 		GENERIC_READ_CONVERSION_START
 			value * 1.5 / 32768
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
+		LIMITS_RESPONSE SlackLimitResponse.rb
 
 TELEMETRY PEAK_CAN_TLM rc_eps_gen_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4318,7 +4467,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_3 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677394 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628818 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_3_pnl_2_voltage_max 16 UINT "Panel 2 Voltage max" BIG_ENDIAN
@@ -4327,24 +4476,28 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_3 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_3_pnl_2_voltage_avg 16 UINT "Panel 2 Voltage avg" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_3_pnl_3_voltage_min 16 UINT "Panel 3 Voltage min" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_3_pnl_3_voltage_max 16 UINT "Panel 3 Voltage max" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 
 TELEMETRY PEAK_CAN_TLM rc_eps_gen_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4358,7 +4511,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_2 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677393 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628817 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_min 16 UINT "Panel 1 Voltage min" BIG_ENDIAN
@@ -4367,24 +4520,28 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_2 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_max 16 UINT "Panel 1 Voltage max" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_2_pnl_1_voltage_avg 16 UINT "Panel 1 Voltage avg" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM rc_eps_gen_2_pnl_2_voltage_min 16 UINT "Panel 2 Voltage min" BIG_ENDIAN
 		UNITS Volts V
 		GENERIC_READ_CONVERSION_START
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 
 TELEMETRY PEAK_CAN_TLM rc_eps_gen_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4398,7 +4555,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_gen_1 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677392 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628816 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_gen_1_pnl_1_enabled 1 UINT "whether gen panel 1 is enabled" BIG_ENDIAN
@@ -4478,6 +4635,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_5 BIG_ENDIAN
 			value / 327.68
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED -10.0 -8.0 4.5 6.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_5_batt_temp_min 8 INT "Battery temperature indicated by TMP36 mounted to the batteries." BIG_ENDIAN
 		UNITS Degrees_Celcius C
@@ -4502,7 +4660,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_4 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 305725955 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 303628803 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_4_voltage_min 16 UINT "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
@@ -4523,6 +4681,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_4 BIG_ENDIAN
 			23.6 * value / 65535
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 5.2 5.8 7.3 7.7
+		LIMITS_RESPONSE SlackLimitResponse.rb
 		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_4_balancer_state 1 UINT "State of the battery balancer. enabeling the battery balancer only gives it permission to ballance. " BIG_ENDIAN
 		STATE false 0
@@ -4571,6 +4730,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_3 BIG_ENDIAN
 			(value - 32767) / 3276.7
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED -10.0 -8.0 4.5 6.0
+		LIMITS_RESPONSE SlackLimitResponse.rb
 		FORMAT_STRING "%.4f"
 	APPEND_ITEM rc_eps_batt_3_batt_temp_avg 8 INT "Battery temperature indicated by TMP36 mounted to the batteries." BIG_ENDIAN
 		UNITS Degrees_Celcius C
@@ -4578,6 +4738,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_3 BIG_ENDIAN
 			value - 50
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 15 20 30 35
+		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM rc_eps_batt_2 BIG_ENDIAN 
@@ -4613,6 +4774,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_2 BIG_ENDIAN
 			value * 0.004
 		GENERIC_READ_CONVERSION_END
 		LIMITS DEFAULT 1 ENABLED 2.6 2.9 3.65 3.85
+		LIMITS_RESPONSE SlackLimitResponse.rb
 		FORMAT_STRING "%.4f"
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
@@ -4628,10 +4790,16 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_1 BIG_ENDIAN
 	APPEND_ITEM CANID_PADDING 1 UINT "Fixed value of 0 - reserved."
 	APPEND_ITEM CANID_RTR 1 UINT "RTR value."
 	APPEND_ITEM CANID_TYPE 1 UINT "Indicates whether the message is a standard or extended frame."
-	APPEND_ID_ITEM CANID_ID 29 UINT 304677376 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+	APPEND_ID_ITEM CANID_ID 29 UINT 305725952 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE EXTENDED 1
 		STATE STANDARD 0
-	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_eps_batt_1_acc_charge_avg 16 UINT "None" BIG_ENDIAN
+	APPEND_ITEM rc_eps_batt_1_voltage_avg 16 UINT "None" BIG_ENDIAN
+		UNITS Volts V
+		GENERIC_READ_CONVERSION_START
+			23.6 * value / 65535
+		GENERIC_READ_CONVERSION_END
+	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
 TELEMETRY PEAK_CAN_TLM cmd_ppt_set_count BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 

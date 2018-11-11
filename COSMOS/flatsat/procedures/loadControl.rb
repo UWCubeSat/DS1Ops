@@ -1,3 +1,4 @@
+class Load
 def turnOn()
   begin
     cmd("DIGITAL_LOAD", "TURN_ON")
@@ -90,4 +91,39 @@ def isVoltageBelow(limit)
   rescue Exception => e
     puts "WARNING. COULD NOT GET INPUT VOLTAGE"
   end
+end
+
+def getCurrent()
+  begin
+    cmd("DIGITAL_LOAD GET_CURRENT")
+    i = tlm("DIGITAL_LOAD INPUT_CURRENT I")
+    return i
+  rescue Exception => e
+    puts "WARNING. COULD NOT GET INPUT CURRENT"
+	return nil
+  end
+end
+
+def getVoltage()
+  begin
+    cmd("DIGITAL_LOAD GET_CURRENT")
+    v = tlm("DIGITAL_LOAD INPUT_VOLTAGE V")
+    return v
+  rescue Exception => e
+    puts "WARNING. COULD NOT GET INPUT CURRENT"
+	return nil
+  end
+end
+
+def getCurrent()
+  begin
+    cmd("DIGITAL_LOAD ENABLE_SENSE")
+    i = tlm("DIGITAL_LOAD INPUT_CURRENT I")
+    return i
+  rescue Exception => e
+    puts "WARNING. COULD NOT GET INPUT CURRENT"
+	return nil
+  end
+end
+
 end

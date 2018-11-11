@@ -1,4 +1,4 @@
-
+class DP811A
 
 class ChannelStatus
   def initialize(v, i, p)
@@ -66,7 +66,7 @@ end
 
 def channelOn(channel)
   begin 
-  cmd("PS_DP832A", "TURN_ON_CHANNEL","channel"=>channel)
+  cmd("PS_DP811A", "TURN_ON_CHANNEL","channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT UPDATE VOLTAGE"
   end
@@ -74,7 +74,7 @@ end
 
 def channelOff(channel)
   begin
-  cmd("PS_DP832A", "TURN_OFF_CHANNEL","channel"=>channel)
+  cmd("PS_DP811A", "TURN_OFF_CHANNEL","channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN OFF CHANNEL"
   end
@@ -82,7 +82,7 @@ end
 
 def setVoltage(channel, voltage)
   begin
-  cmd("PS_DP832A", "SET_VOLTAGE", "voltage" => voltage,"channel"=>channel)
+  cmd("PS_DP811A", "SET_VOLTAGE", "voltage" => voltage,"channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN ON CHANNEL"
   end
@@ -90,7 +90,7 @@ end
 
 def setCurrent(channel, current)
   begin
-  cmd("PS_DP832A", "SET_CURRENT", "current" => current,"channel"=>channel)
+  cmd("PS_DP811A", "SET_CURRENT", "current" => current,"channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT SET CURRENT"
   end
@@ -98,8 +98,8 @@ end
 
 def isChannelOn(channel)
   begin
-  cmd("PS_DP832A","GETCHANNELSTATE", "channel"=>channel)
-  state=tlm("PS_DP832A CH#{channel}_STATE STATE")
+  cmd("PS_DP811A","GETCHANNELSTATE", "channel"=>channel)
+  state=tlm("PS_DP811A CH#{channel}_STATE STATE")
   if state == "ON"
     return true
   end
@@ -110,20 +110,20 @@ def isChannelOn(channel)
 end
 def getStatus()
   begin 
-  cmd("PS_DP832A","GETSTATUS")
-  v=tlm("PS_DP832A PS_STATUS V_CH1")
-  i=tlm("PS_DP832A PS_STATUS i_CH1")
-  p=tlm("PS_DP832A PS_STATUS P_CH1")
+  cmd("PS_DP811A","GETSTATUS")
+  v=tlm("PS_DP811A PS_STATUS V_CH1")
+  i=tlm("PS_DP811A PS_STATUS i_CH1")
+  p=tlm("PS_DP811A PS_STATUS P_CH1")
   chan1 = ChannelStatus.new(v, i, p)
   
-  v=tlm("PS_DP832A PS_STATUS V_CH2")
-  i=tlm("PS_DP832A PS_STATUS i_CH2")
-  p=tlm("PS_DP832A PS_STATUS P_CH2")
+  v=tlm("PS_DP811A PS_STATUS V_CH2")
+  i=tlm("PS_DP811A PS_STATUS i_CH2")
+  p=tlm("PS_DP811A PS_STATUS P_CH2")
   chan2 = ChannelStatus.new(v, i, p)
   
-  v=tlm("PS_DP832A PS_STATUS V_CH3")
-  i=tlm("PS_DP832A PS_STATUS i_CH3")
-  p=tlm("PS_DP832A PS_STATUS P_CH3")
+  v=tlm("PS_DP811A PS_STATUS V_CH3")
+  i=tlm("PS_DP811A PS_STATUS i_CH3")
+  p=tlm("PS_DP811A PS_STATUS P_CH3")
   chan3 = ChannelStatus.new(v, i, p)
   
   stat = StatusPacket.new(chan1, chan2, chan3)
@@ -136,7 +136,7 @@ end
 
 def setOverVoltage(channel, voltage)
   begin
-  cmd("PS_DP832A", "SET_OOVER_VOLTAGE", "voltage" => voltage,"channel"=>channel)
+  cmd("PS_DP811A", "SET_OOVER_VOLTAGE", "voltage" => voltage,"channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT SET OVER VOLTAGE"
   end
@@ -144,7 +144,7 @@ end
 
 def setOverCurrent(channel, current)
   begin
-  cmd("PS_DP832A", "SET_OOVER_CURRENT", "current" => voltage,"channel"=>channel)
+  cmd("PS_DP811A", "SET_OOVER_CURRENT", "current" => voltage,"channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT SET OVER VOLTAGE"
   end
@@ -152,7 +152,7 @@ end
 
 def overVoltageOff(channel)
   begin
-  cmd("PS_DP832A", "TURN_OFF_OVER_VOLTAGE","channel"=>channel)
+  cmd("PS_DP811A", "TURN_OFF_OVER_VOLTAGE","channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN OFF OVERVOLTAGE"
   end
@@ -160,7 +160,7 @@ end
 
 def overVoltageOn(channel)
   begin
-  cmd("PS_DP832A", "TURN_ON_OVER_VOLTAGE","channel"=>channel)
+  cmd("PS_DP811A", "TURN_ON_OVER_VOLTAGE","channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN ON OVERVOLTAGE"
   end
@@ -168,7 +168,7 @@ end
 
 def overCurrentOff(channel)
   begin
-  cmd("PS_DP832A", "TURN_OFF_OVER_CURRENT","channel"=>channel)
+  cmd("PS_DP811A", "TURN_OFF_OVER_CURRENT","channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN OFF OVERCURRENT"
   end
@@ -176,7 +176,7 @@ end
 
 def overCurrentOn(channel)
   begin
-  cmd("PS_DP832A", "TURN_ON_OVER_Current","channel"=>channel)
+  cmd("PS_DP811A", "TURN_ON_OVER_Current","channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN ON OVERCURRENT"
   end
@@ -184,8 +184,9 @@ end
 
 def senseOn(channel)
   begin
-  cmd("PS_DP832A", "TURN_ON_SENSE","channel"=>channel)
+  cmd("PS_DP811A", "TURN_ON_SENSE","channel"=>channel)
   rescue Exception =>e
   puts "WARNING COULD NOT TURN ON SENSE"
   end
+end
 end

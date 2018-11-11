@@ -1,3 +1,33 @@
+COMMAND PEAK_CAN_CMD rc_eps_gen_10 BIG_ENDIAN 
+	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+ 		STATE DEFAULT 36 
+	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
+		STATE DEFAULT 128 
+	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER DLC 8 UINT MIN MAX  8  "Date Length Count from the CAN message."
+		STATE DEFAULT 8 
+	APPEND_PARAMETER FLAGS 16 UINT MIN MAX  2 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		STATE DEFAULT 2 
+	APPEND_PARAMETER CANID_PADDING 1 UINT MIN MAX  0 "Fixed value of 0 - reserved."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_RTR 1 UINT MIN MAX  0 "RTR value."
+		STATE DEFAULT 0 
+	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
+		STATE DEFAULT 1 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305726258 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305726258 
+	APPEND_PARAMETER rc_eps_gen_10_pnl_1_power_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_10_pnl_2_power_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_gen_10_pnl_3_power_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
+
 COMMAND PEAK_CAN_CMD gcmd_autoseq_enable BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  		STATE DEFAULT 36 
@@ -218,8 +248,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_18 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677595 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677595 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303629019 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303629019 
 	APPEND_PARAMETER rc_eps_dist_18_bdot_ocp_thresh 9 UINT 0 511  0 "BDOT current threshold" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_18_com2_ocp_thresh 9 UINT 0 511  0 "COM2 current threshold" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_18_eps_ocp_thresh 9 UINT 0 511  0 "EPS current threshold" BIG_ENDIAN
@@ -624,8 +654,8 @@ COMMAND PEAK_CAN_CMD rc_adcs_bdot_6 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677488 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677488 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628912 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628912 
 	APPEND_PARAMETER rc_adcs_bdot_6_spam_off_time 16 UINT 0 65535  0 "Current setting for the time in minutes of SPAM not being on" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_6_spam_on_time 16 UINT 0 65535  0 "Current setting for the time in minutes of SPAM being on" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_6_spam_control 1 UINT 0 1  0 "Current setting on whether or not spam is enabled" BIG_ENDIAN
@@ -772,8 +802,8 @@ COMMAND PEAK_CAN_CMD rc_adcs_bdot_5 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677468 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677468 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628892 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628892 
 	APPEND_PARAMETER rc_adcs_bdot_5_spam_on_z_mtq_x 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_5_spam_on_z_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_5_spam_on_z_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
@@ -1194,8 +1224,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_h1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305726051 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 305726051 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677475 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 304677475 
 	APPEND_PARAMETER rc_eps_dist_h1_temp_min 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_h1_temp_max 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_h1_temp_avg 16 INT -32768 32767  0 "Temperature of MSP" BIG_ENDIAN
@@ -2137,8 +2167,8 @@ COMMAND PEAK_CAN_CMD rc_eps_batt_7 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305726042 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 305726042 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628890 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628890 
 	APPEND_PARAMETER rc_eps_batt_7_acc_charge_min 16 UINT 0 65535  0 "Acumulated charge minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_7_acc_charge_max 16 UINT 0 65535  0 "Accumulated charge maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_7_acc_charge_avg 16 UINT 0 65535  0 "Accumulated charge avg" BIG_ENDIAN
@@ -2357,15 +2387,16 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_16 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677458 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677458 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628882 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628882 
 	APPEND_PARAMETER rc_eps_dist_16_ppt_state 8 UINT 0 3  0 "PPT domain state" BIG_ENDIAN
 		STATE on 0
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE unknown 5
+		STATE off_autoshutoff 5
+		STATE unknown 6
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_min 16 INT -32768 32767  0 "PPT domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_max 16 INT -32768 32767  0 "PPT domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_16_ppt_c_avg 16 INT -32768 32767  0 "PPT domain current average" BIG_ENDIAN
@@ -2394,8 +2425,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_9 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677451 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677451 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628875 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628875 
 	APPEND_PARAMETER rc_eps_dist_9_rahs_v_min 16 UINT 0 65535  0 "RAHS domain voltage minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_9_rahs_v_max 16 UINT 0 65535  0 "RAHS domain voltage maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_9_rahs_v_avg 16 UINT 0 65535  0 "RAHS domain voltage average" BIG_ENDIAN
@@ -2424,8 +2455,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_7 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677449 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677449 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628873 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628873 
 	APPEND_PARAMETER rc_eps_dist_7_com2_v_min 16 UINT 0 65535  0 "COM2 domain voltage minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_7_com2_v_max 16 UINT 0 65535  0 "COM2 domain voltage maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_7_com2_v_avg 16 UINT 0 65535  0 "COM2 domain voltage average" BIG_ENDIAN
@@ -2454,15 +2485,16 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_6 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677448 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677448 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628872 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628872 
 	APPEND_PARAMETER rc_eps_dist_6_com2_state 8 UINT 0 3  0 "COM2 domain state" BIG_ENDIAN
 		STATE on 0
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE unknown 5
+		STATE off_autoshutoff 5
+		STATE unknown 6
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_min 16 INT -32768 32767  0 "COM2 domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_max 16 INT -32768 32767  0 "COM2 domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_6_com2_c_avg 16 INT -32768 32767  0 "COM2 domain current average" BIG_ENDIAN
@@ -2491,8 +2523,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_5 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677447 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677447 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628871 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628871 
 	APPEND_PARAMETER rc_eps_dist_5_com1_v_min 16 UINT 0 65535  0 "COM1 domain voltage minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_5_com1_v_max 16 UINT 0 65535  0 "COM1 domain voltage maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_5_com1_v_avg 16 UINT 0 65535  0 "COM1 domain voltage average" BIG_ENDIAN
@@ -2521,8 +2553,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_3 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677445 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677445 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628869 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628869 
 	APPEND_PARAMETER rc_eps_dist_3_batt_v_min 16 UINT 0 65535  0 "Battery voltage minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_3_batt_v_max 16 UINT 0 65535  0 "Battery voltage maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_3_batt_v_avg 16 UINT 0 65535  0 "Battery voltage average" BIG_ENDIAN
@@ -2551,8 +2583,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_2 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677444 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677444 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628868 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628868 
 	APPEND_PARAMETER rc_eps_dist_2_uv_state 8 UINT 0 3  0 "Undervoltage State" BIG_ENDIAN
 		STATE normal 0
 		STATE undervoltage 1
@@ -2582,8 +2614,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_17 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677459 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677459 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628883 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628883 
 	APPEND_PARAMETER rc_eps_dist_17_ppt_v_min 16 UINT 0 65535  0 "PPT domain voltage minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_17_ppt_v_max 16 UINT 0 65535  0 "PPT domain voltage maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_17_ppt_v_avg 16 UINT 0 65535  0 "PPT domain voltage average" BIG_ENDIAN
@@ -2612,15 +2644,16 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_14 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677456 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677456 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628880 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628880 
 	APPEND_PARAMETER rc_eps_dist_14_eps_state 8 UINT 0 3  0 "EPS domain state" BIG_ENDIAN
 		STATE on 0
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE unknown 5
+		STATE off_autoshutoff 5
+		STATE unknown 6
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_min 16 INT -32768 32767  0 "EPS domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_max 16 INT -32768 32767  0 "EPS domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_14_eps_c_avg 16 INT -32768 32767  0 "EPS domain current average" BIG_ENDIAN
@@ -2649,8 +2682,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_13 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677455 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677455 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628879 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628879 
 	APPEND_PARAMETER rc_eps_dist_13_estim_v_min 16 UINT 0 65535  0 "ESTIM domain voltage minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_13_estim_v_max 16 UINT 0 65535  0 "ESTIM domain voltage maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_13_estim_v_avg 16 UINT 0 65535  0 "ESTIM domain voltage average" BIG_ENDIAN
@@ -2679,8 +2712,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_11 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677453 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677453 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628877 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628877 
 	APPEND_PARAMETER rc_eps_dist_11_bdot_v_min 16 UINT 0 65535  0 "BDOT domain voltage minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_11_bdot_v_max 16 UINT 0 65535  0 "BDOT domain voltage maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_11_bdot_v_avg 16 UINT 0 65535  0 "BDOT domain voltage average" BIG_ENDIAN
@@ -2709,15 +2742,16 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_12 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677454 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677454 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628878 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628878 
 	APPEND_PARAMETER rc_eps_dist_12_estim_state 8 UINT 0 3  0 "ESTIM domain state" BIG_ENDIAN
 		STATE on 0
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE unknown 5
+		STATE off_autoshutoff 5
+		STATE unknown 6
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_min 16 INT -32768 32767  0 "ESTIM domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_max 16 INT -32768 32767  0 "ESTIM domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_12_estim_c_avg 16 INT -32768 32767  0 "ESTIM domain current average" BIG_ENDIAN
@@ -2746,8 +2780,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_15 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677457 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677457 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628881 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628881 
 	APPEND_PARAMETER rc_eps_dist_15_eps_v_min 16 UINT 0 65535  0 "EPS domain voltage minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_15_eps_v_max 16 UINT 0 65535  0 "EPS domain voltage maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_15_eps_v_avg 16 UINT 0 65535  0 "EPS domain voltage average" BIG_ENDIAN
@@ -2776,15 +2810,16 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_10 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677452 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677452 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628876 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628876 
 	APPEND_PARAMETER rc_eps_dist_10_bdot_state 8 UINT 0 3  0 "BDOT domain state" BIG_ENDIAN
 		STATE on 0
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE unknown 5
+		STATE off_autoshutoff 5
+		STATE unknown 6
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_min 16 INT -32768 32767  0 "BDOT domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_max 16 INT -32768 32767  0 "BDOT domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_10_bdot_c_avg 16 INT -32768 32767  0 "BDOT domain current average" BIG_ENDIAN
@@ -2813,15 +2848,16 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_8 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677450 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677450 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628874 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628874 
 	APPEND_PARAMETER rc_eps_dist_8_rahs_state 8 UINT 0 3  0 "RAHS domain state" BIG_ENDIAN
 		STATE on 0
 		STATE off_manual 1
 		STATE off_overcurrent 2
 		STATE off_batt_undervoltage 3
 		STATE off_initial 4
-		STATE unknown 5
+		STATE off_autoshutoff 5
+		STATE unknown 6
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_min 16 INT -32768 32767  0 "RAHS domain current minimum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_max 16 INT -32768 32767  0 "RAHS domain current maximum" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_dist_8_rahs_c_avg 16 INT -32768 32767  0 "RAHS domain current average" BIG_ENDIAN
@@ -2850,8 +2886,8 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305726022 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 305726022 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677446 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 304677446 
 	APPEND_PARAMETER rc_eps_dist_4_com1_state 8 UINT 0 3  0 "COM1 domain state" BIG_ENDIAN
 		STATE on 0
 		STATE off_manual 1
@@ -2887,9 +2923,12 @@ COMMAND PEAK_CAN_CMD rc_eps_dist_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677443 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677443 
-	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305136195 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305136195 
+	APPEND_PARAMETER rc_eps_dist_1_batt_v_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_1_com1_c_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_dist_1_temp_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 16 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND PEAK_CAN_CMD rc_adcs_mpc_11 BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
@@ -4052,8 +4091,8 @@ COMMAND PEAK_CAN_CMD rc_adcs_bdot_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677402 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677402 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628826 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628826 
 	APPEND_PARAMETER rc_adcs_bdot_4_mag_z_avg 16 INT -32768 32767  0 "Z Average reading in nT" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_4_spam_on_y_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_4_spam_on_y_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
@@ -4085,8 +4124,8 @@ COMMAND PEAK_CAN_CMD rc_adcs_bdot_3 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677401 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677401 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628825 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628825 
 	APPEND_PARAMETER rc_adcs_bdot_3_mag_y_max 16 INT -32768 32767  0 "Y Maximum reading in nT" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_3_mag_y_avg 16 INT -32768 32767  0 "Y Average reading in nT" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_3_mag_z_min 16 INT -32768 32767  0 "Z Minium reading in nT" BIG_ENDIAN
@@ -4114,8 +4153,8 @@ COMMAND PEAK_CAN_CMD rc_adcs_bdot_2 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677383 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677383 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628807 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628807 
 	APPEND_PARAMETER rc_adcs_bdot_2_mag_x_min 16 INT -32768 32767  0 "X Minium reading in nT" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_2_mag_x_max 16 INT -32768 32767  0 "X Maximum reading in nT " BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_2_mag_x_avg 16 INT -32768 32767  0 "X Average reading in nT" BIG_ENDIAN
@@ -4143,8 +4182,8 @@ COMMAND PEAK_CAN_CMD rc_adcs_bdot_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677382 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677382 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628806 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628806 
 	APPEND_PARAMETER rc_adcs_bdot_1_spam_on_x_mtq_x 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_1_spam_on_x_mtq_y 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
 	APPEND_PARAMETER rc_adcs_bdot_1_spam_on_x_mtq_z 16 INT -32768 32767  0 "the averages of one axis of magnetometer readings during one axis of the last spam" BIG_ENDIAN
@@ -4604,8 +4643,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_9 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677400 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677400 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628824 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628824 
 	APPEND_PARAMETER rc_eps_gen_9_pnl_1_temp_max 8 INT -128 127  0 "Panel 1 Temp max" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_9_pnl_1_temp_avg 8 INT -128 127  0 "Panel 1 Temp avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_9_pnl_2_temp_min 8 INT -128 127  0 "Panel 2 Temp min" BIG_ENDIAN
@@ -4637,8 +4676,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_8 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725975 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 305725975 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628823 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628823 
 	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_min 16 INT -32768 32767  0 "Panel 3 Current min" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_max 16 INT -32768 32767  0 "Panel 3 Current max" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_8_pnl_3_power_avg 16 INT -32768 32767  0 "Panel 3 Current avg" BIG_ENDIAN
@@ -4668,8 +4707,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_7 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725974 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 305725974 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628822 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628822 
 	APPEND_PARAMETER rc_eps_gen_7_pnl_1_power_avg 16 INT -32768 32767  0 "Panel 1 Current avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_min 16 INT -32768 32767  0 "Panel 2 Current min" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_7_pnl_2_power_max 16 INT -32768 32767  0 "Panel 2 Current max" BIG_ENDIAN
@@ -4697,8 +4736,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_6 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725973 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 305725973 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628821 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628821 
 	APPEND_PARAMETER rc_eps_gen_6_pnl_3_current_max 16 INT -32768 32767  0 "Panel 3 Current max" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_6_pnl_3_current_avg 16 INT -32768 32767  0 "Panel 3 Current avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_6_pnl_1_power_min 16 INT -32768 32767  0 "Panel 1 Current min" BIG_ENDIAN
@@ -4726,8 +4765,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_5 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677396 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677396 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628820 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628820 
 	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_min 16 INT -32768 32767  0 "Panel 2 Current min" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_max 16 INT -32768 32767  0 "Panel 2 Current max" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_5_pnl_2_current_avg 16 INT -32768 32767  0 "Panel 2 Current avg" BIG_ENDIAN
@@ -4755,8 +4794,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677395 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677395 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628819 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628819 
 	APPEND_PARAMETER rc_eps_gen_4_pnl_3_voltage_avg 16 UINT 0 20000  0 "Panel 3 Voltage avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_4_pnl_1_current_min 16 INT -32768 32767  0 "Panel 1 Current min" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_4_pnl_1_current_max 16 INT -32768 32767  0 "Panel 1 Current max" BIG_ENDIAN
@@ -4784,8 +4823,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_3 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677394 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677394 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628818 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628818 
 	APPEND_PARAMETER rc_eps_gen_3_pnl_2_voltage_max 16 UINT 0 20000  0 "Panel 2 Voltage max" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_3_pnl_2_voltage_avg 16 UINT 0 20000  0 "Panel 2 Voltage avg" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_3_pnl_3_voltage_min 16 UINT 0 20000  0 "Panel 3 Voltage min" BIG_ENDIAN
@@ -4813,8 +4852,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_2 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677393 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677393 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628817 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628817 
 	APPEND_PARAMETER rc_eps_gen_2_pnl_1_voltage_min 16 UINT 0 20000  0 "Panel 1 Voltage min" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_2_pnl_1_voltage_max 16 UINT 0 20000  0 "Panel 1 Voltage max" BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_gen_2_pnl_1_voltage_avg 16 UINT 0 20000  0 "Panel 1 Voltage avg" BIG_ENDIAN
@@ -4842,8 +4881,8 @@ COMMAND PEAK_CAN_CMD rc_eps_gen_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677392 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677392 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628816 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628816 
 	APPEND_PARAMETER rc_eps_gen_1_pnl_1_enabled 1 UINT 0 1  0 "whether gen panel 1 is enabled" BIG_ENDIAN
 		STATE DISABLED 0
 		STATE ENABLED 1
@@ -4947,8 +4986,8 @@ COMMAND PEAK_CAN_CMD rc_eps_batt_4 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725955 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 305725955 
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  303628803 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 303628803 
 	APPEND_PARAMETER rc_eps_batt_4_voltage_min 16 UINT 0 65535  0 "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_4_voltage_max 16 UINT 0 65535  0 "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
 	APPEND_PARAMETER rc_eps_batt_4_voltage_avg 16 UINT 0 65535  0 "Battery voltage from the coulomb counter on the battery board. Most accurate but only on when the EPS power domain is on." BIG_ENDIAN
@@ -5050,9 +5089,11 @@ COMMAND PEAK_CAN_CMD rc_eps_batt_1 BIG_ENDIAN
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CANID_TYPE 1 UINT MIN MAX  1  "Indicates whether the message is a standard or extended frame."
 		STATE DEFAULT 1 
-	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  304677376 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
-		STATE DEFAULT 304677376 
-	APPEND_PARAMETER PADDING 64 UINT MIN MAX 0 "Padded bits for CAN data"
+	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  305725952 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
+		STATE DEFAULT 305725952 
+	APPEND_PARAMETER rc_eps_batt_1_acc_charge_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER rc_eps_batt_1_voltage_avg 16 UINT 0 65535  0 "None" BIG_ENDIAN
+	APPEND_PARAMETER PADDING 32 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND PEAK_CAN_CMD cmd_ppt_set_count BIG_ENDIAN 
 	APPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 "Length of TCP-ized CAN message (always 36/0x24 bytes) " 

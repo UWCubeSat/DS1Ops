@@ -1,6 +1,6 @@
 # If you have custom limits responses or conversions you require them here
-#REQUIRE PS_DP811A_limits_response.rb
-#REQUIRE PS_DP811A_conversion.rb
+#REQUIRE PS_DP832A_limits_response.rb
+#REQUIRE PS_DP832A_conversion.rb
 REQUIRE SlackLimitResponse.rb
 
 # Ignored Parameters

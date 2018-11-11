@@ -5,4 +5,12 @@ TELEMETRY DIGITAL_LOAD STATUS BIG_ENDIAN "Power Supply Telemetry"
 TELEMETRY DIGITAL_LOAD INPUT_VOLTAGE BIG_ENDIAN "Power Supply Telemetry"
   APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
   APPEND_ITEM V 32 FLOAT
+
+TELEMETRY DIGITAL_LOAD INPUT_CURRENT BIG_ENDIAN "Power Supply Telemetry"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM I 32 FLOAT
+  
+TELEMETRY DIGITAL_LOAD SLEW BIG_ENDIAN "Power Supply Telemetry"
+  APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
+  APPEND_ITEM S 32 FLOAT
   
