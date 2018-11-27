@@ -102,7 +102,7 @@ def self.getCurrent()
     return [time, i]
   rescue Exception => e
     puts "WARNING. COULD NOT GET INPUT CURRENT"
-	return nil
+	return [0,0]
   end
 end
 
@@ -114,7 +114,14 @@ def self.getVoltage()
     return [time, v]
   rescue Exception => e
     puts "WARNING. COULD NOT GET INPUT CURRENT"
-	return nil
+	return [0, 0]
+  end
+end
+def self.senseOn()
+  begin
+    cmd("DIGITAL_LOAD ENABLE_SENSE")
+  rescue Exception => e
+    puts "WARNING. COULD NOT ENABLE SENSE"
   end
 end
 

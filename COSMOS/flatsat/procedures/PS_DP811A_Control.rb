@@ -182,7 +182,7 @@ def self.overCurrentOn()
   end
 end
 
-def self.senseOn(1)
+def self.senseOn()
   begin
   cmd("PS_DP811A", "TURN_ON_SENSE","channel"=>1)
   rescue Exception =>e
