@@ -542,7 +542,7 @@ def createCosmosTlm(candb, tlmFileName):
 					elif derived in unitFormat:
 						tlmFile.write("\t\tFORMAT_STRING \"" + unitFormat[derived] + "\"\n")
 			tlmFile.write("\n")
-		tlmFile.write("""
+	tlmFile.write("""
 	TELEMETRY {}_TLM general_can_message BIG_ENDIAN 
 		APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
 		APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
