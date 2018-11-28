@@ -569,7 +569,7 @@ def createCosmosCmd(candb, tlmFileName):
 	interfaceName = tlmFileName[:-8] #grabs the filename minus _cmd.txt
 	for frame in candb.frames:
 		if 'com_1' in frame.transmitter:
-			tlmFile.write("COMMAND {}_CMD {} BIG_ENDIAN \n".format(interfaceName, frame.name))
+			tlmFile.write("COMMAND {}_CMD {} BIG_ENDIAN \"{}\"\n".format(interfaceName, frame.name, frame.comment if frame.comment != None else ""))
 			tlmFile.write("\tAPPEND_PARAMETER LENGTH 16 UINT MIN MAX  36 \"Length of TCP-ized CAN message (always 36/0x24 bytes) \" \n ")
 			tlmFile.write("\t\tSTATE DEFAULT 36 \n")
 			tlmFile.write("\tAPPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 \"Fixed message type for CAN\" BIG_ENDIAN\n")
@@ -608,7 +608,7 @@ def createCosmosCmd(candb, tlmFileName):
 					tlmString += ("\tAPPEND_PARAMETER {} {} {} MIN MAX  0 \"{}\" {}\n".format(signal.name,
 																40,
 																signalType,
-																signal.comment,
+																signal.comment if signal.comment != None else "",
 																signalEndian))
 				elif not (signal.name in overFlowSignals):
 					int(signal.min)
@@ -617,7 +617,7 @@ def createCosmosCmd(candb, tlmFileName):
 																signalType,
 																int(signal.min),
 																int(signal.max),
-																signal.comment,
+																signal.comment if signal.comment != None else "",
 																signalEndian))
 				for key in sorted(signal._values.keys()):
 					tlmString +=("\t\tSTATE {} {}\n".format(signal._values[key].replace(" ", "_"),
