@@ -1,9 +1,7 @@
-TELEMETRY PS_DP832A PS_STATUS BIG_ENDIAN "Power Supply Telemetry"
+TELEMETRY PS_DP811A PS_STATUS BIG_ENDIAN "Power Supply Telemetry"
   APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
-  APPEND_ITEM PS_STATUS_V_CH1 32 FLOAT "Output voltage on channel 1."
-LIMITS DEFAULT 3 ENABLED 0 1 2 3
-      
-      LIMITS_RESPONSE SlackLimitResponse.rb 
+
+  APPEND_ITEM V_CH1 32 FLOAT "Output voltage on channel 1."      
     FORMAT_STRING "%0.3f"
     UNITS "Volts" "V"
   APPEND_ITEM I_CH1 32 FLOAT "Output current on channel 1."
@@ -12,35 +10,17 @@ LIMITS DEFAULT 3 ENABLED 0 1 2 3
   APPEND_ITEM P_CH1 32 FLOAT "Output power on channel 1."
     FORMAT_STRING "%0.3f"
     UNITS "Watts" "W"
-  APPEND_ITEM V_CH2 32 FLOAT "Output voltage on channel 2."
-     
-    FORMAT_STRING "%0.3f"
-    UNITS "Volts" "V"
-  APPEND_ITEM I_CH2 32 FLOAT "Output current on channel 2."
-    FORMAT_STRING "%0.3f"
-    UNITS "Amps" "A"
-  APPEND_ITEM P_CH2 32 FLOAT "Output power on channel 2."
-    FORMAT_STRING "%0.3f"
-    UNITS "Watts" "W"
-  APPEND_ITEM V_CH3 32 FLOAT "Output voltage on channel 3."
-    FORMAT_STRING "%0.3f"
-    UNITS "Volts" "V"
-  APPEND_ITEM I_CH3 32 FLOAT "Output current on channel 3."
-    FORMAT_STRING "%0.3f"
-    UNITS "Amps" "A"
-  APPEND_ITEM P_CH3 32 FLOAT "Output power on channel 3."
-    FORMAT_STRING "%0.3f"
-    UNITS "Watts" "W"
+  
  
  
- TELEMETRY PS_DP832A CH1_STATE BIG_ENDIAN "Power Supply Telemetry"
+ TELEMETRY PS_DP112A CH1_STATE BIG_ENDIAN "Power Supply Telemetry"
   APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
   APPEND_ITEM STATE 16 STRING "Status of channel 1."
  
-TELEMETRY PS_DP832A CH2_STATE BIG_ENDIAN "Power Supply Telemetry"
+TELEMETRY PS_DP112A CH2_STATE BIG_ENDIAN "Power Supply Telemetry"
   APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
   APPEND_ITEM STATE 512 STRING "Status of channel 2."
   
-TELEMETRY PS_DP832A CH3_STATE BIG_ENDIAN "Power Supply Telemetry"
+TELEMETRY PS_DP112A CH3_STATE BIG_ENDIAN "Power Supply Telemetry"
   APPEND_ID_ITEM TLM_ID 32 INT 1 "Packet Identifier" # Unique telemetry ID
   APPEND_ITEM STATE 16 STRING "Status of channel 3."
