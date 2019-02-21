@@ -1,0 +1,6 @@
+COMMAND SERVER_TEST TEST BIG_ENDIAN "Read voltage of all channels."
+  APPEND_ID_PARAMETER CMD_ID 8 UINT 1 1 1 "Command Id" # Unique command ID
+  APPEND_PARAMETER CMD_TEMPLATE 1024 STRING "test"
+
+
+
