@@ -55,8 +55,22 @@ VAL_TABLE_ agg 5 "sum" 4 "max" 3 "min" 2 "count" 1 "avg" 0 "none" ;
 VAL_TABLE_ bool 1 "true" 0 "false" ;
 
 
-BO_ 2449736506 gcmd_com1_mode: 1 com_1
- SG_ gcmd_com1_mode_mode : 0|8@1+ (1,0) [1|4] "" Vector__XXX
+BO_ 2449736506 com1_mode: 1 Vector__XXX
+ SG_ com1_mode_mode : 0|8@1+ (1,0) [1|4] "" Vector__XXX
+
+BO_ 2449736504 gcmd_com1_mode_camera: 1 com_1
+ SG_ gcmd_com1_mode_camera_time : 0|8@1+ (1,0) [0|255] "minutes" Vector__XXX
+
+BO_ 2449736503 gcmd_com1_mode_realtime: 1 com_1
+ SG_ gcmd_com1_mode_realtime_time : 0|8@1+ (1,0) [0|255] "minutes" Vector__XXX
+
+BO_ 2449736502 gcmd_com1_mode_health: 0 com_1
+
+BO_ 2449736501 gcmd_com1_mode_safe: 0 com_1
+
+BO_ 2449736500 gcmd_com1_transponder_off: 0 com_1
+
+BO_ 2449736499 gcmd_com1_transponder_on: 0 com_1
 
 BO_ 2451047200 rahs_camera: 8 rahs
  SG_ rahs_camera_data : 0|64@1+ (1,0) [0|1.84467440737096E+019] "" Vector__XXX
@@ -957,8 +971,16 @@ BO_ 2449932985 grnd_epoch: 5 com_1
 BO_TX_BU_ 2147745800 : adcs_bdot,adcs_estim,adcs_mpc,adcs_mtq,adcs_rwx,adcs_rwy,adcs_rwz,adcs_sensorproc,com_2,eps_batt,eps_dist,eps_gen,ppt,rahs;
 
 
-CM_ BO_ 2449736506 "ground command to change the mode of COM1";
-CM_ SG_ 2449736506 gcmd_com1_mode_mode "the mode to change to";
+CM_ BO_ 2449736506 "Set by COM1; contains the current mode";
+CM_ SG_ 2449736506 com1_mode_mode "The current mode of COM1";
+CM_ BO_ 2449736504 "Commands COM1 to switch to Camera Mode";
+CM_ SG_ 2449736504 gcmd_com1_mode_camera_time "The timeout for camera mode, in minutes.  0 minutes means use last time.";
+CM_ BO_ 2449736503 "Commands COM1 to switch to Real-Time Mode";
+CM_ SG_ 2449736503 gcmd_com1_mode_realtime_time "The timeout for realtime mode, in minutes.  0 minutes means use last time.";
+CM_ BO_ 2449736502 "Commands COM1 to switch to Health Mode";
+CM_ BO_ 2449736501 "Commands COM1 to switch to Safe Mode";
+CM_ BO_ 2449736500 "Commands COM1 to disable the transponder";
+CM_ BO_ 2449736499 "Commands COM1 to enable the transponder";
 CM_ BO_ 2451047200 "Packet containing camera data from the RAHS board";
 CM_ SG_ 2451047200 rahs_camera_data "The picture data";
 CM_ BO_ 2449736496 "Sets the state of battery balancer automation";
@@ -1455,7 +1477,7 @@ CM_ SG_ 2456223776 bdot_tumble_status_status "bdot tumble status boolean";
 CM_ SG_ 2449932985 grnd_epoch_val_overflow "Overflow of epoch (time between millenium and when we launched)";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "BusType" "CAN";
-VAL_ 2449736506 gcmd_com1_mode_mode 4 "camera mode" 3 "real-time mode" 2 "safe mode" 1 "health mode" ;
+VAL_ 2449736506 com1_mode_mode 4 "camera mode" 3 "real-time mode" 2 "safe mode" 1 "health mode" ;
 VAL_ 2449736497 gcmd_autoseq_enable_enable 2 "null" 1 "true" 0 "false" ;
 VAL_ 2449736496 gcmd_batt_set_bal_auto_state 2 "null" 1 "true" 0 "false" ;
 VAL_ 2449736495 gcmd_dist_autoshutoff_ppt 2 "null" 1 "true" 0 "false" ;
