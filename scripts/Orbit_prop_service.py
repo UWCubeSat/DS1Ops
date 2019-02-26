@@ -35,7 +35,7 @@ class Propigation_Service(threading.Thread):
                 pass
             
             now = datetime.utcnow()
-            
+            passes = [[now, now, now]]
             if (now-self.last_update).total_seconds() > self.update_period:
                 try:
                     print("updating tle file")
@@ -60,6 +60,7 @@ class Propigation_Service(threading.Thread):
                 packet += bytearray(struct.pack("f",loc[0]))
                 packet += bytearray(struct.pack("f",loc[1]))
                 packet += bytearray(struct.pack("f",loc[2]))
+                #send location packet
                 try:
                     self.skt.send(packet)
                 except:
@@ -67,14 +68,23 @@ class Propigation_Service(threading.Thread):
                     
                 time.sleep(1)
                 now = datetime.utcnow()
-                passes = orb.get_next_passes(now, 2, -122.308932, 47.654030999999996, 50, tol=0.001, horizon=0)
+                
+                next_passes = orb.get_next_passes(now, 12, -122.308932, 47.654030999999996, 37, tol=0.001, horizon=0)
+                
+                if len(next_passes) > 0:
+                    #check if both rise and fall are in the future or both in the past
+                    if ((passes[0][0] - now).total_seconds())*((passes[0][1] - now).total_seconds()) >= 0:
+                        passes = next_passes
+               
+                print(passes[0])
                 rise = (passes[0][0] - now).total_seconds()
                 fall = (passes[0][1] - now).total_seconds()
                 packet = "\x02".encode()
                 packet += bytearray(struct.pack("i",int(rise)))
                 packet += bytearray(struct.pack("i",int(fall)))
                 
-                time.sleep(1)
+                
+                #send time packet
                 try:
                     self.skt.send(packet)
                 except:
