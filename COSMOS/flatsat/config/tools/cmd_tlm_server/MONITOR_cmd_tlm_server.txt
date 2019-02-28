@@ -9,7 +9,7 @@ PACKET_LOG_WRITER DEFAULT packet_log_writer.rb nil false
 # Replace localhost below with the IP Address of the main CmdTlmServer
 # Update the target list below to the full list of targets in your system
 # To make this child unable to send commands change the first 7779 to nil
-INTERFACE CHAININT tcpip_client_interface.rb 192.168.1.152 7779 7779 10 5 PREIDENTIFIED
+INTERFACE CHAININT tcpip_client_interface.rb 192.168.1.152 7779 7779 10 nil PREIDENTIFIED
   TARGET EPS_DIST
   TARGET EPS_BATT
   TARGET EPS_GEN
