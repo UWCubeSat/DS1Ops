@@ -276,7 +276,7 @@ derivedValueToConversion = {
 	"acc_charge_min":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
 	"acc_charge_avg":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
 	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
-	"rc_eps_batt_7_voltage_diff":"(1000 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_4\", \"RC_EPS_BATT_4_VOLTAGE_AVG\") - (2 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_2\", \"RC_EPS_BATT_2_NODE_V_AVG\")))"
+	"rc_eps_batt_7_voltage_diff":"(1000 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_4\", \"RC_EPS_BATT_4_VOLTAGE_AVG\") - (2000 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_2\", \"RC_EPS_BATT_2_NODE_V_AVG\")))"
 }
 
 derivedValueToUnits = {
