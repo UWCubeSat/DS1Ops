@@ -417,10 +417,9 @@ COMMAND PEAK_CAN_CMD gcmd_bdot_mag_control BIG_ENDIAN ""
 	APPEND_PARAMETER CANID_ID 29 UINT MIN MAX  302252745 "The ID (normal or extended) portion of the 'CAN ID' set of headers."
 		STATE DEFAULT 302252745 
 	APPEND_PARAMETER gcmd_bdot_mag_control_mode 2 UINT 0 3  0 "Choose the best fit magnetometer from ground. 0 = Auto, 1 = BDOT, 2 = SP1, 3 = SP2" BIG_ENDIAN
-		STATE auto_mode 0
-		STATE bdot_mode 1
-		STATE sp1_mode 2
-		STATE sp2_mode 3
+		STATE bdot_mode 0
+		STATE sp1_mode 1
+		STATE sp2_mode 2
 	APPEND_PARAMETER PADDING 62 UINT MIN MAX 0 "Padded bits for CAN data"
 
 COMMAND PEAK_CAN_CMD gcmd_bdot_max_tumble BIG_ENDIAN ""
