@@ -2566,7 +2566,7 @@ TELEMETRY PEAK_CAN_TLM rc_eps_batt_7 BIG_ENDIAN
 	ITEM rc_eps_batt_7_voltage_diff 0 0 DERIVED
 		UNITS milliVolts mV
 		GENERIC_READ_CONVERSION_START
-			(1000 * System.telemetry.value("PEAK_CAN", "RC_EPS_BATT_4", "RC_EPS_BATT_4_VOLTAGE_AVG") - (2000 * System.telemetry.value("PEAK_CAN", "RC_EPS_BATT_2", "RC_EPS_BATT_2_NODE_V_AVG")))
+			(1000 * System.telemetry.value("PEAK_CAN", "RC_EPS_BATT_4", "RC_EPS_BATT_4_VOLTAGE_AVG") - (2000 * System.telemetry.value("PEAK_CAN", "RC_EPS_BATT_2", "RC_EPS_BATT_2_NODE_V_AVG"))) / 2
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%.4f"
 
