@@ -69,15 +69,17 @@ class Propigation_Service(threading.Thread):
                 time.sleep(1)
                 now = datetime.utcnow()
                 
-                next_passes = orb.get_next_passes(now, 12, -122.308932, 47.654030999999996, 37, tol=0.001, horizon=0)
-                
+                next_passes = orb.get_next_passes(now, 24, -122.3032, 47.655548, 150 , tol=0.001, horizon=0)
+                print('Next passes')
+               
                 if len(next_passes) > 0:
                     #check if both rise and fall are in the future or both in the past
                     if ((passes[0][0] - now).total_seconds())*((passes[0][1] - now).total_seconds()) >= 0:
                         passes = next_passes
                
-                print(passes[0])
+                
                 rise = (passes[0][0] - now).total_seconds()
+                
                 fall = (passes[0][1] - now).total_seconds()
                 packet = "\x02".encode()
                 packet += bytearray(struct.pack("i",int(rise)))
@@ -94,15 +96,13 @@ class Propigation_Service(threading.Thread):
         print("connection to "+ addr[0] + " closed")
         self.skt.close()
 
-#orb = Orbital("AO-85", tle_file="tle.txt")
 
-#print(orb.get_lonlatalt(datetime.utcnow()))
-
+s = socket.socket()
+s.bind(("", 5555)) 
+s.listen(5)
+s.settimeout(3)
 while True:
-    s = socket.socket()
-    s.bind(("", 5555))
-    s.listen(5)
-    s.settimeout(3)
+    
     num_threads = 0
     try:
         con, addr = s.accept()
