@@ -4,6 +4,6 @@
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
 
-INTERFACE PPT_INT serial_interface.rb <%= ENV["FLATSAT_COMPORT_PPT"] %> <%= ENV["FLATSAT_COMPORT_PPT"] %> 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
+INTERFACE PPT_INT serial_interface.rb <%= ENV["FLATSAT_COMPORT_PPT"] || "COM256" %> <%= ENV["FLATSAT_COMPORT_PPT"] || "COM256" %> 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
   TARGET PPT
 	DONT_CONNECT
