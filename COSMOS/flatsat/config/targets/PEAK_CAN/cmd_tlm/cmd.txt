@@ -3,11 +3,13 @@ COMMAND PEAK_CAN_CMD cmd_ignore_fsw BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -33,11 +35,13 @@ COMMAND PEAK_CAN_CMD cmd_ppt_single_fire BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -69,11 +73,13 @@ COMMAND PEAK_CAN_CMD cmd_ppt_time_upd BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -102,11 +108,13 @@ COMMAND PEAK_CAN_CMD cmd_rollcall BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -133,11 +141,13 @@ COMMAND PEAK_CAN_CMD gcmd_autoseq_add_1 BIG_ENDIAN "propertires of autosequencer
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -164,11 +174,13 @@ COMMAND PEAK_CAN_CMD gcmd_autoseq_add_2 BIG_ENDIAN "data of CAN packet to be add
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -190,11 +202,13 @@ COMMAND PEAK_CAN_CMD gcmd_autoseq_enable BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -221,11 +235,13 @@ COMMAND PEAK_CAN_CMD gcmd_autoseq_get_indices BIG_ENDIAN "get indices of the spe
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -249,11 +265,13 @@ COMMAND PEAK_CAN_CMD gcmd_autoseq_get_met BIG_ENDIAN "get MET of the item at the
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -277,11 +295,13 @@ COMMAND PEAK_CAN_CMD gcmd_autoseq_remove_can_id BIG_ENDIAN "remove all occurrenc
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -305,11 +325,13 @@ COMMAND PEAK_CAN_CMD gcmd_autoseq_rm_at_index BIG_ENDIAN "remove the autosequenc
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -333,11 +355,13 @@ COMMAND PEAK_CAN_CMD gcmd_batt_set_heater_check BIG_ENDIAN "enables/disables bat
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -364,11 +388,13 @@ COMMAND PEAK_CAN_CMD gcmd_bdot_control BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -396,11 +422,13 @@ COMMAND PEAK_CAN_CMD gcmd_bdot_mag_control BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -427,11 +455,13 @@ COMMAND PEAK_CAN_CMD gcmd_bdot_max_tumble BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -456,11 +486,13 @@ COMMAND PEAK_CAN_CMD gcmd_bdot_pole_override BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -501,11 +533,13 @@ COMMAND PEAK_CAN_CMD gcmd_bdot_spam BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -539,11 +573,13 @@ COMMAND PEAK_CAN_CMD gcmd_com1_mode_camera BIG_ENDIAN "Commands COM1 to switch t
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -568,11 +604,13 @@ COMMAND PEAK_CAN_CMD gcmd_com1_mode_health BIG_ENDIAN "Commands COM1 to switch t
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -595,11 +633,13 @@ COMMAND PEAK_CAN_CMD gcmd_com1_mode_realtime BIG_ENDIAN "Commands COM1 to switch
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -624,11 +664,13 @@ COMMAND PEAK_CAN_CMD gcmd_com1_mode_safe BIG_ENDIAN "Commands COM1 to switch to 
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -651,11 +693,13 @@ COMMAND PEAK_CAN_CMD gcmd_com1_transponder_off BIG_ENDIAN "Commands COM1 to disa
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -678,11 +722,13 @@ COMMAND PEAK_CAN_CMD gcmd_com1_transponder_on BIG_ENDIAN "Commands COM1 to enabl
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -705,11 +751,13 @@ COMMAND PEAK_CAN_CMD gcmd_com2_run BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -739,11 +787,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_autoshutoff BIG_ENDIAN "Set the status of dist au
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -790,11 +840,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_reset_mission BIG_ENDIAN "Resets MET and autosequ
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -817,11 +869,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_self_restart BIG_ENDIAN "Causes dist to self-rest
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -844,11 +898,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_set_pd_ovc_bdot BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -873,11 +929,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_set_pd_ovc_com2 BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -902,11 +960,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_set_pd_ovc_eps BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -931,11 +991,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_set_pd_ovc_estim BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -960,11 +1022,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_set_pd_ovc_ppt BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -989,11 +1053,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_set_pd_ovc_rahs BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1018,11 +1084,13 @@ COMMAND PEAK_CAN_CMD gcmd_dist_set_pd_state BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1077,11 +1145,13 @@ COMMAND PEAK_CAN_CMD gcmd_eps_batt_fulldef BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1106,11 +1176,13 @@ COMMAND PEAK_CAN_CMD gcmd_gen_set_pt_state BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1145,11 +1217,13 @@ COMMAND PEAK_CAN_CMD gcmd_mtq_pms BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1179,11 +1253,13 @@ COMMAND PEAK_CAN_CMD gcmd_mtq_pop BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1218,11 +1294,13 @@ COMMAND PEAK_CAN_CMD gcmd_mtq_pwm_time BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1249,11 +1327,13 @@ COMMAND PEAK_CAN_CMD gcmd_ppt_halt BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1279,11 +1359,13 @@ COMMAND PEAK_CAN_CMD gcmd_ppt_multiple_fire BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1310,11 +1392,13 @@ COMMAND PEAK_CAN_CMD gcmd_reset_minmax BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1346,11 +1430,13 @@ COMMAND PEAK_CAN_CMD grnd_epoch BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1375,11 +1461,13 @@ COMMAND PEAK_CAN_CMD tle_1 BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1403,11 +1491,13 @@ COMMAND PEAK_CAN_CMD tle_2 BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1429,11 +1519,13 @@ COMMAND PEAK_CAN_CMD tle_3 BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1457,11 +1549,13 @@ COMMAND PEAK_CAN_CMD tle_4 BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
@@ -1486,11 +1580,13 @@ COMMAND PEAK_CAN_CMD tle_5 BIG_ENDIAN ""
  		STATE DEFAULT 36 
 	APPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 "Fixed message type for CAN" BIG_ENDIAN
 		STATE DEFAULT 128 
-	APPEND_PARAMETER TAG 64 UINT MIN MAX  0 "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_PARAMETER RESET 16 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
+	APPEND_PARAMETER UPTIME 32 UINT MIN MAX 0
 		STATE DEFAULT 0 
-	APPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
+	APPEND_PARAMETER TYPE 16 UINT MIN MAX 0
+		STATE DEFAULT 0 
+	APPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		STATE DEFAULT 0 
 	APPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		STATE DEFAULT 0 
