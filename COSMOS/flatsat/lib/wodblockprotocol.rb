@@ -34,10 +34,8 @@ module Cosmos
         if @@packet_times.has_key?(id)
           if (reset >= @@packet_times[id][0] and uptime > @@packet_times[id][1])
             @@packet_times[id] = [reset,uptime]
-            puts("YES!",id,gnd_class)
             return data
           else
-            puts("NO!",id,gnd_class)
             return :STOP
           end
         else
