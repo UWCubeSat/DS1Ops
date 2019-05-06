@@ -7,3 +7,4 @@ INTERFACE KVASER_LEAF_INT tcpip_server_interface.rb 1000 1000 10 nil LENGTH 0 16
   TARGET KVASER_LEAF
   # Add in the OverrideProtocol to allow override_tlm("KVASER_LEAF STATUS STRING = 'HI'")
 #~  PROTOCOL READ_WRITE OverrideProtocol
+	DONT_CONNECT

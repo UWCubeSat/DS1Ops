@@ -4,5 +4,6 @@
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
 
-INTERFACE EPS_DIST_INT serial_interface.rb <%= ENV["FLATSAT_COMPORT_EPSDIST"] %> <%= ENV["FLATSAT_COMPORT_EPSDIST"] %> 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
+INTERFACE EPS_DIST_INT serial_interface.rb <%= ENV["FLATSAT_COMPORT_EPSDIST"] || "COM256" %> <%= ENV["FLATSAT_COMPORT_EPSDIST"] || "COM256" %> 9600 NONE 1 10.0 nil LENGTH 8 8 0 1 LITTLE_ENDIAN 1 0xFC nil true
   TARGET EPS_DIST
+	DONT_CONNECT
