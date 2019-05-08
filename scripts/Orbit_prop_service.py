@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jan 16 15:37:14 2019
-
-@author: Langley
-"""
-
 from pyorbital.orbital import Orbital
 from datetime import datetime
 import socket
@@ -23,11 +16,11 @@ class Propigation_Service(threading.Thread):
         self.skt = skt
         self.update_period = update_period
         self.last_update = datetime(1970,1,1)
+        self.stop = False
         
     def run(self):
-        inpt = "foo"
-        
-        while len(inpt) > 0:
+        inpt = 'start' 
+        while len(inpt) > 0 and not self.stop:
             try:
                 inpt = self.skt.recv(1024)
                 
@@ -70,7 +63,6 @@ class Propigation_Service(threading.Thread):
                 now = datetime.utcnow()
                 
                 next_passes = orb.get_next_passes(now, 24, -122.3032, 47.655548, 150 , tol=0.001, horizon=0)
-                print('Next passes')
                
                 if len(next_passes) > 0:
                     #check if both rise and fall are in the future or both in the past
@@ -98,21 +90,29 @@ class Propigation_Service(threading.Thread):
 
 
 s = socket.socket()
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
 s.bind(("", 5555)) 
 s.listen(5)
 s.settimeout(3)
-while True:
-    
-    num_threads = 0
+
+num_threads = 0
+running = True
+services = []
+
+while running:
     try:
         con, addr = s.accept()
-        print("connected to "+ addr[0])
-        
+        print("connected to "+ addr[0])    
         con.settimeout(1)
-        p_serv = Propigation_Service("AO-85", num_threads, "tle.txt", con , 600000, addr)
-        
+        p_serv = Propigation_Service("AO-85", num_threads, "tle.txt", con , 600000, addr)            
         p_serv.start()
-        
-        num_threads +=1
-    except:
-        pass
+        services.append(p_serv) 
+        num_threads += 1
+
+    except Exception as ex:
+        if ex == 'KeyboardInterupt':
+            running = False
+            for s in services:
+                s.stop = True
+s.close()

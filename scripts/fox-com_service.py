@@ -115,3 +115,7 @@ while running:
         t_csms.close.set()
         t_fx_cm.close.set()
         running = False
+    elif cmd == 'help':
+        print('mute: mutes print outs\n unmute: unmute print outs\n view-queue: print queued commands\n clear: clear command queue\n quit: close the service')
+    else:
+        print('type help to get available commands')
