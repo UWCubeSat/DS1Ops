@@ -2664,7 +2664,8 @@ TELEMETRY AMSAT_TLM rc_eps_batt_h2 BIG_ENDIAN
 		STATE EXTENDED 1
 		STATE STANDARD 0
 	APPEND_ITEM rc_eps_batt_h2_canrxerror 8 UINT "the Batt MCP's RX error buffer" BIG_ENDIAN
-	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
+	APPEND_ITEM rc_eps_batt_h2_last_i2c_res 8 UINT "the result of the last i2c operation" BIG_ENDIAN
+	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
 TELEMETRY AMSAT_TLM rc_eps_dist_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
