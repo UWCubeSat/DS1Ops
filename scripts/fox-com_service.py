@@ -12,12 +12,16 @@ class COSMOS_Listener(threading.Thread):
       self.command_queue = command_queue
       self.mute = threading.Event()
       self.skt.settimeout(3)
+      self.time_since_last_command = 0
+      self.time_since_last_connect = 0
+      self.error_log = []
       self.close = threading.Event()
     def run(self):
         while not self.close.is_set():
             try:
                 con, addr = self.skt.accept()
-                con.settimeout(0.5)
+                self.time_since_last_connnect = 0
+                con.settimeout(.5)
                 if not self.mute.is_set():
                     print("COSMOS Connected")
                 inpt = "start"
@@ -27,19 +31,30 @@ class COSMOS_Listener(threading.Thread):
                         if len(inpt) > 0:
                             if not self.mute.is_set():
                                 print( "Recieved" +str(inpt))
+                            self.time_since_last_command = 0
                             self.command_queue.put(inpt)
-                    except:
-                        pass
+                    except Exception as e:
+                        if str(e) != 'timed out':
+                            self.error_log.append(str(e))
+                        self.time_since_last_command += .5
                 con.shutdown(socket.SHUT_RDWR)
                 con.close()
                 if not self.mute.is_set():
                     print("COSMOS Disconnected")
             except:
+                self.time_since_last_connect += 3
                 if not self.mute.is_set():
                     print("Not connected to COSMOS")
         self.skt.shutdown(socket.SHUT_RDWR)
         self.skt.close()
         print('cosmos listener closed')
+    def get_error_log(self):
+        return self.error_log
+    def get_last_command_time(self):
+        return self.time_since_last_command
+
+    def get_last_connect_time(self):
+        return self.time_since_last_connect
 
 class Fox_com_Sender(threading.Thread):
     def __init__(self, threadID, name, addr, port, command_queue):
@@ -115,7 +130,24 @@ while running:
         t_csms.close.set()
         t_fx_cm.close.set()
         running = False
+    elif cmd == 'get-last-command-time':
+        print(t_csms.get_last_command_time())
+    elif cmd == 'get-last-connect-time':
+        print(t_csms.get_last_connect_time())
+    elif cmd == 'get-error-log':
+        for e in t_csms.get_error_log():
+            print(e)
     elif cmd == 'help':
-        print('mute: mutes print outs\n unmute: unmute print outs\n view-queue: print queued commands\n clear: clear command queue\n quit: close the service')
+        print('mute: mutes print outs\n \
+unmute: unmute print outs\n \
+view-queue: print queued commands\n \
+clear: clear command queue\n \
+get-last-command-time: get the time since the last command was recieved\n \
+get-last-connect-time: get time since last time cosmos was connected\n \
+get-error-log: get the errors that have happend while reading commands\n \
+quit: close the service')
+    elif cmd == 'get-last-command-time': 
+        print(t_csms.get_time_since_last_command())
     else:
         print('type help to get available commands')
+

@@ -2,7 +2,7 @@ SCREEN AUTO AUTO 1.0
 
 TITLE "Sensor Processing"
 
-<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_SP', pdName: 'ESTIM', rcNum: '12'}%>
+# render statement was here
 
 #~SECTIONHEADER "Board"
 #~HORIZONTAL
