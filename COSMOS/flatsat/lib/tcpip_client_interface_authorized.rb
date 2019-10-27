@@ -65,5 +65,18 @@ module Cosmos
 	  write_interface @password + "\n"
             write_interface @foxid + "\n"
     end
+	
+	def read_interface
+      begin
+        data = @stream.read
+      rescue Timeout::Error
+        Logger.instance.error "Timeout waiting for data to be read"
+        data = nil
+      end
+      return nil if data.nil? or data.length <= 0
+	  write_interface "ACK" + "\n"
+      read_interface_base(data)
+      data
+    end
   end
 end
