@@ -22,3 +22,7 @@ COMMAND EPS_BATT TEMPCHECKINGCMD LITTLE_ENDIAN "Control battery board management
     STATE DISABLE 0
     STATE ENABLE 1
     STATE NOCHANGE 2
+
+COMMAND EPS_BATT RESET_I2C LITTLE_ENDIAN "re-initializes i2c"
+	# This must ALWAYS be the first entry in any command packet
+	<%= render "../../SYSTEM/cmd_tlm/_shared_cmd_header.txt", locals: { eid: 10, opc: 102 } %>

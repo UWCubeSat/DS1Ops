@@ -18,7 +18,18 @@ SCREEN AUTO AUTO 1.0
     HORIZONTALLINE  
   
     MATRIXBYCOLUMNS 5 2 2
-		<%= render "_scrn_pd_view_can.txt", locals: {currNum: '4', voltNum: '5', ss: 'COM1'} %>
+		LABEL "COM1->"
+		LABEL "Current:"
+		HORIZONTAL
+			FORMATVALUE PEAK_CAN RC_EPS_DIST_1 RC_EPS_DIST_1_COM1_C_AVG "%0.3f A" FORMATTED 10
+			LIMITSBAR PEAK_CAN RC_EPS_DIST_1 RC_EPS_DIST_1_COM1_C_AVG
+		END
+		LABEL "Bus V:"
+		HORIZONTAL
+			FORMATVALUE PEAK_CAN RC_EPS_DIST_5 RC_EPS_DIST_5_COM1_V_AVG "%0.3f V" FORMATTED 10
+			LIMITSBAR PEAK_CAN RC_EPS_DIST_5 RC_EPS_DIST_5_COM1_V_AVG
+		END
+
 		<%= render "_scrn_pd_view_can.txt", locals: {currNum: '6', voltNum: '7', ss: 'COM2'} %>
 		<%= render "_scrn_pd_view_can.txt", locals: {currNum: '8', voltNum: '9', ss: 'RAHS'} %>
 		<%= render "_scrn_pd_view_can.txt", locals: {currNum: '10', voltNum: '11', ss: 'BDOT'} %>

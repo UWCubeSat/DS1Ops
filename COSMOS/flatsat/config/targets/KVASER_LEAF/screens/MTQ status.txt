@@ -1,0 +1,39 @@
+SCREEN AUTO AUTO 0.2
+
+TITLE "MTQ Status"
+
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_MTQ', pdName: 'BDOT', rcNum: '10'}%>
+VERTICALBOX "Status"
+  HORIZONTAL
+    LABEL "Ignore FSW"
+    VALUE KVASER_LEAF "rc_adcs_mtq_5" "rc_adcs_mtq_5_fsw_ignore"
+  END
+END
+
+VERTICALBOX "Command Variance"
+  MATRIXBYCOLUMNS 3 5 5
+  LABEL "X"
+  LABEL "Y"
+  LABEL "Z"
+  VALUE KVASER_LEAF "rc_adcs_mtq_5" "rc_adcs_mtq_5_cmds_x_var"
+  VALUE KVASER_LEAF "rc_adcs_mtq_5" "rc_adcs_mtq_5_cmds_y_var"
+  VALUE KVASER_LEAF "rc_adcs_mtq_5" "rc_adcs_mtq_5_cmds_z_var"
+  END
+END
+
+VERTICALBOX "Duty Cycles"
+  MATRIXBYCOLUMNS 4 5 5
+    LABEL ""
+	LABEL "X"
+	LABEL "Y"
+	LABEL "Z"
+	LABEL "Duty 1"
+	VALUE KVASER_LEAF "rc_adcs_mtq_4" "rc_adcs_mtq_4_duty_x1_avg"
+	VALUE KVASER_LEAF "rc_adcs_mtq_4" "rc_adcs_mtq_4_duty_y1_avg"
+	VALUE KVASER_LEAF "rc_adcs_mtq_4" "rc_adcs_mtq_4_duty_z1_avg"
+	LABEL "Duty 2"
+	VALUE KVASER_LEAF "rc_adcs_mtq_4" "rc_adcs_mtq_4_duty_x2_avg"
+	VALUE KVASER_LEAF "rc_adcs_mtq_4" "rc_adcs_mtq_4_duty_y2_avg"
+	VALUE KVASER_LEAF "rc_adcs_mtq_4" "rc_adcs_mtq_4_duty_z2_avg"
+  END
+END

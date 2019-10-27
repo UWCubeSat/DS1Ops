@@ -1,5 +1,5 @@
 class Load
-def turnOn()
+def self.turnOn()
   begin
     cmd("DIGITAL_LOAD", "TURN_ON")
   rescue Exception =>e
@@ -97,8 +97,8 @@ end
 def self.getCurrent()
   begin
     cmd("DIGITAL_LOAD GET_CURRENT")
+    time = tlm("DIGITAL_LOAD INPUT_CURRENT PACKET_TIMESECONDS")
     i = tlm("DIGITAL_LOAD INPUT_CURRENT I")
-	time = tlm("DIGITAL_LOAD INPUT_CURRENT PACKET_TIMESECONDS")
     return [time, i]
   rescue Exception => e
     puts "WARNING. COULD NOT GET INPUT CURRENT"
@@ -108,12 +108,13 @@ end
 
 def self.getVoltage()
   begin
-    cmd("DIGITAL_LOAD GET_CURRENT")
+    cmd("DIGITAL_LOAD GET_VOLTAGE")
     v = tlm("DIGITAL_LOAD INPUT_VOLTAGE V")
-	time = tlm("DIGITAL_LOAD STATUS PACKET_TIMESECONDS")
+    time = tlm("DIGITAL_LOAD INPUT_VOLTAGE PACKET_TIMESECONDS")
+   
     return [time, v]
   rescue Exception => e
-    puts "WARNING. COULD NOT GET INPUT CURRENT"
+    puts "WARNING. COULD NOT GET INPUT VOLTAGE"
 	return [0, 0]
   end
 end

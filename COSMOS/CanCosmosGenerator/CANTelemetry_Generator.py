@@ -46,7 +46,7 @@ signalToLimits = {
 	"rc_adcs_mtq_h1_temp_avg":temperatureLimits,
 	"rc_com1_h1_temp_avg":temperatureLimits,
 	"rc_com2_h1_temp_avg":temperatureLimits,
-		
+
 		"rc_eps_batt_h1_temp_max":temperatureLimits,
 	"rc_adcs_bdot_h1_temp_max":temperatureLimits,
 	"rc_ppt_h1_temp_max":temperatureLimits,
@@ -58,7 +58,7 @@ signalToLimits = {
 	"rc_adcs_mtq_h1_temp_max":temperatureLimits,
 	"rc_com1_h1_temp_max":temperatureLimits,
 	"rc_com2_h1_temp_max":temperatureLimits,
-		
+
 		"rc_eps_batt_h1_temp_min":temperatureLimits,
 	"rc_adcs_bdot_h1_temp_min":temperatureLimits,
 	"rc_ppt_h1_temp_min":temperatureLimits,
@@ -70,7 +70,7 @@ signalToLimits = {
 	"rc_adcs_mtq_h1_temp_min":temperatureLimits,
 	"rc_com1_h1_temp_min":temperatureLimits,
 	"rc_com2_h1_temp_min":temperatureLimits,
-	
+
 	"rc_eps_dist_3_batt_v_avg":[5.2, 5.8,7.3, 7.7],
 	"rc_eps_dist_4_com1_c_avg":[0.01, 0.08, 0.12, 0.15],
 	"rc_eps_dist_5_com1_v_avg":[0.5,3.0,7.0,10.0],
@@ -86,7 +86,7 @@ signalToLimits = {
 	"rc_eps_dist_15_eps_v_avg":[0.5,3.0,7.0,10.0],
 	"rc_eps_dist_16_ppt_c_avg":[0.1,0.25,0.4,0.5],
 	"rc_eps_dist_17_ppt_v_avg":[0.5,3.0,7.0,10.0],
-	
+
 	"rc_eps_dist_3_batt_v_min":[5.2, 5.8,7.3, 7.7],
 	"rc_eps_dist_4_com1_c_min":[0.01, 0.08, 0.12, 0.15],
 	"rc_eps_dist_5_com1_v_min":[0.5,3.0,7.0,10.0],
@@ -102,7 +102,7 @@ signalToLimits = {
 	"rc_eps_dist_15_eps_v_min":[0.5,3.0,7.0,10.0],
 	"rc_eps_dist_16_ppt_c_min":[0.1,0.25,0.4,0.5],
 	"rc_eps_dist_17_ppt_v_min":[0.5,3.0,7.0,10.0],
-	
+
 	"rc_eps_dist_3_batt_v_max":[5.2, 5.8,7.3, 7.7],
 	"rc_eps_dist_4_com1_c_max":[0.01, 0.08, 0.12, 0.15],
 	"rc_eps_dist_5_com1_v_max":[0.5,3.0,7.0,10.0],
@@ -118,7 +118,7 @@ signalToLimits = {
 	"rc_eps_dist_15_eps_v_max":[0.5,3.0,7.0,10.0],
 	"rc_eps_dist_16_ppt_c_max":[0.1,0.25,0.4,0.5],
 	"rc_eps_dist_17_ppt_v_max":[0.5,3.0,7.0,10.0],
-	
+
 	"rc_eps_gen_2_pnl_1_voltage_avg":[3.0, 9.0,17.0,18.0],
 	"rc_eps_gen_3_pnl_2_voltage_avg":[3.0, 9.0,17.0,18.0],
 	"rc_eps_gen_4_pnl_3_voltage_avg":[3.0, 9.0,17.0,18.0],
@@ -131,7 +131,7 @@ signalToLimits = {
 	"rc_eps_gen_9_pnl_1_temp_avg":[17,19.5,23,25],
 	"rc_eps_gen_9_pnl_2_temp_avg":[17,19.5,23,25],
 	"rc_eps_gen_9_pnl_3_temp_avg":[17,19.5,23,25],
-	
+
 	"rc_eps_gen_2_pnl_1_voltage_min":[3.0, 9.0,17.0,18.0],
 	"rc_eps_gen_2_pnl_2_voltage_min":[3.0, 9.0,17.0,18.0],
 	"rc_eps_gen_3_pnl_3_voltage_min":[3.0, 9.0,17.0,18.0],
@@ -144,7 +144,7 @@ signalToLimits = {
 	"rc_eps_gen_8_pnl_1_temp_min":[17,19.5,23,25],
 	"rc_eps_gen_9_pnl_2_temp_min":[17,19.5,23,25],
 	"rc_eps_gen_9_pnl_3_temp_min":[17,19.5,23,25],
-	
+
 	"rc_eps_gen_2_pnl_1_voltage_max":[3.0, 9.0,17.0,18.0],
 	"rc_eps_gen_3_pnl_2_voltage_max":[3.0, 9.0,17.0,18.0],
 	"rc_eps_gen_3_pnl_3_voltage_max":[3.0, 9.0,17.0,18.0],
@@ -251,7 +251,7 @@ unitFormat = {
 	"dK":"%0.3f",
 	"dk":"%0.3f",
 	"r/s":"%0.3f"
-        
+
 }
 
 enumToColor = { #these can be green, yellow, or red
@@ -276,7 +276,7 @@ derivedValueToConversion = {
 	"acc_charge_min":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
 	"acc_charge_avg":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
 	"acc_charge_max":"packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value(\"{}\", \"RC_EPS_BATT_6\", \"RC_EPS_BATT_6_CTRL\") & 0b00111000) >> 3)) * 17 / 24576",
-	"rc_eps_batt_7_voltage_diff":"(1000 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_4\", \"RC_EPS_BATT_4_VOLTAGE_AVG\") - (2 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_2\", \"RC_EPS_BATT_2_NODE_V_AVG\")))"
+	"rc_eps_batt_7_voltage_diff":"(1000 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_4\", \"RC_EPS_BATT_4_VOLTAGE_AVG\") - (2000 * System.telemetry.value(\"{}\", \"RC_EPS_BATT_2\", \"RC_EPS_BATT_2_NODE_V_AVG\"))) / 2"
 }
 
 derivedValueToUnits = {
@@ -520,7 +520,7 @@ def createCosmosTlm(candb, tlmFileName):
 																signalToLimits[signal.name][3]
 																))
 					tlmString +="\t\tLIMITS_RESPONSE SlackLimitResponse.rb\n"
-									
+
 				if signal.name in signalFormat:
 					tlmString += "\t\tFORMAT_STRING \"" + signalFormat[signal.name] + "\"\n"
 				elif signal.unit in unitFormat:
@@ -543,8 +543,8 @@ def createCosmosTlm(candb, tlmFileName):
 						tlmFile.write("\t\tFORMAT_STRING \"" + unitFormat[derived] + "\"\n")
 			tlmFile.write("\n")
 	tlmFile.write("""
-	TELEMETRY {}_TLM general_can_message BIG_ENDIAN 
-		APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
+	TELEMETRY {}_TLM general_can_message BIG_ENDIAN
+		APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) "
 		APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 		APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
 		APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
@@ -574,11 +574,13 @@ def createCosmosCmd(candb, tlmFileName):
 			tlmFile.write("\t\tSTATE DEFAULT 36 \n")
 			tlmFile.write("\tAPPEND_ID_PARAMETER FIXED_TYPE 16 UINT MIN MAX  128 \"Fixed message type for CAN\" BIG_ENDIAN\n")
 			tlmFile.write("\t\tSTATE DEFAULT 128 \n")
-			tlmFile.write("\tAPPEND_PARAMETER TAG 64 UINT MIN MAX  0 \"NOT USED in current PCAN-Ethernet Gateway DR hardware/software.\"\n")
+			tlmFile.write("\tAPPEND_PARAMETER RESET 16 UINT MIN MAX 0\n")
 			tlmFile.write("\t\tSTATE DEFAULT 0 \n")
-			tlmFile.write("\tAPPEND_PARAMETER TIMESTAMP_L 32 UINT MIN MAX  0 \"Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp.\"\n")
+			tlmFile.write("\tAPPEND_PARAMETER UPTIME 32 UINT MIN MAX 0\n")
 			tlmFile.write("\t\tSTATE DEFAULT 0 \n")
-			tlmFile.write("\tAPPEND_PARAMETER TIMESTAMP_H 32 UINT MIN MAX  0 \"Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp.\"\n")
+			tlmFile.write("\tAPPEND_PARAMETER TYPE 16 UINT MIN MAX 0\n")
+			tlmFile.write("\t\tSTATE DEFAULT 0 \n")
+			tlmFile.write("\tAPPEND_PARAMETER TIMESTAMP 64 UINT MIN MAX 0 \"Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp.\"\n")
 			tlmFile.write("\t\tSTATE DEFAULT 0 \n")
 			tlmFile.write("\tAPPEND_PARAMETER CHANNEL 8 UINT MIN MAX  0  \"NOT USED in current PCAN-Ethernet Gateway DR hardware/software.\"\n")
 			tlmFile.write("\t\tSTATE DEFAULT 0 \n")
@@ -622,6 +624,8 @@ def createCosmosCmd(candb, tlmFileName):
 				for key in sorted(signal._values.keys()):
 					tlmString +=("\t\tSTATE {} {}\n".format(signal._values[key].replace(" ", "_"),
 																key))
+				if signal.unit != "":
+					tlmString +=("\t\tUNITS \"{}\" \"{}\"\n".format(signal.unit, signal.unit))
 				signalStrings[signal._startbit] = tlmString
 			if signal_size != 64:
 				signalStrings[64] = ("\tAPPEND_PARAMETER PADDING {} UINT MIN MAX 0 \"Padded bits for CAN data\"\n\n".format(64 - signal_size))

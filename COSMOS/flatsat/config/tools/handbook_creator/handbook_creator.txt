@@ -23,7 +23,7 @@ PAGE command_handbook.html
   SECTION ALL footer.html.erb
 
 PAGE telemetry_handbook.html
-  NO_PDF
+  #NO_PDF
   TARGET AMSAT
   PDF_HEADER pdf_header.html.erb "Telemetry Handbook"
   PDF_FOOTER pdf_footer.html.erb "Telemetry Handbook"
