@@ -39,7 +39,7 @@ GEM
     qtbindings (4.8.6.5-x64-mingw32)
       qtbindings-qt (~> 4.8.6.0, >= 4.8.6.4)
     qtbindings-qt (4.8.6.4-x64-mingw32)
-    rack (2.0.5)
+    rack (2.0.7)
     rake (12.3.1)
     rdoc (6.0.4)
     ruby-termios (0.9.6)
