@@ -32,69 +32,60 @@ module Cosmos
       read_timeout,
       protocol_type = nil,
       *protocol_args)
-			
-			super(hostname, write_port, read_port, write_timeout, read_timeout, protocol_type = nil, *protocol_args)
-			
-			@buffer = Queue.new
-			# the number of reads without data
-			@num_errors = 0
-			Thread.new {
-				loop do
-					begin
-						if @stream.connected?
-							data = @stream.read
-							#puts "read some data of len: " + data.length.to_s
-							if data.length == 3
- 								@num_errors = 0
-								if data == "\x00\x03\x00"
-									# we're good to go!
-									# "\x00\x03\x01" means that AmCom is transmitting
-									unless @buffer.empty?
-										packet = @buffer.pop
-										method(:write_interface).super_method.call(packet)
-									end
-								end
-							else
-								# length error
-								@num_errors += 1
-							end
-						end
-					rescue => e
-						puts "ERROR: " + e.to_s
-					end
-			#		puts "stuff"
-				sleep(0.1)
-				end
-			}
+
+      super(hostname, write_port, read_port, write_timeout, read_timeout, protocol_type = nil, *protocol_args)
+
+      @buffer = Queue.new
+      # the number of reads without data
+      @error = false
+      Thread.new {
+        loop do
+          begin
+            if @stream.connected?
+              data = @stream.read
+              #puts "read some data of len: " + data.length.to_s
+              if data.length == 3
+                 @error = false
+                if data == "\x00\x03\x00"
+                  # we're good to go!
+                  # "\x00\x03\x01" means that AmCom is transmitting
+                  unless @buffer.empty?
+                    packet = @buffer.pop
+                    method(:write_interface).super_method.call(packet)
+                  end
+                end
+              else
+                # length error
+                @error = @error || true
+              end
+            end
+          rescue => e
+            puts "ERROR: " + e.to_s
+          end
+        sleep(0.1)
+        end
+      }
     end
   
     def read_interface
-			while @num_errors < 10
-			#loop do
-        # this will loop infinitely, causing the interface to never read
+      while !@error
       end
-			# this return indictates that the connection should be closed
-			return nil
+      # this return indictates that the connection should be closed
+      return nil
     end
-		
-		def connected?
-			return super() && @num_errors < 10
-			# this will pick up the slack from the spin wait on read
-			# TODO: improve this to detect connection state from reading thread
-		end
-		
-		def connect
-			@num_errors = 0
-			super()
-		end
-		
-		def disconnect
-			super()
-			@buffer.clear
-		end
-		
-		def write_interface(data)
-				@buffer << data
-		end
+
+    def connect
+      @error = false
+      super()
+    end
+
+    def disconnect
+      super()
+      @buffer.clear
+    end
+
+    def write_interface(data)
+        @buffer << data
+    end
   end
 end
