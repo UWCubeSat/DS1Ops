@@ -1,7 +1,9 @@
 TELEMETRY AMSAT_TLM cmd_mtq_bdot BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -21,7 +23,9 @@ TELEMETRY AMSAT_TLM cmd_mtq_bdot BIG_ENDIAN
 TELEMETRY AMSAT_TLM cmd_mtq_fsw BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -46,7 +50,9 @@ TELEMETRY AMSAT_TLM cmd_mtq_fsw BIG_ENDIAN
 TELEMETRY AMSAT_TLM cmd_reboot_request BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -73,7 +79,9 @@ TELEMETRY AMSAT_TLM cmd_reboot_request BIG_ENDIAN
 TELEMETRY AMSAT_TLM com1_mode BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -95,7 +103,9 @@ TELEMETRY AMSAT_TLM com1_mode BIG_ENDIAN
 TELEMETRY AMSAT_TLM com2_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -118,7 +128,9 @@ TELEMETRY AMSAT_TLM com2_state BIG_ENDIAN
 TELEMETRY AMSAT_TLM eps_dist_autoseq_get_ind_rsp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -135,7 +147,9 @@ TELEMETRY AMSAT_TLM eps_dist_autoseq_get_ind_rsp BIG_ENDIAN
 TELEMETRY AMSAT_TLM eps_dist_autoseq_get_met_rsp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -157,7 +171,9 @@ TELEMETRY AMSAT_TLM eps_dist_autoseq_get_met_rsp BIG_ENDIAN
 TELEMETRY AMSAT_TLM estim_mag_unit_x BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -175,7 +191,9 @@ TELEMETRY AMSAT_TLM estim_mag_unit_x BIG_ENDIAN
 TELEMETRY AMSAT_TLM estim_mag_unit_y BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -193,7 +211,9 @@ TELEMETRY AMSAT_TLM estim_mag_unit_y BIG_ENDIAN
 TELEMETRY AMSAT_TLM estim_mag_unit_z BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -211,7 +231,9 @@ TELEMETRY AMSAT_TLM estim_mag_unit_z BIG_ENDIAN
 TELEMETRY AMSAT_TLM estim_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -234,7 +256,9 @@ TELEMETRY AMSAT_TLM estim_state BIG_ENDIAN
 TELEMETRY AMSAT_TLM estim_sun_unit_x BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -252,7 +276,9 @@ TELEMETRY AMSAT_TLM estim_sun_unit_x BIG_ENDIAN
 TELEMETRY AMSAT_TLM estim_sun_unit_y BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -270,7 +296,9 @@ TELEMETRY AMSAT_TLM estim_sun_unit_y BIG_ENDIAN
 TELEMETRY AMSAT_TLM estim_sun_unit_z BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -288,7 +316,9 @@ TELEMETRY AMSAT_TLM estim_sun_unit_z BIG_ENDIAN
 TELEMETRY AMSAT_TLM mpc_vp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -308,7 +338,9 @@ TELEMETRY AMSAT_TLM mpc_vp BIG_ENDIAN
 TELEMETRY AMSAT_TLM mtq_ack BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -335,7 +367,9 @@ TELEMETRY AMSAT_TLM mtq_ack BIG_ENDIAN
 TELEMETRY AMSAT_TLM rahs_camera BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -352,7 +386,9 @@ TELEMETRY AMSAT_TLM rahs_camera BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -388,7 +424,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -408,7 +446,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_10 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -428,7 +468,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_11 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -464,7 +506,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -500,7 +544,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_3 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -535,7 +581,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_4 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -567,7 +615,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_5 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -620,7 +670,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_6 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -653,7 +705,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_7 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -689,7 +743,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_8 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -728,7 +784,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_9 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -787,7 +845,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_bdot_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -805,7 +865,9 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_h2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -822,7 +884,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -840,7 +904,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_10 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -858,7 +924,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_11 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -876,7 +944,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_12 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -894,7 +964,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_13 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -912,7 +984,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_14 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -931,7 +1005,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -950,7 +1026,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_3 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -969,7 +1047,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_4 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -988,7 +1068,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_5 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1007,7 +1089,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_6 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1026,7 +1110,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_7 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1059,7 +1145,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_8 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1077,7 +1165,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_9 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1136,7 +1226,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_estim_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1154,7 +1246,9 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_h2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1171,7 +1265,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1190,7 +1286,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_10 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1209,7 +1307,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_11 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1226,7 +1326,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_12 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1243,7 +1345,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_13 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1260,7 +1364,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_14 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1279,7 +1385,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_15 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1297,7 +1405,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1315,7 +1425,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_3 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1333,7 +1445,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_4 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1351,7 +1465,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_5 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1370,7 +1486,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_6 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1389,7 +1507,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_7 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1408,7 +1528,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_8 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1427,7 +1549,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_9 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1486,7 +1610,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mpc_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1504,7 +1630,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_h2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mtq_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1528,7 +1656,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mtq_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1552,7 +1682,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_3 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mtq_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1576,7 +1708,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_4 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mtq_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1599,7 +1733,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_5 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mtq_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1658,7 +1794,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_mtq_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1676,7 +1814,9 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_h2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1693,7 +1833,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1729,7 +1871,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_10 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1765,7 +1909,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_11 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1801,7 +1947,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_12 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1837,7 +1985,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_13 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1870,7 +2020,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_14 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1906,7 +2058,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_15 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_16 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1946,7 +2100,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_16 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_17 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -1998,7 +2154,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_17 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2038,7 +2196,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2078,7 +2238,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_3 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2118,7 +2280,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_4 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2158,7 +2322,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_5 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2193,7 +2359,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_6 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2213,7 +2381,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_7 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2233,7 +2403,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_8 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2269,7 +2441,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_9 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_adcs_sp_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2328,7 +2502,9 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2351,7 +2527,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2388,7 +2566,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2432,7 +2612,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_3 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2481,7 +2663,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_4 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2527,7 +2711,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_5 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2551,7 +2737,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_6 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2592,7 +2780,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_7 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2651,7 +2841,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_batt_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2670,7 +2862,9 @@ TELEMETRY AMSAT_TLM rc_eps_batt_h2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2702,7 +2896,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2748,7 +2944,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_10 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2786,7 +2984,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_11 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2832,7 +3032,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_12 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2870,7 +3072,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_13 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2916,7 +3120,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_14 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -2954,7 +3160,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_15 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_16 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3000,7 +3208,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_16 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_17 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3038,7 +3248,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_17 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_18 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3085,7 +3297,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_18 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3110,7 +3324,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3148,7 +3364,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_3 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3193,7 +3411,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_4 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3231,7 +3451,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_5 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3277,7 +3499,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_6 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3315,7 +3539,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_7 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3361,7 +3587,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_8 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3399,7 +3627,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_9 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3458,7 +3688,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_dist_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3476,7 +3708,9 @@ TELEMETRY AMSAT_TLM rc_eps_dist_h2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3511,7 +3745,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3543,7 +3779,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_10 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3587,7 +3825,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3631,7 +3871,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_3 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3675,7 +3917,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_4 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3719,7 +3963,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_5 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3763,7 +4009,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_6 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3807,7 +4055,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_7 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3852,7 +4102,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_8 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3924,7 +4176,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_9 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -3983,7 +4237,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_eps_gen_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4001,7 +4257,9 @@ TELEMETRY AMSAT_TLM rc_eps_gen_h2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_ppt_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4029,7 +4287,9 @@ TELEMETRY AMSAT_TLM rc_ppt_1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_ppt_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4065,7 +4325,9 @@ TELEMETRY AMSAT_TLM rc_ppt_2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_ppt_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4124,7 +4386,9 @@ TELEMETRY AMSAT_TLM rc_ppt_h1 BIG_ENDIAN
 TELEMETRY AMSAT_TLM rc_ppt_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4146,7 +4410,9 @@ TELEMETRY AMSAT_TLM rc_ppt_h2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM sensorproc_imu BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4184,7 +4450,9 @@ TELEMETRY AMSAT_TLM sensorproc_imu BIG_ENDIAN
 TELEMETRY AMSAT_TLM sensorproc_mag BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4220,7 +4488,9 @@ TELEMETRY AMSAT_TLM sensorproc_mag BIG_ENDIAN
 TELEMETRY AMSAT_TLM sensorproc_mag2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4256,7 +4526,9 @@ TELEMETRY AMSAT_TLM sensorproc_mag2 BIG_ENDIAN
 TELEMETRY AMSAT_TLM sensorproc_sun BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-	APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+	APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 	APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 	APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 	APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
@@ -4280,7 +4552,9 @@ TELEMETRY AMSAT_TLM sensorproc_sun BIG_ENDIAN
 	TELEMETRY AMSAT_TLM general_can_message BIG_ENDIAN
 		APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) "
 		APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
-		APPEND_ITEM TAG 64 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
+		APPEND_ITEM RESET 16 UINT "COM1 reset"
+	APPEND_ITEM UPTIME 32 UINT "COM1 uptime"
+	APPEND_ITEM TYPE 16 UINT "COM1 TYPE"
 		APPEND_ITEM TIMESTAMP_L 32 UINT "Timestamp of the CAN message, in microseconds.  This is the lower 4 bytes of the timestamp."
 		APPEND_ITEM TIMESTAMP_H 32 UINT "Timestamp of the CAN message, in microseconds.  This is the upper 4 bytes of the timestamp."
 		APPEND_ITEM CHANNEL 8 UINT "NOT USED in current PCAN-Ethernet Gateway DR hardware/software."
