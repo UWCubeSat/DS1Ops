@@ -1,0 +1,38 @@
+SCREEN AUTO AUTO 1.0 FIXED
+STAY_ON_TOP
+
+Title "HS-1 OCP"
+
+<% @ss_names = ["BDOT", "COM2", "EPS", "ESTIM", "PPT", "RAHS"] %>
+
+NAMED_WIDGET tab TABBOOK
+  TABITEM ""
+    <% @ss_names.each do |ss_name| %>
+      LABELVALUEDESC AMSAT RC_EPS_DIST_18 RC_EPS_DIST_18_<%= ss_name %>_OCP_THRESH "<%= ss_name %> -> "
+    <% end %>
+    SPACER EXPANDING 20
+    HORIZONTAL
+      SPACER 65 EXPANDING
+      BUTTON "CHANGE" 'get_named_widget("tab").setCurrentIndex(1)'
+      SPACER 65 EXPANDING
+    END
+  END
+  TABITEM ""
+    VERTICAL 7
+      LABEL "Subsystem"
+      NAMED_WIDGET combobox COMBOBOX <%= @ss_names.to_s.tr('[],', '') %>
+	  SPACER EXPANDING 25
+
+	  LABEL "OCP Value (Amps)"
+      NAMED_WIDGET textfield TEXTFIELD
+	  SPACER EXPANDING 40
+      HORIZONTAL
+        BUTTON "CONFIRM" 'val = get_named_widget("textfield").text.to_f; if val != nil and val > 0.0 and val <= 15.0; cmd("AMSAT GCMD_DIST_SET_PD_OVC_#{get_named_widget("combobox").text} WITH GCMD_DIST_SET_PD_OVC_#{get_named_widget("combobox").text}_OVC #{get_named_widget("textfield").text}"); get_named_widget("textfield").text = ""; get_named_widget("tab").setCurrentIndex(0); else; puts "value must be between 0 and 15 amps"; end;'
+          SETTING WIDTH 150
+        BUTTON "DENY" 'get_named_widget("textfield").text = ""; get_named_widget("tab").setCurrentIndex(0)'
+          SETTING WIDTH 100
+      END
+    END
+  END
+END
+SETTING WIDTH 400

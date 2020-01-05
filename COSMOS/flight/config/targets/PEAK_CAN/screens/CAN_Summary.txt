@@ -1,0 +1,62 @@
+SCREEN AUTO AUTO 0.2
+
+TITLE "HuskySat-1: CAN Status Summary"
+
+HORIZONTALLINE
+
+HORIZONTAL
+  SPACER FIXED FIXED EXPANDING
+  LABEL "Mission Elapsed Time:"
+  SPACER 10 10
+  VALUE PEAK_CAN RC_EPS_DIST_2 RC_EPS_DIST_2_MET WITH_UNITS 8
+  SPACER FIXED FIXED EXPANDING
+END
+
+MATRIXBYCOLUMNS 3
+
+VERTICALBOX "EPS_DIST" 5
+  
+  # Add CAN_RX_ERROR from h2 roll call packet
+  
+  MATRIXBYCOLUMNS 4 4 4
+    LABEL "Temperature"
+    SPACER 17 10
+    VALUE PEAK_CAN RC_EPS_DIST_h1 RC_EPS_DIST_h1_TEMP_AVG WITH_UNITS 8
+      SETTING ENABLE_AGING FALSE
+    LIMITSBAR PEAK_CAN RC_EPS_DIST_h1 RC_EPS_DIST_h1_TEMP_AVG WITH_UNITS
+  END
+  
+  MATRIXBYCOLUMNS 5 4 4
+    
+    LABEL "RX Packets"
+    VALUE PEAK_CAN RC_EPS_DIST_h1 RECEIVED_COUNT CONVERTED 8 # COSMOS packet received count 10
+      SETTING ENABLE_AGING FALSE
+    SPACER 20 10
+    LABEL "CAN RX Errors"
+    VALUE PEAK_CAN RC_EPS_DIST_h2 RC_EPS_DIST_h2_CANRXERROR RAW 8
+      SETTING ENABLE_AGING FALSE    
+    
+    LABEL "Last Update"
+    VERTICAL
+      TIMESINCEUPDATE PEAK_CAN RC_EPS_DIST_h1 RECEIVED_COUNT FORMATTED 8
+        SETTING ENABLE_AGING FALSE
+    END
+    SPACER 20 10
+    LABEL "Reboots"
+    VALUE PEAK_CAN RC_EPS_DIST_h1 RC_EPS_DIST_h1_RESET_COUNT CONVERTED 8
+      SETTING ENABLE_AGING FALSE
+    
+  END
+
+END
+
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_GEN', pdName: 'EPS', rcNum: '14'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'EPS_BATT', pdName: 'EPS', rcNum: '14'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'PPT', pdName: 'PPT', rcNum: '16'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_ESTIM', pdName: 'ESTIM', rcNum: '12'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_MPC', pdName: 'ESTIM', rcNum: '12'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT', pdName: 'BDOT', rcNum: '10'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_SP', pdName: 'ESTIM', rcNum: '12'}%>
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_MTQ', pdName: 'BDOT', rcNum: '10'}%>
+
+END

@@ -1,0 +1,11 @@
+	  LABEL "<%= ss%>->"
+		LABEL "Current:"
+		HORIZONTAL
+			FORMATVALUE AMSAT RC_EPS_DIST_<%= currNum%> RC_EPS_DIST_<%= currNum%>_<%= ss%>_C_AVG "%0.3f A" FORMATTED 10
+			LIMITSBAR AMSAT RC_EPS_DIST_<%= currNum%> RC_EPS_DIST_<%= currNum%>_<%= ss %>_C_AVG
+		END
+		LABEL "Bus V:"
+		HORIZONTAL
+			FORMATVALUE AMSAT RC_EPS_DIST_<%= voltNum%> RC_EPS_DIST_<%= voltNum%>_<%= ss%>_V_AVG "%0.3f V" FORMATTED 10
+			LIMITSBAR AMSAT RC_EPS_DIST_<%= voltNum%> RC_EPS_DIST_<%= voltNum %>_<%= ss%>_V_AVG
+		END

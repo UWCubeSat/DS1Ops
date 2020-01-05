@@ -1,0 +1,70 @@
+<h1 style="background:#555555;color:white;padding:10px;">Telemetry Packets</h1>
+<% ignoredSigArray = ["PACKET_TIMESECONDS", "PACKET_TIMEFORMATTED", "RECEIVED_TIMESECONDS", "RECEIVED_TIMEFORMATTED", "RECEIVED_COUNT", "LENGTH",
+		"FIXED_TYPE", "TAG", "TIMESTAMP_L", "TIMESTAMP_H", "CHANNEL", "DLC", "FLAGS", "CANID_PADDING", "CANID_RTR", "CANID_TYPE", "CANID_ID", "PADDING"] %>
+<% grnd_name = { 0 => "None", 1 => "CAMERA", 5 => "REAL-TIME", 6 => "HEALTH", 7 => "WOD" } %>
+<% packets.each do |packet| %>
+	<% packet_id = packet.sorted_items.select { |item| item.name == "CANID_ID" }[0].id_value.to_i %>
+	<% grnd_int = (packet_id >> 20) & 7 %>
+	<% if grnd_int != 0 %>
+	  <div id="tlm_<%= "#{packet.target_name}_#{packet.packet_name}" %>">
+		<h2><%= "#{packet.packet_name}" %></h2>
+		<b>ID:</b> 0x<%= packet_id.to_s(16) %>
+		<br>
+		<b>Grnd:</b> <%= grnd_name[grnd_int] %>
+		<div><%= packet.description %></div>
+		
+		<% if packet.sorted_items.any? {|item| !ignoredSigArray.include?(item.name)} %>
+			<table class="table table-striped">
+			  <thead>
+				<tr>
+				  <th>Item Name</th>
+				  <th>Description</th>
+				  <th class="text-center">Bit Offset</th>
+				  <th class="text-center">Bit Size</th>
+				  <th class="text-center">Data Type</th>
+				  <th class="text-center">Units</th>
+				</tr>
+			  <thead>
+			  <tbody>
+				<% packet.sorted_items.each do |item| %>
+					<% if !ignoredSigArray.include?(item.name) %>
+					  <tr>
+						<td><%= item.name %></td>
+						<td>
+						  <%= item.description %>
+						  <% if item.id_value %>
+							<div><strong>Id Value: <%= item.id_value %></strong></div>
+						  <% end %> 
+						  <% if item.states %>
+							<table class="table table-bordered table-condensed" style="margin-top:10px">
+							  <thead>
+								<tr><th>State</th><th>Value</th></tr>
+							  </thead>
+							  <tbody>
+								<% item.states.each do |key, value| %>
+								  <% if item.state_colors[key] == :RED %>
+									<tr style="background:pink"><td><%= key %> (<%= item.state_colors[key] %>)</td><td><%= value %></td>
+								  <% elsif item.state_colors[key] %>
+									<tr style="background:light<%= item.state_colors[key].downcase %>;"><td><%= key %> (<%= item.state_colors[key] %>)</td><td><%= value %></td>
+								  <% else %>
+									<tr><td><%= key %></td><td><%= value %></td>
+								  <% end %>
+								<% end %>
+							  </tbody>
+							</table>
+						  <% end %>
+						</td>
+						<td class="text-center"><%= item.bit_offset %></td>
+						<td class="text-center"><%= item.bit_size %></td>
+						<td class="text-center"><%= item.data_type %></td>
+						<td class="text-center"><%= item.units %></td>
+					  </tr>
+				  <% end %>
+				<% end %>
+			  </tbody>
+			</table>
+		<% end %>
+	  </div>
+	  <hr></hr>
+	<% end %>
+<% end %>

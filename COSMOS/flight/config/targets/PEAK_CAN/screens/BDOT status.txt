@@ -1,0 +1,147 @@
+SCREEN AUTO AUTO 0.2
+
+TITLE "BDOT Status"
+
+MATRIXBYCOLUMNS 2 10 0
+VERTICALBOX "Magnetometer" 5 5
+  MATRIXBYCOLUMNS 4 5 5
+    LABEL ""
+	label "   --X--"
+    label "   --Y--"
+    label "   --Z--"
+  END
+  SECTIONHEADER "Nominal Readings"
+  MATRIXBYCOLUMNS 4 5 5
+    ########
+	LABEL "Minimum"
+    VALUE PEAK_CAN "rc_adcs_bdot_2" "rc_adcs_bdot_2_mag_x_min" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_2" "rc_adcs_bdot_2_mag_y_min" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_3" "rc_adcs_bdot_3_mag_z_min" WITH_UNITS
+    ########
+    LABEL "Average"
+    VALUE PEAK_CAN "rc_adcs_bdot_2" "rc_adcs_bdot_2_mag_x_avg" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_3" "rc_adcs_bdot_3_mag_y_avg" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_mag_z_avg" WITH_UNITS
+    ########
+    LABEL "Maximum"
+    VALUE PEAK_CAN "rc_adcs_bdot_2" "rc_adcs_bdot_2_mag_x_max" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_3" "rc_adcs_bdot_3_mag_y_max" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_3" "rc_adcs_bdot_3_mag_z_max" WITH_UNITS
+  END
+  
+  SPACER 0 10
+  SECTIONHEADER "Variance"
+  MATRIXBYCOLUMNS 4 5 5
+  LABEL ""
+	VALUE PEAK_CAN "rc_adcs_bdot_10" "rc_adcs_bdot_10_dipole_var_x"
+	VALUE PEAK_CAN "rc_adcs_bdot_10" "rc_adcs_bdot_10_dipole_var_y"
+	VALUE PEAK_CAN "rc_adcs_bdot_10" "rc_adcs_bdot_10_dipole_var_z"
+  END
+  
+  SPACER 0 10
+  SECTIONHEADER "SPAM ON Readings"
+  MATRIXBYCOLUMNS 4 5 5
+    LABEL "X-axis SPAM"
+    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_spam_on_x_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_spam_on_x_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_spam_on_x_mtq_z" WITH_UNITS
+    ########
+    LABEL "Y-axis SPAM"
+    VALUE PEAK_CAN "rc_adcs_bdot_1" "rc_adcs_bdot_1_spam_on_y_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_spam_on_y_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_spam_on_y_mtq_z" WITH_UNITS
+    ########
+    LABEL "Z-axis SPAM"
+    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_spam_on_z_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_spam_on_z_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_5" "rc_adcs_bdot_5_spam_on_z_mtq_z" WITH_UNITS
+  END
+  
+  SPACER 0 10
+  SECTIONHEADER "SPAM OFF Readings"
+  MATRIXBYCOLUMNS 4 5 5
+    LABEL "X-axis SPAM"
+    VALUE PEAK_CAN "rc_adcs_bdot_7" "rc_adcs_bdot_7_spam_off_x_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_7" "rc_adcs_bdot_7_spam_off_x_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_8" "rc_adcs_bdot_8_spam_off_x_mtq_z" WITH_UNITS
+    ########
+    LABEL "Y-axis SPAM"
+    VALUE PEAK_CAN "rc_adcs_bdot_8" "rc_adcs_bdot_8_spam_off_y_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_8" "rc_adcs_bdot_8_spam_off_y_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_8" "rc_adcs_bdot_8_spam_off_y_mtq_z" WITH_UNITS
+    ########
+    LABEL "Z-axis SPAM"
+    VALUE PEAK_CAN "rc_adcs_bdot_9" "rc_adcs_bdot_9_spam_off_z_mtq_x" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_9" "rc_adcs_bdot_9_spam_off_z_mtq_y" WITH_UNITS
+    VALUE PEAK_CAN "rc_adcs_bdot_9" "rc_adcs_bdot_9_spam_off_z_mtq_z" WITH_UNITS
+	END
+	
+  SPACER 0 10
+  SECTIONHEADER "Dipole Gain"
+  MATRIXBYCOLUMNS 4 5 5
+  LABEL ""
+    FORMATVALUE PEAK_CAN "rc_adcs_bdot_7" "rc_adcs_bdot_7_dipole_gain_x" "%0.2f" CONVERTED
+    FORMATVALUE PEAK_CAN "rc_adcs_bdot_9" "rc_adcs_bdot_9_dipole_gain_y" "%0.2f" CONVERTED
+    FORMATVALUE PEAK_CAN "rc_adcs_bdot_9" "rc_adcs_bdot_9_dipole_gain_z" "%0.2f" CONVERTED
+  END
+	
+  SPACER 0 10
+  SECTIONHEADER "POP Status"
+  MATRIXBYCOLUMNS 4 5 5
+  LABEL ""
+  VALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_pop_status_x"
+  VALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_pop_status_y"
+  VALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_pop_status_z"
+END
+END
+
+VERTICAL
+VERTICALBOX "State" 5 5
+  HORIZONTAL
+    LABEL "Tumbling?"
+    VALUE PEAK_CAN "rc_adcs_bdot_4" "rc_adcs_bdot_4_tumble" CONVERTED 13
+  END
+  HORIZONTAL
+    LABEL "State"
+    VALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_current_state" CONVERTED 13
+  END
+  HORIZONTAL
+    LABEL "SPAM Enabled"
+	VALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_spam_control" CONVERTED 13
+  END
+  HORIZONTAL
+    LABEL "Magnetometer Control"
+	VALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_mag_control" CONVERTED 13
+  END
+END
+VERTICALBOX "Magnetorquer" 5 5
+  MATRIXBYCOLUMNS 4 5 5
+    SPACER 1 1
+    label "x"
+    label "y"
+    label "z"
+    ########
+    # Remove before flight
+    LABEL "Last MTQ command"
+    VALUE PEAK_CAN "cmd_mtq_bdot" "cmd_mtq_bdot_x" RAW 6
+    VALUE PEAK_CAN "cmd_mtq_bdot" "cmd_mtq_bdot_y" RAW 6
+    VALUE PEAK_CAN "cmd_mtq_bdot" "cmd_mtq_bdot_z" RAW 6
+  END
+END
+VERTICALBOX "SPAM" 5 5
+  HORIZONTAL
+    LABEL "SPAM on time"
+	FORMATVALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_spam_on_time" "%d min" CONVERTED
+  END
+  HORIZONTAL
+    LABEL "SPAM off time"
+	FORMATVALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_spam_off_time" "%d min" CONVERTED
+  END
+  HORIZONTAL
+    LABEL "Max tumble time"
+	FORMATVALUE PEAK_CAN "rc_adcs_bdot_6" "rc_adcs_bdot_6_max_tumble_time" "%d min" CONVERTED
+  END
+  
+END
+<%=render "_single_subsystem_section.txt", locals:{subsyst: 'ADCS_BDOT', pdName: 'BDOT', rcNum: '10'}%>
+END

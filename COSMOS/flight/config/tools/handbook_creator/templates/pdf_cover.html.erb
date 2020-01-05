@@ -1,0 +1,24 @@
+<html>
+  <head>
+  </head>
+  <body style="">
+    <div style="border-bottom: 1px solid black; width: 100%">
+      <div id="left" style="float:left;text-align:left;">
+        <img width=50 src="file:///<%= File.join(System.paths['HANDBOOKS'], 'assets', 'img', 'hsl_logo.png') %>"></img>
+      </div>
+      <div id="right" style="float:right;text-align:right;">
+        <!--<div>Document No.: XXXXXXX</div>-->
+        <div>Revision: 1.0.0</div>
+        <div>Date: <%= Time.now.strftime("%m/%d/%Y").to_s %></div>
+      </div>
+      <div id="center" style="width:500px;margin:0px auto;text-align:center;">
+        Copies are Uncontrolled
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+
+    <h1 style="text-align:center;margin-top:100px;"><%= title %></h1>
+    <h3 style="text-align:center;">For the HuskySat-1 Mission</h3>
+	<!--More title page formatting can be added here (possibly revision history)-->
+  </body>
+</html>

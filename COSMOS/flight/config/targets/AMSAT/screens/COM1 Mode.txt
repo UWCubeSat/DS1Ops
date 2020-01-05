@@ -1,0 +1,26 @@
+SCREEN AUTO AUTO 1.0 FIXED
+STAY_ON_TOP
+
+TITLE "COM1 Mode"
+
+HORIZONTALLINE
+
+HORIZONTAL
+  SPACER FIXED FIXED EXPANDING
+  LABEL "Current Mode:"
+  SPACER 10 10
+  VALUE AMSAT COM1_MODE COM1_MODE_MODE
+  SPACER FIXED FIXED EXPANDING
+END
+
+BETTERGRAPH AMSAT RC_EPS_DIST_1 RC_EPS_DIST_1_COM1_C_AVG "COM1 Current" 100 600 400
+
+HORIZONTAL
+  NAMED_WIDGET mode_combo COMBOBOX '' SAFE HEALTH REALTIME CAMERA
+  SPACER 50 10
+  BUTTON 'Update Mode' "comboBox = get_named_widget('mode_combo'); mode = comboBox.text; if mode != '' 	then cmd('AMSAT GCMD_COM1_MODE_' + mode); comboBox.setCurrentIndex(0); end"
+END
+
+# important note:
+#     `self` in a naked <% %> is a *config parser*
+#     `self` in a button actions is a *screen*

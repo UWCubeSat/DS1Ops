@@ -1,0 +1,39 @@
+VERTICALBOX <%=subsyst %> 5
+  
+  # Add CAN_RX_ERROR from h2 roll call packet
+  
+  MATRIXBYCOLUMNS 4 4 4
+    LABEL "Temperature"
+    SPACER 17 10
+    VALUE AMSAT RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS 8
+      SETTING ENABLE_AGING FALSE
+    LIMITSBAR AMSAT RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_TEMP_AVG WITH_UNITS
+  END
+  
+  MATRIXBYCOLUMNS 5 4 4
+    
+    LABEL "RX Packets"
+    VALUE AMSAT RC_<%=subsyst %>_h1 RECEIVED_COUNT CONVERTED 8 # COSMOS packet received count 10
+      SETTING ENABLE_AGING FALSE
+    SPACER 20 10
+    LABEL "CAN RX Errors"
+    <% if subsyst.upcase != "ADCS_SP" %>
+      VALUE AMSAT RC_<%=subsyst %>_h2 RC_<%=subsyst %>_h2_CANRXERROR RAW 8
+        SETTING ENABLE_AGING FALSE
+    <% else %>
+      LABEL "     N/A"
+    <% end %>
+
+    LABEL "Last Update"
+    VERTICAL
+      TIMESINCEUPDATE AMSAT RC_<%=subsyst %>_h1 RECEIVED_COUNT FORMATTED 8
+        SETTING ENABLE_AGING FALSE
+    END
+    SPACER 20 10
+    LABEL "Reboots"
+    VALUE AMSAT RC_<%=subsyst %>_h1 RC_<%=subsyst %>_h1_RESET_COUNT CONVERTED 8
+      SETTING ENABLE_AGING FALSE
+    
+  END
+
+END
