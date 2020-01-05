@@ -6,3 +6,6 @@ COSMOS/flatsat/outputs/logs/
 COSMOS/flatsat/outputs/tmp/
 COSMOS/flatsat/outputs/saved_config/
 
+COSMOS/flight/outputs/logs/
+COSMOS/flight/outputs/tmp/
+COSMOS/flight/outputs/saved_config/
