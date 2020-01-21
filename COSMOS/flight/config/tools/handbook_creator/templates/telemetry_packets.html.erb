@@ -1,11 +1,11 @@
 <h1 style="background:#555555;color:white;padding:10px;">Telemetry Packets</h1>
 <% ignoredSigArray = ["PACKET_TIMESECONDS", "PACKET_TIMEFORMATTED", "RECEIVED_TIMESECONDS", "RECEIVED_TIMEFORMATTED", "RECEIVED_COUNT", "LENGTH",
-		"FIXED_TYPE", "TAG", "TIMESTAMP_L", "TIMESTAMP_H", "CHANNEL", "DLC", "FLAGS", "CANID_PADDING", "CANID_RTR", "CANID_TYPE", "CANID_ID", "PADDING"] %>
+		"FIXED_TYPE", "TAG", "TIMESTAMP_L", "TIMESTAMP_H", "CHANNEL", "DLC", "FLAGS", "CANID_PADDING", "CANID_RTR", "CANID_TYPE", "CANID_ID", "PADDING", "TYPE", "RESET", "UPTIME", "TIMESTAMP"] %>
 <% grnd_name = { 0 => "None", 1 => "CAMERA", 5 => "REAL-TIME", 6 => "HEALTH", 7 => "WOD" } %>
 <% packets.each do |packet| %>
 	<% packet_id = packet.sorted_items.select { |item| item.name == "CANID_ID" }[0].id_value.to_i %>
 	<% grnd_int = (packet_id >> 20) & 7 %>
-	<% if grnd_int != 0 %>
+	<% if (grnd_int != 0 && ![307823148, 307823156, 307823167, 307823168, 307823169].include?(packet_id)) || packet_id == 302252858%>
 	  <div id="tlm_<%= "#{packet.target_name}_#{packet.packet_name}" %>">
 		<h2><%= "#{packet.packet_name}" %></h2>
 		<b>ID:</b> 0x<%= packet_id.to_s(16) %>

@@ -4,7 +4,7 @@
     <h2><%= "#{packet.packet_name}" %></h2>
     <div><span style="font-size:18px;background:#555555;color:white;"><%= packet.hazardous ? 'Hazardous' : '' %></span></div>
     <div><%= packet.description %></div>
-	<% ignoredSigArray = ["CANID_ID", "LENGTH", "FIXED_TYPE", "TAG", "TIMESTAMP_L", "FLAGS", "TIMESTAMP_H", "CHANNEL", "DLC", "CANID_PADDING", "CANID_RTR", "CANID_TYPE", "PADDING"] %>
+	<% ignoredSigArray = ["CANID_ID", "LENGTH", "FIXED_TYPE", "TAG", "TIMESTAMP_L", "FLAGS", "TIMESTAMP_H", "CHANNEL", "DLC", "CANID_PADDING", "CANID_RTR", "CANID_TYPE", "PADDING", "TYPE", "RESET", "UPTIME", "TIMESTAMP"] %>
 	<% if packet.sorted_items.any? {|item| !ignoredSigArray.include?(item.name)} %>
 		<table class="table table-striped">
 		  <thead>

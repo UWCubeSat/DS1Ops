@@ -7,7 +7,7 @@ PAGE index.html
   SECTION ALL footer.html.erb
 
 PAGE command_handbook.html
-  TARGET AMSAT
+  TARGET AMSAT_CMD
   PDF_TOP_MARGIN 20
   PDF_BOTTOM_MARGIN 15
   PDF_SIDE_MARGIN 10
@@ -24,7 +24,7 @@ PAGE command_handbook.html
 
 PAGE telemetry_handbook.html
   #NO_PDF
-  TARGET AMSAT
+  TARGET AMSAT_TLM
   PDF_HEADER pdf_header.html.erb "Telemetry Handbook"
   PDF_FOOTER pdf_footer.html.erb "Telemetry Handbook"
   PDF_COVER pdf_cover.html.erb "Telemetry Handbook"
@@ -38,7 +38,7 @@ PAGE telemetry_handbook.html
   SECTION ALL footer.html.erb
 
 TARGET_PAGES _cmd_tlm.html
-  TARGET AMSAT
+  TARGET AMSAT_TLM
   NO_PDF
   PDF_HEADER pdf_header.html.erb "Command and Telemetry Handbook"
   PDF_FOOTER pdf_footer.html.erb "Command and Telemetry Handbook"
