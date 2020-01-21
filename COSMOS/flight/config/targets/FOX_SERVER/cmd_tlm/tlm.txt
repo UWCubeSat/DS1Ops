@@ -1,4 +1,4 @@
-TELEMETRY AMSAT_TLM cmd_mtq_bdot BIG_ENDIAN 
+TELEMETRY FOX_SERVER cmd_mtq_bdot BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -20,7 +20,7 @@ TELEMETRY AMSAT_TLM cmd_mtq_bdot BIG_ENDIAN
 	APPEND_ITEM cmd_mtq_bdot_z 8 INT "bdot command for z direction" BIG_ENDIAN
 	APPEND_ITEM PADDING 40 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM cmd_mtq_fsw BIG_ENDIAN 
+TELEMETRY FOX_SERVER cmd_mtq_fsw BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -47,7 +47,7 @@ TELEMETRY AMSAT_TLM cmd_mtq_fsw BIG_ENDIAN
 		STATE not_tumbling_charlie 3
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM cmd_reboot_request BIG_ENDIAN 
+TELEMETRY FOX_SERVER cmd_reboot_request BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -76,7 +76,7 @@ TELEMETRY AMSAT_TLM cmd_reboot_request BIG_ENDIAN
 		STATE unk 8
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM com1_mode BIG_ENDIAN 
+TELEMETRY FOX_SERVER com1_mode BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -100,7 +100,7 @@ TELEMETRY AMSAT_TLM com1_mode BIG_ENDIAN
 		STATE camera_mode 4
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM com2_state BIG_ENDIAN 
+TELEMETRY FOX_SERVER com2_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -125,7 +125,7 @@ TELEMETRY AMSAT_TLM com2_state BIG_ENDIAN
 	APPEND_ITEM com2_state_curr_file 8 UINT "which fille is comm2 running rn" BIG_ENDIAN
 	APPEND_ITEM com2_state_health_state 8 UINT "health state codes" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM eps_dist_autoseq_get_ind_rsp BIG_ENDIAN 
+TELEMETRY FOX_SERVER eps_dist_autoseq_get_ind_rsp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -144,7 +144,7 @@ TELEMETRY AMSAT_TLM eps_dist_autoseq_get_ind_rsp BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM eps_dist_autoseq_get_ind_rsp_ind 64 UINT "the indices, as an 8-element array" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM eps_dist_autoseq_get_met_rsp BIG_ENDIAN 
+TELEMETRY FOX_SERVER eps_dist_autoseq_get_met_rsp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -168,7 +168,7 @@ TELEMETRY AMSAT_TLM eps_dist_autoseq_get_met_rsp BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM estim_mag_unit_x BIG_ENDIAN 
+TELEMETRY FOX_SERVER estim_mag_unit_x BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -188,7 +188,7 @@ TELEMETRY AMSAT_TLM estim_mag_unit_x BIG_ENDIAN
 	APPEND_ITEM estim_mag_unit_x_val 64 FLOAT "Unit vector of direction of magnetic field z" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM estim_mag_unit_y BIG_ENDIAN 
+TELEMETRY FOX_SERVER estim_mag_unit_y BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -208,7 +208,7 @@ TELEMETRY AMSAT_TLM estim_mag_unit_y BIG_ENDIAN
 	APPEND_ITEM estim_mag_unit_y_val 64 FLOAT "Unit vector of direction of magnetic field y" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM estim_mag_unit_z BIG_ENDIAN 
+TELEMETRY FOX_SERVER estim_mag_unit_z BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -228,7 +228,7 @@ TELEMETRY AMSAT_TLM estim_mag_unit_z BIG_ENDIAN
 	APPEND_ITEM estim_mag_unit_z_val 64 FLOAT "Unit vector of direction of magnetic field x" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM estim_state BIG_ENDIAN 
+TELEMETRY FOX_SERVER estim_state BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -253,7 +253,7 @@ TELEMETRY AMSAT_TLM estim_state BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 62 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM estim_sun_unit_x BIG_ENDIAN 
+TELEMETRY FOX_SERVER estim_sun_unit_x BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -273,7 +273,7 @@ TELEMETRY AMSAT_TLM estim_sun_unit_x BIG_ENDIAN
 	APPEND_ITEM estim_sun_unit_x_val 64 FLOAT "Unit vector of where the sun is at z" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM estim_sun_unit_y BIG_ENDIAN 
+TELEMETRY FOX_SERVER estim_sun_unit_y BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -293,7 +293,7 @@ TELEMETRY AMSAT_TLM estim_sun_unit_y BIG_ENDIAN
 	APPEND_ITEM estim_sun_unit_y_val 64 FLOAT "Unit vector of where the sun is at y" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM estim_sun_unit_z BIG_ENDIAN 
+TELEMETRY FOX_SERVER estim_sun_unit_z BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -313,7 +313,7 @@ TELEMETRY AMSAT_TLM estim_sun_unit_z BIG_ENDIAN
 	APPEND_ITEM estim_sun_unit_z_val 64 FLOAT "Unit vector of where the sun is at x" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM mpc_vp BIG_ENDIAN 
+TELEMETRY FOX_SERVER mpc_vp BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -335,7 +335,7 @@ TELEMETRY AMSAT_TLM mpc_vp BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 63 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM mtq_ack BIG_ENDIAN 
+TELEMETRY FOX_SERVER mtq_ack BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -364,7 +364,7 @@ TELEMETRY AMSAT_TLM mtq_ack BIG_ENDIAN
 	APPEND_ITEM mtq_ack_last_fsw_y 8 INT "last fsw y command received " BIG_ENDIAN
 	APPEND_ITEM mtq_ack_last_fsw_z 8 INT "last fsw z command received " BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rahs_camera BIG_ENDIAN 
+TELEMETRY FOX_SERVER rahs_camera BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -383,7 +383,7 @@ TELEMETRY AMSAT_TLM rahs_camera BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM rahs_camera_data 64 UINT "The picture data" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -421,7 +421,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_1 BIG_ENDIAN
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_10 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -443,7 +443,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_10 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_10_dipole_var_z 16 UINT "The variance of sent dipole commands" BIG_ENDIAN
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_11 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -465,7 +465,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_11 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_11_mag_z_var 16 UINT "The magnetometer variance on the z axis" BIG_ENDIAN
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -503,7 +503,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_2 BIG_ENDIAN
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_3 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -541,7 +541,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_3 BIG_ENDIAN
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_4 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -578,7 +578,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_4 BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_5 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -612,7 +612,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_5 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_6 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -667,7 +667,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_6 BIG_ENDIAN
 		STATE sp2_mode 2
 	APPEND_ITEM PADDING 5 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_7 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -702,7 +702,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_7 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_8 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -740,7 +740,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_8 BIG_ENDIAN
 			value * 73.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_9 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -781,7 +781,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_9 BIG_ENDIAN
 			value / 100.0
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -842,7 +842,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_bdot_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_bdot_h2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_bdot_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -862,7 +862,7 @@ TELEMETRY AMSAT_TLM rc_adcs_bdot_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_bdot_h2_canrxerror 8 UINT "the BDOT MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -881,7 +881,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_10 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -901,7 +901,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_10 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_10_sun_y 64 FLOAT "y component of unit vector from spacecraft to sun" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_11 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -921,7 +921,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_11 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_11_sun_z 64 FLOAT "z component of unit vector from spacecraft to sun" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_12 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -941,7 +941,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_12 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_12_mag_x 64 FLOAT "x component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_13 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -961,7 +961,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_13 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_13_mag_y 64 FLOAT "y component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_14 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -981,7 +981,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_14 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_14_mag_z 64 FLOAT "z component of unit vector of the direction of the magnetic field " BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1002,7 +1002,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_2 BIG_ENDIAN
 		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_3 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1023,7 +1023,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_3 BIG_ENDIAN
 		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_4 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1044,7 +1044,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_4 BIG_ENDIAN
 		UNITS Meters m
 		FORMAT_STRING "%0.1f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_5 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1065,7 +1065,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_5 BIG_ENDIAN
 		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_6 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1086,7 +1086,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_6 BIG_ENDIAN
 		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_7 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1107,7 +1107,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_7 BIG_ENDIAN
 		UNITS Meters_Per_Second m/s
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_8 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1142,7 +1142,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_8 BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 13 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_9 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1162,7 +1162,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_9 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_9_sun_x 64 FLOAT "x component of unit vector from spacecraft to sun" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1223,7 +1223,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_estim_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_estim_h2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_estim_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1243,7 +1243,7 @@ TELEMETRY AMSAT_TLM rc_adcs_estim_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_estim_h2_canrxerror 8 UINT "Estim MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1262,7 +1262,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_10 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1283,7 +1283,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_10 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_11 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1304,7 +1304,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_11 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_12 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1323,7 +1323,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_12 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_13 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1342,7 +1342,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_13 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_14 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1361,7 +1361,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_14 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_15 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1382,7 +1382,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_15 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_15_point_true 8 UINT "Proportion of samples where attitude is within 20 degrees of commanded vector" BIG_ENDIAN
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1402,7 +1402,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_2_sc_quat_1 64 FLOAT "The first element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_3 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1422,7 +1422,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_3 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_3_sc_quat_2 64 FLOAT "The second element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_4 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1442,7 +1442,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_4 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_4_sc_quat_3 64 FLOAT "The third element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_5 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1462,7 +1462,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_5 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_5_sc_quat_4 64 FLOAT "The fourth element of the attitude quaternion of the spacecraft" BIG_ENDIAN
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_6 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1483,7 +1483,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_6 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_7 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1504,7 +1504,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_7 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_8 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1525,7 +1525,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_8 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_9 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1546,7 +1546,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_9 BIG_ENDIAN
 		UNITS Radians_Per_Second r/s
 		FORMAT_STRING "%0.3f"
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1607,7 +1607,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_mpc_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_mpc_h2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mpc_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1627,7 +1627,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mpc_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mpc_h2_canrxerror 8 UINT "the MPC MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_mtq_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mtq_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1653,7 +1653,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_2_bdot_z_avg 8 INT "Average Z BDOT command" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_2_bdot_z_max 8 INT "Max Z BDOT command" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_mtq_3 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mtq_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1679,7 +1679,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_3 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_3_fsw_y_min 8 INT "Min Y FSW command" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_3_fsw_z_avg 8 INT "Average Z FSW command" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_mtq_4 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mtq_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1705,7 +1705,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_4 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_4_duty_z1_avg 8 UINT "Average Z Duty" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_4_duty_z2_avg 8 UINT "Average Z Duty" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_mtq_5 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mtq_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1730,7 +1730,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_5 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_cmds_y_var 16 UINT "Variance in BDot's dipole commands" BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_5_cmds_z_var 16 UINT "Variance in BDot's dipole commands" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_mtq_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mtq_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1791,7 +1791,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_mtq_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_adcs_mtq_h2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_mtq_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1811,7 +1811,7 @@ TELEMETRY AMSAT_TLM rc_adcs_mtq_h2 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_mtq_h2_canrxerror 8 UINT "the MTQ MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1830,7 +1830,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_1 BIG_ENDIAN
 		STATE STANDARD 0
 	APPEND_ITEM PADDING 64 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_10 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1868,7 +1868,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_10 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_11 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1906,7 +1906,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_11 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_12 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1944,7 +1944,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_12 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_13 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -1982,7 +1982,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_13 BIG_ENDIAN
 			value * 60.0/32767
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_14 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2017,7 +2017,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_14 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_14_sun_valid 8 UINT "Sum of last 255 processed sun sensor valid bits" BIG_ENDIAN
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_15 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2055,7 +2055,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_15 BIG_ENDIAN
 		FORMAT_STRING "%0.2f"
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_16 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_16 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2097,7 +2097,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_16 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.2f"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_17 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_17 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2151,7 +2151,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_17 BIG_ENDIAN
 		STATE nack 3
 		STATE transmit_timeout 4
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2193,7 +2193,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_2 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.2f"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_3 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2235,7 +2235,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_3 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.2f"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_4 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2277,7 +2277,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_4 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_5 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2319,7 +2319,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_5 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%0.4f"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_6 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2356,7 +2356,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_6 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_7 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2378,7 +2378,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_7 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_7_mag1_var_z 16 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_8 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2400,7 +2400,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_8 BIG_ENDIAN
 	APPEND_ITEM rc_adcs_sp_8_mag2_var_z 16 UINT "None" BIG_ENDIAN
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_9 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2438,7 +2438,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_9 BIG_ENDIAN
 			value * 73
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_adcs_sp_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_adcs_sp_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2499,7 +2499,7 @@ TELEMETRY AMSAT_TLM rc_adcs_sp_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_adcs_sp_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_eps_batt_1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2524,7 +2524,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 32 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_batt_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2563,7 +2563,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_2 BIG_ENDIAN
 		FORMAT_STRING "%.4f"
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_batt_3 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2609,7 +2609,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_3 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_batt_4 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2660,7 +2660,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_4 BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 12 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_batt_5 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2708,7 +2708,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_5 BIG_ENDIAN
 			value - 50
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_eps_batt_6 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2734,7 +2734,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_6 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_batt_7 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2758,26 +2758,26 @@ TELEMETRY AMSAT_TLM rc_eps_batt_7 BIG_ENDIAN
 	ITEM acc_charge_min 0 0 DERIVED
 		UNITS milliAmpH mAH
 		GENERIC_READ_CONVERSION_START
-			packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value("AMSAT_TLM", "RC_EPS_BATT_6", "RC_EPS_BATT_6_CTRL") & 0b00111000) >> 3)) * 17 / 24576
+			packet.read('RC_EPS_BATT_7_ACC_CHARGE_MIN') * 2 ** (2 * ((System.telemetry.value("FOX_SERVER", "RC_EPS_BATT_6", "RC_EPS_BATT_6_CTRL") & 0b00111000) >> 3)) * 17 / 24576
 		GENERIC_READ_CONVERSION_END
 	ITEM acc_charge_avg 0 0 DERIVED
 		UNITS milliAmpH mAH
 		GENERIC_READ_CONVERSION_START
-			packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value("AMSAT_TLM", "RC_EPS_BATT_6", "RC_EPS_BATT_6_CTRL") & 0b00111000) >> 3)) * 17 / 24576
+			packet.read('RC_EPS_BATT_7_ACC_CHARGE_AVG') * 2 ** (2 * ((System.telemetry.value("FOX_SERVER", "RC_EPS_BATT_6", "RC_EPS_BATT_6_CTRL") & 0b00111000) >> 3)) * 17 / 24576
 		GENERIC_READ_CONVERSION_END
 	ITEM acc_charge_max 0 0 DERIVED
 		UNITS milliAmpH mAH
 		GENERIC_READ_CONVERSION_START
-			packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value("AMSAT_TLM", "RC_EPS_BATT_6", "RC_EPS_BATT_6_CTRL") & 0b00111000) >> 3)) * 17 / 24576
+			packet.read('RC_EPS_BATT_7_ACC_CHARGE_MAX') * 2 ** (2 * ((System.telemetry.value("FOX_SERVER", "RC_EPS_BATT_6", "RC_EPS_BATT_6_CTRL") & 0b00111000) >> 3)) * 17 / 24576
 		GENERIC_READ_CONVERSION_END
 	ITEM rc_eps_batt_7_voltage_diff 0 0 DERIVED
 		UNITS milliVolts mV
 		GENERIC_READ_CONVERSION_START
-			(1000 * System.telemetry.value("AMSAT_TLM", "RC_EPS_BATT_4", "RC_EPS_BATT_4_VOLTAGE_AVG") - (2000 * System.telemetry.value("AMSAT_TLM", "RC_EPS_BATT_2", "RC_EPS_BATT_2_NODE_V_AVG"))) / 2
+			(1000 * System.telemetry.value("FOX_SERVER", "RC_EPS_BATT_4", "RC_EPS_BATT_4_VOLTAGE_AVG") - (2000 * System.telemetry.value("FOX_SERVER", "RC_EPS_BATT_2", "RC_EPS_BATT_2_NODE_V_AVG"))) / 2
 		GENERIC_READ_CONVERSION_END
 		FORMAT_STRING "%.4f"
 
-TELEMETRY AMSAT_TLM rc_eps_batt_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2838,7 +2838,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_batt_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_eps_batt_h2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_batt_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2859,7 +2859,7 @@ TELEMETRY AMSAT_TLM rc_eps_batt_h2 BIG_ENDIAN
 	APPEND_ITEM rc_eps_batt_h2_last_i2c_res 8 UINT "the result of the last i2c operation" BIG_ENDIAN
 	APPEND_ITEM PADDING 48 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2893,7 +2893,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_1 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_10 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2941,7 +2941,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_10 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_11 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_11 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -2981,7 +2981,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_11 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_12 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_12 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3029,7 +3029,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_12 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_13 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_13 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3069,7 +3069,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_13 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_14 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_14 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3117,7 +3117,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_14 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_15 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_15 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3157,7 +3157,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_15 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_16 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_16 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3205,7 +3205,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_16 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_17 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_17 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3245,7 +3245,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_17 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_18 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_18 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3294,7 +3294,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_18 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 10 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3321,7 +3321,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_2 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_3 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3361,7 +3361,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_3 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_4 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3408,7 +3408,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_4 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_5 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3448,7 +3448,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_5 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_6 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3496,7 +3496,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_6 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_7 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3536,7 +3536,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_7 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_8 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3584,7 +3584,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_8 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_9 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3624,7 +3624,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_9 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3685,7 +3685,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_dist_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_eps_dist_h2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_dist_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3705,7 +3705,7 @@ TELEMETRY AMSAT_TLM rc_eps_dist_h2 BIG_ENDIAN
 	APPEND_ITEM rc_eps_dist_h2_canrxerror 8 UINT "the Dist MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_gen_1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3742,7 +3742,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_1 BIG_ENDIAN
 		STATE CHARGING 1 GREEN
 	APPEND_ITEM PADDING 58 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_gen_10 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_10 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3776,7 +3776,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_10 BIG_ENDIAN
 		GENERIC_READ_CONVERSION_END
 	APPEND_ITEM PADDING 16 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_gen_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3822,7 +3822,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_2 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 		LIMITS_RESPONSE SlackLimitResponse.rb
 
-TELEMETRY AMSAT_TLM rc_eps_gen_3 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_3 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3868,7 +3868,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_3 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 3.0 9.0 17.0 18.0
 		LIMITS_RESPONSE SlackLimitResponse.rb
 
-TELEMETRY AMSAT_TLM rc_eps_gen_4 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_4 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3914,7 +3914,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_4 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
 		LIMITS_RESPONSE SlackLimitResponse.rb
 
-TELEMETRY AMSAT_TLM rc_eps_gen_5 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_5 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -3960,7 +3960,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_5 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.003 0.05 0.3 0.4
 		LIMITS_RESPONSE SlackLimitResponse.rb
 
-TELEMETRY AMSAT_TLM rc_eps_gen_6 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_6 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4006,7 +4006,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_6 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 3.0 4.0
 		LIMITS_RESPONSE SlackLimitResponse.rb
 
-TELEMETRY AMSAT_TLM rc_eps_gen_7 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_7 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4052,7 +4052,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_7 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 0.06 1.0 6.0 7.0
 		LIMITS_RESPONSE SlackLimitResponse.rb
 
-TELEMETRY AMSAT_TLM rc_eps_gen_8 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_8 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4099,7 +4099,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_8 BIG_ENDIAN
 		LIMITS_RESPONSE SlackLimitResponse.rb
 	APPEND_ITEM PADDING 8 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_eps_gen_9 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_9 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4173,7 +4173,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_9 BIG_ENDIAN
 		LIMITS DEFAULT 1 ENABLED 17 19.5 23 25
 		LIMITS_RESPONSE SlackLimitResponse.rb
 
-TELEMETRY AMSAT_TLM rc_eps_gen_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4234,7 +4234,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_eps_gen_h1_reset_count 8 UINT "Reset Count" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_eps_gen_h2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_eps_gen_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4254,7 +4254,7 @@ TELEMETRY AMSAT_TLM rc_eps_gen_h2 BIG_ENDIAN
 	APPEND_ITEM rc_eps_gen_h2_canrxerror 8 UINT "GEN MCP's RX error buffer" BIG_ENDIAN
 	APPEND_ITEM PADDING 56 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM rc_ppt_1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_ppt_1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4284,7 +4284,7 @@ TELEMETRY AMSAT_TLM rc_ppt_1 BIG_ENDIAN
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_ppt_2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_ppt_2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4322,7 +4322,7 @@ TELEMETRY AMSAT_TLM rc_ppt_2 BIG_ENDIAN
 			value * 2.0**-15
 		GENERIC_READ_CONVERSION_END
 
-TELEMETRY AMSAT_TLM rc_ppt_h1 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_ppt_h1 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4383,7 +4383,7 @@ TELEMETRY AMSAT_TLM rc_ppt_h1 BIG_ENDIAN
 		STATE (PUC)_MPUSEG3IFG_seg_3_mem_viol 46
 	APPEND_ITEM rc_ppt_h1_reset_count 8 UINT "None" BIG_ENDIAN
 
-TELEMETRY AMSAT_TLM rc_ppt_h2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER rc_ppt_h2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4407,7 +4407,7 @@ TELEMETRY AMSAT_TLM rc_ppt_h2 BIG_ENDIAN
 		STATE no_main_discharge 2
 	APPEND_ITEM PADDING 54 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM sensorproc_imu BIG_ENDIAN 
+TELEMETRY FOX_SERVER sensorproc_imu BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4447,7 +4447,7 @@ TELEMETRY AMSAT_TLM sensorproc_imu BIG_ENDIAN
 		STATE true 1
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM sensorproc_mag BIG_ENDIAN 
+TELEMETRY FOX_SERVER sensorproc_mag BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4485,7 +4485,7 @@ TELEMETRY AMSAT_TLM sensorproc_mag BIG_ENDIAN
 	APPEND_ITEM sensorproc_mag_bdot_valid 1 UINT "Whether the reading is valid for bdot" BIG_ENDIAN
 	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM sensorproc_mag2 BIG_ENDIAN 
+TELEMETRY FOX_SERVER sensorproc_mag2 BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4523,7 +4523,7 @@ TELEMETRY AMSAT_TLM sensorproc_mag2 BIG_ENDIAN
 	APPEND_ITEM sensorproc_mag2_bdot_valid 1 UINT "Whether the reading is valid for bdot" BIG_ENDIAN
 	APPEND_ITEM PADDING 14 UINT "Padded bits for CAN data"
 
-TELEMETRY AMSAT_TLM sensorproc_sun BIG_ENDIAN 
+TELEMETRY FOX_SERVER sensorproc_sun BIG_ENDIAN 
 	APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) " 
  	APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 	APPEND_ITEM RESET 16 UINT "COM1 reset"
@@ -4549,7 +4549,7 @@ TELEMETRY AMSAT_TLM sensorproc_sun BIG_ENDIAN
 	APPEND_ITEM PADDING 15 UINT "Padded bits for CAN data"
 
 
-	TELEMETRY AMSAT_TLM general_can_message BIG_ENDIAN
+	TELEMETRY FOX_SERVER general_can_message BIG_ENDIAN
 		APPEND_ITEM LENGTH 16 UINT "Length of TCP-ized CAN message (always 36/0x24 bytes) "
 		APPEND_ID_ITEM FIXED_TYPE 16 UINT 128 "Fixed message type for CAN" BIG_ENDIAN
 		APPEND_ITEM RESET 16 UINT "COM1 reset"

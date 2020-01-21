@@ -3,5 +3,7 @@
 
 # Modify this according to your actual target connection
 # Please see the COSMOS Interface Configuration documentation
-INTERFACE AMSAT_TLM_INT tcpip_server_interface.rb nil 2000 10 nil LENGTH 0 16 0 1 BIG_ENDIAN
-  TARGET AMSAT_TLM
+INTERFACE FOX_SERVER_INT tcpip_client_interface_authorized.rb amsat.org 41043 41043 <%= ENV["FOX_USER"] || "bogus_user" %> <%= ENV["FOX_PASS"] || "bogus_pass" %> 6 10.0 nil LENGTH 0 16 0 1 BIG_ENDIAN
+  TARGET FOX_SERVER
+	DONT_CONNECT
+	DONT_RECONNECT

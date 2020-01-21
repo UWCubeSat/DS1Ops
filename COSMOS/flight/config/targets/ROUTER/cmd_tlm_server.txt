@@ -1,9 +1,0 @@
-# This is a segment of the main cmd_tlm_server.txt that will be used with
-# AUTO_INTERFACE_TARGETS or INTERFACE_TARGET
-
-# NOTE: This line must be modified to match how your actual target connects.
-# See http://cosmosrb.com/docs/interfaces/ for more information.
-ROUTER INST_ROUTER tcpip_server_interface.rb 2055 2055 10.0 nil LENGTH 32 16 7
-  OPTION LISTEN_ADDRESS 127.0.0.1
-#~  ROUTE PEAK_CAN_INT
-#~  ROUTE PEAK_CAN_CMD_INT
