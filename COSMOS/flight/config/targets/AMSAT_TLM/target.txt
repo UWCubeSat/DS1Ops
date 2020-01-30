@@ -21,6 +21,10 @@ IGNORE_ITEM CANID_PADDING
 IGNORE_ITEM CANID_RTR
 IGNORE_ITEM CANID_TYPE
 IGNORE_ITEM PADDING
+IGNORE_ITEM TYPE
+IGNORE_ITEM RESET
+IGNORE_ITEM UPTIME
+IGNORE_ITEM TIMESTAMP
 
 # You can explicitly define the command and telemetry files
 # you want to process and the order they are processed.
