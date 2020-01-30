@@ -26,8 +26,8 @@ if __name__ == "__main__":
 			uptime     = bytes_to_int(packet[6:10])
 			
 			if grnd_class == 7 and (not (id in last_wod_uptimes) or
-															(uptime > last_wod_uptimes[id][0] and reset == last_wod_uptimes[id][1]) or
-															reset > last_wod_uptimes[id][1]):
+															(uptime > last_wod_uptimes[id][1] and reset == last_wod_uptimes[id][0]) or
+															reset > last_wod_uptimes[id][0]):
 				send_sock.send(packet)
 				last_wod_uptimes[id] = (reset, uptime)
 	finally:
