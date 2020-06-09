@@ -1,0 +1,11 @@
+time,Temperature_Min,Temperature_Max,Temperature_Avg,Last_Reset_Cause,Reset_Count
+1587759803,28.25,28.75,28.55,Brownout (BOR),5
+1587759866,28.5,29.0,28.77,Brownout (BOR),5
+1587759918,29.0,29.25,29.1,Brownout (BOR),5
+1587759981,29.0,29.5,29.36,Brownout (BOR),5
+1587760043,29.5,30.0,29.71,Brownout (BOR),5
+1587760105,29.75,30.24,29.92,Brownout (BOR),5
+1587760163,30.0,30.49,30.15,Brownout (BOR),5
+1587760225,30.24,30.74,30.42,Brownout (BOR),5
+1587760283,30.49,30.99,30.69,Brownout (BOR),5
+1587760340,30.74,31.24,30.95,Brownout (BOR),5

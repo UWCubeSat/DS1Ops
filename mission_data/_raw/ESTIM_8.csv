@@ -1,0 +1,11 @@
+time,Epoch,SGP4_Flag,Spacecraft_In_Sun,Spacecraft_Above_Ground_Station,TLE_ID_Valid
+1587759803,1860834277,0,False,False,False
+1587759866,1860849716,0,False,False,False
+1587759918,1860864422,0,False,False,False
+1587759981,1860879877,0,False,False,False
+1587760043,1860895347,0,False,False,False
+1587760101,1860910815,0,False,False,False
+1587760163,1860926284,0,False,False,False
+1587760225,1860941751,0,False,False,False
+1587760283,1860957218,0,False,False,False
+1587760340,1860971987,0,False,False,False
