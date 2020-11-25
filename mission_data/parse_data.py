@@ -665,13 +665,13 @@ def download_data():
 def parse_data():
     # load the T0 dictionary
     # these are the reset times for COM1 (needed for unix epoch conversion)
-    with open("FOX6T0.txt", 'r') as csvfile:
+    with open(t0_file, 'r') as csvfile:
         csvreader = csv.reader(csvfile)
         for row in csvreader:
             T0_dict[int(row[0])] = int(row[1])
     
     # read the data csv
-    with open('Fox6canpacket.log', 'r') as csvfile:
+    with open(can_file, 'r') as csvfile:
         csvreader = csv.reader(csvfile)
         for row in csvreader:
             canId = row[6:10]
